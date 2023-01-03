@@ -4,11 +4,11 @@ if (jwt == null) {
 }
 
 function login() {
-    const username = document.getElementById("username").value;
+    /*const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
   
     const xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "https://www.mecallapi.com/api/login");
+    xhttp.open("POST", "https://www.mecallapi.com/api/index");
     xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     xhttp.send(JSON.stringify({
       "username": username,
@@ -38,11 +38,11 @@ function login() {
         }
       }
     };
-    return false;
+    return false;*/
 }
 
 function loadUser() {
-  const xhttp = new XMLHttpRequest();
+  /*const xhttp = new XMLHttpRequest();
   xhttp.open("GET", "https://www.mecallapi.com/api/auth/user");
   xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xhttp.setRequestHeader("Authorization", "Bearer "+jwt);
@@ -57,12 +57,12 @@ function loadUser() {
         document.getElementById("username").innerHTML = user["username"];
       }
     }
-  };
+  };*/
 }
 
 loadUser();
 
 function logout() {
-  localStorage.removeItem("jwt");
-  window.location.href = './index.html'
+  /*localStorage.removeItem("jwt");
+  window.location.href = './index.html'*/
 }
