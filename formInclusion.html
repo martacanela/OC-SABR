@@ -123,7 +123,7 @@
                             </div>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required " for="principiosActivos">8. Principios activos actuales</label><br>
+                            <label class="form-label required " for="principiosActivos">13. Principios activos actuales</label><br>
                             <p>Si cree que existen otros medicamentos que puedan influir, indique los principios activos separados por ";"</p>
                             <input type="checkbox" name="principiosActivos" id="sinMedicamentos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="sinMedicamentos">Sin medicamentos</label><br>
                             <div id="sinPrincActivos">
@@ -148,11 +148,11 @@
                         <h3>Cáncer primario y tratamientos previos a la SABR M1</h3>
                         <br>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="fechaDiagnostico" >13. Fecha de diagnóstico del cáncer primario</label>
+                            <label class="form-label required" for="fechaDiagnostico" >14. Fecha de diagnóstico del cáncer primario</label>
                             <input type="date" id="fechaDiagnostico" class="form-control" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="estadoCancerPrimario" >20. Estatus actual del cáncer primario</label><br>
+                            <label class="form-label required" for="estadoCancerPrimario" >15. Estatus actual del cáncer primario</label><br>
                             <input value="respCompleta" type="radio" name="estadoCancerPrimario" id="respCompleta" required> <label for="respCompleta">Respuesta completa</label><br>
                             <input value="respParcial" type="radio" name="estadoCancerPrimario" id="respParcial" > <label for="respParcial">Respuesta parcial</label><br>
                             <input value="sinRespuesta" type="radio" name="estadoCancerPrimario" id="sinRespuesta" > <label for="sinRespuesta">Sin respuesta</label><br>
@@ -160,7 +160,7 @@
                         </div>
 
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="cancerPrimario" >21. Cáncer primario</label><br>
+                            <label class="form-label required" for="cancerPrimario" >16. Cáncer primario</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioMama"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T')" required> <label for="cancerPrimarioMama">Mama</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioPulmon"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T')" > <label for="cancerPrimarioPulmon">Pulmón</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioColorectal"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T')" > <label for="cancerPrimarioColorectal">Colorectal</label><br>
@@ -174,7 +174,7 @@
                         <br>
                         <div id="tumorPrimarioMama" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="anatopatoAguja" >22. Anatomía patológica de la biopsia de aguja grande</label><br>
+                                <label class="form-label required" for="anatopatoAguja" >17. Anatomía patológica de la biopsia de aguja grande</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAguja" id="anatopatoDuctal"  onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoDuctal">Ductal</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAguja" id="anatopatoLobul"  onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoLobul">Lobulillar</label><br>
                                 <input type="radio" class="dropdownGroup hasDropdown" name="anatopatoAguja" id="anatopatoOtros__L" onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoOtros__L">Otros</label><br>
@@ -182,7 +182,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="gradoHistologico" >23. Grado histológico</label>
+                                <label class="form-label required" for="gradoHistologico" >18. Grado histológico</label>
                                 <select class="form-control" name = "gradoHistologico" id="gradoHist">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "unoGrado">1</option>
@@ -192,37 +192,37 @@
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="receptorEstrogeno">24. Receptor estrógeno</label>
+                                <label class="form-label required" for="receptorEstrogeno">19. Receptor estrógeno</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="receptorEstrogeno" name="receptorEstrogeno" class="form-control" min="0.0" max="100.0"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="receptorProgesterona">25. Receptor progesterona</label>
+                                <label class="form-label required" for="receptorProgesterona">20. Receptor progesterona</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="receptorProgesterona" class="form-control" min="0.0" max="100.0"/>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="her2Positivo" >26. Her2 positivo</label><br>
+                                <label class="form-label required" for="her2Positivo" >21. Her2 positivo</label><br>
                                 <input type="radio" name="her2Positivo" id="her2Si"> <label for="her2Si">Sí</label><br>
                                 <input type="radio" name="her2Positivo" id="her2No"> <label for="her2No">No</label><br>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="ki67">27. Ki67</label>
+                                <label class="form-label required" for="ki67">22. Ki67</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="ki67" class="form-control" min="0.0" max="100.0"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="tils">28. TiLs</label>
+                                <label class="form-label required" for="tils">23. TiLs</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="tils" name="tils" class="form-control" min="0.0" max="100.0"/>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="subtipoMolecular" >29. Subtipo molecular</label>
+                                <label class="form-label required" for="subtipoMolecular" >24. Subtipo molecular</label>
                                 <select class="form-control" name = "subtipoMolecular" id="subtipoMolecular">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "luminolA">Luminol A</option>
@@ -233,19 +233,19 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="cirugiaTumorPrimario" >30. Cirugía</label><br>
+                                <label class="form-label required" for="cirugiaTumorPrimario" >25. Cirugía</label><br>
                                 <input type="radio" class="hasDropdown dropdownGroup" name="cirugiaTumorPrimario" id="cirugiaSi"  onclick="otrosAparece('cirugiaSi', 'fechaCirugiaTab')"> <label for="cirugiaSi">Sí</label><br>
                                 <input type="radio" class="dropdownGroup" name="cirugiaTumorPrimario" id="cirugiaNo" onclick="otrosAparece('cirugiaSi', 'fechaCirugiaTab')"> <label for="cirugiaNo">No</label><br>
                             </div>
 
                             <div id="fechaCirugiaTab" style="display: none;">
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required" for="fechaCirugiaTumorPrimario" >31. Fecha cirugía</label>
+                                    <label class="form-label required" for="fechaCirugiaTumorPrimario" >26. Fecha cirugía</label>
                                     <input type="date" id="fechaCirugiaTumorPrimario" class="form-control fechaCirugiaDropdown"/>
                                 </div>
     
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required" for="tipoCirugia" >32. Tipo de cirugía</label><br>
+                                    <label class="form-label required" for="tipoCirugia" >27. Tipo de cirugía</label><br>
                                     <input type="radio" name="tipoCirugia" id="tumorectomia" class="tipoCirugiaDropdown"> <label for="tumorectomia">Tumorectomía</label><br>
                                     <input type="radio" name="tipoCirugia" id="mastectomia" class="tipoCirugiaDropdown"> <label for="mastectomia">Mastectomía</label><br>
                                 </div>
@@ -254,17 +254,18 @@
                         </div>
                         <div id="tumorPrimarioPulmon" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="anatopatoAgujaPulmon" >33. Anatomía patológica de la biopsia de aguja grande</label><br>
+                                <label class="form-label required" for="anatopatoAgujaPulmon" >17. Anatomía patológica de la biopsia de aguja grande</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaPulmon" id="anatopatoPulmonAdenocarcinoma"  onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')" > <label for="anatopatoPulmonAdenocarcinoma">Adenocarcinoma</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaPulmon" id="anatopatoPulmonEscamoso"  onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')"> <label for="anatopatoPulmonEscamoso">Escamoso</label><br>
                                 <input type="radio" class="dropdownGroup hasDropdown" name="anatopatoAgujaPulmon" id="anatopatoPulmonOtros__L" onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')"> <label for="anatopatoPulmonOtros__L">Otros</label><br>
                                 <input type="text" name="anatopatoAgujaPulmon" id="anatopatoPulmonOtros__T" class="form-control anatopatoAgujaPulmonDropdown" placeholder="Separad por ';'" style="display:none" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="pdl1" >34. PDL1 </label><br>
+                                <label class="form-label required" for="pdl1" >18. PDL1 </label><br>
                                 <input type="radio" name="pdl1" id="pdl1Positivo"> <label for="pdl1Positivo">Positivo</label><br>
                                 <input type="radio" name="pdl1" id="pdl1Negativo"> <label for="pdl1Negativo">Negativo</label><br>
                             </div>
+                            <!--Revisado hasta aquí -->
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="pdl1Primario">35. PDL1 Positivo</label>
                                 <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control" min="0.0" max="100.0"/>
@@ -439,218 +440,6 @@
                                 <option value = "m1_pM">M1</option>
                                 <option value = "mx_pM">Mx</option>
                              </select>
-                        </div>
-                    </div>
-                    <div class="tab tratamientosParaElCancerPrimarioTab" id="tratamientosParaElCancerPrimarioTab">
-                        <h3>Tratamientos para el cáncer primario</h3>
-                        <br>
-                        <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="tratamientosCancerPrimario">57. Tratamientos</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown qtnaGroup" name="tratamientosCancerPrimario" id="qtna" onclick="otrosAparece('qtna', 'qtna_preguntas')" required> <label for="qtna">Quimioterapia neoadyuvante (<b>QTNA</b>)</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown rtnaGroup" name="tratamientosCancerPrimario" id="rtna" onclick="otrosAparece('rtna', 'rtna_preguntas')"> <label for="rtna">Radioterapia neoadyuvante (<b>RTNA</b>)</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="tratamientosCancerPrimario" id="qta" onclick="otrosAparece('qta', 'qta_preguntas')"> <label for="qta">Quimioterapia adyuvante <b>(QTA)</b></label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="tratamientosCancerPrimario" id="rta" onclick="otrosAparece('rta', 'rta_preguntas')"> <label for="rta">Radioterapia adyuvante <b>(RTA)</b></label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown hormonoterapiaGroup" name="tratamientosCancerPrimario" id="hormonoterapia" onclick="otrosAparece('hormonoterapia', 'hormonoterapia_preguntas')"> <label for="hormonoterapia">Hormonoterapia</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown inmunoterapiaGroup" name="tratamientosCancerPrimario" id="inmunoterapia" onclick="otrosAparece('inmunoterapia', 'inmunoterapia_preguntas')"> <label for="inmunoterapia">Inmunoterapia</label><br>
-                        </div>
-                        <div id="qtna_preguntas" style="display: none;">
-                            <h5>Quimioterapia neoadyuvante <b>(QTNA)</b></h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioQtna" >58. Fecha de inicio</label>
-                                <input type="date" id="fechaInicioQtna" class="form-control qtnaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaFinQtna" >59. Fecha de finalización</label>
-                                <input type="date" id="fechaFinQtna" class="form-control qtnaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="tipoQtna" >60. Tipo de QTNA</label>
-                                <select class="form-control qtnaDropdown" name = "tipoQtna" id="tipoQtna">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "agentesAlquilantes_qtna">Agentes alquilantes (bulsufan, ciclofosfamida, termozolomida)</option>
-                                    <option value = "antimetabolitos_qtna">Antimetabolitos (5-FU, 6-MP, capercitabina, gemcitabina)</option>
-                                    <option value = "antibioticos_qtna">Antibióticos anticancerígenos (actinomicina-D, bleomicina, daunorrubicina, doxorrubicina)</option>
-                                    <option value = "inhibidores_qtna">Inhibidores de topoisomerasas (etopósido, irinotecán, toptecán)</option>
-                                    <option value = "antiomioticos_qtna">Antimióticos (docetaxel, eribulina, ixabepilona, paclitaxel, vinblastina)</option>
-                                    <option value = "alcaloides_qtna">Alcaloides de plantas (vinblastina, vincristina)</option>
-                                 </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="qtna_completa" >61. ¿QTNA completa?</label>
-                                <select class="form-control qtnaDropdown" name = "qtna_completa" id="qtna_completa">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "enTratamiento">En tratamiento</option>
-                                    <option value = "suspendida">Suspendida</option>
-                                    <option value = "completada">Completada</option>
-                                 </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="respuesta_qtna" >62. Respuesta a la QTNA</label>
-                                <select class="form-control qtnaDropdown" name = "respuesta_qtna" id="respuesta_qtna">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "completa">Completa</option>
-                                    <option value = "parcial">Parcial</option>
-                                    <option value = "sinRespuesta">Sin respuesta</option>
-                                    <option value = "progresion">Progresion</option>
-                                 </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="toxicidad_qtna" >63. Toxicidad a la QTNA</label><br>
-                                <input type="radio" class="qtnaDropdown" name="toxicidad_qtna" id="toxicidad_qtnaSi"> <label for="toxicidad_qtnaSi">Sí</label><br>
-                                <input type="radio" name="toxicidad_qtna" id="toxicidad_qtnaNo"> <label for="toxicidad_qtnaNo">No</label><br>
-                            </div>
-                        </div>
-                        <div id="rtna_preguntas" style="display: none;">
-                            <h5>Radioterapia neoadyuvante <b>(RTNA)</b></h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioRtna" >64. Fecha de inicio</label>
-                                <input type="date" id="fechaInicioRtna" class="form-control rtnaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaFinRtna" >65. Fecha de finalización</label>
-                                <input type="date" id="fechaFinRtna" class="form-control rtnaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="boost_rtna" >66. Boost en RTNA</label><br>
-                                <input type="radio" class="rtnaDropdown" name="boost_rtna" id="boost_rtnaSi"> <label for="boost_rtnaSi">Sí</label><br>
-                                <input type="radio" name="boost_rtna" id="boost_rtnaNo"> <label for="boost_rtnaNo">No</label><br>
-                            </div>
-                            <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="dosisBoost_rtna">67. Dosis boost de RTNA</label>
-                                <p>Unidades: <b>Gy</b></p>
-                                <input type="number" id="dosisBoost_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="20" max="300"/>
-                            </div>
-                            <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="dosisTotal_rtna">68. Dosis total de RTNA</label>
-                                <p>Unidades: <b>Gy</b></p>
-                                <input type="number" id="dosisTotal_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="20" max="300"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="rtna_completa" >69. ¿RTNA completa?</label>
-                                <select class="form-control rtnaDropdown" name = "rtna_completa" id="rtna_completa">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "enTratamiento_rtna">En tratamiento</option>
-                                    <option value = "suspendida_rtna">Suspendida</option>
-                                    <option value = "completada_rtna">Completada</option>
-                                 </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="toxicidad_rtna" >70. Toxicidad a la RTNA</label><br>
-                                <input type="radio" class="rtnaDropdown" name="toxicidad_rtna" id="toxicidad_rtnaSi"> <label for="toxicidad_rtnaSi">Sí</label><br>
-                                <input type="radio" name="toxicidad_rtna" id="toxicidad_rtnaNo"> <label for="toxicidad_rtnaNo">No</label><br>
-                            </div>
-                        </div>
-                        
-                        <div id="qta_preguntas" style="display: none;">
-                            <h5>Quimioterapia adyuvante <b>(QTA)</b></h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioQta" >71. Fecha de inicio de QTA</label>
-                                <input type="date" id="fechaInicioQta" class="form-control qtaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaFinQta" >72. Fecha de finalización de QTA</label>
-                                <input type="date" id="fechaFinQta" class="form-control qtaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="tipoQta" >73. Tipo de QTA</label>
-                                <select class="form-control qtaDropdown" name = "tipoQta" id="tipoQtna">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "agentesAlquilantes_qta">Agentes alquilantes (bulsufan, ciclofosfamida, termozolomida)</option>
-                                    <option value = "antimetabolitos_qta">Antimetabolitos (5-FU, 6-MP, capercitabina, gemcitabina)</option>
-                                    <option value = "antibioticos_qta">Antibióticos anticancerígenos (actinomicina-D, bleomicina, daunorrubicina, doxorrubicina)</option>
-                                    <option value = "inhibidores_qta">Inhibidores de topoisomerasas (etopósido, irinotecán, toptecán)</option>
-                                    <option value = "antiomioticos_qta">Antimióticos (docetaxel, eribulina, ixabepilona, paclitaxel, vinblastina)</option>
-                                    <option value = "alcaloides_qta">Alcaloides de plantas (vinblastina, vincristina)</option>
-                                    </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="qta_completa" >74. ¿QTA completa?</label>
-                                <select class="form-control qtaDropdown" name = "qta_completa" id="qta_completa">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "enTratamiento_qta">En tratamiento</option>
-                                    <option value = "suspendida_qta">Suspendida</option>
-                                    <option value = "completada_qta">Completada</option>
-                                    </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="respuesta_qta" >75. Respuesta a la QTA</label>
-                                <select class="form-control qtaDropdown" name = "respuesta_qta" id="respuesta_qta">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "completa_qta">Completa</option>
-                                    <option value = "parcial_qta">Parcial</option>
-                                    <option value = "sinRespuesta_qta">Sin respuesta</option>
-                                    <option value = "progresion_qta">Progresion</option>
-                                    </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="toxicidad_qta" >76. Toxicidad a la QTA</label><br>
-                                <input type="radio" class="qtaDropdown" name="toxicidad_qta" id="toxicidad_qtaSi"> <label for="toxicidad_qtaSi">Sí</label><br>
-                                <input type="radio" name="toxicidad_qta" id="toxicidad_qtaNo"> <label for="toxicidad_qtaNo">No</label><br>
-                            </div>
-                        </div>
-                        <div id="rta_preguntas" style="display: none;">
-                            <h5>Radioterapia adyuvante <b>(RTA)</b></h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioRta" >77. Fecha de inicio de RTA</label>
-                                <input type="date" id="fechaInicioRta" class="form-control rtaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaFinRta" >78. Fecha de finalización de RTA</label>
-                                <input type="date" id="fechaFinRta" class="form-control rtaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="boost_rta" >79. Boost en RTA</label><br>
-                                <input type="radio" class="rtaDropdown" name="boost_rta" id="boost_rtaSi"> <label for="boost_rtaSi">Sí</label><br>
-                                <input type="radio" name="boost_rta" id="boost_rtaNo"> <label for="boost_rtaNo">No</label><br>
-                            </div>
-                            <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="dosisBoost_rta">80. Dosis boost de RTA</label>
-                                <p>Unidades: <b>Gy</b></p>
-                                <input type="number" id="dosisBoost_rta" class="form-control rtaDropdown" placeholder="0.0" min="20" max="300"/>
-                            </div>
-                            <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="dosisTotal_rta">81. Dosis total de RTA</label>
-                                <p>Unidades: <b>Gy</b></p>
-                                <input type="number" id="dosisTotal_rta" class="form-control rtaDropdown" placeholder="0.0" min="20" max="300"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="rta_completa" >82. ¿RTA completa?</label>
-                                <select class="form-control rtaDropdown" name = "rta_completa" id="rta_completa">
-                                    <option value = "" selected>--Escoja una opción--</option>
-                                    <option value = "enTratamiento_rta">En tratamiento</option>
-                                    <option value = "suspendida_rta">Suspendida</option>
-                                    <option value = "completada_rta">Completada</option>
-                                </select>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="toxicidad_rta" >83. Toxicidad a la RTA</label><br>
-                                <input type="radio" class="rtaDropdown" name="toxicidad_rta" id="toxicidad_rtaSi"> <label for="toxicidad_rtaSi">Sí</label><br>
-                                <input type="radio" name="toxicidad_rta" id="toxicidad_rtaNo"> <label for="toxicidad_rtaNo">No</label><br>
-                            </div>
-                        </div>
-                        <div id="hormonoterapia_preguntas" style="display: none;">
-                            <h5>Hormonoterapia</h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioHormo" >84. Fecha de inicio de la hormonoterapia</label>
-                                <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown"/>
-                            </div>
-                        </div>
-                        <div id="inmunoterapia_preguntas" style="display: none;">
-                            <h5>Inmunoterapia</h5>
-                            <br>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaInicioInmuno" >85. Fecha de inicio de la inmunoterapia</label>
-                                <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaFinInmuno" >86. Fecha de finalización de la inmunoterapia</label>
-                                <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
-                            </div>
                         </div>
                     </div>
                     <div class="tab datosM1Tab">
@@ -842,7 +631,6 @@
                         <span class="step"></span>
                         <span class="step" name="circulitoPaso"></span>
                         <span class="step optionalStep" name="circulitoPaso" style="display: none;"></span>
-                        <span class="step" name="circulitoPaso"></span>
                         <span class="step" name="circulitoPaso"></span>
                         <span class="step" name="circulitoPaso"></span>
                     </div>

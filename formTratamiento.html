@@ -40,7 +40,7 @@
                       <div id="sabr_preguntas" style="display: none;">
                         <div class="form-outline mb-4">
                           <label class="form-label required" for="ubicacion">3. Ubicación</label><br>
-                          <input type="radio" name="ubicacion" id="osea" onclick="otrosAparece()" required> <label for="osea">Ósea</label><br>
+                          <input type="radio" name="ubicacion" id="osea" onclick="otrosAparece()"> <label for="osea">Ósea</label><br>
                           <input type="radio" name="ubicacion" id="pulmonar" onclick="otrosAparece()"> <label for="pulmonar">Pulmonar</label><br>
                           <input type="radio" name="ubicacion" id="ganglionar" onclick="otrosAparece()"> <label for="ganglionar">Ganglionar</label><br>
                           <input type="radio" name="ubicacion" id="cerebral" onclick="otrosAparece()"> <label for="cerebral">Cerebral</label><br>
@@ -51,33 +51,33 @@
 
                         <div class="form-outline mb-4 ">
                             <label class="form-label required" for="inicioSABR">4. Fecha de incio SABR</label>
-                            <input type="date" id="inicioSABR" name="inicioSABR" class="form-control inicioSABRDropdown" required>
+                            <input type="date" id="inicioSABR" name="inicioSABR" class="form-control inicioSABRDropdown">
                         </div>
                         <div class="form-outline mb-4 ">
                             <label class="form-label required" for="finSABR">5. Fecha de fin SABR</label>
-                            <input type="date" id="finSABR" name="finSABR" class="form-control finSABRDropdown" required>
+                            <input type="date" id="finSABR" name="finSABR" class="form-control finSABRDropdown">
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label required" for="dosisTotal">6. Dosis total</label>
                             <p>Unidades: <b>Gy</b></p>
-                            <input type="number" id="dosisTotal" class="form-control dosisTotalDropdown" placeholder="No indicad las unidades" min="20" max="42" required/>
+                            <input type="number" id="dosisTotal" class="form-control dosisTotalDropdown" placeholder="No indicad las unidades" min="20" max="42"/>
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label required" for="dosisFraccionada">7. Dosis fraccionada</label>
                             <p>Unidades: <b>Gy</b></p>
                             <label class="form-label " for="primeraSesion">1ª Sesión: </label>
-                            <input type="number" id="primeraSesion" class="form-control formSesion primeraSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" required/><br>
+                            <input type="number" id="primeraSesion" class="form-control formSesion primeraSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
                             <label class="form-label " for="primeraSesion">2ª Sesión: </label>
-                            <input type="number" id="segundaSesion" class="form-control formSesion segundaSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" required/><br>
+                            <input type="number" id="segundaSesion" class="form-control formSesion segundaSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
                             <label class="form-label " for="primeraSesion">3ª Sesión: </label>
-                            <input type="number" id="terceraSesion" class="form-control formSesion terceraSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" required/><br>
+                            <input type="number" id="terceraSesion" class="form-control formSesion terceraSesionDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
                           </div>
                         
                         <div class="form-outline mb-4">
                           <label for="semanas" class="form-label required">8. Semanas</label>
-                          <input class="form-control semanasDropdown" list="semanasOption" id="semanas" placeholder="Número de semanas de tratamiento." min="1" max="5" required>
+                          <input class="form-control semanasDropdown" list="semanasOption" id="semanas" placeholder="Número de semanas de tratamiento." min="1" max="5" >
                           <datalist id="semanasOption">
                             <option value="1">
                             <option value="2">
@@ -88,7 +88,7 @@
                         </div>
                         <div class="form-outline mb-4">
                           <label class="form-label required" for="numeroSBRT" >9. Número SABR</label>
-                          <input type="number" id="numeroSBRT" class="form-control numeroSBRTDropdown" min="1" max="9999" required/>
+                          <input type="number" id="numeroSBRT" class="form-control numeroSBRTDropdown" min="1" max="9999" />
                         </div> 
                       </div>
                       <div id="qtna_preguntas" style="display: none;">
