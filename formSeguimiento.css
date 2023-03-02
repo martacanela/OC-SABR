@@ -10,6 +10,12 @@
         border-bottom-right-radius: .3rem;
     }
 }
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background-color: #E3FDFD;
+}
 .required:after {
     content:" *";
     color: red;
@@ -24,10 +30,12 @@ input.invalid {
     display: none;
 }
 
-button {
+button, .btn {
     background-color: #71C9CE;
     color: #ffffff;
     border: none;
+    border-radius: 0;
+    width: 7rem;
     padding: 10px 20px;
     font-size: 17px;
     font-family: Raleway;
@@ -62,4 +70,8 @@ button:hover {
 /* Mark the steps that are finished and valid: */
 .step.finish {
     background-color: #04AA6D;
+}
+.form_error::after {
+    content: 'Este campo es obligatorio';
+    color: red;
 }
