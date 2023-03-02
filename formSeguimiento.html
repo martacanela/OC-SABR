@@ -48,14 +48,17 @@
                         <div class="form-outline mb-4 habToxicos">
                             <label class="form-label required " for="habitosToxicos">4. Hábitos tóxicos</label><br>
                             <p>Seleccione como máximo 3 opciones</p>
-                            <input type="checkbox" name="habitosToxicos" id="sinHabitosToxicos" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')" required> <label for="sinHabitosToxicos">Sin hábitos tóxicos</label><br>
-                            <div id="habToxicos">
-                                <input type="checkbox" name="habitosToxicos" id="tabaco" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="tabaco">Tabaco</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="enol" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="enol">Enol</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="drogas" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="drogas">Drogas</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exfumador" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exfumador">Ex-fumador</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exbebedor" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exbebedor">Ex-bebedor</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exdrogadicto" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exdrogadicto">Ex-drogadicto</label><br>    
+                            <input type="checkbox" name="habitosToxicos" id="noContestarHabitos" onclick="deshabilita('noContestarHabitos', 'noContestarTab')" required> <label for="noContestarHabitos">No contesto</label><br>
+                            <div id="noContestarTab">
+                                <input type="checkbox" name="habitosToxicos" id="sinHabitosToxicos" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="sinHabitosToxicos">Sin hábitos tóxicos</label><br>
+                                <div id="habToxicos">
+                                    <input type="checkbox" name="habitosToxicos" id="tabaco"> <label for="tabaco">Tabaco</label><br>
+                                    <input type="checkbox" name="habitosToxicos" id="enol"> <label for="enol">Enol</label><br>
+                                    <input type="checkbox" name="habitosToxicos" id="drogas"> <label for="drogas">Drogas</label><br>
+                                    <input type="checkbox" name="habitosToxicos" id="exfumador"> <label for="exfumador">Ex-fumador</label><br>
+                                    <input type="checkbox" name="habitosToxicos" id="exbebedor"> <label for="exbebedor">Ex-bebedor</label><br>
+                                    <input type="checkbox" name="habitosToxicos" id="exdrogadicto" > <label for="exdrogadicto">Ex-drogadicto</label><br>    
+                                </div>
                             </div>
                         </div>
     
@@ -71,37 +74,43 @@
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label required " for="patologiasConcomitantes">7. Patologías concomitantes actuales</label><br>
-                            <input type="checkbox" name="patologiasConcomitantes" id="sinConcomitantes" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')" required> <label for="sinConcomitantes">Sin patologías concomitantes</label><br>
-                            <div id="sinPatConc">
-                                <input type="checkbox" name="patologiasConcomitantes" id="db2" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="db2">Diabetes tipo 2</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="hipertension" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="hipertension">Hipertensión</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="dislipemia" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="dislipemia">Dislipemia</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="epoc" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="epoc">EPOC</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="asma" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="asma">Asma</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="iam" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="iam">IAM</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="insCardiaca" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="insCardiaca">Insuficiencia cardíaca</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="patOtros__L" class="dropdownGroup hasDropdown" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="patOtros__L">Otros</label><br>
-                                <input type="text" name="patologiasConcomitantes" id="patOtrosText__T" class="form-control patologiasConcomitantesDropdown" style="display:none" placeholder="Separad por ';'"/>
+                            <input type="checkbox" name="patologiasConcomitantes" id="noContestoConcomitantes" onclick="deshabilita('noContestoConcomitantes', 'noContestoConcomitantesTab'); otrosAparece('patOtros__L', 'patOtrosText__T')" required> <label for="noContestoConcomitantes">No contesto</label><br>
+                            <div id="noContestoConcomitantesTab">
+                                <input type="checkbox" name="patologiasConcomitantes" id="sinConcomitantes" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="sinConcomitantes">Sin patologías concomitantes</label><br>
+                                <div id="sinPatConc">
+                                    <input type="checkbox" name="patologiasConcomitantes" id="db2" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="db2">Diabetes tipo 2</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="hipertension" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="hipertension">Hipertensión</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="dislipemia" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="dislipemia">Dislipemia</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="epoc" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="epoc">EPOC</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="asma" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="asma">Asma</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="iam" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="iam">IAM</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="insCardiaca" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="insCardiaca">Insuficiencia cardíaca</label><br>
+                                    <input type="checkbox" name="patologiasConcomitantes" id="patOtros__L" class="dropdownGroup hasDropdown" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="patOtros__L">Otros</label><br>
+                                    <input type="text" name="patologiasConcomitantes" id="patOtrosText__T" class="form-control patologiasConcomitantesDropdown" style="display:none" placeholder="Separad por ';'"/>
+                                </div>
                             </div>
                         </div> 
                         <div class="form-outline mb-4">
                             <label class="form-label required " for="principiosActivos">8. Principios activos actuales</label><br>
                             <p>Si cree que existen otros medicamentos que puedan influir, indique los principios activos separados por ";"</p>
-                            <input type="checkbox" name="principiosActivos" id="sinMedicamentos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="sinMedicamentos">Sin medicamentos</label><br>
-                            <div id="sinPrincActivos">
-                                <input type="checkbox" name="principiosActivos" id="sulfonilureas" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="sulfonilureas">Sulfonilureas</label><br>
-                                <input type="checkbox" name="principiosActivos" id="metformina" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="metformina">Metformina</label><br>
-                                <input type="checkbox" name="principiosActivos" id="insulina" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="insulina">Insulina</label><br>
-                                <input type="checkbox" name="principiosActivos" id="otrosAntiglucemiantes" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAntiglucemiantes">Otros antiglucemiantes</label><br>
-                                <input type="checkbox" name="principiosActivos" id="diureticos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="diureticos">Diuréticos</label><br>
-                                <input type="checkbox" name="principiosActivos" id="otrosHipertensivos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosHipertensivos">Otros hipertensivos</label><br>
-                                <input type="checkbox" name="principiosActivos" id="estatinas" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="estatinas">Estatinas</label><br>
-                                <input type="checkbox" name="principiosActivos" id="fibratos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="fibratos">Fibratos</label><br>
-                                <input type="checkbox" name="principiosActivos" id="otrosAgentesModLipid" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAgentesModLipid">Otros agentes modificadores de lípidos</label><br>
-                                <input type="checkbox" name="principiosActivos" id="corticoides" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="corticoides">Corticoides</label><br>
-                                <input type="checkbox" name="principiosActivos" id="antitromboticos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="antitromboticos">Antitrombóticos</label><br>
-                                <input type="checkbox" name="principiosActivos" id="principiosOtros__L" class="dropdownGroup hasDropdown" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otros">Otros</label><br>
-                                <input type="text" name="principiosActivos" id="principiosOtros__T" class="form-control principiosActivosDropdown" style="display:none" placeholder="Separad por ';'"/> 
+                            <input type="checkbox" name="principiosActivos" id="noContestarPrincipios" onclick="deshabilita('noContestarPrincipios', 'noContestarPrincipiosTab'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="noContestarPrincipios">No contesto</label><br>
+                            <div id="noContestarPrincipiosTab">
+                                <input type="checkbox" name="principiosActivos" id="sinMedicamentos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="sinMedicamentos">Sin medicamentos</label><br>
+                                <div id="sinPrincActivos">
+                                    <input type="checkbox" name="principiosActivos" id="sulfonilureas" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="sulfonilureas">Sulfonilureas</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="metformina" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="metformina">Metformina</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="insulina" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="insulina">Insulina</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="otrosAntiglucemiantes" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAntiglucemiantes">Otros antiglucemiantes</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="diureticos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="diureticos">Diuréticos</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="otrosHipertensivos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosHipertensivos">Otros hipertensivos</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="estatinas" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="estatinas">Estatinas</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="fibratos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="fibratos">Fibratos</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="otrosAgentesModLipid" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAgentesModLipid">Otros agentes modificadores de lípidos</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="corticoides" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="corticoides">Corticoides</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="antitromboticos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="antitromboticos">Antitrombóticos</label><br>
+                                    <input type="checkbox" name="principiosActivos" id="principiosOtros__L" class="dropdownGroup hasDropdown" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otros">Otros</label><br>
+                                    <input type="text" name="principiosActivos" id="principiosOtros__T" class="form-control principiosActivosDropdown" style="display:none" placeholder="Separad por ';'"/> 
+                                </div>
                             </div>
                         </div>
                         
@@ -114,9 +123,9 @@
                             <label class="form-label required" for="pruebasPostSABR">9. Pruebas post-SABR</label><br>
                             <input type="checkbox" name="pruebasPostSABR" id="sinPruebas" onclick="deshabilita('sinPruebas', 'pruebas'); otrosAparece('tac', 'tacTab'); otrosAparece('rm', 'rmTab'); otrosAparece('petTac', 'pecTacTab')" required> <label for="sinPruebas">Sin pruebas</label><br>
                             <div id="pruebas">
-                                <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="deshabilita('sinPruebas', 'pruebas'); otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
-                                <input type="checkbox" name="pruebasPostSABR" id="rm" class="hasDropdown dropdownGroup rmGroup" onclick="deshabilita('sinPruebas', 'pruebas'); otrosAparece('rm', 'rmTab')"> <label for="rm">RM</label><br>
-                                <input type="checkbox" name="pruebasPostSABR" id="petTac" class="hasDropdown dropdownGroup petTacGroup" onclick="deshabilita('sinPruebas', 'pruebas'); otrosAparece('petTac', 'pecTacTab')"> <label for="petTac">PET-TAC</label><br>
+                                <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
+                                <input type="checkbox" name="pruebasPostSABR" id="rm" class="hasDropdown dropdownGroup rmGroup" onclick="otrosAparece('rm', 'rmTab')"> <label for="rm">RM</label><br>
+                                <input type="checkbox" name="pruebasPostSABR" id="petTac" class="hasDropdown dropdownGroup petTacGroup" onclick="otrosAparece('petTac', 'pecTacTab')"> <label for="petTac">PET-TAC</label><br>
                             </div>
                             
                         </div>
@@ -235,11 +244,11 @@
                             <label class="form-label required" for="toxicidad">27. RTOG, LENT-SOMA</label><br>
                             <input type="checkbox" name="toxicidad" id="no" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('toxOtros__L', 'toxOtrosForm__T'); otrosAparece('astenia', 'gradoAsteniaTab');  otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('dolor', 'gradoDolorTab');" required> <label for="no">No</label><br>
                             <div id="sinToxicidad">
-                                <input type="checkbox" name="toxicidad" id="astenia" class="hasDropdown dropdownGroup asteniaGroup" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('astenia', 'gradoAsteniaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')" > <label for="astenia">Astenia</label><br>
-                                <input type="checkbox" name="toxicidad" id="disnea" class="hasDropdown dropdownGroup disneaGroup" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="disnea">Disnea</label><br>
-                                <input type="checkbox" name="toxicidad" id="neumonitis" class="hasDropdown dropdownGroup neumonitisGroup" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="neumonitis">Neumonitis</label><br>
-                                <input type="checkbox" name="toxicidad" id="dolor" class="hasDropdown dropdownGroup dolorGroup" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('dolor', 'gradoDolorTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="dolor">Dolor</label><br>
-                                <input type="checkbox" name="toxicidad" id="toxOtros__L" class="hasDropdown dropdownGroup" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="toxOtros__L">Otros</label><br>
+                                <input type="checkbox" name="toxicidad" id="astenia" class="hasDropdown dropdownGroup asteniaGroup" onclick="otrosAparece('astenia', 'gradoAsteniaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')" > <label for="astenia">Astenia</label><br>
+                                <input type="checkbox" name="toxicidad" id="disnea" class="hasDropdown dropdownGroup disneaGroup" onclick="otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="disnea">Disnea</label><br>
+                                <input type="checkbox" name="toxicidad" id="neumonitis" class="hasDropdown dropdownGroup neumonitisGroup" onclick="otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="neumonitis">Neumonitis</label><br>
+                                <input type="checkbox" name="toxicidad" id="dolor" class="hasDropdown dropdownGroup dolorGroup" onclick="otrosAparece('dolor', 'gradoDolorTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="dolor">Dolor</label><br>
+                                <input type="checkbox" name="toxicidad" id="toxOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="toxOtros__L">Otros</label><br>
                                 <input type="text" name="toxicidad" id="toxOtrosForm__T" class="form-control toxicidadDropdow" placeholder="Separad por ';'" style="display:none"/>
                             </div>
                         </div>
