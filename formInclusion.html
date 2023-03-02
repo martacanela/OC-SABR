@@ -79,12 +79,12 @@
                             <label class="form-label required " for="antecedentesOncologicos">9. Antecedentes oncológicos</label><br>
                             <input type="checkbox" name="antecedentesOncologicos" id="sinAntecedentes" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" required> <label for="sinAntecedentes">Sin antecedentes</label><br>
                             <div id="sinAnt">
-                                <input value="mama" type="checkbox" name="antecedentesOncologicos" id="antecMama" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecMama">Mama</label><br>
-                                <input value="pulmon" type="checkbox" name="antecedentesOncologicos" id="antecPulmon" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecPulmon">Pulmón</label><br>
-                                <input value="prostata" type="checkbox" name="antecedentesOncologicos" id="antecProstata" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecProstata">Próstata</label><br>
-                                <input value="recto" type="checkbox" name="antecedentesOncologicos" id="antecRecto" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecRecto">Recto</label><br>
-                                <input value="piel" type="checkbox" name="antecedentesOncologicos" id="antecPiel" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecPiel">Piel</label><br>
-                                <input value="otros" class="dropdownGroup hasDropdown" type="checkbox" name="antecedentesOncologicos" id="antecedentesOtros__L" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')"> <label for="antecedentesOtros__L">Otros</label><br>
+                                <input value="mama" type="checkbox" name="antecedentesOncologicos" id="antecMama" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecMama">Mama</label><br>
+                                <input value="pulmon" type="checkbox" name="antecedentesOncologicos" id="antecPulmon" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecPulmon">Pulmón</label><br>
+                                <input value="prostata" type="checkbox" name="antecedentesOncologicos" id="antecProstata" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecProstata">Próstata</label><br>
+                                <input value="recto" type="checkbox" name="antecedentesOncologicos" id="antecRecto" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecRecto">Recto</label><br>
+                                <input value="piel" type="checkbox" name="antecedentesOncologicos" id="antecPiel" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecPiel">Piel</label><br>
+                                <input value="otros" class="dropdownGroup hasDropdown" type="checkbox" name="antecedentesOncologicos" id="antecedentesOtros__L" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')"> <label for="antecedentesOtros__L">Otros</label><br>
                                 <input type="text" name="antecedentesOtros__T" id="antecedentesOtros__T" class="form-control antecedentesOncologicosDropdown" style="display:none" placeholder="Separad por ';'"/>
                             </div>
                         </div>
@@ -99,27 +99,47 @@
                             <p>Seleccione como máximo 3 opciones</p>
                             <input type="checkbox" name="habitosToxicos" id="sinHabitosToxicos" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')" required> <label for="sinHabitosToxicos">Sin hábitos tóxicos</label><br>
                             <div id="habToxicos">
-                                <input type="checkbox" name="habitosToxicos" id="tabaco" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="tabaco">Tabaco</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="enol" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="enol">Enol</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="drogas" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="drogas">Drogas</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exfumador" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exfumador">Ex-fumador</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exbebedor" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exbebedor">Ex-bebedor</label><br>
-                                <input type="checkbox" name="habitosToxicos" id="exdrogadicto" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')"> <label for="exdrogadicto">Ex-drogadicto</label><br>    
+                                <input type="checkbox" name="habitosToxicos" id="tabaco"> <label for="tabaco">Tabaco</label><br>
+                                <input type="checkbox" name="habitosToxicos" id="enol"> <label for="enol">Enol</label><br>
+                                <input type="checkbox" name="habitosToxicos" id="drogas"> <label for="drogas">Drogas</label><br>
+                                <input type="checkbox" name="habitosToxicos" id="exfumador"> <label for="exfumador">Ex-fumador</label><br>
+                                <input type="checkbox" name="habitosToxicos" id="exbebedor"> <label for="exbebedor">Ex-bebedor</label><br>
+                                <input type="checkbox" name="habitosToxicos" id="exdrogadicto" > <label for="exdrogadicto">Ex-drogadicto</label><br> 
                             </div>
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label required " for="patologiasConcomitantes">12. Patologías concomitantes actuales</label><br>
                             <input type="checkbox" name="patologiasConcomitantes" id="sinConcomitantes" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')" required> <label for="sinConcomitantes">Sin patologías concomitantes</label><br>
                             <div id="sinPatConc">
-                                <input type="checkbox" name="patologiasConcomitantes" id="db2" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="db2">Diabetes tipo 2</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="hipertension" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="hipertension">Hipertensión</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="dislipemia" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="dislipemia">Dislipemia</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="epoc" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="epoc">EPOC</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="asma" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="asma">Asma</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="iam" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="iam">IAM</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="insCardiaca" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="insCardiaca">Insuficiencia cardíaca</label><br>
-                                <input type="checkbox" name="patologiasConcomitantes" id="patOtros__L" class="dropdownGroup hasDropdown" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="patOtros__L">Otros</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="db2" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="db2">Diabetes tipo 2</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="hipertension" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="hipertension">Hipertensión</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="dislipemia" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="dislipemia">Dislipemia</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="epoc" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="epoc">EPOC</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="asma" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="asma">Asma</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="iam" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="iam">IAM</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="insCardiaca" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="insCardiaca">Insuficiencia cardíaca</label><br>
+                                <input type="checkbox" name="patologiasConcomitantes" id="patOtros__L" class="dropdownGroup hasDropdown" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="patOtros__L">Otros</label><br>
                                 <input type="text" name="patologiasConcomitantes" id="patOtrosText__T" class="form-control patologiasConcomitantesDropdown" style="display:none" placeholder="Separad por ';'"/>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label required " for="principiosActivos">8. Principios activos actuales</label><br>
+                            <p>Si cree que existen otros medicamentos que puedan influir, indique los principios activos separados por ";"</p>
+                            <input type="checkbox" name="principiosActivos" id="sinMedicamentos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="sinMedicamentos">Sin medicamentos</label><br>
+                            <div id="sinPrincActivos">
+                                <input type="checkbox" name="principiosActivos" id="sulfonilureas" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="sulfonilureas">Sulfonilureas</label><br>
+                                <input type="checkbox" name="principiosActivos" id="metformina" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="metformina">Metformina</label><br>
+                                <input type="checkbox" name="principiosActivos" id="insulina" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="insulina">Insulina</label><br>
+                                <input type="checkbox" name="principiosActivos" id="otrosAntiglucemiantes" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAntiglucemiantes">Otros antiglucemiantes</label><br>
+                                <input type="checkbox" name="principiosActivos" id="diureticos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="diureticos">Diuréticos</label><br>
+                                <input type="checkbox" name="principiosActivos" id="otrosHipertensivos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosHipertensivos">Otros hipertensivos</label><br>
+                                <input type="checkbox" name="principiosActivos" id="estatinas" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="estatinas">Estatinas</label><br>
+                                <input type="checkbox" name="principiosActivos" id="fibratos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="fibratos">Fibratos</label><br>
+                                <input type="checkbox" name="principiosActivos" id="otrosAgentesModLipid" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otrosAgentesModLipid">Otros agentes modificadores de lípidos</label><br>
+                                <input type="checkbox" name="principiosActivos" id="corticoides" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="corticoides">Corticoides</label><br>
+                                <input type="checkbox" name="principiosActivos" id="antitromboticos" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="antitromboticos">Antitrombóticos</label><br>
+                                <input type="checkbox" name="principiosActivos" id="principiosOtros__L" class="dropdownGroup hasDropdown" onclick="otrosAparece('principiosOtros__L', 'principiosOtros__T')"> <label for="otros">Otros</label><br>
+                                <input type="text" name="principiosActivos" id="principiosOtros__T" class="form-control principiosActivosDropdown" style="display:none" placeholder="Separad por ';'"/> 
                             </div>
                         </div>           
                     </div>
@@ -130,41 +150,6 @@
                         <div class="form-outline mb-4">
                             <label class="form-label required" for="fechaDiagnostico" >13. Fecha de diagnóstico del cáncer primario</label>
                             <input type="date" id="fechaDiagnostico" class="form-control" required/>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required" for="diagnosticoM1" >14. Diagnóstico M1</label><br>
-                            <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" onclick="otrosAparece('metacronico', 'm1Metacronico')" required> <label for="sincronico">Sincrónico</label><br>
-                            <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico" onclick="otrosAparece('metacronico', 'm1Metacronico')"> <label for="metacronico">Metacrónico</label><br>
-                        </div>
-                        <div id="m1Metacronico" style="display:none;">
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaM1" >15. Fecha M1 Metacrónico</label>
-                                <input type="date" id="fechaM1" class="form-control diagnosticoM1Dropdown"/>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="statusM1" >16. Estado actual M1</label><br>
-                                <input type="radio" name="statusM1" id="m1Controlado" class="diagnosticoM1Dropdown"> <label for="m1Controlado">Controlado</label><br>
-                                <input type="radio" name="statusM1" id="m1NoControlado" > <label for="m1NoControlado">No controlado</label><br>
-                            </div>
-                        </div>
-                        <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="numeroM1">17. Número de M1</label>
-                            <input type="number" id="numeroM1" class="form-control" required/>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required " for="organosAfectados">18. Órganos afectados</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoGanglionar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoGanglionar">Ganglionar</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoCerebral" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoCerebral">Cerebral</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoHepatico" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoHepatico">Recto</label><br>
-                            <input class="dropdownGroup hasDropdown" type="checkbox" name="organosAfectados" id="organoAfectadoOtros__L" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoOtros__L">Otros</label><br>
-                            <input type="text" name="organosAfectados" id="organoAfectadoOtros__T" class="form-control organosAfectadosDropdown" style="display:none" placeholder="Separad por ';'"/>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required" for="diagnósticoHistológicoM1" >19. Diagnóstico histológico M1</label><br>
-                            <input type="radio" name="diagHistM1" id="diagnosticoHistologicoSi" required> <label for="diagnosticoHistologicoSi">Si</label><br>
-                            <input type="radio" name="diagHistM1" id="diagnosticoHistologicoNo" > <label for="diagnosticoHistologicoNo">No</label><br>
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label required" for="estadoCancerPrimario" >20. Estatus actual del cáncer primario</label><br>
@@ -249,21 +234,23 @@
 
                             <div class="form-outline mb-4">
                                 <label class="form-label required" for="cirugiaTumorPrimario" >30. Cirugía</label><br>
-                                <input type="radio" name="cirugiaTumorPrimario" id="cirugiaSi"> <label for="cirugiaSi">Sí</label><br>
-                                <input type="radio" name="cirugiaTumorPrimario" id="cirugiaNo"> <label for="cirugiaNo">No</label><br>
+                                <input type="radio" class="hasDropdown dropdownGroup" name="cirugiaTumorPrimario" id="cirugiaSi"  onclick="otrosAparece('cirugiaSi', 'fechaCirugiaTab')"> <label for="cirugiaSi">Sí</label><br>
+                                <input type="radio" class="dropdownGroup" name="cirugiaTumorPrimario" id="cirugiaNo" onclick="otrosAparece('cirugiaSi', 'fechaCirugiaTab')"> <label for="cirugiaNo">No</label><br>
                             </div>
 
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaCirugiaTumorPrimario" >31. Fecha cirugía</label>
-                                <input type="date" id="fechaCirugiaTumorPrimario" class="form-control"/>
+                            <div id="fechaCirugiaTab" style="display: none;">
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="fechaCirugiaTumorPrimario" >31. Fecha cirugía</label>
+                                    <input type="date" id="fechaCirugiaTumorPrimario" class="form-control fechaCirugiaDropdown"/>
+                                </div>
+    
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="tipoCirugia" >32. Tipo de cirugía</label><br>
+                                    <input type="radio" name="tipoCirugia" id="tumorectomia" class="tipoCirugiaDropdown"> <label for="tumorectomia">Tumorectomía</label><br>
+                                    <input type="radio" name="tipoCirugia" id="mastectomia" class="tipoCirugiaDropdown"> <label for="mastectomia">Mastectomía</label><br>
+                                </div>
+    
                             </div>
-
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="tipoCirugia" >32. Tipo de cirugía</label><br>
-                                <input type="radio" name="tipoCirugia" id="tumorectomia"> <label for="tumorectomia">Tumorectomía</label><br>
-                                <input type="radio" name="tipoCirugia" id="mastectomia"> <label for="mastectomia">Mastectomía</label><br>
-                            </div>
-                            <hr>
                         </div>
                         <div id="tumorPrimarioPulmon" style="display:none;">
                             <div class="form-outline mb-4">
@@ -666,7 +653,45 @@
                             </div>
                         </div>
                     </div>
-
+                    <div class="tab datosM1Tab">
+                        <h3>Datos M1</h3>
+                        <br>
+                        <div class="form-outline mb-4">
+                            <label class="form-label required" for="diagnosticoM1" >14. Diagnóstico M1</label><br>
+                            <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" onclick="otrosAparece('metacronico', 'm1Metacronico')" required> <label for="sincronico">Sincrónico</label><br>
+                            <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico" onclick="otrosAparece('metacronico', 'm1Metacronico')"> <label for="metacronico">Metacrónico</label><br>
+                        </div>
+                        <div id="m1Metacronico" style="display:none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required" for="fechaM1" >15. Fecha M1 Metacrónico</label>
+                                <input type="date" id="fechaM1" class="form-control diagnosticoM1Dropdown"/>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required" for="statusM1" >16. Estado actual M1</label><br>
+                                <input type="radio" name="statusM1" id="m1Controlado" class="diagnosticoM1Dropdown"> <label for="m1Controlado">Controlado</label><br>
+                                <input type="radio" name="statusM1" id="m1NoControlado" > <label for="m1NoControlado">No controlado</label><br>
+                            </div>
+                        </div>
+                        <div class="form-outline mb-4 ">
+                            <label class="form-label required" for="numeroM1">17. Número de M1</label>
+                            <input type="number" id="numeroM1" class="form-control" required/>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label required " for="organosAfectados">18. Órganos afectados</label><br>
+                            <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
+                            <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
+                            <input type="checkbox" name="organosAfectados" id="organoAfectadoGanglionar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoGanglionar">Ganglionar</label><br>
+                            <input type="checkbox" name="organosAfectados" id="organoAfectadoCerebral" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoCerebral">Cerebral</label><br>
+                            <input type="checkbox" name="organosAfectados" id="organoAfectadoHepatico" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoHepatico">Recto</label><br>
+                            <input class="dropdownGroup hasDropdown" type="checkbox" name="organosAfectados" id="organoAfectadoOtros__L" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoOtros__L">Otros</label><br>
+                            <input type="text" name="organosAfectados" id="organoAfectadoOtros__T" class="form-control organosAfectadosDropdown" style="display:none" placeholder="Separad por ';'"/>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <label class="form-label required" for="diagnósticoHistológicoM1" >19. Diagnóstico histológico M1</label><br>
+                            <input type="radio" name="diagHistM1" id="diagnosticoHistologicoSi" required> <label for="diagnosticoHistologicoSi">Si</label><br>
+                            <input type="radio" name="diagHistM1" id="diagnosticoHistologicoNo" > <label for="diagnosticoHistologicoNo">No</label><br>
+                        </div>
+                    </div>
                     <div class="tab tratamientosPreviosASABRTab">
                         <h3>Tratamientos previos a la SABR para M1</h3>
                         <br>
