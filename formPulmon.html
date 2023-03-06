@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    <title>Inclusión</title>
+    <title>Inclusión Pulmón</title>
     <link href="formInclusion.css" rel="stylesheet">
   </head>
   <body>
@@ -21,7 +21,7 @@
                 <div class="card-body p-md-5 mx-md-4">
   
                   <form id="regForm">
-                    <h1>Inclusión</h1>
+                    <h1>Inclusión Pulmón</h1>
                     <br>
                     <div class="tab" id="caracteristicasTab">
                         <h3>Características</h3>
@@ -478,45 +478,11 @@
                              </select>
                         </div>
                     </div>
-                    <div class="tab datosM1Tab">
-                        <h3>Datos M1</h3>
-                        <br>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required" for="diagnosticoM1" >57. Diagnóstico M1</label><br>
-                            <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" onclick="otrosAparece('metacronico', 'm1Metacronico')" required> <label for="sincronico">Sincrónico</label><br>
-                            <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico" onclick="otrosAparece('metacronico', 'm1Metacronico')"> <label for="metacronico">Metacrónico</label><br>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required" for="fechaM1">58. Fecha M1</label>
-                            <input type="date" id="fechaM1" class="form-control" required/>
-                        </div>
-                        <div id="m1Metacronico" style="display:none;">
-                            <div class="form-outline mb-4">
-                                <label class="form-label required" for="statusM1" >59. Estado actual M1</label><br>
-                                <input type="radio" name="statusM1" id="m1Controlado" class="diagnosticoM1Dropdown"> <label for="m1Controlado">Controlado</label><br>
-                                <input type="radio" name="statusM1" id="m1NoControlado" > <label for="m1NoControlado">No controlado</label><br>
-                            </div>
-                        </div>
-                        <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="numeroM1">60. Número de M1</label>
-                            <input type="number" id="numeroM1" class="form-control" required/>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required " for="organosAfectados">61. Órganos afectados</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoGanglionar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoGanglionar">Ganglionar</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoCerebral" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoCerebral">Cerebral</label><br>
-                            <input type="checkbox" name="organosAfectados" id="organoAfectadoHepatico" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoHepatico">Recto</label><br>
-                            <input class="dropdownGroup hasDropdown" type="checkbox" name="organosAfectados" id="organoAfectadoOtros__L" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoOtros__L">Otros</label><br>
-                            <input type="text" name="organosAfectados" id="organoAfectadoOtros__T" class="form-control organosAfectadosDropdown" style="display:none" placeholder="Separad por ';'"/>
-                        </div>
-                    </div>
                     <div class="tab tratamientosPreviosASABRTab">
                         <h3>Pruebas pre-SABR</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="pruebasPreSABR">62. Pruebas pre-SABR</label><br>
+                            <label class="form-label required" for="pruebasPreSABR">57. Pruebas pre-SABR</label><br>
                             <input type="checkbox" name="pruebasPostSABR" id="sinPruebas" onclick="deshabilita('sinPruebas', 'pruebas'); otrosAparece('tac', 'tacTab'); otrosAparece('rm', 'rmTab'); otrosAparece('petTac', 'pecTacTab')" required> <label for="sinPruebas">Sin pruebas</label><br>
                             <div id="pruebas">
                                 <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
@@ -527,46 +493,46 @@
                         </div>
                         <div id="tacTab" style="display:none;">
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="tacImage">63. TAC</label><br>
+                                <label class="form-label required" for="tacImage">58. TAC</label><br>
                                 <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="tacImagePreRT">64. TAC de simulación</label><br>
+                                <label class="form-label required" for="tacImagePreRT">59. TAC de simulación</label><br>
                                 <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaTAC" >65. Fecha TAC</label>
+                                <label class="form-label required" for="fechaTAC" >60. Fecha TAC</label>
                                 <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
                             </div>
                         </div>
                         <div id="rmTab" style="display:none;">
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="rmImage">66. RM</label><br>
+                                <label class="form-label required" for="rmImage">61. RM</label><br>
                                 <input type="file" class="rmDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaRM" >67. Fecha RM</label>
+                                <label class="form-label required" for="fechaRM" >62. Fecha RM</label>
                                 <input type="date" id="fechaRM" class="form-control rmDropdown" />
                             </div>
                         </div>
                         <div id="pecTacTab" style="display:none;">
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="petTacImage">68. PET-TAC</label><br>
+                                <label class="form-label required" for="petTacImage">63. PET-TAC</label><br>
                                 <input type="file" class="petTacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaPETTAC" >69. Fecha PET-TAC</label>
+                                <label class="form-label required" for="fechaPETTAC" >64. Fecha PET-TAC</label>
                                 <input type="date" id="fechaPETTAC" class="form-control petTacDropdown" />
                             </div>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="marcadoresTumorales" >70. Marcadores tumorales pre-SABR</label><br>
+                            <label class="form-label required" for="marcadoresTumorales" >65. Marcadores tumorales pre-SABR</label><br>
                             <input type="radio" name="marcadoresTumorales" class="dropdownGroup hasDropdown" id="marcadoresTumoralesSi" onclick="otrosAparece('marcadoresTumoralesSi', 'marcadoresTumDeterminados')" required> <label for="marcadoresTumoralesSi">Sí</label><br>
                             <input type="radio" name="marcadoresTumorales" class="dropdownGroup" id="marcadoresTumoralesNo" onclick="otrosAparece('marcadoresTumoralesSi', 'marcadoresTumDeterminados')"> <label for="marcadoresTumoralesNo">No</label><br>
                         </div>
                         <div id="marcadoresTumDeterminados" style="display: none;">
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="marcadores">71. ¿Qué marcadores tumorales se han determinado?</label><br>
+                                <label class="form-label required" for="marcadores">66. ¿Qué marcadores tumorales se han determinado?</label><br>
                                 <input type="checkbox" name="marcadores" id="marcadorCEA" class="marcadoresTumoralesDropdown"> <label for="marcadorCEA">CEA</label><br>
                                 <input type="checkbox" name="marcadores" id="marcadorCA153"> <label for="marcadorCA153">CA 15.3</label><br>
                                 <input type="checkbox" name="marcadores" id="marcadorCA199"> <label for="marcadorCA199">CA 19.9</label><br>
@@ -575,7 +541,7 @@
                                 <input type="checkbox" name="marcadores" id="marcadorPSA"> <label for="marcadorPSA">PSA</label><br>
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="analiticaMarcadores">72. Analítica con los marcadores tumorales</label><br>
+                                <label class="form-label required" for="analiticaMarcadores">67. Analítica con los marcadores tumorales</label><br>
                                 <input type="file" accept="application/pdf,application/vnd.ms-excel" class="marcadoresTumoralesDropdown"/>
                             </div>
                         </div>
@@ -594,7 +560,6 @@
                         <span class="step optionalStep" name="circulitoPaso" style="display: none;"></span>
                         <span class="step" name="circulitoPaso"></span>
                         <span class="step" name="circulitoPaso"></span>
-                        <span class="step" name="circulitoPaso"></span>
                     </div>
                   </form>
                 </div>
@@ -605,7 +570,7 @@
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="forms.js"></script>
+  <script src="formsPulmon.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 

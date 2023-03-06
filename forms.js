@@ -289,24 +289,3 @@ if (elementoQueEstaMarcado != null && elementoQueEstaMarcado != checkboxGroup[0]
 // Por cada cambio en un checkbox, llamar a la funcion cambiarRequiredEnCheckbox
 checkboxs.forEach(checkbox => checkbox.addEventListener('change', cambiarRequiredEnCheckbox))
 
-
-
-// function cambiarRequiredDeTodosLosTabsMenosPrimero(acomp = true) {
-//   let inputsDeTodosLosTabsDeseados = Array.from(document.querySelectorAll(
-//     '.tab:not(#caracteristicasTab):not(#tratamientosParaElCancerPrimarioTab) input, .tab:not(#caracteristicasTab):not(#tratamientosParaElCancerPrimarioTab) select'
-//     ));
-//   inputsDeTodosLosTabsDeseados = inputsDeTodosLosTabsDeseados.filter(input => !(input.classList.value.includes('Dropdown') && !input.classList.value.includes('hasDropdown')))
-//   document.getElementById('qtna').setAttribute('required', '')
-//   inputsDeTodosLosTabsDeseados.forEach(input => input.removeAttribute('required'));
-//   if (!acomp) {
-//     let lastInput = inputsDeTodosLosTabsDeseados[0];
-//     for (let i = 0; i < inputsDeTodosLosTabsDeseados.length; i++) {
-//       if (lastInput.name === inputsDeTodosLosTabsDeseados[i].name) continue;
-//       inputsDeTodosLosTabsDeseados[i].setAttribute('required', '');
-//       lastInput = inputsDeTodosLosTabsDeseados[i];
-//     }
-//     inputsDeTodosLosTabsDeseados[0].setAttribute('required', '');
-//   }
-//   console.log(inputsDeTodosLosTabsDeseados)
-// }
-
