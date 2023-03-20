@@ -11,8 +11,10 @@ showTab(currentTab); // Display the current tab
 function showTab(n) {
 // This function will display the specified tab of the form...
 var x = document.getElementsByClassName("tab");
+if (x.length === 0) return;
 x[n].style.display = "block";
 //... and fix the Previous/Next buttons:
+if (x.length === 1) return;
 if (n == 0) {
   document.getElementById("prevBtn").style.display = "none";
 } else {
@@ -137,15 +139,14 @@ $(parentDiv).addClass('form_error');
 // Añadirlos al array de inputs invalidos
 invalidInputs.push(this);
 
-// Si es el primer input invalido, debera mostrarse ese tab para comenzar a arreglar los errores
-if (invalidInputs.indexOf(this) === 0) {
+// Si es el primer input invalido, y hay más de un tab, deberá mostrarse ese tab para comenzar a arreglar los errores
+if (invalidInputs.indexOf(this) === 0 && document.getElementsByClassName('tab').length != 0) {
   // Todos los tabs
   let allTabs = Array.from(document.getElementsByClassName('tab'));
 
   // Se busca el tab de este input / select recorriendo un bucle hasta encontrar un div que tenga por clase "tab"
   let thisTab = this.parentElement;
   while (!$(thisTab).hasClass('tab')) {
-    console.log(thisTab);
     thisTab = thisTab.parentElement;
   }
   
@@ -167,7 +168,7 @@ if (invalidInputs.indexOf(this) === 0) {
 
 // Cada vez que en un input o select haya un cambia, se quita la clase form_error del div padre
 Array.from(document.querySelectorAll('input, select')).map(input => input.addEventListener('change', function() {
-this.closest('.form_error').classList.remove('form_error');
+if (this.closest('.form_error')) this.closest('.form_error').classList.remove('form_error');
 }));
 
 
@@ -185,6 +186,9 @@ cancerPrimarioInputs.forEach(cpInput => cpInput.addEventListener('change', funct
 cambiarVisibilidadDelHiddenTab(this);
 mostrarDivCorrespondienteHiddenTab(this);
 cambiarRequiredDeInputsDentroDelDivDelHiddenTab(this);
+
+// Mostrar cirugías correspondientes
+mostrarCirugiaCorrespondiente(this);
 }));
 
 // Funcion para buscar el div concreto de Mama, Pulmon, Prostata o Colorrectal dentro del hidden tab (Cancer primario)
@@ -198,7 +202,7 @@ return divsTumoresPrimarios.find(div => div.id === divId);
 // Funcion para ocultar o mostrar el hidden tab
 function cambiarVisibilidadDelHiddenTab(changedInput) {
 // Si se marca el input "otros", añadir clase hidden para ocultar el tab y ocultar el circulito del paso opcional 
-if (changedInput.id === 'cancerPrimarioOtros__L') {
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
   tumorPrimarioTab.classList.add('hidden');
   circulitoPasoAMostrar.style.display = 'none';
 // De lo contrario, mostrar ambos
@@ -213,7 +217,7 @@ if (changedInput.id === 'cancerPrimarioOtros__L') {
 // Mostrar div concreto dentro del tab hidden (Mama, Pulmon, Prostata...) y ocultar los otros
 function mostrarDivCorrespondienteHiddenTab(changedInput) {
 // Si el input es "Otros", return
-if (changedInput.id === 'cancerPrimarioOtros__L') return;
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
 // Buscar el div del input marcado y todos los divs
 let thisDiv = findDivDeHiddenTab(changedInput);
 let divsTumoresPrimarios = Array.from(document.querySelectorAll('#tumorPrimarioTab > div'));
@@ -227,7 +231,7 @@ function cambiarRequiredDeInputsDentroDelDivDelHiddenTab (changedInput) {
 // Quitar required de todos los inputs
 inputsDentroDelHiddenTab.forEach(input => input.removeAttribute('required'));
 // Si es "Otros", return
-if (changedInput.id === 'cancerPrimarioOtros__L') return;
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
 // Guardar el div del input marcado y los inputs y selects dentro del div del input marcado
 let thisDiv = findDivDeHiddenTab(changedInput);
 let inputsDeThisDiv = Array.from(thisDiv.querySelectorAll('input, select'));
@@ -244,6 +248,52 @@ for (let i = 0; i < inputsDeThisDiv.length; i++) {
 inputsDeThisDiv[0].setAttribute('required', '');
 }
 
+
+const checkboxCirugia = document.getElementById('m1Cirugia');
+
+function mostrarCirugiaCorrespondiente(changedInput) {
+let divsSeleccionados = document.querySelectorAll('.selected.divsCirugias');
+let selectCirugia = document.getElementById('numeroCirugia');
+let numero = parseInt(selectCirugia.value);
+
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
+  if (divsSeleccionados.length === 0) return;
+  divsSeleccionados.forEach(divSeleccionado => {
+    ocultarCirugia(divSeleccionado);
+    document.getElementById('m1Cirugia_preguntas').style.display = 'none';
+    checkboxCirugia.checked = false;
+  })
+  return;
+}
+
+if (divsSeleccionados.length === 0) {
+  let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia`);
+  let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
+  divCirugiaCorrespondiente.classList.add('selected');
+  divCirugiaCorrespondiente.style.display = 'block';
+  inputsCirugia.setAttribute('required', true);
+  return;
+}
+
+divsSeleccionados.forEach(divSeleccionado => ocultarCirugia(divSeleccionado));
+
+for (let i = 1; i <= numero; i++) {
+  let index = i === 1 ? '' : `_${i}`;
+
+  let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia${index}`);
+  let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
+
+  divCirugiaCorrespondiente.classList.add('selected');
+  divCirugiaCorrespondiente.style.display = 'block';
+  inputsCirugia.setAttribute('required', true);
+}
+}
+
+function ocultarCirugia(divCirugia) {
+divCirugia.classList.remove('selected');
+divCirugia.style.display = 'none';
+divCirugia.querySelector('input').removeAttribute('required');
+}
 
 // Inputs que tienen un desplegable (con clase dropdownGroup)
 const inputsQueTienenDropdowns = document.querySelectorAll('.dropdownGroup');
@@ -289,3 +339,45 @@ if (elementoQueEstaMarcado != null && elementoQueEstaMarcado != checkboxGroup[0]
 // Por cada cambio en un checkbox, llamar a la funcion cambiarRequiredEnCheckbox
 checkboxs.forEach(checkbox => checkbox.addEventListener('change', cambiarRequiredEnCheckbox))
 
+
+function mostrarCirugias() {
+let divsCirugias = document.querySelectorAll('.divsCirugias');
+divsCirugias.forEach(div => div.classList.contains('selected') ? div.style.display = 'block' : div.style.display = 'none');
+}
+
+
+const selectsNumeroDeTratamientos = Array.from(document.getElementsByClassName('selectNumero'));
+
+selectsNumeroDeTratamientos.map(select => select.addEventListener('change', function () {
+let numeroContainer = document.querySelector(`div.selectContainer:has(select#${this.id}) + div.numeroContainer`);
+let template = numeroContainer.querySelector('div.template');
+let newDiv = '';
+let cantidad = parseInt(this.value);
+
+numeroContainer.innerHTML = '';
+
+for (let i = 1; i <= cantidad; i++) {
+  let index = i === 1 ? '' : `_${i}`;
+
+  newDiv = template.cloneNode(true);
+  newDiv.style.display = 'block';
+  
+  let divsCirugias = Array.from(newDiv.querySelectorAll('.divsCirugias'));
+  let labelsDeNewDiv = Array.from(newDiv.querySelectorAll('label'));
+  let inputsYSelectsDeNewDiv = Array.from(newDiv.querySelectorAll('input, select'));
+
+  divsCirugias.map(div => div.id = `${div.id}${index}`);
+  
+  labelsDeNewDiv.map(label => {
+    label.htmlFor = `${label.htmlFor}${index}`;
+    if (label.hasAttribute('id')) label.id = `${label.id}`;
+  });
+
+  inputsYSelectsDeNewDiv.map (input => {
+    input.id = `${input.id}${index}`;
+    if (input.hasAttribute('name')) input.name = `${input.name}${index}`;
+  })
+
+  numeroContainer.appendChild(newDiv);
+}
+}))
