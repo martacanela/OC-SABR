@@ -123,7 +123,7 @@ const invalidInputs = [];
 // Añadir una alerta de enviamiento para comprobar validaciones. Si se quiere implementar el enviamiento, modificar / comentar este codigo
 $('#regForm').on('submit', function(e) {
 e.preventDefault();
-alert('Formulario enviado');
+document.getElementById('popup_container').classList.add('popup_showed');
 })
 
 
@@ -187,8 +187,24 @@ cambiarVisibilidadDelHiddenTab(this);
 mostrarDivCorrespondienteHiddenTab(this);
 cambiarRequiredDeInputsDentroDelDivDelHiddenTab(this);
 
-// Mostrar cirugías correspondientes
+// Mostrar cirugia y tipo qta correspondiente
 mostrarCirugiaCorrespondiente(this);
+mostrarQtaCorrecto(this);
+mostrarLocalizacionRadioterapiaCorrecta(this);
+
+let inhibidoresCromatasaNeo = document.getElementById('inhibidoresDeLaCromatasaNeo');
+let inhibidoresCromatasaAdy = document.getElementById('inhibidoresDeLaCromatasaAdy');
+if (cpInput.id === 'cancerPrimarioMama') {
+  mostrarDivsDeInputs('tipoHormonoterapiaNeoadyuvante');
+  mostrarDivsDeInputs('tipoHormonoterapiaAdyuvante');
+  inhibidoresCromatasaNeo.setAttribute('required', 'true');
+  inhibidoresCromatasaAdy.setAttribute('required', 'true');
+} else {
+  esconderDivsDeInputs('tipoHormonoterapiaNeoadyuvante');
+  esconderDivsDeInputs('tipoHormonoterapiaAdyuvante');
+  inhibidoresCromatasaNeo.removeAttribute('required');
+  inhibidoresCromatasaAdy.removeAttribute('required');
+}
 }));
 
 // Funcion para buscar el div concreto de Mama, Pulmon, Prostata o Colorrectal dentro del hidden tab (Cancer primario)
@@ -238,8 +254,8 @@ let inputsDeThisDiv = Array.from(thisDiv.querySelectorAll('input, select'));
 // Inicializar una variable lastInput con el primer input como valor inicial, y:
 let lastInput = inputsDeThisDiv[0];
 for (let i = 0; i < inputsDeThisDiv.length; i++) {
-  // Por cada input dentro de inputsDeThisDiv añadir un required, siempre y cuando no sean del mismo grupo (con el mismo name) que el lastInput
-  if (lastInput.name === inputsDeThisDiv[i].name) continue;
+  // Por cada input dentro de inputsDeThisDiv añadir un required, siempre y cuando no sean del mismo grupo (con el mismo name) que el lastInput o no sean required
+  if (lastInput.name === inputsDeThisDiv[i].name || inputsDeThisDiv[i].classList.contains('no-required')) continue;
   inputsDeThisDiv[i].setAttribute('required', '');
   // Actualizar lastInput
   lastInput = inputsDeThisDiv[i];
@@ -254,9 +270,9 @@ const checkboxCirugia = document.getElementById('m1Cirugia');
 function mostrarCirugiaCorrespondiente(changedInput) {
 let divsSeleccionados = document.querySelectorAll('.selected.divsCirugias');
 let selectCirugia = document.getElementById('numeroCirugia');
-let numero = parseInt(selectCirugia.value);
+let numero = selectCirugia ? parseInt(selectCirugia.value) : 1;
 
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T' || changedInput.id === 'cancerPrimarioColorectal') {
   if (divsSeleccionados.length === 0) return;
   divsSeleccionados.forEach(divSeleccionado => {
     ocultarCirugia(divSeleccionado);
@@ -295,11 +311,74 @@ divCirugia.style.display = 'none';
 divCirugia.querySelector('input').removeAttribute('required');
 }
 
+
+function mostrarQtaCorrecto(changedInput) {
+let divSelectQta = document.getElementById('qtaTipoDivSelect');
+let divCheckboxsQta = document.getElementById('qtaTipoDivCheckboxs');
+let divSelectQtna = document.getElementById('qtnaTipoDivSelect');
+let divCheckboxsQtna = document.getElementById('qtnaTipoDivCheckboxs');
+if (changedInput.id === 'cancerPrimarioMama') {
+  divSelectQta.style.display = divSelectQtna.style.display = 'none';
+  divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'block';
+} else {
+  divSelectQta.style.display = divSelectQtna.style.display = 'block';
+  divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'none';
+}
+}
+
+
+function esconderDivsDeInputs(idDiv) {
+let divAEsconder = document.getElementById(idDiv);
+divAEsconder.style.display = 'none';
+}
+
+function mostrarDivsDeInputs(idDiv) {
+let divAMostrar = document.getElementById(idDiv);
+divAMostrar.style.display = 'block';
+}
+
+function mostrarLocalizacionRadioterapiaCorrecta(changedInput) {
+let divsLocalizacion = Array.from(document.getElementsByClassName('divsRTLocalizacion'));
+let thisDivLocalizacion = document.getElementById(`${changedInput.id}RTLocalizacion`);
+
+if (!thisDivLocalizacion) {
+  divsLocalizacion.map(div => {
+    div.querySelector('input').removeAttribute('required');
+    div.style.display = 'none';
+  });
+  return;
+};
+
+let firstInputOfThisDiv = thisDivLocalizacion.querySelector('input');
+
+divsLocalizacion.map(div => {
+  div.querySelector('input').removeAttribute('required');
+  div.style.display = 'none';
+});
+
+firstInputOfThisDiv.setAttribute('required', true);
+thisDivLocalizacion.style.display = 'block';
+}
+
+
 // Inputs que tienen un desplegable (con clase dropdownGroup)
 const inputsQueTienenDropdowns = document.querySelectorAll('.dropdownGroup');
 
 // Funcion para cambiar el atributo required en los child inputs de los desplegables
 function cambiarRequiredEnChildInputs() {
+if (this.id === 'hormonoterapia' || this.id === 'hormonoterapiaAdyuvante') {
+  let inhibidoresCromatasaNeo = document.getElementById('inhibidoresDeLaCromatasaNeo');
+  let inhibidoresCromatasaAdy = document.getElementById('inhibidoresDeLaCromatasaAdy');
+  if (document.getElementById('cancerPrimarioMama').checked) {
+    inhibidoresCromatasaNeo.setAttribute('required', 'true');
+    inhibidoresCromatasaAdy.setAttribute('required', 'true');
+  } else {
+    inhibidoresCromatasaNeo.removeAttribute('required');
+    inhibidoresCromatasaAdy.removeAttribute('required');
+  }
+  return;
+}
+
 // Si la clase de el input cambiado contiene `idGroup`, siendo "id" el atributo id del propio input, guardar los inputs que contengan la clase `idDropdown`.
 // En caso contrario, guardar los inputs con clase `nameDropdown`, siendo name el atributo name del grupo de inputs del input cambiado (Se usara `idDropdown` para
 // los checkboxes y `nameDropdown` para los radiobuttons, pues todos los radio buttons de un grupo de inputs afecta a un desplegable, mientras que un solo checkbox afecta
@@ -380,4 +459,134 @@ for (let i = 1; i <= cantidad; i++) {
 
   numeroContainer.appendChild(newDiv);
 }
-}))
+}));
+
+
+const radiosUbicacionCirugia = Array.from(document.querySelectorAll('input[name="ubicacionCirugia"]'));
+
+function mostrarTipoCirugiaSegunUbicacion(changedInput) {
+let divsCirugiaTipo = Array.from(document.getElementsByClassName('divsCirugiasTipo'));
+let divAMostrar = divsCirugiaTipo.find(div => div.id === `${changedInput.id}DivCirugia`);
+let divTipoCirugia = document.getElementById('divTipoCirugia');
+
+if (changedInput.id === 'ubicacionCirugiaOtras__L' || changedInput.id === 'ubicacionCirugiaOtras__T' || changedInput.id === 'cirugiaColorectal') {
+  divTipoCirugia.style.display = 'none';
+  return;
+}
+
+divTipoCirugia.style.display = 'block';
+divsCirugiaTipo.map(div => div.style.display = 'none');
+divAMostrar.style.display = 'block';
+}
+
+radiosUbicacionCirugia.map(input => input.addEventListener('change', function() {
+mostrarTipoCirugiaSegunUbicacion(this);
+}));
+
+function actualizarPreguntaRecaida(etapaSeleccionada) {
+// Obtener la entrada de radio correspondiente a "1 mes post SABR"
+const unMesPost = document.getElementById('unMesPost');
+
+// Obtener el campo de la segunda pregunta
+const preguntaRecaida = document.getElementById('recaidaPersistenca');
+const fechaRecaidaCancerPrimario = document.getElementById('fechaRecaidaCancerPrimario');
+const tratamientoRecaidaCancerPrimario = document.getElementById('tratamientoRecaidaCancerPrimario');
+const fechaRecaidaGanglionar = document.getElementById('fechaRecaidaGanglionar');
+const tratamientoRecaidaGanglionar = document.getElementById('tratamientoRecaidaGanglionar');
+const fechaRecaidaM1 = document.getElementById('fechaRecaidaM1');
+const tratamientoRecaidaM1 = document.getElementById('tratamientoRecaidaM1');
+const recaidaNumeroM1 = document.getElementById('recaidaNumeroM1');
+
+
+// Si "1 mes post SABR" está seleccionado, se quita la propiedad "required" de la segunda pregunta
+if (etapaSeleccionada === unMesPost) {
+  preguntaRecaida.removeAttribute('required');
+  fechaRecaidaCancerPrimario.removeAttribute('required');
+  tratamientoRecaidaCancerPrimario.removeAttribute('required');
+  fechaRecaidaGanglionar.removeAttribute('required');
+  tratamientoRecaidaGanglionar.removeAttribute('required');
+  fechaRecaidaM1.removeAttribute('required');ç
+  tratamientoRecaidaM1.removeAttribute('required');
+  recaidaNumeroM1.removeAttribute('required');
+} else {
+  // De lo contrario, se agrega la propiedad "required" a la segunda pregunta
+  preguntaRecaida.setAttribute('required', '');
+  fechaRecaidaCancerPrimario.setAttribute('require', '');
+  tratamientoRecaidaCancerPrimario.setAttribute('require', '');
+  fechaRecaidaGanglionar.setAttribute('require', '');
+  tratamientoRecaidaGanglionar.setAttribute('require', '');
+  fechaRecaidaM1.setAttribute('require', '');
+  tratamientoRecaidaM1.setAttribute('require', '');
+  recaidaNumeroM1.setAttribute('require', '');
+}
+}
+
+function mostrarSeccion() {
+// Obtener el valor del radio button seleccionado
+var num_veces = document.querySelector('.num_veces:checked').value;
+console.log(num_veces);
+
+// Obtener la sección que se mostrará múltiples veces
+var seccion = document.querySelector('#seccionUbicacion');
+
+// Remover cualquier sección clonada previamente
+var secciones_clonadas = document.querySelectorAll('.seccion_clonada');
+console.log(secciones_clonadas);
+for (var i = 0; i < secciones_clonadas.length; i++) {
+  secciones_clonadas[i].remove();
+}
+
+// Mostrar la sección el número de veces indicado
+for (var i = 0; i < num_veces; i++) {
+  var seccion_clonada = seccion.cloneNode(true);
+  console.log(seccion_clonada);
+  seccion_clonada.style.display = "block";
+  seccion_clonada.classList.add('seccion_clonada');
+  document.body.appendChild(seccion_clonada);
+
+  document.getElementById("cloneSection").appendChild(seccion_clonada);
+}
+}
+
+
+// Obtiene el menú desplegable y la sección de abajo
+const numUbicacionesDropdown = document.getElementById('numUbicaciones');
+const repeticionesUbicacionSection = document.querySelector('.repeticionesUbicacion');
+
+// Agrega un evento onchange al menú desplegable
+numUbicacionesDropdown.addEventListener('change', () => {
+  // Obtiene el valor de la opción seleccionada
+  const numUbicaciones = numUbicacionesDropdown.value;
+
+  // Usa una estructura de control para mostrar/ocultar secciones
+  switch(numUbicaciones) {
+      case 'ubicacion1':
+          repeticionesUbicacionSection.style.display = 'none';
+          break;
+      case 'ubicacion2':
+          repeticionesUbicacionSection.style.display = 'block';
+          document.getElementById('tacTab').style.display = 'block';
+          document.getElementById('rmTab').style.display = 'none';
+          document.getElementById('pecTacTab').style.display = 'none';
+          break;
+      case 'ubicacion3':
+          repeticionesUbicacionSection.style.display = 'block';
+          document.getElementById('tacTab').style.display = 'block';
+          document.getElementById('rmTab').style.display = 'block';
+          document.getElementById('pecTacTab').style.display = 'none';
+          break;
+      case 'ubicacion4':
+          repeticionesUbicacionSection.style.display = 'block';
+          document.getElementById('tacTab').style.display = 'block';
+          document.getElementById('rmTab').style.display = 'block';
+          document.getElementById('pecTacTab').style.display = 'block';
+          break;
+      case 'ubicacion5':
+          repeticionesUbicacionSection.style.display = 'block';
+          document.getElementById('tacTab').style.display = 'block';
+          document.getElementById('rmTab').style.display = 'block';
+          document.getElementById('pecTacTab').style.display = 'block';
+          document.querySelector('#respuestaRadiologica').parentElement.style.display = 'block';
+          break;
+  }
+});
