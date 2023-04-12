@@ -19,6 +19,10 @@ body{
 
     }
 }
+.tabulador {
+    display: inline-block;
+    margin-left: 4em;
+}
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {
