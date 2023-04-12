@@ -53,16 +53,16 @@
                             <input type="number" id="dosisTotal" class="form-control sabrDropdown" placeholder="No indicad las unidades" min="20" max="42" />
                         </div>
 
-                        <div class="form-outline mb-4">
+                        <div class="form-outline mb-4 w-75">
                             <label class="form-label required" for="dosisFraccionada">6. Dosis fraccionada</label>
                             <p>Unidades: <b>Gy</b></p>
-                            <label class="form-label " for="primeraSesion">1ª Sesión: </label>
-                            <input type="number" id="primeraSesion" class="form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
-                            <label class="form-label " for="primeraSesion">2ª Sesión: </label>
-                            <input type="number" id="segundaSesion" class="form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
-                            <label class="form-label " for="primeraSesion">3ª Sesión: </label>
-                            <input type="number" id="terceraSesion" class="form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
-                            </div>
+                            <label class="form-label tabulador" for="primeraSesion">1ª Sesión: </label>
+                            <input type="number" id="primeraSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
+                            <label class="form-label tabulador" for="primeraSesion">2ª Sesión: </label>
+                            <input type="number" id="segundaSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
+                            <label class="form-label tabulador" for="primeraSesion">3ª Sesión: </label>
+                            <input type="number" id="terceraSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" />
+                        </div>
                         
                         <div class="form-outline mb-4">
                             <label for="semanas" class="form-label required">7. Semanas</label>
@@ -75,14 +75,120 @@
                             <option value="5">
                             </datalist>
                         </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required" for="numeroSBRT" >8. Número SABR</label>
-                            <input type="number" id="numeroSBRT" class="form-control sabrDropdown" min="1" max="9999" />
-                        </div>   
+                    </div>
+                    <div class="tab">
+                        <h3>Pruebas</h3>
+                        <br>
+                        <div class="form-outline mb-4 selectContainer">
+                            <label class="form-label required" for="numeroUbicaciones" >Número de ubicaciones</label>
+                            <select class="form-control selectNumero" name = "numeroUbicaciones" id="numeroUbicaciones">
+                                <option value = "1" selected>1</option>
+                                <option value = "2">2</option>
+                                <option value = "3">3</option>
+                                <option value = "4">4</option>
+                                <option value = "5">5</option>
+                            </select>
+                        </div>
+                        <div class="form-outline mb-4 numeroContainer">
+                            <div class="form-outline mb-4 template">
+                                <h3>Pruebas diagnósticas</h3>
+                                <div class="form-outline mb-4 ">
+                                    <label class="form-label required" for="pruebasPreSABR">Pruebas diagnósticas</label><br>
+                                    <div id="pruebas">
+                                        <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
+                                        <input type="checkbox" name="pruebasPostSABR" id="rm" class="hasDropdown dropdownGroup rmGroup" onclick="otrosAparece('rm', 'rmTab')"> <label for="rm">RM</label><br>
+                                        <input type="checkbox" name="pruebasPostSABR" id="petTac" class="hasDropdown dropdownGroup petTacGroup" onclick="otrosAparece('petTac', 'pecTacTab')"> <label for="petTac">PET-TAC</label><br>
+                                        <input class="dropdownGroup hasDropdown" type="checkbox" name="pruebasD" id="pruebasDOtros__L" onclick="otrosAparece('pruebasDOtros__L', 'pruebasDOtros__T')" > <label for="pruebasDOtros__L">Otros</label><br>
+                                        <input type="text" name="pruebasD" id="pruebasDOtros__T" class="form-control pruebasDDropdown" style="display:none" placeholder="Separad por ';'"/>    
+                                    </div>
+                                </div>
+                                <div id="tacTab" style="display:none;">
+                                    <div class="form-outline mb-4 ">
+                                        <label class="form-label required" for="tacImage">TAC</label><br>
+                                        <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="fechaTAC" >Fecha TAC</label>
+                                        <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
+                                    </div>
+                                </div>
+                                <div id="rmTab" style="display:none;">
+                                    <div class="form-outline mb-4 ">
+                                        <label class="form-label required" for="rmImage">RM</label><br>
+                                        <input type="file" class="rmDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="fechaRM" >Fecha RM</label>
+                                        <input type="date" id="fechaRM" class="form-control rmDropdown" />
+                                    </div>
+                                </div>
+                                <div id="pecTacTab" style="display:none;">
+                                    <div class="form-outline mb-4 ">
+                                        <label class="form-label required" for="petTacImage">PET-TAC</label><br>
+                                        <input type="file" class="petTacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="fechaPETTAC" >Fecha PET-TAC</label>
+                                        <input type="date" id="fechaPETTAC" class="form-control petTacDropdown" />
+                                    </div>
+                                </div>
+                                <h3>TAC de simulación de radioterapia</h3>
+                                <br>
+                                <div class="form-outline mb-4 ">
+                                    <label class="form-label required" for="tacImagePreRT">TAC de simulación</label><br>
+                                    <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="fechaTAC" >Fecha TAC</label>
+                                    <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
+                                </div>
+                                <h3>Hemograma</h3>
+                                <br>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="leucocitos" >Leucocitos</label><br>
+                                    <p>Unidades: <b>µL</b></p>
+                                    <input type="number" id="leucocitos" class="form-control" placeholder="0.0" min="4.00" max="10.00" required/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="linfocitos">Linfocitos</label><br>
+                                    <p>Unidades: <b>%</b></p>
+                                    <input type="number" id="linfocitos" class="form-control" placeholder="20.0"  min="40.0" max="10.00" required/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="monocitos" >Monocitos</label><br>
+                                    <p>Unidades: <b>%</b></p>
+                                    <input type="number" id="monocitos" class="form-control" placeholder="2.0"  min="10.00" max="10.00" required/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="hemoglobina" >Hemoglobina</label><br>
+                                    <p>Unidades: <b>g/dL</b></p>
+                                    <input type="number" id="hemoglobina" class="form-control" placeholder="0.0"  min="12.0" max="15.0" required/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="hematocitos" >Hematocitos</label><br>
+                                    <p>Unidades: <b>%</b></p>
+                                    <input type="number" id="hematocitos" class="form-control" placeholder="0.0"  min="36.0" max="46.0" required/>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required" for="hematies" >Hematíes</label><br>
+                                    <p>Unidades: <b>µL</b></p>
+                                    <input type="number" id="hematies" class="form-control" placeholder="0.0"  min="3.80" max="3.40" required/>
+                                </div>
+                                <hr>
+                            </div>
+                        </div>
                     </div>
                     <div style="overflow:auto;">
                         <div style="float:right; display: flex; align-items: center; gap: 10px;">
-                          <input type="submit" value="Subir" id="uploadBtn" class="btn">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                        <input type="submit" value="Subir" style="display: none;" id="uploadBtn" class="btn">
+                        </div>
+
+                        <!-- Circles which indicates the steps of the form: -->
+                        <div style="text-align:center;margin-top:40px;">
+                            <span class="step"></span>
+                            <span class="step"></span>
                         </div>
                     </div>
                   </form>
@@ -91,6 +197,15 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+  <section class="popup_container" id="popup_container">
+    <div class="popup_wrapper">
+        <h3 class="popup_title">Formulario enviado correctamente</h3>
+        <div class="popup_links">
+            <a href="./seguimiento.html" class="popup_link">Siguiente formulario</a>
+            <a href="#" class="popup_link">Página principal</a>
+        </div>
     </div>
   </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
