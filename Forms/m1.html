@@ -76,15 +76,17 @@
                             <h4>Quimioterapia</h4>
                             <div class="form-outline mb-4">
                                 <label for="tipoQt">Tipo de quimioterapia</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad')"> <label for="qtadyuvante">Adyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qteGroup" name="qtExclusiva" id="qtexclusiva" onclick="otrosAparece('qtexclusiva', 'qtex')"> <label for="qtexclusiva">Exclusiva</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcGroup" name="qtConcomitante" id="qtConcomitante" onclick="otrosAparece('qtConcomitante', 'qtConc')"> <label for="qtConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup qtDropdown" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad'); otrosAparece('qtOtros__L', 'qt__T')"> <label for="qtadyuvante">Adyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qteGroup qtDropdown" name="qtExclusiva" id="qtexclusiva" onclick="otrosAparece('qtexclusiva', 'qtex'); otrosAparece('qtOtros__L', 'qt__T')"> <label for="qtexclusiva">Exclusiva</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcGroup qtDropdown" name="qtConcomitante" id="qtConcomitante" onclick="otrosAparece('qtConcomitante', 'qtConc'); otrosAparece('qtOtros__L', 'qt__T')"> <label for="qtConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown"  name="qtOtros" id="qtOtros__L" onclick="otrosAparece('qtOtros__L', 'qt__T')" > <label for="qtOtros__L">Otros</label><br>
+                            <input type="text" name="qtOtros" id="qt__T" class="form-control qtDropdown" style="display:none" placeholder="Separad por ';'"/>
                             </div>
                             <div id="qtad" style="display: none;">
                                 <h5>Quimioterapia adyuvante <b>(QTA)</b></h5>
                                 <br>
                                 <div class="form-outline mb-4 selectContainer">
-                                    <label class="form-label required" for="numeroQuimioterapiaAdyuvante" >Número de tratamientos</label>
+                                    <label class="form-label required" for="numeroQuimioterapiaAdyuvante" >Número de líneas de tratamiento</label>
                                     <select class="form-control selectNumero" name = "numeroQuimioterapiaAdyuvante" id="numeroQuimioterapiaAdyuvante">
                                         <option value = "1" selected>1</option>
                                         <option value = "2">2</option>
@@ -96,12 +98,26 @@
                                 <div class="form-outline mb-4 numeroContainer">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQta" >Fecha de inicio de QTA</label>
-                                            <input type="date" id="fechaInicioQta" class="form-control qtaDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQta" >Fecha de inicio de QTA</label><br>
+                                            <input type="checkbox" name="fechaInicioQta" id="sinfechaInicioQta" onclick="deshabilita('sinfechaInicioQta', 'fechaInicioQtaP')" required> <label for="sinfechaInicioQta">No consta</label><br>
+                                                <div id="fechaInicioQtaP">
+                                                    <input type="date" id="fechaInicioQta" class="form-control qtaDropdown"/>
+                                                </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinQta" >Fecha de finalización de QTA</label>
-                                            <input type="date" id="fechaFinQta" class="form-control qtaDropdown"/>
+                                            <label class="form-label required" for="qtaFinalizado">¿Se ha terminado el tratamiento?</label><br>
+                                            <input class="hasDropdown dropdownGroup" type="radio" name="qtaFinalizado" id="qtaFinalizadoSi" onclick="otrosAparece('qtaFinalizadoSi', 'qtafin_preg')" required> <label for="qtaFinalizadoSi">Sí</label><br>
+                                            <input class="dropdownGroup" type="radio" name="qtaFinalizado" id="qtaFinalizadoNo" onclick="otrosAparece('qtaFinalizadoSi', 'qtafin_preg')"> <label for="qtaFinalizadoNo">No</label><br>
+                                        </div>
+                                        <div id="qtafin_preg" style="display: none;">
+                                            <div class="form-outline mb-4">
+                                                 
+                                                <label class="form-label required" for="fechaFinQta" >Fecha de finalización de QTA</label><br>
+                                                <input type="checkbox" name="fechaFinQta" id="sinfechaFinQta" onclick="deshabilita('sinfechaFinQta', 'fechaFinQtaP')" required> <label for="sinfechaFinQta">No consta</label><br>
+                                                <div id="fechaFinQtaP">
+                                                    <input type="date" id="fechaFinQta" class="form-control qtaDropdown"/>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoQta" >Tipo de QTA</label>
@@ -159,12 +175,26 @@
                                 <div class="form-outline mb-4 numeroContainer">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQtEx" >Fecha de inicio</label>
-                                            <input type="date" id="fechaInicioQtEx" class="form-control qtexDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQTE" >Fecha de inicio de QTE</label><br>
+                                            <input type="checkbox" name="fechaInicioQTE" id="sinfechaInicioQTE" onclick="deshabilita('sinfechaInicioQTE', 'fechaInicioQTEP')" required> <label for="sinfechaInicioQTE">No consta</label><br>
+                                                <div id="fechaInicioQTEP">
+                                                    <input type="date" id="fechaInicioQTE" class="form-control QTEDropdown"/>
+                                                </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinQtEx" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinQtEx" class="form-control qtexropdown"/>
+                                            <label class="form-label required" for="QTEFinalizado">¿Se ha terminado el tratamiento?</label><br>
+                                            <input class="hasDropdown dropdownGroup" type="radio" name="QTEFinalizado" id="QTEFinalizadoSi" onclick="otrosAparece('QTEFinalizadoSi', 'QTEfin_preg')" required> <label for="QTEFinalizadoSi">Sí</label><br>
+                                            <input class="dropdownGroup" type="radio" name="QTEFinalizado" id="QTEFinalizadoNo" onclick="otrosAparece('QTEFinalizadoSi', 'QTEfin_preg')"> <label for="QTEFinalizadoNo">No</label><br>
+                                        </div>
+                                        <div id="QTEfin_preg" style="display: none;">
+                                            <div class="form-outline mb-4">
+                                                 
+                                                <label class="form-label required" for="fechaFinQTE" >Fecha de finalización de QTE</label><br>
+                                                <input type="checkbox" name="fechaFinQTE" id="sinfechaFinQTE" onclick="deshabilita('sinfechaFinQTE', 'fechaFinQTEP')" required> <label for="sinfechaFinQTE">No consta</label><br>
+                                                <div id="fechaFinQTEP">
+                                                    <input type="date" id="fechaFinQTE" class="form-control QTEDropdown"/>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoQtEx" >Tipo de quimioterapia exclusiva</label>
@@ -232,12 +262,26 @@
                                 <div class="form-outline mb-4 numeroContainer">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioqtconc" >Fecha de inicio</label>
-                                            <input type="date" id="fechaInicioqtconc" class="form-control qtconcDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQTC" >Fecha de inicio de QTC</label><br>
+                                            <input type="checkbox" name="fechaInicioQTC" id="sinfechaInicioQTC" onclick="deshabilita('sinfechaInicioQTC', 'fechaInicioQTCP')" required> <label for="sinfechaInicioQTC">No consta</label><br>
+                                                <div id="fechaInicioQTCP">
+                                                    <input type="date" id="fechaInicioQTC" class="form-control QTCDropdown"/>
+                                                </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinqtconc" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinqtconc" class="form-control qtconcropdown"/>
+                                            <label class="form-label required" for="QTCFinalizado">¿Se ha terminado el tratamiento?</label><br>
+                                            <input class="hasDropdown dropdownGroup" type="radio" name="QTCFinalizado" id="QTCFinalizadoSi" onclick="otrosAparece('QTCFinalizadoSi', 'QTCfin_preg')" required> <label for="QTCFinalizadoSi">Sí</label><br>
+                                            <input class="dropdownGroup" type="radio" name="QTCFinalizado" id="QTCFinalizadoNo" onclick="otrosAparece('QTCFinalizadoSi', 'QTCfin_preg')"> <label for="QTCFinalizadoNo">No</label><br>
+                                        </div>
+                                        <div id="QTCfin_preg" style="display: none;">
+                                            <div class="form-outline mb-4">
+                                                 
+                                                <label class="form-label required" for="fechaFinQTC" >Fecha de finalización de QTC</label><br>
+                                                <input type="checkbox" name="fechaFinQTC" id="sinfechaFinQTC" onclick="deshabilita('sinfechaFinQTC', 'fechaFinQTCP')" required> <label for="sinfechaFinQTC">No consta</label><br>
+                                                <div id="fechaFinQTCP">
+                                                    <input type="date" id="fechaFinQTC" class="form-control QTCDropdown"/>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoqtconc" >Tipo de quimioterapia concomitante</label>

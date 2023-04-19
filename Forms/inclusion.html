@@ -63,13 +63,19 @@
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="altura">7. Talla</label>
                                             <p>Unidades: <b>m</b></p>
-                                            <input type="number" id="altura" class="form-control" placeholder="0.0" min="1.0" max="3.0" required/>
+                                            <input type="checkbox" name="altura" id="sinaltura" onclick="deshabilita('sinaltura', 'alturaP')" required> <label for="sinaltura">No consta</label><br>
+                                            <div id="alturaP">
+                                                <input type="number" id="altura" class="form-control" placeholder="0.0" min="1.0" max="3.0" required step="any"/> 
+                                            </div>
                                         </div>
 
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="peso">8. Peso</label>
                                             <p>Unidades: <b>kg</b></p>
-                                            <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" required/>
+                                            <input type="checkbox" name="peso" id="sinPeso" onclick="deshabilita('sinPeso', 'pesoP')" required> <label for="sinPeso">No consta</label><br>
+                                            <div id="pesoP">
+                                                <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" required step="any"/>
+                                            </div>
                                         </div>
 
                                         <div class="form-outline mb-4">

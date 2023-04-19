@@ -75,13 +75,13 @@
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="receptorEstrogeno">7. Receptor estrógeno</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="number" id="receptorEstrogeno" name="receptorEstrogeno" class="form-control" min="0.0" max="100.0"/>
+                                <input type="number" id="receptorEstrogeno" name="receptorEstrogeno" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="receptorProgesterona">8. Receptor progesterona</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="number" id="receptorProgesterona" class="form-control" min="0.0" max="100.0"/>
+                                <input type="number" id="receptorProgesterona" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4">
@@ -93,13 +93,17 @@
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="ki67">10. Ki67</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="number" id="ki67" class="form-control" min="0.0" max="100.0"/>
+                                <input type="number" id="ki67" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="tils">11. TiLs</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="number" id="tils" name="tils" class="form-control no-required" min="0.0" max="100.0"/>
+                                <input type="checkbox" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')" required> <label for="sintils">No consta</label><br>
+                                <div id="tilsP">
+                                    <input type="number" id="tils" name="tils" class="form-control no-required" min="0.0" max="100.0" step="any"/>
+                                </div>
+                                
                             </div>
 
                             <div class="form-outline mb-4">
@@ -602,6 +606,8 @@
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="rtAdyuvante" id="rtadyuvante" onclick="otrosAparece('rtadyuvante', 'rta_preguntas')"> <label for="rtadyuvante">Adyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rteGroup" name="rtExclusiva" id="rtexclusiva" onclick="otrosAparece('rtexclusiva', 'rtex_preguntas')"> <label for="rtexclusiva">Exclusiva</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtConcGroup" name="rtConcomitante" id="rtConcomitante" onclick="otrosAparece('rtConcomitante', 'rtConc_preguntas')"> <label for="rtConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtSecGroup" name="rtSecuencial" id="rtSecuencial" onclick="otrosAparece('rtSecuencial', 'rtsec_preguntas')"> <label for="rtSecuencial">Secuencial</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalGroup" name="rtPaliativa" id="rtPaliativa" onclick="otrosAparece('rtPaliativa', 'rtPal_preguntas')"> <label for="rtPaliativa">Paliativa</label><br>
                             </div>
                             <div id="rtna_preguntas" style="display: none;">
                                 <h5>Radioterapia neoadyuvante <b>(RTNA)</b></h5>
@@ -609,11 +615,11 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaNeoadyuvante" >Localización</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaNeoadyuvante" >Ubicación</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacion" style="display: none;">
-                                                <input type="radio" name="localizacionRadioterapiaNeoadyuvante" id="lrnMama" class="rtnaDropdown"/> <label for="lrnMama">Mama</label><br>
-                                                <input type="radio" name="localizacionRadioterapiaNeoadyuvante" id="lrnMasectomia"/> <label for="lrnMasectomia">Mastectomía</label><br>
-                                                <input type="radio" name="localizacionRadioterapiaNeoadyuvante" id="lrnAreasGanglionares"/> <label for="lrnAreasGanglionares">Áreas ganglionares</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnMama" class="rtnaDropdown"/> <label for="lrnMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnMasectomia"/> <label for="lrnMasectomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnAreasGanglionares"/> <label for="lrnAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnPulmon" class="rtnaDropdown"/> <label for="lrnPulmon">Pulmón</label><br>
@@ -631,16 +637,15 @@
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtna">Dosis total</label>
                                             <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisTotal_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="0" max="80"/>
+                                            <input type="number" id="dosisTotal_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="dosisSesion_rtna">Dosis / sesión</label>
-                                            <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisSesion_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="0" max="30"/>
+                                            <label class="form-label required" for="numSesionesRTNA">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTNA" class="form-control rtnaDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtna" >Sesiones / semana</label><br>
-                                            <input type="number" id="sesionesSemana_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="1" max="5"/>
+                                            <input type="number" id="sesionesSemana_rtna" class="form-control rtnaDropdown" min="1" max="5"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="rtna_completa" >¿RTNA completa?</label>
@@ -666,10 +671,16 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaAdyuvante" >Localización</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraMama" class="rtaDropdown"/> <label for="lraMama">Mama</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraMasectomia"/> <label for="lraMasectomia">Mastectomía</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaAdyuvante" >Ubicación</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTALocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMama" class="rtnaDropdown"/> <label for="lraMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMasectomia"/> <label for="lraMasectomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTALocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraPulmon" class="rtnaDropdown"/> <label for="lraPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMediastino"/> <label for="lraMediastino">Mediastino</label><br>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioRta" >Fecha de inicio de RTA</label>
@@ -682,16 +693,15 @@
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rta">Dosis total</label>
                                             <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisTotal_rta" class="form-control rtaDropdown" placeholder="0.0" min="0" max="80"/>
+                                            <input type="number" id="dosisTotal_rta" class="form-control rtaDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="dosisSesion_rta">Dosis / sesión</label>
-                                            <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisSesion_rta" class="form-control rtaDropdown" placeholder="0.0" min="0" max="30"/>
+                                            <label class="form-label required" for="numSesionesRTNA">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTNA" class="form-control rtnaDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rta" >Sesiones / semana</label><br>
-                                            <input type="number" id="sesionesSemana_rta" class="form-control rtaDropdown" placeholder="0.0" min="1" max="5"/>
+                                            <input type="number" id="sesionesSemana_rta" class="form-control rtaDropdown" min="1" max="5"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="rta_completa" >¿RTA completa?</label>
@@ -717,10 +727,16 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaExclusiva" >Localización</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaExclusiva" id="lrexMama" class="rtexDropdown"/> <label for="lrexMama">Mama</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaExclusiva" id="lrexMasectomia"/> <label for="lrexMasectomia">Mastectomía</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaExclusiva" id="lrexAreasGanglionares"/> <label for="lrexAreasGanglionares">Áreas ganglionares</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaExclusiva" >Ubicación</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTELocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMama" class="rtnaDropdown"/> <label for="lreMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMasectomia"/> <label for="lreMasectomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreAreasGanglionares"/> <label for="lreAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTELocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lrePulmon" class="rtnaDropdown"/> <label for="lrePulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMediastino"/> <label for="lreMediastino">Mediastino</label><br>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaIniciortex" >Fecha de inicio</label>
@@ -733,16 +749,15 @@
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtex">Dosis total</label>
                                             <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisTotal_rtex" class="form-control rtexDropdown" placeholder="0.0" min="0" max="80"/>
+                                            <input type="number" id="dosisTotal_rtex" class="form-control rtexDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="dosisSesion_rtex">Dosis / sesión</label>
-                                            <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisSesion_rtex" class="form-control rtexDropdown" placeholder="0.0" min="0" max="30"/>
+                                            <label class="form-label required" for="numSesionesRTE">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTE" class="form-control rtnaDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtex" >Sesiones / semana</label><br>
-                                            <input type="number" id="sesionesSemana_rtex" class="form-control rtexDropdown" placeholder="0.0" min="1" max="5"/>
+                                            <input type="number" id="sesionesSemana_rtex" class="form-control rtexDropdown" min="1" max="5"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="rtex_completa" >¿Radioterapia exclusiva completa?</label>
@@ -768,10 +783,16 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaConcomitante" >Localización</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaConcomitante" id="lrconMama" class="rtconcDropdown"/> <label for="lrconMama">Mama</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaConcomitante" id="lrconMasectomia"/> <label for="lrconMasectomia">Mastectomía</label><br>
-                                            <input type="radio" name="localizacionRadioterapiaConcomitante" id="lrconAreasGanglionares"/> <label for="lrconAreasGanglionares">Áreas ganglionares</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaConcomitante" >Ubicación</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMama" class="rtnaDropdown"/> <label for="lrcMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMasectomia"/> <label for="lrcMasectomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcAreasGanglionares"/> <label for="lrcAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcPulmon" class="rtnaDropdown"/> <label for="lrcPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMediastino"/> <label for="lrcMediastino">Mediastino</label><br>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaIniciortconc" >Fecha de inicio</label>
@@ -784,16 +805,15 @@
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtconc">Dosis total</label>
                                             <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisTotal_rtconc" class="form-control rtconcDropdown" placeholder="0.0" min="0" max="80"/>
+                                            <input type="number" id="dosisTotal_rtconc" class="form-control rtconcDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="dosisSesion_rtconc">Dosis / sesión</label>
-                                            <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisSesion_rtconc" class="form-control rtconcDropdown" placeholder="0.0" min="0" max="30"/>
+                                            <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtconc" >Sesiones / semana</label><br>
-                                            <input type="number" id="sesionesSemana_rtconc" class="form-control rtconcDropdown" placeholder="0.0" min="1" max="5"/>
+                                            <input type="number" id="sesionesSemana_rtconc" class="form-control rtconcDropdown" min="1" max="5"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="rtconc_completa" >¿Radioterapia concomitante completa?</label>
@@ -808,6 +828,118 @@
                                             <label class="form-label required" for="toxicidad_rtconc" >Toxicidad a la Radioterapia concomitante</label><br>
                                             <input type="radio" class="rtconcDropdown" name="toxicidad_rtconc" id="toxicidad_rtconcSi"> <label for="toxicidad_rtconcSi">Sí</label><br>
                                             <input type="radio" name="toxicidad_rtconc" id="toxicidad_rtconcNo"> <label for="toxicidad_rtconcNo">No</label><br>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="rtsec_preguntas" style="display: none;">
+                                <h5>Radioterapia Secuencial</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4 template">
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="localizacionRadioterapiaSecuencial" >Ubicación</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMama" class="rtnaDropdown"/> <label for="lrsecMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMasectomia"/> <label for="lrsecMasectomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecAreasGanglionares"/> <label for="lrsecAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecPulmon" class="rtnaDropdown"/> <label for="lrsecPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMediastino"/> <label for="lrsecMediastino">Mediastino</label><br>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaIniciortsec" >Fecha de inicio</label>
+                                            <input type="date" id="fechaIniciortsec" class="form-control rtsecDropdown"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaFinrtsec" >Fecha de finalización</label>
+                                            <input type="date" id="fechaFinrtsec" class="form-control rtsecDropdown"/>
+                                        </div>
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="dosisTotal_rtsec">Dosis total</label>
+                                            <p>Unidades: <b>Gy</b></p>
+                                            <input type="number" id="dosisTotal_rtsec" class="form-control rtsecDropdown" placeholder="0.0" min="0" max="80" step="any"/>
+                                        </div>
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="sesionesSemana_rtsec" >Sesiones / semana</label><br>
+                                            <input type="number" id="sesionesSemana_rtsec" class="form-control rtsecDropdown" min="1" max="5"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="rtsec_completa" >¿Radioterapia Secuencial completa?</label>
+                                            <select class="form-control rtsecDropdown" name = "rtsec_completa" id="rtsec_completa">
+                                                <option value = "" selected>--Escoja una opción--</option>
+                                                <option value = "enTratamiento_rtsec">En tratamiento</option>
+                                                <option value = "suspendida_rtsec">Suspendida</option>
+                                                <option value = "completada_rtsec">Completada</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="toxicidad_rtsec" >Toxicidad a la Radioterapia Secuencial</label><br>
+                                            <input type="radio" class="rtsecDropdown" name="toxicidad_rtsec" id="toxicidad_rtsecSi"> <label for="toxicidad_rtsecSi">Sí</label><br>
+                                            <input type="radio" name="toxicidad_rtsec" id="toxicidad_rtsecNo"> <label for="toxicidad_rtsecNo">No</label><br>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="rtPal_preguntas" style="display: none;">
+                                <h5>Radioterapia Paliativa</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4 template">
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="localizacionRadioterapiaPaliativa" >Ubicación</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMama" class="rtnaDropdown"/> <label for="lrpalMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMapaltomia"/> <label for="lrpalMapaltomia">Mastectomía</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalAreasGanglionares"/> <label for="lrpalAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalPulmon" class="rtnaDropdown"/> <label for="lrpalPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMediastino"/> <label for="lrpalMediastino">Mediastino</label><br>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaIniciortpal" >Fecha de inicio</label>
+                                            <input type="date" id="fechaIniciortpal" class="form-control rtpalDropdown"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaFinrtpal" >Fecha de finalización</label>
+                                            <input type="date" id="fechaFinrtpal" class="form-control rtpalDropdown"/>
+                                        </div>
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="dosisTotal_rtpal">Dosis total</label>
+                                            <p>Unidades: <b>Gy</b></p>
+                                            <input type="number" id="dosisTotal_rtpal" class="form-control rtpalDropdown" placeholder="0.0" min="0" max="80" step="any"/>
+                                        </div>
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="sesionesSemana_rtpal" >Sesiones / semana</label><br>
+                                            <input type="number" id="sesionesSemana_rtpal" class="form-control rtpalDropdown" min="1" max="5"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="rtpal_completa" >¿Radioterapia Paliativa completa?</label>
+                                            <select class="form-control rtpalDropdown" name = "rtpal_completa" id="rtpal_completa">
+                                                <option value = "" selected>--Escoja una opción--</option>
+                                                <option value = "enTratamiento_rtpal">En tratamiento</option>
+                                                <option value = "suspendida_rtpal">Suspendida</option>
+                                                <option value = "completada_rtpal">Completada</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="toxicidad_rtpal" >Toxicidad a la Radioterapia Paliativa</label><br>
+                                            <input type="radio" class="rtpalDropdown" name="toxicidad_rtpal" id="toxicidad_rtpalSi"> <label for="toxicidad_rtpalSi">Sí</label><br>
+                                            <input type="radio" name="toxicidad_rtpal" id="toxicidad_rtpalNo"> <label for="toxicidad_rtpalNo">No</label><br>
                                         </div>
                                         <hr>
                                     </div>
@@ -833,7 +965,7 @@
                                         </div>
                                         <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante" style="display: none;">
                                             <label class="form-label required" for="tipoHormonoterapia_neo" >Tipo de HTNA</label><br>
-                                            <input type="radio" id="inhibidoresDeLaCromatasaNeo" name="tipoHormonoterapia_neo" class="dropdownGroup hormonoterapiaDropdown" onclick="otrosAparece('tipoHormonoterapiaNeoOtros__L', 'tipoHormonoterapiaNeoOtros__T')"/> <label for="inhibidoresDeLaCromatasaNeo" >Inhibidores de la aromatasa</label><br>
+                                            <input type="radio" id="inhibidoresDeLaCromatasaNeo" name="tipoHormonoterapia_neo" class="dropdownGroup hormonoterapiaDropdown" onclick="otrosAparece('tipoHormonoterapiaNeoOtros__L', 'tipoHormonoterapiaNeoOtros__T')"/> <label for="inhibidoresDeLaCromatasaNeo" >Inhibidores de la cromatasa</label><br>
                                             <input type="radio" id="antiestrogenosNeo" name="tipoHormonoterapia_neo" class="dropdownGroup" onclick="otrosAparece('tipoHormonoterapiaNeoOtros__L', 'tipoHormonoterapiaNeoOtros__T')"/> <label for="antiestrogenosNeo" >Antiestrógenos</label><br>
                                             <input type="radio" class="dropdownGroup hasDropdown" name="tipoHormonoterapia_neo" id="tipoHormonoterapiaNeoOtros__L" onclick="otrosAparece('tipoHormonoterapiaNeoOtros__L', 'tipoHormonoterapiaNeoOtros__T')"> <label for="tipoHormonoterapiaNeoOtros__L">Otros</label><br>
                                             <input type="text" name="tipoHormonoterapia_neo" id="tipoHormonoterapiaNeoOtros__T" class="form-control tipoHormonoterapia_neoDropdown" placeholder="Separad por ';'" style="display:none" />

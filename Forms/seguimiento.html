@@ -66,87 +66,101 @@
                         </div>
                         <div class="form-outline mb-4 numeroContainer">
                             <div class="form-outline mb-4 template">
-                                <h3>Pruebas radiológicas</h3>
-                                <div class="form-outline mb-4 ">
-                                    <label class="form-label required" for="pruebasPreSABR">Pruebas radiológicas post-SABR</label><br>
-                                    <div id="pruebas">
-                                        <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
-                                        <input type="checkbox" name="pruebasPostSABR" id="rm" class="hasDropdown dropdownGroup rmGroup" onclick="otrosAparece('rm', 'rmTab')"> <label for="rm">RM</label><br>
-                                        <input type="checkbox" name="pruebasPostSABR" id="petTac" class="hasDropdown dropdownGroup petTacGroup" onclick="otrosAparece('petTac', 'pecTacTab')"> <label for="petTac">PET-TAC</label><br>
-                                        <input class="dropdownGroup hasDropdown" type="checkbox" name="pruebasD" id="pruebasDOtros__L" onclick="otrosAparece('pruebasDOtros__L', 'pruebasDOtros__T')" > <label for="pruebasDOtros__L">Otros</label><br>
-                                        <input type="text" name="pruebasD" id="pruebasDOtros__T" class="form-control pruebasDDropdown" style="display:none" placeholder="Separad por ';'"/>    
-                                    </div>
-                                </div>
-                                <div id="tacTab" style="display:none;">
-                                    <div class="form-outline mb-4 ">
-                                        <label class="form-label required" for="tacImage">TAC</label><br>
-                                        <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
-                                    </div>
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label required" for="fechaTAC" >Fecha TAC</label>
-                                        <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
-                                    </div>
-                                </div>
-                                <div id="rmTab" style="display:none;">
-                                    <div class="form-outline mb-4 ">
-                                        <label class="form-label required" for="rmImage">RM</label><br>
-                                        <input type="file" class="rmDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
-                                    </div>
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label required" for="fechaRM" >Fecha RM</label>
-                                        <input type="date" id="fechaRM" class="form-control rmDropdown" />
-                                    </div>
-                                </div>
-                                <div id="pecTacTab" style="display:none;">
-                                    <div class="form-outline mb-4 ">
-                                        <label class="form-label required" for="petTacImage">PET-TAC</label><br>
-                                        <input type="file" class="petTacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
-                                    </div>
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label required" for="fechaPETTAC" >Fecha PET-TAC</label>
-                                        <input type="date" id="fechaPETTAC" class="form-control petTacDropdown" />
-                                    </div>
-                                </div>
+                                <h3>Pruebas radiológicas</h3><br>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required" for="respuestaRadiologica" >Respuesta radiológica</label>
-                                    <select class="form-control" name = "respuestaRadiologica" id="respuestaRadiologica" required>
-                                        <option value = "completa" selected>Completa</option>
-                                        <option value = "parcial">Parcial</option>
-                                        <option value = "estable">Estable</option>
-                                        <option value = "progresion">Progresión</option>
-                                     </select>
+                                    <label class="form-label required" for="pruebasRadioDisponible" >¿Están disponibles las pruebas radiológicas?</label><br>
+                                    <input type="radio" name="pruebasRadioDisponible"  class="dropdownGroup" id="pruebasRadioDisponibleSi" onclick="otrosAparece('pruebasRadioDisponibleSi', 'pruebasRadio_Preg')" required> <label for="pruebasRadioDisponibleSi">Si</label><br>
+                                    <input type="radio" name="pruebasRadioDisponible" class="hasDropdown dropdownGroup" id="pruebasRadioDisponibleNo" onclick="otrosAparece('pruebasRadioDisponibleSi', 'pruebasRadio_Preg')"> <label for="pruebasRadioDisponibleNo">No</label><br>
+                                </div>
+                                <div id="pruebasRadio_Preg" style="display: none;">
+                                    <div class="form-outline mb-4 ">
+                                        <label class="form-label required" for="pruebasPreSABR">Pruebas radiológicas post-SABR</label><br>
+                                        <div id="pruebas">
+                                            <input type="checkbox" name="pruebasPostSABR" id="tac" class="hasDropdown dropdownGroup tacGroup" onclick="otrosAparece('tac', 'tacTab')"> <label for="tac">TAC</label><br>
+                                            <input type="checkbox" name="pruebasPostSABR" id="rm" class="hasDropdown dropdownGroup rmGroup" onclick="otrosAparece('rm', 'rmTab')"> <label for="rm">RM</label><br>
+                                            <input type="checkbox" name="pruebasPostSABR" id="petTac" class="hasDropdown dropdownGroup petTacGroup" onclick="otrosAparece('petTac', 'pecTacTab')"> <label for="petTac">PET-TAC</label><br>
+                                            <input class="dropdownGroup hasDropdown" type="checkbox" name="pruebasD" id="pruebasDOtros__L" onclick="otrosAparece('pruebasDOtros__L', 'pruebasDOtros__T')" > <label for="pruebasDOtros__L">Otros</label><br>
+                                            <input type="text" name="pruebasD" id="pruebasDOtros__T" class="form-control pruebasDDropdown" style="display:none" placeholder="Separad por ';'"/>    
+                                        </div>
+                                    </div>
+                                    <div id="tacTab" style="display:none;">
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="tacImage">TAC</label><br>
+                                            <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaTAC" >Fecha TAC</label>
+                                            <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
+                                        </div>
+                                    </div>
+                                    <div id="rmTab" style="display:none;">
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="rmImage">RM</label><br>
+                                            <input type="file" class="rmDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaRM" >Fecha RM</label>
+                                            <input type="date" id="fechaRM" class="form-control rmDropdown" />
+                                        </div>
+                                    </div>
+                                    <div id="pecTacTab" style="display:none;">
+                                        <div class="form-outline mb-4 ">
+                                            <label class="form-label required" for="petTacImage">PET-TAC</label><br>
+                                            <input type="file" class="petTacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaPETTAC" >Fecha PET-TAC</label>
+                                            <input type="date" id="fechaPETTAC" class="form-control petTacDropdown" />
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="respuestaRadiologica" >Respuesta radiológica</label>
+                                        <select class="form-control" name = "respuestaRadiologica" id="respuestaRadiologica" required>
+                                            <option value = "completa" selected>Completa</option>
+                                            <option value = "parcial">Parcial</option>
+                                            <option value = "estable">Estable</option>
+                                            <option value = "progresion">Progresión</option>
+                                         </select>
+                                    </div>
                                 </div>
                                 <h3>Hemograma</h3>
                                 <br>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required" for="leucocitos" >Leucocitos</label><br>
-                                    <p>Unidades: <b>µL</b></p>
-                                    <input type="number" id="leucocitos" class="form-control" placeholder="0.0" min="4.00" max="10.00" required/>
+                                    <label class="form-label required" for="hemogramaDisponible" >¿Está disponible el hemograma?</label><br>
+                                    <input type="radio" name="hemogramaDisponible"  class="dropdownGroup" id="hemogramaDisponibleSi" onclick="otrosAparece('hemogramaDisponibleSi', 'hemograma_Preg')" required> <label for="hemogramaDisponibleSi">Si</label><br>
+                                    <input type="radio" name="hemogramaDisponible" class="hasDropdown dropdownGroup" id="hemogramaDisponibleNo" onclick="otrosAparece('hemogramaDisponibleSi', 'hemograma_Preg')"> <label for="hemogramaDisponibleNo">No</label><br>
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required" for="linfocitos">Linfocitos</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="linfocitos" class="form-control" placeholder="20.0"  min="40.0" max="10.00" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required" for="monocitos" >Monocitos</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="monocitos" class="form-control" placeholder="2.0"  min="10.00" max="10.00" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required" for="hemoglobina" >Hemoglobina</label><br>
-                                    <p>Unidades: <b>g/dL</b></p>
-                                    <input type="number" id="hemoglobina" class="form-control" placeholder="0.0"  min="12.0" max="15.0" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required" for="hematocitos" >Hematocitos</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="hematocitos" class="form-control" placeholder="0.0"  min="36.0" max="46.0" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required" for="hematies" >Hematíes</label><br>
-                                    <p>Unidades: <b>µL</b></p>
-                                    <input type="number" id="hematies" class="form-control" placeholder="0.0"  min="3.80" max="3.40" required/>
+                                <div id="hemograma_Preg" style="display: none;">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="leucocitos" >Leucocitos</label><br>
+                                        <p>Unidades: <b>µL</b></p>
+                                        <input type="number" id="leucocitos" class="form-control" placeholder="0.0" required step="any"/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="linfocitos">Linfocitos</label><br>
+                                        <p>Unidades: <b>%</b></p>
+                                        <input type="number" id="linfocitos" class="form-control" placeholder="0.0"  step="any" required/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="monocitos" >Monocitos</label><br>
+                                        <p>Unidades: <b>%</b></p>
+                                        <input type="number" id="monocitos" class="form-control" placeholder="0.0"  step="any" required/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="hemoglobina" >Hemoglobina</label><br>
+                                        <p>Unidades: <b>g/dL</b></p>
+                                        <input type="number" id="hemoglobina" class="form-control" placeholder="0.0"  step="any" required/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="hematocitos" >Hematocitos</label><br>
+                                        <p>Unidades: <b>%</b></p>
+                                        <input type="number" id="hematocitos" class="form-control" placeholder="0.0" step="any" required/>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required" for="hematies" >Hematíes</label><br>
+                                        <p>Unidades: <b>µL</b></p>
+                                        <input type="number" id="hematies" class="form-control" placeholder="0.0" step="any" required/>
+                                    </div>
                                 </div>
                                 <hr>
                             </div>
@@ -155,20 +169,27 @@
                     <div class="tab">
                         <h3>TAC de simulación de radioterapia</h3>
                         <br>
-                        <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="tacImagePreRT">6. TAC de simulación</label><br>
-                            <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
-                        </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="fechaTAC" >7. Fecha TAC</label>
-                            <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
+                            <label class="form-label required" for="TacSimulacionDisponible" >6. ¿Está disponible el TAC de simulación?</label><br>
+                            <input type="radio" name="TacSimulacionDisponible"  class="dropdownGroup" id="TacSimulacionDisponibleSi" onclick="otrosAparece('TacSimulacionDisponibleSi', 'tacSimulacion_Preg')" required> <label for="TacSimulacionDisponibleSi">Si</label><br>
+                            <input type="radio" name="TacSimulacionDisponible" class="hasDropdown dropdownGroup" id="TacSimulacionDisponibleNo" onclick="otrosAparece('TacSimulacionDisponibleSi', 'tacSimulacion_Preg')"> <label for="TacSimulacionDisponibleNo">No</label><br>
+                        </div>
+                        <div id="tacSimulacion_Preg" style="display: none;">
+                            <div class="form-outline mb-4 ">
+                                <label class="form-label required" for="tacImagePreRT">TAC de simulación</label><br>
+                                <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required" for="fechaTAC" >Fecha TAC</label>
+                                <input type="date" id="fechaTAC" class="form-control tacDropdown"/>
+                            </div>
                         </div>
                     </div>             
                     <div class="tab">
                         <h3>Recaídas o persistencia</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="recaidaPersistenca">8. Recaída o persistencia</label><br>
+                            <label class="form-label required" for="recaidaPersistenca">7. Recaída o persistencia</label><br>
                             <input type="checkbox" name="recaidaPersistenca" id="recaidaNinguna" onclick="deshabilita('recaidaNinguna', 'sinRecaida'); otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaM1', 'preguntasRecaidaM1')" required> <label for="recaidaNinguna">Ninguna</label><br>
                             <div id="sinRecaida">
                                 <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup cancerPrimarioGroup" id="recaidaCancerPrimario" onclick="otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario')"> <label for="recaidaCancerPrimario">Cáncer primario</label><br>
@@ -178,11 +199,11 @@
                         </div>
                         <div id="preguntasRecaidaCancerPrimario" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaRecaidaCancerPrimario" >9. Fecha recaída cáncer primario</label>
+                                <label class="form-label required" for="fechaRecaidaCancerPrimario" >8. Fecha recaída cáncer primario</label>
                                 <input type="date" id="fechaRecaidaCancerPrimario" class="form-control cancerPrimarioDropdown" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="tratamientoRecaidaCancerPrimario" >10. Recidiva tratamiento cáncer primario</label><br>
+                                <label class="form-label required" for="tratamientoRecaidaCancerPrimario" >9. Recidiva tratamiento cáncer primario</label><br>
                                 <input type="radio" name="tratamientoRecaidaCancerPrimario" class="cancerPrimarioDropdown" id="recaidaCPCirugia"> <label for="recaidaCPCirugia">Cirugía</label><br>
                                 <input type="radio" name="tratamientoRecaidaCancerPrimario" id="recaidaCPRT" > <label for="recaidaCPRT">RT</label><br>
                                 <input type="radio" name="tratamientoRecaidaCancerPrimario" id="recaidaCPQT" > <label for="recaidaCPQT">QT</label><br>
@@ -192,11 +213,11 @@
                         </div>
                         <div id="preguntasRecaidaGanglionar" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaRecaidaGanglionar" >11. Fecha recaída ganglionar</label>
+                                <label class="form-label required" for="fechaRecaidaGanglionar" >10. Fecha recaída ganglionar</label>
                                 <input type="date" id="fechaRecaidaGanglionar" class="form-control ganglionarDropdown" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="tratamientoRecaidaGanglionar" >12. Tratamiento ganglionar</label><br>
+                                <label class="form-label required" for="tratamientoRecaidaGanglionar" >11. Tratamiento ganglionar</label><br>
                                 <input type="radio" name="tratamientoRecaidaGanglionar" class="ganglionarDropdown" id="recaidaGangCirugia"> <label for="recaidaGangCirugia">Cirugía</label><br>
                                 <input type="radio" name="tratamientoRecaidaGanglionar" id="recaidaGangRT" > <label for="recaidaGangRT">RT</label><br>
                                 <input type="radio" name="tratamientoRecaidaGanglionar" id="recaidaGangQT" > <label for="recaidaGangQT">QT</label><br>
@@ -206,11 +227,11 @@
                         </div>
                         <div id="preguntasRecaidaM1" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaRecaidaM1" >13. Fecha recaída M1</label>
+                                <label class="form-label required" for="fechaRecaidaM1" >12. Fecha recaída M1</label>
                                 <input type="date" id="fechaRecaidaM1" class="form-control m1Dropdown" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="tratamientoRecaidaM1" >14. Tratamiento M1</label><br>
+                                <label class="form-label required" for="tratamientoRecaidaM1" >13. Tratamiento M1</label><br>
                                 <input type="radio" name="tratamientoRecaidaM1" class="m1Dropdown" id="recaidaM1Cirugia"> <label for="recaidaM1Cirugia">Cirugía</label><br>
                                 <input type="radio" name="tratamientoRecaidaM1" id="recaidaM1RT" > <label for="recaidaM1RT">RT</label><br>
                                 <input type="radio" name="tratamientoRecaidaM1" id="recaidaM1QT" > <label for="recaidaM1QT">QT</label><br>
@@ -218,7 +239,7 @@
                                 <input type="radio" name="tratamientoRecaidaM1" id="recaidaM1IT" > <label for="recaidaM1IT">IT</label><br>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="recaidaNumeroM1" >15. Número M1</label>
+                                <label class="form-label required" for="recaidaNumeroM1" >14. Número M1</label>
                                 <input type="number" id="recaidaNumeroM1" class="form-control m1Dropdown" min="1" max="9999"/>
                             </div>
                         </div>
@@ -227,7 +248,7 @@
                         <h3>Toxicidad y Estatus</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="toxicidad">16. RTOG, LENT-SOMA</label><br>
+                            <label class="form-label required" for="toxicidad">15. RTOG, LENT-SOMA</label><br>
                             <input type="checkbox" name="toxicidad" id="no" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('toxOtros__L', 'toxOtrosForm__T'); otrosAparece('astenia', 'gradoAsteniaTab');  otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('dolor', 'gradoDolorTab');" required> <label for="no">No</label><br>
                             <div id="sinToxicidad">
                                 <input type="checkbox" name="toxicidad" id="astenia" class="hasDropdown dropdownGroup asteniaGroup" onclick="otrosAparece('astenia', 'gradoAsteniaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="astenia">Astenia</label><br>
@@ -380,7 +401,7 @@
                             </select>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="estatus" >17. Estatus</label>
+                            <label class="form-label required" for="estatus" >16. Estatus</label>
                             <select class="form-control" name = "estatus" id="estatus" required>
                                 <option value = "vivaSinEnfermedad" selected>Vivo/a sin enfermedad</option>
                                 <option value = "vivaConEnfermedad">Vivo/a con enfermedad</option>
@@ -390,17 +411,17 @@
                              </select>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="analiticaSiNo">18. ¿Se ha realizado una analítica?</label><br>
+                            <label class="form-label required" for="analiticaSiNo">17. ¿Se ha realizado una analítica?</label><br>
                             <input class="hasDropdown dropdownGroup" type="radio" name="analiticaSiNo" id="analiticaSi" onclick="otrosAparece('analiticaSi', 'analiticaSiTab')" required> <label for="analiticaSi">Sí</label><br>
                             <input class="dropdownGroup" type="radio" name="analiticaSiNo" id="analiticaNo" onclick="otrosAparece('analiticaSi', 'analiticaSiTab')"> <label for="analiticaNo">No</label><br>
                         </div>
                         <div id="analiticaSiTab" style="display: none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="fechaAnalitica" >19. Fecha de la analítica</label>
+                                <label class="form-label required" for="fechaAnalitica" >18. Fecha de la analítica</label>
                                 <input type="date" id="fechaAnalitica" class="form-control analiticaDropdown" />
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required" for="analitica">20. Analítica</label><br>
+                                <label class="form-label required" for="analitica">19. Analítica</label><br>
                                 <input type="file" accept="application/pdf,application/vnd.ms-excel" class="analiticaDropdown"/>
                             </div>
                         </div>
@@ -409,7 +430,7 @@
                         <h3>Tratamientos</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="tratamientosSeguimiento">21. Tratamientos</label><br>
+                            <label class="form-label required" for="tratamientosSeguimiento">20. Tratamientos</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown qtGroup" name="tratamientosSeguimiento" id="qt" onclick="otrosAparece('qt', 'qt_preguntas')"> <label for="qt">Quimioterapia <b>(QT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown rtGroup" name="tratamientosSeguimiento" id="rt" onclick="otrosAparece('rt', 'rt_preguntas')"> <label for="rt">Radioterapia <b>(RT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown hormonoterapiaAdyuvanteGroup" name="tratamientosSeguimiento" id="hormonoterapiaAdyuvante" onclick="otrosAparece('hormonoterapiaAdyuvante', 'hormonoterapia_preguntas')"> <label for="hormonoterapiaAdyuvante">Hormonoterapia <b>(HT)</b></label><br>
@@ -1075,7 +1096,7 @@
                             </div>
                         </div>
                         <div class="form-outline mb-4">
-                            <label for="observaciones" class="form-label">22. Observaciones</label>
+                            <label for="observaciones" class="form-label">21. Observaciones</label>
                             <input type="text" class="form-control" name="observaciones">
                         </div>    
                     </div>
