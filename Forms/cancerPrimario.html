@@ -361,12 +361,18 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQtna" >Fecha de inicio</label>
-                                            <input type="date" id="fechaInicioQtna" class="form-control qtnaDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQtna" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioQtna" onclick="deshabilita('sinfechaInicioQtna', 'fechaInicioQtna_P')"> <label for="sinfechaInicioQtna">No consta</label><br>
+                                            <div id="fechaInicioQtna_P">
+                                                <input type="date" id="fechaInicioQtna" class="form-control qtnaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinQtna" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinQtna" class="form-control qtnaDropdown"/>
+                                            <label class="form-label required" for="fechaFinQtna" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinQtna" onclick="deshabilita('sinfechaFinQtna', 'fechaFinQtna_P')"> <label for="sinfechaFinQtna">No consta</label><br>
+                                            <div id="fechaFinQtna_P">
+                                                <input type="date" id="fechaFinQtna" class="form-control qtnaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoQtna" >Tipo de QTNA</label>
@@ -424,12 +430,18 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQta" >Fecha de inicio de QTA</label>
-                                            <input type="date" id="fechaInicioQta" class="form-control qtaDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQta" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioQta" onclick="deshabilita('sinfechaInicioQta', 'fechaInicioQta_P')"> <label for="sinfechaInicioQta">No consta</label><br>
+                                            <div id="fechaInicioQta_P">
+                                                <input type="date" id="fechaInicioQta" class="form-control QtaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinQta" >Fecha de finalización de QTA</label>
-                                            <input type="date" id="fechaFinQta" class="form-control qtaDropdown"/>
+                                            <label class="form-label required" for="fechaFinQta" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinQta" onclick="deshabilita('sinfechaFinQta', 'fechaFinQta_P')"> <label for="sinfechaFinQta">No consta</label><br>
+                                            <div id="fechaFinQta_P">
+                                                <input type="date" id="fechaFinQta" class="form-control QtaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoQta" >Tipo de QTA</label>
@@ -477,12 +489,18 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQtEx" >Fecha de inicio</label>
-                                            <input type="date" id="fechaInicioQtEx" class="form-control qtexDropdown"/>
+                                            <label class="form-label required" for="fechaInicioQtEx" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioQtEx" onclick="deshabilita('sinfechaInicioQtEx', 'fechaInicioQtEx_P')"> <label for="sinfechaInicioQtEx">No consta</label><br>
+                                            <div id="fechaInicioQtEx_P">
+                                                <input type="date" id="fechaInicioQtEx" class="form-control QtExDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinQtEx" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinQtEx" class="form-control qtexropdown"/>
+                                            <label class="form-label required" for="fechaFinQtEx" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinQtEx" onclick="deshabilita('sinfechaFinQtEx', 'fechaFinQtEx_P')"> <label for="sinfechaFinQtEx">No consta</label><br>
+                                            <div id="fechaFinQtEx_P">
+                                                <input type="date" id="fechaFinQtEx" class="form-control QtExDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoQtEx" >Tipo de quimioterapia exclusiva</label>
@@ -540,12 +558,18 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioqtconc" >Fecha de inicio</label>
-                                            <input type="date" id="fechaInicioqtconc" class="form-control qtconcDropdown"/>
+                                            <label class="form-label required" for="fechaInicioqtconc" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioqtconc" onclick="deshabilita('sinfechaInicioqtconc', 'fechaInicioqtconc_P')"> <label for="sinfechaInicioqtconc">No consta</label><br>
+                                            <div id="fechaInicioqtconc_P">
+                                                <input type="date" id="fechaInicioqtconc" class="form-control qtconcDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinqtconc" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinqtconc" class="form-control qtconcropdown"/>
+                                            <label class="form-label required" for="fechaFinqtconc" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinqtconc" onclick="deshabilita('sinfechaFinqtconc', 'fechaFinqtconc_P')"> <label for="sinfechaFinqtconc">No consta</label><br>
+                                            <div id="fechaFinqtconc_P">
+                                                <input type="date" id="fechaFinqtconc" class="form-control qtconcDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoqtconc" >Tipo de quimioterapia concomitante</label>
@@ -623,20 +647,35 @@
                                             </div>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnPulmon" class="rtnaDropdown"/> <label for="lrnPulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnMediastino"/> <label for="lrnMediastino">Mediastino</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnAreasGanglionares"/> <label for="lrnAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnRecto" class="rtnaDropdown"/> <label for="lrnRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnAreasGanglionares"/> <label for="lrnAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnProstata" class="rtnaDropdown"/> <label for="lrnProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnAreasGanglionares"/> <label for="lrnAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaInicioRtna" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioRtna" onclick="deshabilita('sinfechaInicioRtna', 'fechaInicioRtna_P')"> <label for="sinfechaInicioRtna">No consta</label><br>
+                                            <div id="fechaInicioRtna_P">
+                                                <input type="date" id="fechaInicioRtna" class="form-control RtnaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioRtna" >Fecha de inicio de RTNA</label>
-                                            <input type="date" id="fechaInicioRtna" class="form-control rtnaDropdown"/>
-                                        </div>
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinRtna" >Fecha de finalización de RTNA</label>
-                                            <input type="date" id="fechaFinRtna" class="form-control rtnaDropdown"/>
+                                            <label class="form-label required" for="fechaFinRtna" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinRtna" onclick="deshabilita('sinfechaFinRtna', 'fechaFinRtna_P')"> <label for="sinfechaFinRtna">No consta</label><br>
+                                            <div id="fechaFinRtna_P">
+                                                <input type="date" id="fechaFinRtna" class="form-control RtnaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtna">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="number" id="dosisTotal_rtna" class="form-control rtnaDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
@@ -674,40 +713,54 @@
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="localizacionRadioterapiaAdyuvante" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTALocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMama" class="rtnaDropdown"/> <label for="lraMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMama" class="RtaDropdown"/> <label for="lraMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMasectomia"/> <label for="lraMasectomia">Mastectomía</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
-                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTALocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraPulmon" class="rtnaDropdown"/> <label for="lraPulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMediastino"/> <label for="lraMediastino">Mediastino</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraPulmon" class="RtaDropdown"/> <label for="lraPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraRecto" class="RtaDropdown"/> <label for="lraRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraProstata" class="RtaDropdown"/> <label for="lraProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraAreasGanglionares"/> <label for="lraAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioRta" >Fecha de inicio de RTA</label>
-                                            <input type="date" id="fechaInicioRta" class="form-control rtaDropdown"/>
+                                            <label class="form-label required" for="fechaInicioRta" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaInicioRta" onclick="deshabilita('sinfechaInicioRta', 'fechaInicioRta_P')"> <label for="sinfechaInicioRta">No consta</label><br>
+                                            <div id="fechaInicioRta_P">
+                                                <input type="date" id="fechaInicioRta" class="form-control RtaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinRta" >Fecha de finalización de RTA</label>
-                                            <input type="date" id="fechaFinRta" class="form-control rtaDropdown"/>
+                                            <label class="form-label required" for="fechaFinRta" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinRta" onclick="deshabilita('sinfechaFinRta', 'fechaFinRta_P')"> <label for="sinfechaFinRta">No consta</label><br>
+                                            <div id="fechaFinRta_P">
+                                                <input type="date" id="fechaFinRta" class="form-control RtaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rta">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
-                                            <input type="number" id="dosisTotal_rta" class="form-control rtaDropdown" placeholder="0.0" min="0" max="80" step="any"/>
+                                            <input type="number" id="dosisTotal_rta" class="form-control RtaDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="numSesionesRTNA">Número de sesiones</label>
-                                            <input type="number" id="numSesionesRTNA" class="form-control rtnaDropdown" min="0" max="30"/>
+                                            <input type="number" id="numSesionesRTNA" class="form-control RtaDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rta" >Sesiones / semana</label><br>
-                                            <input type="number" id="sesionesSemana_rta" class="form-control rtaDropdown" min="1" max="5"/>
+                                            <input type="number" id="sesionesSemana_rta" class="form-control RtaDropdown" min="1" max="5"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="rta_completa" >¿RTA completa?</label>
-                                            <select class="form-control rtaDropdown" name = "rta_completa" id="rta_completa">
+                                            <select class="form-control RtaDropdown" name = "rta_completa" id="rta_completa">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "enTratamiento_rta">En tratamiento</option>
                                                 <option value = "suspendida_rta">Suspendida</option>
@@ -716,7 +769,7 @@
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="toxicidad_rta" >Toxicidad a la RTA</label><br>
-                                            <input type="radio" class="rtaDropdown" name="toxicidad_rta" id="toxicidad_rtaSi"> <label for="toxicidad_rtaSi">Sí</label><br>
+                                            <input type="radio" class="RtaDropdown" name="toxicidad_rta" id="toxicidad_rtaSi"> <label for="toxicidad_rtaSi">Sí</label><br>
                                             <input type="radio" name="toxicidad_rta" id="toxicidad_rtaNo"> <label for="toxicidad_rtaNo">No</label><br>
                                         </div>
                                         <hr>
@@ -731,32 +784,46 @@
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="localizacionRadioterapiaExclusiva" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTELocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMama" class="rtnaDropdown"/> <label for="lreMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMama" class="rtexDropdown"/> <label for="lreMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMasectomia"/> <label for="lreMasectomia">Mastectomía</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreAreasGanglionares"/> <label for="lreAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
-                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTELocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lrePulmon" class="rtnaDropdown"/> <label for="lrePulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMediastino"/> <label for="lreMediastino">Mediastino</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lrePulmon" class="rtexDropdown"/> <label for="lrePulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreAreasGanglionares"/> <label for="lreAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreRecto" class="rtexDropdown"/> <label for="lreRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreAreasGanglionares"/> <label for="lreAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreProstata" class="rtexDropdown"/> <label for="lreProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreAreasGanglionares"/> <label for="lreAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaIniciortex" >Fecha de inicio</label>
-                                            <input type="date" id="fechaIniciortex" class="form-control rtexDropdown"/>
+                                            <label class="form-label required" for="fechaIniciortex" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaIniciortex" onclick="deshabilita('sinfechaIniciortex', 'fechaIniciortex_P')"> <label for="sinfechaIniciortex">No consta</label><br>
+                                            <div id="fechaIniciortex_P">
+                                                <input type="date" id="fechaIniciortex" class="form-control rtexDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinrtex" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinrtex" class="form-control rtexDropdown"/>
+                                            <label class="form-label required" for="fechaFinrtex" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinrtex" onclick="deshabilita('sinfechaFinrtex', 'fechaFinrtex_P')"> <label for="sinfechaFinrtex">No consta</label><br>
+                                            <div id="fechaFinrtex_P">
+                                                <input type="date" id="fechaFinrtex" class="form-control rtexDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtex">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="number" id="dosisTotal_rtex" class="form-control rtexDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="numSesionesRTE">Número de sesiones</label>
-                                            <input type="number" id="numSesionesRTE" class="form-control rtnaDropdown" min="0" max="30"/>
+                                            <input type="number" id="numSesionesRTE" class="form-control rtexDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtex" >Sesiones / semana</label><br>
@@ -788,32 +855,46 @@
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="localizacionRadioterapiaConcomitante" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMama" class="rtnaDropdown"/> <label for="lrcMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMama" class="rtconcDropdown"/> <label for="lrcMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMasectomia"/> <label for="lrcMasectomia">Mastectomía</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcAreasGanglionares"/> <label for="lrcAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
-                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcPulmon" class="rtnaDropdown"/> <label for="lrcPulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMediastino"/> <label for="lrcMediastino">Mediastino</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcPulmon" class="rtconcDropdown"/> <label for="lrcPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcAreasGanglionares"/> <label for="lrcAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcRecto" class="rtconcDropdown"/> <label for="lrcRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcAreasGanglionares"/> <label for="lrcAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcProstata" class="rtconcDropdown"/> <label for="lrcProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcAreasGanglionares"/> <label for="lrcAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaIniciortconc" >Fecha de inicio</label>
-                                            <input type="date" id="fechaIniciortconc" class="form-control rtconcDropdown"/>
+                                            <label class="form-label required" for="fechaIniciortconc" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaIniciortconc" onclick="deshabilita('sinfechaIniciortconc', 'fechaIniciortconc_P')"> <label for="sinfechaIniciortconc">No consta</label><br>
+                                            <div id="fechaIniciortconc_P">
+                                                <input type="date" id="fechaIniciortconc" class="form-control rtconcDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinrtconc" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinrtconc" class="form-control rtconcDropdown"/>
+                                            <label class="form-label required" for="fechaFinrtconc" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinrtconc" onclick="deshabilita('sinfechaFinrtconc', 'fechaFinrtconc_P')"> <label for="sinfechaFinrtconc">No consta</label><br>
+                                            <div id="fechaFinrtconc_P">
+                                                <input type="date" id="fechaFinrtconc" class="form-control rtconcDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtconc">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="number" id="dosisTotal_rtconc" class="form-control rtconcDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
-                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtconcDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtconc" >Sesiones / semana</label><br>
@@ -845,13 +926,21 @@
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="localizacionRadioterapiaSecuencial" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMama" class="rtnaDropdown"/> <label for="lrsecMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMama" class="rtsecDropdown"/> <label for="lrsecMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMasectomia"/> <label for="lrsecMasectomia">Mastectomía</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecAreasGanglionares"/> <label for="lrsecAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
-                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecPulmon" class="rtnaDropdown"/> <label for="lrsecPulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMediastino"/> <label for="lrsecMediastino">Mediastino</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecPulmon" class="rtsecDropdown"/> <label for="lrsecPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecAreasGanglionares"/> <label for="lrsecAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecRecto" class="rtsecDropdown"/> <label for="lrsecRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecAreasGanglionares"/> <label for="lrsecAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecProstata" class="rtsecDropdown"/> <label for="lrsecProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecAreasGanglionares"/> <label for="lrsecAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
@@ -864,13 +953,13 @@
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtsec">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="number" id="dosisTotal_rtsec" class="form-control rtsecDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
-                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtsecDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtsec" >Sesiones / semana</label><br>
@@ -902,32 +991,46 @@
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="localizacionRadioterapiaPaliativa" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMama" class="rtnaDropdown"/> <label for="lrpalMama">Mama</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMama" class="rtpalDropdown"/> <label for="lrpalMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMapaltomia"/> <label for="lrpalMapaltomia">Mastectomía</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalAreasGanglionares"/> <label for="lrpalAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
-                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTCLocalizacion" style="display: none;">
-                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalPulmon" class="rtnaDropdown"/> <label for="lrpalPulmon">Pulmón</label><br>
-                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMediastino"/> <label for="lrpalMediastino">Mediastino</label><br>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalPulmon" class="rtpalDropdown"/> <label for="lrpalPulmon">Pulmón</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalAreasGanglionares"/> <label for="lrpalAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalRecto" class="rtpalDropdown"/> <label for="lrpalRecto">Recto</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalAreasGanglionares"/> <label for="lrpalAreasGanglionares">Áreas ganglionares</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalProstata" class="rtpalDropdown"/> <label for="lrpalProstata">Próstata</label><br>
+                                                <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalAreasGanglionares"/> <label for="lrpalAreasGanglionares">Áreas ganglionares</label><br>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaIniciortpal" >Fecha de inicio</label>
-                                            <input type="date" id="fechaIniciortpal" class="form-control rtpalDropdown"/>
+                                            <label class="form-label required" for="fechaIniciortpal" >Fecha de inicio</label><br>
+                                            <input type="checkbox" id="sinfechaIniciortpal" onclick="deshabilita('sinfechaIniciortpal', 'fechaIniciortpal_P')"> <label for="sinfechaIniciortpal">No consta</label><br>
+                                            <div id="fechaIniciortpal_P">
+                                                <input type="date" id="fechaIniciortpal" class="form-control rtpalDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaFinrtpal" >Fecha de finalización</label>
-                                            <input type="date" id="fechaFinrtpal" class="form-control rtpalDropdown"/>
+                                            <label class="form-label required" for="fechaFinrtpal" >Fecha de finalización</label><br>
+                                            <input type="checkbox" id="sinfechaFinrtpal" onclick="deshabilita('sinfechaFinrtpal', 'fechaFinrtpal_P')"> <label for="sinfechaFinrtpal">No consta</label><br>
+                                            <div id="fechaFinrtpal_P">
+                                                <input type="date" id="fechaFinrtpal" class="form-control rtpalDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="dosisTotal_rtpal">Dosis total</label>
-                                            <p>En caso de tener más de PTV indicar la dosis más alta</p>
+                                            <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="number" id="dosisTotal_rtpal" class="form-control rtpalDropdown" placeholder="0.0" min="0" max="80" step="any"/>
                                         </div>
                                         <div class="form-outline mb-4 ">
                                             <label class="form-label required" for="numSesionesRTC">Número de sesiones</label>
-                                            <input type="number" id="numSesionesRTC" class="form-control rtnaDropdown" min="0" max="30"/>
+                                            <input type="number" id="numSesionesRTC" class="form-control rtpalDropdown" min="0" max="30"/>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="sesionesSemana_rtpal" >Sesiones / semana</label><br>
@@ -966,8 +1069,18 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioHormo" >Fecha de inicio de la HTNA</label>
-                                            <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown"/>
+                                            <label class="form-label required" for="fechaInicioHormo" >Fecha de inicio de la HTNA</label><br>
+                                            <input type="checkbox" id="sinfechaInicioHtNa" onclick="deshabilita('sinfechaInicioHtNa', 'fechaInicioHtNa_P')"> <label for="sinfechaInicioHtNa">No consta</label><br>
+                                            <div id="fechaInicioHtNa_P">
+                                                <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaFinHormo" >Fecha de finalización de la HTNA</label><br>
+                                            <input type="checkbox" id="sinfechaFinoHtNa" onclick="deshabilita('sinfechaFinoHtNa', 'fechaFinHtNa_P')"> <label for="sinfechaFinoHtNa">No consta</label><br>
+                                            <div id="fechaFinHtNa_P">
+                                                <input type="date" id="fechaFinHormo" class="form-control hormonoterapiaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante" style="display: none;">
                                             <label class="form-label required" for="tipoHormonoterapia_neo" >Tipo de HTNA</label><br>
@@ -987,7 +1100,17 @@
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioHormoAdyu" >Fecha de inicio de la HTA</label>
-                                            <input type="date" id="fechaInicioHormoAdyu" class="form-control hormonoterapiaAdyuvanteDropdown"/>
+                                            <input type="checkbox" id="sinfechaInicioHtA" onclick="deshabilita('sinfechaInicioHtA', 'fechaInicioHtA_P')"> <label for="sinfechaInicioHtA">No consta</label><br>
+                                            <div id="fechaInicioHtA_P">
+                                                <input type="date" id="fechaInicioHormoAdyu" class="form-control hormonoterapiaAdyuvanteDropdown"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaFinHormoAdyu" >Fecha de finalización de la HTA</label>
+                                            <input type="checkbox" id="sinfechaFinHtA" onclick="deshabilita('sinfechaFinHtA', 'fechaFinHtA_P')"> <label for="sinfechaFinHtA">No consta</label><br>
+                                            <div id="fechaFinHtA_P">
+                                                <input type="date" id="fechaFinHormoAdyu" class="form-control hormonoterapiaAdyuvanteDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4" id="tipoHormonoterapiaAdyuvante" style="display: none;">
                                             <label class="form-label required" for="tipoHormonoterapia_ady" >Tipo de HTA</label><br>
@@ -1007,7 +1130,17 @@
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioHormoexcu" >Fecha de inicio de la Hormonoterapia Exclusiva</label>
-                                            <input type="date" id="fechaInicioHormoexcu" class="form-control hormonoterapiaExclusivaDropdown"/>
+                                            <input type="checkbox" id="sinfechaInicioHtEx" onclick="deshabilita('sinfechaInicioHtEx', 'fechaInicioHtEx_P')"> <label for="sinfechaInicioHtEx">No consta</label><br>
+                                            <div id="fechaInicioHtEx_P">
+                                                <input type="date" id="fechaInicioHormoexcu" class="form-control hormonoterapiaExclusivaDropdown"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required" for="fechaFinHormoexcu" >Fecha de finalización de la Hormonoterapia Exclusiva</label>
+                                            <input type="checkbox" id="sinfechaFinHtEx" onclick="deshabilita('sinfechaFinHtEx', 'fechaFinHtEx_P')"> <label for="sinfechaFinHtEx">No consta</label><br>
+                                            <div id="fechaFinHtEx_P">
+                                                <input type="date" id="fechaFinHormoexcu" class="form-control hormonoterapiaExclusivaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="tipoHormonoterapia_exc" >Tipo de Hormonoterapia Exclusiva</label><br>
@@ -1036,11 +1169,17 @@
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioInmuno" >Fecha de inicio de la inmunoterapia</label>
-                                            <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown"/>
+                                            <input type="checkbox" id="sinfechaInicioInmuno" onclick="deshabilita('sinfechaInicioInmuno', 'fechaInicioInmuno_P')"> <label for="sinfechaInicioInmuno">No consta</label><br>
+                                            <div id="fechaInicioInmuno_P">
+                                                <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaFinInmuno" >Fecha de finalización de la inmunoterapia</label>
-                                            <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
+                                            <input type="checkbox" id="sinfechaFinInmuno" onclick="deshabilita('sinfechaFinInmuno', 'fechaFinInmuno_P')"> <label for="sinfechaFinInmuno">No consta</label><br>
+                                            <div id="fechaFinInmuno_P">
+                                                <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1053,11 +1192,17 @@
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioInmunoAdyu" >Fecha de inicio de la inmunoterapia</label>
-                                            <input type="date" id="fechaInicioInmunoAdyu" class="form-control inmunoterapiaAdyuvanteDropdown"/>
+                                            <input type="checkbox" id="sinfechaInicioInmunoAdyu" onclick="deshabilita('sinfechaInicioInmunoAdyu', 'fechaInicioInmunoAdyu_P')"> <label for="sinfechaInicioInmunoAdyu">No consta</label><br>
+                                            <div id="fechaInicioInmunoAdyu_P">
+                                                <input type="date" id="fechaInicioInmunoAdyu" class="form-control inmunoterapiaAdyuDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaFinInmunoAdyu" >Fecha de finalización de la inmunoterapia</label>
-                                            <input type="date" id="fechaFinInmunoAdyu" class="form-control inmunoterapiaAdyuvanteDropdown"/>
+                                            <input type="checkbox" id="sinfechaFinInmunoAdyu" onclick="deshabilita('sinfechaFinInmunoAdyu', 'fechaFinInmunoAdyu_P')"> <label for="sinfechaFinInmunoAdyu">No consta</label><br>
+                                            <div id="fechaFinInmunoAdyu_P">
+                                                <input type="date" id="fechaFinInmunoAdyu" class="form-control inmunoterapiaAdyuDropdown"/>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1070,11 +1215,17 @@
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaInicioInmunoExc" >Fecha de inicio de la inmunoterapia</label>
-                                            <input type="date" id="fechaInicioInmunoExc" class="form-control inmunoterapiaExclusivaDropdown"/>
+                                            <input type="checkbox" id="sinfechaInicioInmunoExc" onclick="deshabilita('sinfechaInicioInmunoExc', 'fechaInicioInmunoExc_P')"> <label for="sinfechaInicioInmunoExc">No consta</label><br>
+                                            <div id="fechaInicioInmunoExc_P">
+                                                <input type="date" id="fechaInicioInmunoExc" class="form-control inmunoterapiaExcDropdown"/>
+                                            </div>
                                         </div>
                                         <div class="form-outline mb-4">
                                             <label class="form-label required" for="fechaFinInmunoExc" >Fecha de finalización de la inmunoterapia</label>
-                                            <input type="date" id="fechaFinInmunoExc" class="form-control inmunoterapiaExclusivaDropdown"/>
+                                            <input type="checkbox" id="sinfechaFinInmunoExc" onclick="deshabilita('sinfechaFinInmunoExc', 'fechaFinInmunoExc_P')"> <label for="sinfechaFinInmunoExc">No consta</label><br>
+                                            <div id="fechaFinInmunoExc_P">
+                                                <input type="date" id="fechaFinInmunoExc" class="form-control inmunoterapiaExcDropdown"/>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1088,7 +1239,10 @@
                                 <div class="form-outline mb-4 template">
                                     <div class="form-outline mb-4">
                                         <label class="form-label required" for="fechaCirugiaM1" >Fecha de cirugía</label>
-                                        <input type="date" id="fechaCirugiaM1" class="form-control m1CirugiaDropdown"/>
+                                        <input type="checkbox" id="sinfechaCirugia" onclick="deshabilita('sinfechaCirugia', 'fechaCirugia_P')"> <label for="sinfechaCirugia">No consta</label><br>
+                                            <div id="fechaCirugia_P">
+                                                <input type="date" id="fechaCirugiaM1" class="form-control m1CirugiaDropdown"/>
+                                            </div>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label required" for="localizacionCirugiaM1" >Tipo cirugía</label><br>
