@@ -21,7 +21,6 @@
                 <div class="card-body p-md-5 mx-md-4">
                   <form id="regForm">
                     <h1>SABR</h1>
-                    <h5>(necesario?)Por cada ubicación en la que se hace SABR hay que rellenar un formulario.</h5>
                     <br>
                     <div class="tab" id="caracteristicasTab">
                         <div class="form-outline mb-4">
@@ -29,7 +28,7 @@
                             <input type="number" id="identificador" class="form-control" placeholder="El número debe estar comprendido entre 1 y 9999" min="1" max="9999" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="ubicacion">2. Ubicación</label><br>
+                            <label class="form-label required" for="ubicacion">2. Localización SABR</label><br>
                             <input class="dropdownGroup" type="radio" name="ubicacion" id="ubicacionOsea"  onclick="otrosAparece('ubicacionOtros__L', 'ubicacionOtros__T')" required> <label for="ubicacionOsea">Ósea</label><br>
                             <input class="dropdownGroup" type="radio" name="ubicacion" id="ubicacionPulmon"  onclick="otrosAparece('ubicacionOtros__L', 'ubicacionOtros__T')" > <label for="ubicacionPulmon">Pulmonar</label><br>
                             <input class="dropdownGroup" type="radio" name="ubicacion" id="ubicacionGanglionar"  onclick="otrosAparece('ubicacionOtros__L', 'ubicacionOtros__T')" > <label for="ubicacionGanglionar">Ganglionar</label><br>

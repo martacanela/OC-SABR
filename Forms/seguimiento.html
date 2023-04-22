@@ -24,7 +24,6 @@
                     <h1>Respuesta y Seguimiento</h1>
                     <br>
                     <div class="tab">
-                        <h3>Antropometría, enfermedades concomitantes y cáncer</h3>
                         <br>
                         <div class="form-outline mb-4">
                             <label class="form-label required" for="identificador" >1. Identificador</label>
@@ -48,7 +47,7 @@
                         <div class="form-outline mb-4 ">
                             <label class="form-label required" for="peso">4. Peso</label>
                             <p>Unidades: <b>kg</b></p>
-                            <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" required/>
+                            <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" step="any" required/>
                         </div>                        
                     </div>
                     <div class="tab">
@@ -132,6 +131,10 @@
                                 </div>
                                 <div id="hemograma_Preg" style="display: none;">
                                     <div class="form-outline mb-4">
+                                        <label class="form-label required" for="fechaHemograma" >Fecha Hemograma</label>
+                                        <input type="date" id="fechaHemograma" class="form-control tacDropdown"/>
+                                      </div>
+                                    <div class="form-outline mb-4">
                                         <label class="form-label required" for="leucocitos" >Leucocitos</label><br>
                                         <p>Unidades: <b>µL</b></p>
                                         <input type="number" id="leucocitos" class="form-control" placeholder="0.0" required step="any"/>
@@ -192,8 +195,8 @@
                             <label class="form-label required" for="recaidaPersistenca">7. Recaída o persistencia</label><br>
                             <input type="checkbox" name="recaidaPersistenca" id="recaidaNinguna" onclick="deshabilita('recaidaNinguna', 'sinRecaida'); otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaM1', 'preguntasRecaidaM1')" required> <label for="recaidaNinguna">Ninguna</label><br>
                             <div id="sinRecaida">
-                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup cancerPrimarioGroup" id="recaidaCancerPrimario" onclick="otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario')"> <label for="recaidaCancerPrimario">Cáncer primario</label><br>
-                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup ganglionarGroup" id="recaidaGanglionar" onclick="otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar')"> <label for="recaidaGanglionar">Ganglionar</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup cancerPrimarioGroup" id="recaidaCancerPrimario" onclick="otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario')"> <label for="recaidaCancerPrimario">Recidiva cáncer primario</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup ganglionarGroup" id="recaidaGanglionar" onclick="otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar')"> <label for="recaidaGanglionar">Recidiva Ganglionar</label><br>
                                 <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup m1Group" id="recaidaM1" onclick="otrosAparece('recaidaM1', 'preguntasRecaidaM1')"> <label for="recaidaM1">M1</label><br>
                             </div>
                         </div>
@@ -405,9 +408,9 @@
                             <select class="form-control" name = "estatus" id="estatus" required>
                                 <option value = "vivaSinEnfermedad" selected>Vivo/a sin enfermedad</option>
                                 <option value = "vivaConEnfermedad">Vivo/a con enfermedad</option>
-                                <option value = "exitusPorM1">Exitus debido a M1</option>
+                                <option value = "exitusPorM1">Exitus debido al tutor o M1</option>
                                 <option value = "exitusOtra">Exitus debido a otras causas</option>
-                                <option value = "salidaEstudio">Ha salido del estudio</option>
+                                <option value = "salidaEstudio">Perdido</option>
                              </select>
                         </div>
                         <div class="form-outline mb-4">

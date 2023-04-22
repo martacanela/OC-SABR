@@ -65,7 +65,7 @@
                                             <p>Unidades: <b>m</b></p>
                                             <input type="checkbox" name="altura" id="sinaltura" onclick="deshabilita('sinaltura', 'alturaP')" required> <label for="sinaltura">No consta</label><br>
                                             <div id="alturaP">
-                                                <input type="number" id="altura" class="form-control" placeholder="0.0" min="1.0" max="3.0" required step="any"/> 
+                                                <input type="number" id="altura" class="form-control" placeholder="0.0" min="1.0" max="3.0" step="any"/> 
                                             </div>
                                         </div>
 
@@ -74,12 +74,12 @@
                                             <p>Unidades: <b>kg</b></p>
                                             <input type="checkbox" name="peso" id="sinPeso" onclick="deshabilita('sinPeso', 'pesoP')" required> <label for="sinPeso">No consta</label><br>
                                             <div id="pesoP">
-                                                <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" required step="any"/>
+                                                <input type="number" id="peso" class="form-control" placeholder="0.0" min="20" max="300" step="any"/>
                                             </div>
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required " for="antecedentesOncologicos">9. Antecedentes oncológicos</label><br>
+                                            <label class="form-label required " for="antecedentesOncologicos">9. Antecedentes oncológicos previos al cáncer primario</label><br>
                                             <input type="checkbox" name="antecedentesOncologicos" id="sinAntecedentes" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" required> <label for="sinAntecedentes">Sin antecedentes</label><br>
                                             <div id="sinAnt">
                                                 <input value="mama" type="checkbox" name="antecedentesOncologicos" id="antecMama" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecMama">Mama</label><br>
