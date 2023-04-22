@@ -99,9 +99,9 @@
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required" for="tils">11. TiLs</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="checkbox" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')" required> <label for="sintils">No consta</label><br>
+                                <input type="checkbox" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')"> <label for="sintils">No consta</label><br>
                                 <div id="tilsP">
-                                    <input type="number" id="tils" name="tils" class="form-control no-required" min="0.0" max="100.0" step="any"/>
+                                    <input type="number" id="tils" name="tils" class="form-control" min="0.0" max="100.0" step="any" required/>
                                 </div>
                                 
                             </div>
@@ -615,7 +615,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaNeoadyuvante" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaNeoadyuvante" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnMama" class="rtnaDropdown"/> <label for="lrnMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaNeoadyuvante" id="lrnMasectomia"/> <label for="lrnMasectomia">Mastectomía</label><br>
@@ -672,7 +672,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaAdyuvante" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaAdyuvante" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTALocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMama" class="rtnaDropdown"/> <label for="lraMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaAdyuvante" id="lraMasectomia"/> <label for="lraMasectomia">Mastectomía</label><br>
@@ -729,7 +729,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaExclusiva" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaExclusiva" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTELocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMama" class="rtnaDropdown"/> <label for="lreMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaExclusiva" id="lreMasectomia"/> <label for="lreMasectomia">Mastectomía</label><br>
@@ -786,7 +786,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaConcomitante" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaConcomitante" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMama" class="rtnaDropdown"/> <label for="lrcMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaConcomitante" id="lrcMasectomia"/> <label for="lrcMasectomia">Mastectomía</label><br>
@@ -843,7 +843,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaSecuencial" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaSecuencial" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMama" class="rtnaDropdown"/> <label for="lrsecMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaSecuencial" id="lrsecMasectomia"/> <label for="lrsecMasectomia">Mastectomía</label><br>
@@ -900,7 +900,7 @@
                                 <div class="form-outline mb-4  ">
                                     <div class="form-outline mb-4 template">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaPaliativa" >Ubicación</label><br>
+                                            <label class="form-label required" for="localizacionRadioterapiaPaliativa" >Localización</label><br>
                                             <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTCLocalizacion" style="display: none;">
                                                 <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMama" class="rtnaDropdown"/> <label for="lrpalMama">Mama</label><br>
                                                 <input type="checkbox" name="localizacionRadioterapiaPaliativa" id="lrpalMapaltomia"/> <label for="lrpalMapaltomia">Mastectomía</label><br>
