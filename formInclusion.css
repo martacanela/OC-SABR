@@ -23,6 +23,18 @@ body{
     display: inline-block;
     margin-left: 4em;
 }
+.colorMama{
+    color: #FF00FF;
+}
+.colorPulmon{
+    color: #FF0000;
+}
+.colorColon{
+    color: #B45F04;
+}
+.colorProstata{
+    color: #04b404;
+}
 
 /* Mark input boxes that gets an error on validation: */
 input.invalid {

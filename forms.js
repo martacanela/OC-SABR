@@ -105,9 +105,20 @@ if(document.getElementById(elementoMarcado).checked){
       document.getElementById(elements[i].id).checked = false;
     }
   }
+  elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
+  for (var i = 0; i < elements.length; i++){
+    document.getElementById(elements[i].id).disabled = true;
+    if (document.getElementById(elements[i].id).checked){
+      document.getElementById(elements[i].id).checked = false;
+    }
+  }
 }
 else{
   var elements = document.getElementById(divADeshabilitar).getElementsByTagName('input');
+  for (var i = 0; i < elements.length; i++){
+    document.getElementById(elements[i].id).disabled = false;
+  }
+  elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
   for (var i = 0; i < elements.length; i++){
     document.getElementById(elements[i].id).disabled = false;
   }
@@ -272,7 +283,7 @@ let divsSeleccionados = document.querySelectorAll('.selected.divsCirugias');
 let selectCirugia = document.getElementById('numeroCirugia');
 let numero = selectCirugia ? parseInt(selectCirugia.value) : 1;
 
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T' || changedInput.id === 'cancerPrimarioColorectal') {
+if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
   if (divsSeleccionados.length === 0) return;
   divsSeleccionados.forEach(divSeleccionado => {
     ocultarCirugia(divSeleccionado);
@@ -313,17 +324,17 @@ divCirugia.querySelector('input').removeAttribute('required');
 
 
 function mostrarQtaCorrecto(changedInput) {
-let divSelectQta = document.getElementById('qtaTipoDivSelect');
-let divCheckboxsQta = document.getElementById('qtaTipoDivCheckboxs');
-let divSelectQtna = document.getElementById('qtnaTipoDivSelect');
-let divCheckboxsQtna = document.getElementById('qtnaTipoDivCheckboxs');
-if (changedInput.id === 'cancerPrimarioMama') {
-  divSelectQta.style.display = divSelectQtna.style.display = 'none';
-  divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'block';
-} else {
-  divSelectQta.style.display = divSelectQtna.style.display = 'block';
-  divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'none';
-}
+  let divSelectQta = document.getElementById('qtaTipoDivSelect');
+  let divCheckboxsQta = document.getElementById('qtaTipoDivCheckboxs');
+  let divSelectQtna = document.getElementById('qtnaTipoDivSelect');
+  let divCheckboxsQtna = document.getElementById('qtnaTipoDivCheckboxs');
+  if (changedInput.id === 'cancerPrimarioMama') {
+    divSelectQta.style.display = divSelectQtna.style.display = 'none';
+    divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'block';
+  } else {
+    divSelectQta.style.display = divSelectQtna.style.display = 'block';
+    divCheckboxsQta.style.display = divCheckboxsQtna.style.display = 'none';
+  }
 }
 
 
