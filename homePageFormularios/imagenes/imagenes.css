@@ -1,0 +1,97 @@
+/*I assign to some variables the colors that I will use in this page*/
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+}
+
+body {
+    background-color: #f8f8f8;
+    font-size: 16px;
+    font-weight: 400;
+    text-rendering: optimizeLegibility;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 0 10% 0 10%;
+}
+
+.table-title {
+    text-align: center; /* Centra el texto */
+    overflow: hidden; /* Para limpiar el float */
+    margin-top: 30px;
+}
+.table-title h3 {
+    display: inline-block;
+    vertical-align: middle;
+}
+.table-title ion-icon {
+    float: left; /* Hace que el icono flote a la izquierda */
+    margin-right: 10px; /* Agrega un margen entre el icono y el título */
+    font-size: 30px;
+}
+
+.table-title ion-icon:hover{
+    background-color: var(--bg-dark-blue-color);
+    border-radius: 33px;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+h3{
+    font-size: 40px;
+}
+
+.hidden{
+    display: none;
+}
+    
+.grid-container {
+    overflow-y: auto;
+    height: 400px;
+    border-radius: 10px 0 0 10px;
+    /*border: 1px solid black;*/
+    
+}
+table {
+    border-spacing: 0;
+    width:100%;
+}
+.header{
+    background-color: var(--bg-dark-blue-color);
+    color: var(--bg-color);
+}
+
+tr{
+    height: 50px;
+}
+
+.white{
+    background-color: white;
+}
+
+.blue{
+    background-color: var(--light-transparent-15-color);
+}
+.downloadBtn{
+    margin-top: 30px;
+    color: var(--bg-color);
+    background: var(--light-blue-color);
+    padding: 10px;
+    border: 0;
+    border-radius: 33px;
+}
+
+.downloadBtn:hover{
+    margin-top: 30px;
+    color: var(--bg-color);
+    background: var(--bg-dark-blue-color);
+    padding: 10px;
+    border: 0;
+    border-radius: 33px;
+    cursor: pointer;
+}
+
+

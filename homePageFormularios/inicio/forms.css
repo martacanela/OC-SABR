@@ -1,0 +1,122 @@
+/*I assign to some variables the colors that will be used in the page*/
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;}
+    
+/*Button size*/   
+.style-1 {
+    height: 170px;
+    width: 170px;
+}
+      
+/*Bacground color, font-family and organization for all the document*/
+body{
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+
+    height: 95vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+/*Color of the central section and positions of the elements*/
+.general {
+    text-align: center;
+    justify-content: center; 
+    align-items: center;
+    border-radius: 33px;
+    padding: 0 10% 0 10%;
+
+}
+
+/*Title color and spacing*/
+.titulo{
+    padding: 30px;
+    color: var(--text-color);
+    font-size: 30px;
+}
+
+/*Button margin*/
+.buttons button {
+    margin: 2%; 
+    
+}
+
+/*Button style and position*/
+.style-1 {
+    border: var(--bg-color);
+    color: var(--text-color);
+    background-color: var(--light-blue-color);
+    text-transform:uppercase;  
+    padding:10px;
+    font-weight:600;
+    max-width:250px;
+    font-size: 15px;
+
+    text-align:center;  
+    margin:10px auto;
+    position:relative;
+    border-radius: 10px;
+}
+/*Button styling when hovered over*/
+.style-1:hover {
+    background: var(--bg-dark-blue-color);
+    border-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+/*Responsive*/
+@media screen and (max-width: 1232px) {
+    .style-1 {
+      width: 140px;
+      height: 140px;
+    }
+}
+@media screen and (max-width: 1153px) {
+    .style-1 {
+      width: 130px;
+      height: 130px;
+    }
+}
+@media screen and (max-width: 1073px) {
+    .style-1 {
+      width: 120px;
+      height: 120px;
+    }
+}
+@media screen and (max-width: 714px) {
+    .style-1 {
+      width: 110px;
+      height: 110px;
+    }
+}
+@media screen and (max-width: 658px) {
+    .style-1 {
+      width: 100px;
+      height: 100px;
+    }
+}
+@media screen and (max-width: 601px) {
+    .general {
+        background-color: var(--bg-color);
+        width: 100%;
+    }
+    .style-1 {
+        width: 110px;
+        height: 110px;
+    }
+}
+@media screen and (max-width: 401px) {
+    .style-1 {
+      width: 90px;
+      height: 90px;
+    }
+}
+
+
+  

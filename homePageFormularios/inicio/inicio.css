@@ -1,0 +1,157 @@
+/*I assign to some variables the colors that I will use in this page*/
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;}
+
+/*Background color and font-family for all the document*/
+body{
+    background-color: var(--light-transparent-15-color);
+    font-family: 'Poppins', sans-serif;
+
+    height: 95vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+/*Color of the central section and positions of the elements*/
+.general {
+    background-color: var(--bg-color);
+    width: 60%;
+    max-width: 1200px;
+    height: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 33px;
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/*Size of sections within the general class*/
+.insert, .imgLogo {
+    flex-basis: 50%;
+    height: 100%; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+  
+/*Background color of the form section and rounded edges*/
+.insert {
+    background-color: var(--light-transparent-60-color);
+    border-top-left-radius: 33px;
+    border-bottom-left-radius: 33px;
+}
+
+/*Form size within section*/
+form{
+    width: 60%;
+}
+
+/*Input size and border style*/
+input{
+    width: 100%;
+    height: 25px;
+    border:#F8F8F8;
+    border-radius: 10px;
+}
+  
+/*Title size position*/
+.insert h1, .imgLogo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
+
+/*Form Image Size*/
+.insert img {
+    max-width: 50%;
+    height: auto;
+    margin-left: 30%;
+}
+
+form button[type="submit"] {
+    margin: 0 auto;
+    display: block;
+    
+    margin-top: 10px;
+}
+
+/*Link size if you have forgotten the password*/
+a{
+    font-size: 12px;
+}
+
+/*Link color when clicked*/
+a:active {
+    color: var(--text-color);
+}
+
+/*Position of the elements of the section on the right and style of this section*/
+section.imgLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--bg-color);
+    border-radius: 33px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Position of the elements of the section on the right*/
+section h1, section p {
+    display: block;
+}
+
+/*Spacing the text paragraph with the borders*/
+.imgLogo p {
+    padding: 10%;
+}
+  
+  
+
+/*Enter button style and animation*/
+button {
+    text-decoration:none;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+button:hover {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.style-1 {
+    border: var(--bg-color);
+    color: var(--text-color);
+    text-transform:uppercase;  
+    padding:10px;
+    font-weight:600;
+    max-width:250px;
+    display:block;
+    text-align:center;  
+    margin:10px auto;
+    position:relative;
+    border-radius: 10px;
+}
+.style-1:hover {
+    background: var(--text-color);
+    border-color: var(--text-color);
+    color: var(--bg-color);
+}
+  
