@@ -97,32 +97,32 @@ else{
 }
 
 function deshabilita(elementoMarcado, divADeshabilitar){
-if(document.getElementById(elementoMarcado).checked){
-  var elements = document.getElementById(divADeshabilitar).getElementsByTagName('input');
-  for (var i = 0; i < elements.length; i++){
-    document.getElementById(elements[i].id).disabled = true;
-    if (document.getElementById(elements[i].id).checked){
-      document.getElementById(elements[i].id).checked = false;
+  if(document.getElementById(elementoMarcado).checked){
+    var elements = document.getElementById(divADeshabilitar).getElementsByTagName('input');
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).disabled = true;
+      if (document.getElementById(elements[i].id).checked){
+        document.getElementById(elements[i].id).checked = false;
+      }
+    }
+    elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).disabled = true;
+      if (document.getElementById(elements[i].id).checked){
+        document.getElementById(elements[i].id).checked = false;
+      }
     }
   }
-  elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
-  for (var i = 0; i < elements.length; i++){
-    document.getElementById(elements[i].id).disabled = true;
-    if (document.getElementById(elements[i].id).checked){
-      document.getElementById(elements[i].id).checked = false;
+  else{
+    var elements = document.getElementById(divADeshabilitar).getElementsByTagName('input');
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).disabled = false;
+    }
+    elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).disabled = false;
     }
   }
-}
-else{
-  var elements = document.getElementById(divADeshabilitar).getElementsByTagName('input');
-  for (var i = 0; i < elements.length; i++){
-    document.getElementById(elements[i].id).disabled = false;
-  }
-  elements = document.getElementById(divADeshabilitar).getElementsByTagName('select');
-  for (var i = 0; i < elements.length; i++){
-    document.getElementById(elements[i].id).disabled = false;
-  }
-}
 }
 
 
