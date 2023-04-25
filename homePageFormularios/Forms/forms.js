@@ -126,7 +126,27 @@ function deshabilita(elementoMarcado, divADeshabilitar){
 }
 
 
-
+$('#QtA_completa').on('change', function () {
+  if(this.value == "completada"){
+      $("#fechaFinalizacionQT").show();
+  } else {
+      $("#fechaFinalizacionQT").hide();
+  }
+});
+$('#ht_completa').on('change', function () {
+  if(this.value == "completada_ht"){
+      $("#fechaFinalizacionHT").show();
+  } else {
+      $("#fechaFinalizacionHT").hide();
+  }
+});
+$('#rtna_completa').on('change', function () {
+  if(this.value == "completada_rtna"){
+      $("#fechaFinalizacionRT").show();
+  } else {
+      $("#fechaFinalizacionRT").hide();
+  }
+});
 
 // Array de inputs invalidos
 const invalidInputs = [];
@@ -480,7 +500,7 @@ let divsCirugiaTipo = Array.from(document.getElementsByClassName('divsCirugiasTi
 let divAMostrar = divsCirugiaTipo.find(div => div.id === `${changedInput.id}DivCirugia`);
 let divTipoCirugia = document.getElementById('divTipoCirugia');
 
-if (changedInput.id === 'ubicacionCirugiaOtras__L' || changedInput.id === 'ubicacionCirugiaOtras__T' || changedInput.id === 'cirugiaColorectal') {
+if (changedInput.id === 'ubicacionCirugiaOtras__L' || changedInput.id === 'ubicacionCirugiaOtras__T') {
   divTipoCirugia.style.display = 'none';
   return;
 }
