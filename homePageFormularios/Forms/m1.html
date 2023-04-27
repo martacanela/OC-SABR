@@ -26,31 +26,31 @@
                         <h3>Datos M1</h3>
                         <br>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="identificador" >1. Identificador</label>
+                            <label class="form-label required formatoPreguntas" for="identificador" >1. Identificador</label>
                             <input type="number" id="identificador" class="form-control" placeholder="El número debe estar comprendido entre 1 y 9999" min="1" max="9999" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="diagnosticoM1" >2. Diagnóstico M1</label><br>
+                            <label class="form-label required formatoPreguntas" for="diagnosticoM1" >2. Diagnóstico M1</label><br>
                             <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" onclick="otrosAparece('metacronico', 'm1Metacronico')" required> <label for="sincronico">Sincrónico</label><br>
                             <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico" onclick="otrosAparece('metacronico', 'm1Metacronico')"> <label for="metacronico">Metacrónico</label><br>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required" for="fechaM1">3. Fecha M1</label>
+                            <label class="form-label required formatoPreguntas" for="fechaM1">3. Fecha M1</label>
                             <input type="date" id="fechaM1" class="form-control" required/>
                         </div>
                         <div id="m1Metacronico" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required" for="statusM1" >4. Estado actual M1</label><br>
+                                <label class="form-label required formatoPreguntas" for="statusM1" >4. Estado actual M1</label><br>
                                 <input type="radio" name="statusM1" id="m1Controlado" class="diagnosticoM1Dropdown"> <label for="m1Controlado">Controlado</label><br>
                                 <input type="radio" name="statusM1" id="m1NoControlado" > <label for="m1NoControlado">No controlado</label><br>
                             </div>
                         </div>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="numeroM1">5. Número de M1</label>
+                            <label class="form-label required formatoPreguntas" for="numeroM1">5. Número de M1</label>
                             <input type="number" id="numeroM1" class="form-control" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required " for="organosAfectados">6. Órganos afectados</label><br>
+                            <label class="form-label required formatoPreguntas" for="organosAfectados">6. Órganos afectados</label><br>
                             <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
                             <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
                             <input type="checkbox" name="organosAfectados" id="organoAfectadoGanglionar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoGanglionar">Ganglionar</label><br>
@@ -64,7 +64,7 @@
                         <h3>Tratamientos</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required" for="tratamientosCancerPrimario">7. Tratamientos previos a la SABR</label><br>
+                            <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">7. Tratamientos previos a la SABR</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias();"> <label for="m1Cirugia">Cirugía</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="tratamientosCancerPrimario" id="rta" onclick="otrosAparece('rta', 'rta_preguntas')"> <label for="rta">Radioterapia <b>(RT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="tratamientosCancerPrimario" id="qta" onclick="otrosAparece('qta', 'qta_preguntas')"> <label for="qta">Quimioterapia <b>(QT)</b> y/o anticuerpos monoclonales</label><br>
@@ -78,7 +78,7 @@
                             <h5>Cirugía</h5>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroCirugia" >Número de cirugías</label>
+                                <label class="form-label required formatoPreguntas" for="numeroCirugia" >Número de cirugías</label>
                                 <select class="form-control selectNumero" name = "numeroCirugia" id="numeroCirugia">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -90,11 +90,11 @@
                             <div class="form-outline mb-4 numeroContainer">
                                 <div class="form-outline mb-4 template">
                                     <div class="form-outline mb-4">
-                                        <label class="form-label required" for="fechaCirugiaM1" >Fecha de cirugía</label>
+                                        <label class="form-label required formatoPreguntas" for="fechaCirugiaM1" >Fecha de cirugía</label>
                                         <input type="date" id="fechaCirugiaM1" class="form-control m1CirugiaDropdown"/>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <label class="form-label required" for="ubicacionCirugia">Localización</label><br>
+                                        <label class="form-label required formatoPreguntas" for="ubicacionCirugia">Localización</label><br>
                                         <input type="radio" name="ubicacionCirugia" id="cirugiaMama" onclick="otrosAparece('ubicacionCirugiaOtras__L', 'ubicacionCirugiaOtras__T')"> <label for="cirugiaMama">Mama</label><br>
                                         <input type="radio" name="ubicacionCirugia" id="cirugiaPulmonar" onclick="otrosAparece('ubicacionCirugiaOtras__L', 'ubicacionCirugiaOtras__T')"> <label for="cirugiaPulmonar">Pulmón</label><br>
                                         <input type="radio" name="ubicacionCirugia" id="cirugiaColorectal" onclick="otrosAparece('ubicacionCirugiaOtras__L', 'ubicacionCirugiaOtras__T')"> <label for="cirugiaColorectal">Colon-recto</label><br>
@@ -110,7 +110,7 @@
                             <h4>Radioterapia</h4>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroRadioterapiaAdyuvante" >Número de líneas de tratamiento</label>
+                                <label class="form-label required formatoPreguntas" for="numeroRadioterapiaAdyuvante" >Número de líneas de tratamiento</label>
                                 <select class="form-control selectNumero" name = "numeroRadioterapiaAdyuvante" id="numeroRadioterapiaAdyuvante">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -124,7 +124,7 @@
                                     <input type="checkbox" id="sinInfoRtNa" onclick="deshabilita('sinInfoRtNa', 'InfoRtNa_P')"> <label for="sinInfoRtNa">No se dispone información</label><br><br>
                                     <div id="InfoRtNa_P">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="localizacionRadioterapiaNeoadyuvante" >Localización</label><br>
+                                            <label class="form-label required formatoPreguntas" for="localizacionRadioterapiaNeoadyuvante" >Localización</label><br>
                                             <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraOsea" class="rtaDropdown" onclick="otrosAparece('rtaLocOtros__L', 'rtaLocOtros__T')"/> <label for="lraOsea">Ósea</label><br>
                                             <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraPulmonar" onclick="otrosAparece('rtaLocOtros__L', 'rtaLocOtros__T')"/> <label for="lraPulmonar">Pulmonar</label><br>
                                             <input type="radio" name="localizacionRadioterapiaAdyuvante" id="lraGanglionar" onclick="otrosAparece('rtaLocOtros__L', 'rtaLocOtros__T')"/> <label for="lraGanglionar">Ganglionar</label><br>
@@ -134,21 +134,21 @@
                                             <input type="text" name="localizacionRadioterapiaAdyuvante" id="rtaLocOtros__T" class="form-control localizacionRadioterapiaAdyuvanteDropdown" placeholder="Separad por ';'" style="display:none" />
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="tecnicaRadioterapiaAdyuvante" >Técnica</label><br>
+                                            <label class="form-label required formatoPreguntas" for="tecnicaRadioterapiaAdyuvante" >Técnica</label><br>
                                             <input type="radio" name="tecnicaRadioterapiaAdyuvante" id="rtaSABR" class="dropdownGroup rtaDropdown" onclick="otrosAparece('rtaOtros__L', 'rtaOtros__T')"/> <label for="rtaSABR">SABR</label><br>
                                             <input type="radio"  name="tecnicaRadioterapiaAdyuvante" id="rtaEsquemas" class="dropdownGroup" onclick="otrosAparece('rtaOtros__L', 'rtaOtros__T')"/> <label for="rtaEsquemas">Esquemas convencionales</label><br>
                                             <input type="radio" class="dropdownGroup hasDropdown" name="tecnicaRadioterapiaAdyuvante" id="rtaOtros__L" onclick="otrosAparece('rtaOtros__L', 'rtaOtros__T')"/> <label for="rtaOtros__L">Otros</label><br>
                                             <input type="text" name="tecnicaRadioterapiaAdyuvante" id="rtaOtros__T" class="form-control tecnicaRadioterapiaAdyuvanteDropdown" placeholder="Separad por ';'" style="display:none" />
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioRtna" >Fecha de inicio</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaInicioRtna" >Fecha de inicio</label><br>
                                             <input type="checkbox" id="sinfechaInicioRtna" onclick="deshabilita('sinfechaInicioRtna', 'fechaInicioRtna_P')"> <label for="sinfechaInicioRtna">No consta</label><br>
                                             <div id="fechaInicioRtna_P">
                                                 <input type="date" id="fechaInicioRtna" class="form-control RtnaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="rtna_completa" >¿Radioterapia completa?</label>
+                                            <label class="form-label required formatoPreguntas" for="rtna_completa" >¿Radioterapia completa?</label>
                                             <select class="form-control rtnaDropdown" name = "rtna_completa" id="rtna_completa">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "noConsta_rtna">No consta</option>
@@ -158,14 +158,14 @@
                                             </select>
                                         </div>
                                         <div class="form-outline mb-4" id="fechaFinalizacionRT" style="display: none;">
-                                            <label class="form-label required" for="fechaFinRtna" >Fecha de finalización</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaFinRtna" >Fecha de finalización</label><br>
                                             <input type="checkbox" id="sinfechaFinRtna" onclick="deshabilita('sinfechaFinRtna', 'fechaFinRtna_P')"> <label for="sinfechaFinRtna">No consta</label><br>
                                             <div id="fechaFinRtna_P">
                                                 <input type="date" id="fechaFinRtna" class="form-control RtnaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="dosisTotal_rtna">Dosis total</label><br>
+                                            <label class="form-label required formatoPreguntas" for="dosisTotal_rtna">Dosis total</label><br>
                                             <p><i>En caso de tener más de PTV indicar la dosis más alta</i></p>
                                             <p>Unidades: <b>Gy</b></p>
                                             <input type="checkbox" id="sinDosisTotalRtNa" onclick="deshabilita('sinDosisTotalRtNa', 'dosisTotalRtna_P')"> <label for="sinDosisTotalRtNa">No consta</label><br>
@@ -174,21 +174,21 @@
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required" for="numSesionesRTNA">Número de sesiones</label><br>
+                                            <label class="form-label required formatoPreguntas" for="numSesionesRTNA">Número de sesiones</label><br>
                                             <input type="checkbox" id="sinNumSesionesRtNa" onclick="deshabilita('sinNumSesionesRtNa', 'numSesionesRtna_P')"> <label for="sinNumSesionesRtNa">No consta</label><br>
                                             <div id="numSesionesRtna_P">
                                                 <input type="number" id="numSesionesRTNA" class="form-control rtnaDropdown" min="0" max="30"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="sesionesSemana_rtna" >Sesiones / semana</label><br>
+                                            <label class="form-label required formatoPreguntas" for="sesionesSemana_rtna" >Sesiones / semana</label><br>
                                             <input type="checkbox" id="sinSesionesSemanaRtNa" onclick="deshabilita('sinSesionesSemanaRtNa', 'sesionesSemanaRtna_P')"> <label for="sinSesionesSemanaRtNa">No consta</label><br>
                                             <div id="sesionesSemanaRtna_P">
                                                 <input type="number" id="sesionesSemana_rtna" class="form-control rtnaDropdown" min="1" max="5"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="toxicidad_rtna" >Toxicidad a la Radioterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="toxicidad_rtna" >Toxicidad a la Radioterapia</label><br>
                                             <input type="radio" class="rtnaDropdown" name="toxicidad_rtna" id="toxicidad_rtnaSi"> <label for="toxicidad_rtaSi">Sí</label><br>
                                             <input type="radio" name="toxicidad_rtna" id="toxicidad_rtnaNo"> <label for="toxicidad_rtaNo">No</label><br>
                                             <input type="radio" name="toxicidad_rtna" id="toxicidad_rtnaNoConsta"> <label for="toxicidad_rtnaNoConsta">No consta</label><br>
@@ -202,7 +202,7 @@
                             <h4>Quimioterapia y/o anticuerpos monoclonales</h4>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroQuimioterapiaAdyuvante" >Número de líneas de tratamiento</label>
+                                <label class="form-label required formatoPreguntas" for="numeroQuimioterapiaAdyuvante" >Número de líneas de tratamiento</label>
                                 <select class="form-control selectNumero" name = "numeroQuimioterapiaAdyuvante" id="numeroQuimioterapiaAdyuvante">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -216,14 +216,14 @@
                                     <input type="checkbox" id="sinInfoQtA" onclick="deshabilita('sinInfoQtA', 'InfoQtA_P')"> <label for="sinInfoQtA">No se dispone información</label><br><br>
                                     <div id="InfoQtA_P">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioQtA" >Fecha de inicio</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaInicioQtA" >Fecha de inicio</label><br>
                                             <input type="checkbox" id="sinfechaInicioQtA" onclick="deshabilita('sinfechaInicioQtA', 'fechaInicioQtA_P')"> <label for="sinfechaInicioQtA">No consta</label><br>
                                             <div id="fechaInicioQtA_P">
                                                 <input type="date" id="fechaInicioQtA" class="form-control QtADropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="QtA_completa" >¿Quimioterapia completa?</label>
+                                            <label class="form-label required formatoPreguntas" for="QtA_completa" >¿Quimioterapia completa?</label>
                                             <select class="form-control QtADropdown" name = "QtA_completa" id="QtA_completa">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "enTratamiento">En tratamiento</option>
@@ -233,14 +233,14 @@
                                             </select>
                                         </div>
                                         <div class="form-outline mb-4" id="fechaFinalizacionQT" style="display: none;">
-                                            <label class="form-label required" for="fechaFinQtA" >Fecha de finalización</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaFinQtA" >Fecha de finalización</label><br>
                                             <input type="checkbox" id="sinfechaFinQtA" onclick="deshabilita('sinfechaFinQtA', 'fechaFinQtA_P')"> <label for="sinfechaFinQtA">No consta</label><br>
                                             <div id="fechaFinQtA_P">
                                                 <input type="date" id="fechaFinQtA" class="form-control QtADropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="tipoQtA" >Tipo de Quimioterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="tipoQtA" >Tipo de Quimioterapia</label><br>
                                                 <input type="checkbox" class="dropdownGroup" name="tipoQtA" id="sinTipoQtA" onclick="deshabilita('sinTipoQtA', 'tipoQtA_P')"> <label for="sinTipoQtA">No consta</label><br>
                                                 <div id="tipoQtA_P">
                                                     <input type="checkbox" class="dropdownGroup" name="tipoQtA" id="QtAAntraciclinas" onclick="otrosAparece('tipoQtAOtros__L', 'tipoQtAOtros__T')"> <label class="colorMama" for="QtAAntraciclinas">Antraciclinas</label><br>
@@ -255,7 +255,7 @@
                                                 </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="respuesta_QtA" >Respuesta a la Quimioterapia</label>
+                                            <label class="form-label required formatoPreguntas" for="respuesta_QtA" >Respuesta a la Quimioterapia</label>
                                             <select class="form-control QtADropdown" name = "respuesta_QtA" id="respuesta_QtA">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "completa">Completa</option>
@@ -266,7 +266,7 @@
                                             </select>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="toxicidad_QtA" >Toxicidad a la Quimioterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="toxicidad_QtA" >Toxicidad a la Quimioterapia</label><br>
                                             <input type="radio" class="QtADropdown" name="toxicidad_QtA" id="toxicidad_QtASi"> <label for="toxicidad_QtASi">Sí</label><br>
                                             <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANo"> <label for="toxicidad_QtANo">No</label><br>
                                             <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANoConsta"> <label for="toxicidad_QtANoConsta">No consta</label><br>
@@ -280,7 +280,7 @@
                             <h4>Hormonoterapia</h4>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroHormonoterapiaAdyuvante" >Número de líneas de tratamiento</label>
+                                <label class="form-label required formatoPreguntas" for="numeroHormonoterapiaAdyuvante" >Número de líneas de tratamiento</label>
                                 <select class="form-control selectNumero" name = "numeroHormonoterapiaAdyuvante" id="numeroHormonoterapiaAdyuvante">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -294,14 +294,14 @@
                                     <input type="checkbox" id="sinInfoHtNa" onclick="deshabilita('sinInfoHtNa', 'InfoHtNa_P')"> <label for="sinInfoHtNa">No se dispone información</label><br><br>
                                     <div id="InfoHtNa_P">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioHormo" >Fecha de inicio de la Hormonoterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaInicioHormo" >Fecha de inicio de la Hormonoterapia</label><br>
                                             <input type="checkbox" id="sinfechaInicioHtNa" onclick="deshabilita('sinfechaInicioHtNa', 'fechaInicioHtNa_P')"> <label for="sinfechaInicioHtNa">No consta</label><br>
                                             <div id="fechaInicioHtNa_P">
                                                 <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="ht_completa" >¿Hormonoterapia completa?</label>
+                                            <label class="form-label required formatoPreguntas" for="ht_completa" >¿Hormonoterapia completa?</label>
                                             <select class="form-control hormonoterapiaDropdown" name = "ht_completa" id="ht_completa">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "noConsta_ht">No consta</option>
@@ -311,14 +311,14 @@
                                             </select>
                                         </div>
                                         <div class="form-outline mb-4" id="fechaFinalizacionHT" style="display: none;">
-                                            <label class="form-label required" for="fechaFinHormo" >Fecha de finalización de la Hormonoterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaFinHormo" >Fecha de finalización de la Hormonoterapia</label><br>
                                             <input type="checkbox" id="sinfechaFinoHtNa" onclick="deshabilita('sinfechaFinoHtNa', 'fechaFinHtNa_P')"> <label for="sinfechaFinoHtNa">No consta</label><br>
                                             <div id="fechaFinHtNa_P">
                                                 <input type="date" id="fechaFinHormo" class="form-control hormonoterapiaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante">
-                                            <label class="form-label required" for="tipoHormonoterapia_neo" >Tipo de Hormonoterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="tipoHormonoterapia_neo" >Tipo de Hormonoterapia</label><br>
                                             <input type="radio" id="sinTipoHtNa" onclick="deshabilita('sinTipoHtNa', 'tipoHtNa_P')"> <label for="sinTipoHtNa">No consta</label><br>
                                             <div id="tipoHtNa_P">
                                                 <input type="radio" id="inhibidoresDeLaCromatasaNeo" name="tipoHormonoterapia_neo" class="dropdownGroup hormonoterapiaDropdown" onclick="otrosAparece('tipoHormonoterapiaNeoOtros__L', 'tipoHormonoterapiaNeoOtros__T')"/> <label class="colorMama" for="inhibidoresDeLaCromatasaNeo" >Inhibidores de la aromatasa</label><br>
@@ -339,7 +339,7 @@
                             <h4>Inmunoterapia</h4>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroInmunoterapiaAdyuvante" >Número de líneas de tratamiento</label>
+                                <label class="form-label required formatoPreguntas"  for="numeroInmunoterapiaAdyuvante" >Número de líneas de tratamiento</label>
                                 <select class="form-control selectNumero" name = "numeroInmunoterapiaAdyuvante" id="numeroInmunoterapiaAdyuvante">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -353,14 +353,14 @@
                                     <input type="checkbox" id="sinInfoItNa" onclick="deshabilita('sinInfoItNa', 'InfoItNa_P')"> <label for="sinInfoItNa">No se dispone información</label><br><br>
                                     <div id="InfoItNa_P">
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="fechaInicioInmuno" >Fecha de inicio de la Inmunoterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaInicioInmuno" >Fecha de inicio de la Inmunoterapia</label><br>
                                             <input type="checkbox" id="sinfechaInicioInmuno" onclick="deshabilita('sinfechaInicioInmuno', 'fechaInicioInmuno_P')"> <label for="sinfechaInicioInmuno">No consta</label><br>
                                             <div id="fechaInicioInmuno_P">
                                                 <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown"/>
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required" for="it_completa" >¿Inmunoterapia completa?</label>
+                                            <label class="form-label required formatoPreguntas" for="it_completa" >¿Inmunoterapia completa?</label>
                                             <select class="form-control hormonoterapiaDropdown" name = "it_completa" id="it_completa">
                                                 <option value = "" selected>--Escoja una opción--</option>
                                                 <option value = "noConsta_it">No consta</option>
@@ -370,7 +370,7 @@
                                             </select>
                                         </div>
                                         <div class="form-outline mb-4" id="fechaFinalizacionIT" style="display: none;">
-                                            <label class="form-label required" for="fechaFinInmuno" >Fecha de finalización de la Inmunoterapia</label><br>
+                                            <label class="form-label required formatoPreguntas" for="fechaFinInmuno" >Fecha de finalización de la Inmunoterapia</label><br>
                                             <input type="checkbox" id="sinfechaFinInmuno" onclick="deshabilita('sinfechaFinInmuno', 'fechaFinInmuno_P')"> <label for="sinfechaFinInmuno">No consta</label><br>
                                             <div id="fechaFinInmuno_P">
                                                 <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
@@ -385,7 +385,7 @@
                             <h5>Radiofrecuencia</h5>
                             <br>
                             <div class="form-outline mb-4 selectContainer">
-                                <label class="form-label required" for="numeroRadiofrecuencia" >Número de líneas de tratamiento</label>
+                                <label class="form-label required formatoPreguntas" for="numeroRadiofrecuencia" >Número de líneas de tratamiento</label>
                                 <select class="form-control selectNumero" name = "numeroRadiofrecuencia" id="numeroRadiofrecuencia">
                                     <option value = "1" selected>1</option>
                                     <option value = "2">2</option>
@@ -397,11 +397,11 @@
                             <div class="form-outline mb-4 numeroContainer">
                                 <div class="form-outline mb-4 template">
                                     <div class="form-outline mb-4">
-                                        <label class="form-label required" for="fechaRadioM1" >Fecha de radiofrecuencia</label>
+                                        <label class="form-label required formatoPreguntas" for="fechaRadioM1" >Fecha de radiofrecuencia</label>
                                         <input type="date" id="fechaRadioM1" class="form-control m1RadiofrecuenciaDropdown"/>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <label class="form-label required" for="localizacionRadioM1" >Localización radiofrecuencia</label><br>
+                                        <label class="form-label required formatoPreguntas" for="localizacionRadioM1" >Localización radiofrecuencia</label><br>
                                         <input type="radio" name="localizacionRadioM1" id="locRadioM1Pulmonar" class="dropdownGroup m1RadiofrecuenciaDropdown" onclick="otrosAparece('locRadioM1Otros__L', 'locRadioM1Otros__T')"> <label for="locRadioM1Pulmonar">Pulmonar</label><br>
                                         <input type="radio" name="localizacionRadioM1" id="locRadioM1Hepatica" class="dropdownGroup " onclick="otrosAparece('locRadioM1Otros__L', 'locRadioM1Otros__T')"> <label for="locRadioM1Hepatica">Hepática</label><br>
                                         <input type="radio" name="localizacionRadioM1" id="locRadioM1Otros__L" class="dropdownGroup hasDropdown" onclick="otrosAparece('locRadioM1Otros__L', 'locRadioM1Otros__T')"> <label for="locRadioM1Otros__L">Otras</label><br>
