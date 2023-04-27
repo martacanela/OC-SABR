@@ -147,7 +147,13 @@ $('#rtna_completa').on('change', function () {
       $("#fechaFinalizacionRT").hide();
   }
 });
-
+$('#it_completa').on('change', function () {
+  if(this.value == "completada_it"){
+      $("#fechaFinalizacionIT").show();
+  } else {
+      $("#fechaFinalizacionIT").hide();
+  }
+});
 // Array de inputs invalidos
 const invalidInputs = [];
 
