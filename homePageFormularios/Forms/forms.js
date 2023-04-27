@@ -9,26 +9,26 @@ var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
-// This function will display the specified tab of the form...
-var x = document.getElementsByClassName("tab");
-if (x.length === 0) return;
-x[n].style.display = "block";
-//... and fix the Previous/Next buttons:
-if (x.length === 1) return;
-if (n == 0) {
-  document.getElementById("prevBtn").style.display = "none";
-} else {
-  document.getElementById("prevBtn").style.display = "inline";
-}
-if (n == (x.length - 1)) {
-  document.getElementById("nextBtn").style.display = "none";
-  document.getElementById("uploadBtn").style.display = "inline";
-} else {
-  document.getElementById("nextBtn").style.display = "inline";
-  document.getElementById("uploadBtn").style.display = "none";
-}
-//... and run a function that will display the correct step indicator:
-fixStepIndicator(n)
+  // This function will display the specified tab of the form...
+  var x = document.getElementsByClassName("tab");
+  if (x.length === 0) return;
+  x[n].style.display = "block";
+  //... and fix the Previous/Next buttons:
+  if (x.length === 1) return;
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").style.display = "none";
+    document.getElementById("uploadBtn").style.display = "inline";
+  } else {
+    document.getElementById("nextBtn").style.display = "inline";
+    document.getElementById("uploadBtn").style.display = "none";
+  }
+  //... and run a function that will display the correct step indicator:
+  fixStepIndicator(n)
 }
 
 function skipForm(elementoMarcado){
@@ -88,12 +88,32 @@ x[n].className += " active";
 }
 
 function otrosAparece(labelElemento, textoElemento){
-if (document.getElementById(labelElemento).checked) {
-    document.getElementById(textoElemento).style.display = 'block';
+  if (document.getElementById(labelElemento).checked) {
+      document.getElementById(textoElemento).style.display = 'block';
+  }
+  else{
+      document.getElementById(textoElemento).style.display = 'none';
+  }
 }
-else{
-    document.getElementById(textoElemento).style.display = 'none';
-}
+
+function mostrarDivs(labelElemento, divMostrar){
+  console.log("document.getElementById(labelElemento).checked: ", document.getElementById(labelElemento).checked);
+  if (document.getElementById(labelElemento).checked) {
+    console.log("document.getElementsByClassName(divMostrar): ", document.getElementsByClassName(divMostrar));
+    
+    var elements = document.getElementsByClassName(divMostrar);
+    for (var i = 0; i < elements.length; i++){
+      console.log("document.getElementById(elements[i].id): ", document.getElementById(elements[i].id));
+      document.getElementById(elements[i].id).style.display = 'block';
+    }
+      
+  }
+  else{
+    var elements = document.getElementsByClassName(divMostrar);
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).style.display = 'none';
+    }
+  }
 }
 
 function deshabilita(elementoMarcado, divADeshabilitar){
