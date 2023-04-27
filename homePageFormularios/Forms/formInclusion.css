@@ -1,3 +1,7 @@
+.formatoPreguntas {
+    /* Aquí puedes aplicar los estilos deseados */
+    font-weight: bold;
+}
 body{
     margin: 0;
     padding: 0;
