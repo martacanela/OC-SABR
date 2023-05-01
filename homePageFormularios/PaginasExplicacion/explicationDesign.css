@@ -55,7 +55,7 @@ body {
 
 /* Container que envuelve el título y el contenido de las publicaciones, junto con el resumen, sección blanca, con un 70% del tamaño */
 .container {
-    margin-top: 5rem;
+    margin-top: 2rem;
     width: 70%;
     max-width: 1250px;
     background-color: var(--bg-color);
@@ -93,6 +93,7 @@ body {
 /* Resumen de las publicaciones */
 .summary {
     font-size: clamp(18px, 1.5vw, 24px);
+    text-align: justify;
 }
 
 /* Media queries */
