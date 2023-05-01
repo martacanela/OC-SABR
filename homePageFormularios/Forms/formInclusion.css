@@ -12,6 +12,7 @@ h1{
     text-align: center;
     margin: auto;
     border-radius: 28px;
+    /*-webkit-text-stroke: 2px black;*/
 }
 .gradient-form{
     /*background-color: #87b3fd26;*/

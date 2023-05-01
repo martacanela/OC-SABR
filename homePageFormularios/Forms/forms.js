@@ -96,7 +96,14 @@ function otrosAparece(labelElemento, textoElemento){
   }
 }
 
-function mostrarDivs(labelElemento, divMostrar){
+function mostrarDivs(labelElemento, divsAMostrar){
+  console.log("divsAMostrar: ", divsAMostrar);
+  for (var j = 0; j < divsAMostrar.length; j++){
+    mostrarDiv(labelElemento, divsAMostrar[j]);
+  }
+}
+
+function mostrarDiv(labelElemento, divMostrar){
   console.log("document.getElementById(labelElemento).checked: ", document.getElementById(labelElemento).checked);
   if (document.getElementById(labelElemento).checked) {
     console.log("document.getElementsByClassName(divMostrar): ", document.getElementsByClassName(divMostrar));
@@ -115,6 +122,34 @@ function mostrarDivs(labelElemento, divMostrar){
     }
   }
 }
+
+function ocultarDivs(labelElemento, divsAOcultar){
+  console.log("divsAOcultar: ", divsAOcultar);
+  for (var j = 0; j < divsAOcultar.length; j++){
+    ocultarDiv(labelElemento, divsAOcultar[j]);
+  }
+}
+
+function ocultarDiv(labelElemento, divOcultar){
+  console.log("document.getElementById(labelElemento).checked: ", document.getElementById(labelElemento).checked);
+  if (document.getElementById(labelElemento).checked) {
+    console.log("document.getElementsByClassName(divOcultar): ", document.getElementsByClassName(divOcultar));
+    
+    var elements = document.getElementsByClassName(divOcultar);
+    for (var i = 0; i < elements.length; i++){
+      console.log("document.getElementById(elements[i].id): ", document.getElementById(elements[i].id));
+      document.getElementById(elements[i].id).style.display = 'none';
+    }
+      
+  }
+  else{
+    var elements = document.getElementsByClassName(divOcultar);
+    for (var i = 0; i < elements.length; i++){
+      document.getElementById(elements[i].id).style.display = 'block';
+    }
+  }
+}
+
 
 function deshabilita(elementoMarcado, divADeshabilitar){
   if(document.getElementById(elementoMarcado).checked){

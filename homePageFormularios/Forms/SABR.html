@@ -135,10 +135,9 @@
                                         <input type="date" id="fechaPETTAC" class="form-control petTacDropdown" />
                                     </div>
                                 </div>
-                                <h4>TAC de simulación de radioterapia</h4>
-                                <br>
+                                <h4>TAC de radioterapia</h4>
                                 <div class="form-outline mb-4 ">
-                                    <label class="form-label required formatoPreguntas"  for="tacImagePreRT">TAC de simulación</label><br>
+                                    <label class="form-label required formatoPreguntas"  for="tacImagePreRT">TAC de radioterapia</label><br>
                                     <input type="file" class="tacDropdown" accept="*/dicom,.dcm, image/dcm, */dcm, .dicom"/>
                                 </div>
                                 <div class="form-outline mb-4">
@@ -153,8 +152,8 @@
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label required formatoPreguntas" for="unidadesHemograma" >Unidades</label><br>
-                                    <input type="radio" name="unidadesHemograma" id="unidadesConvecionales" onclick="mostrarDivs('unidadesSI', 'unidadesSITab'); mostrarDivs('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesConvecionales">Unidades convencionales</label><br>
-                                    <input type="radio" name="unidadesHemograma" id="unidadesSI" onclick="mostrarDivs('unidadesSI', 'unidadesSITab'); mostrarDivs('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesSI">Unidades del Sistema Internacional (SI)</label><br>
+                                    <input type="radio" name="unidadesHemograma" id="unidadesConvecionales" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesConvecionales">Unidades convencionales</label><br>
+                                    <input type="radio" name="unidadesHemograma" id="unidadesSI" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesSI">Unidades del Sistema Internacional (SI)</label><br>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label required formatoPreguntas"  for="hematies" >Hematíes</label><br>
