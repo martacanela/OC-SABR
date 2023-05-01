@@ -1,3 +1,21 @@
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+}
+
+h1{
+    color: var(--bg-dark-blue-color);
+    text-align: center;
+    margin: auto;
+    border-radius: 28px;
+}
+.gradient-form{
+    /*background-color: #87b3fd26;*/
+}
 .formatoPreguntas {
     /* Aquí puedes aplicar los estilos deseados */
     font-weight: bold;
@@ -6,7 +24,7 @@ body{
     margin: 0;
     padding: 0;
     min-height: 100%;
-    background-color: #E3FDFD;
+    background-color: var(--light-transparent-15-color);
     overflow-x: hidden;
 }
 @media (min-width: 768px) {
@@ -51,10 +69,10 @@ input.invalid {
 }
 
 button, .btn {
-    background-color: #71C9CE;
-    color: #ffffff;
+    background-color: var(--light-transparent-60-color);
+    color: black;
     border: none;
-    border-radius: 0;
+    border-radius:28px;
     width: 7rem;
     padding: 10px 20px;
     font-size: 17px;
@@ -63,6 +81,12 @@ button, .btn {
 
 button:hover {
     opacity: 0.8;
+    background-color: var(--bg-dark-blue-color);
+    color: white;
+}
+.btn:hover{
+    background-color: var(--bg-dark-blue-color);
+    color: white;
 }
 
 #prevBtn {
