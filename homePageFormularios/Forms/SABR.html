@@ -146,114 +146,139 @@
                                 </div>
                                 <h4>Hemograma</h4>
                                 <br>
-                                <div class="form-outline mb-4">
-                                  <label class="form-label required formatoPreguntas"  for="fechaHemograma" >Fecha Hemograma</label>
-                                  <input type="date" id="fechaHemograma" class="form-control tacDropdown"/>
+                                <input type="checkbox" id="sinInfoHemograma" onclick="deshabilita('sinInfoHemograma', 'sinInfoHemograma_P')"> <label for="sinInfoHemograma">No se dispone información del hemograma</label><br><br>
+                                <div id="sinInfoHemograma_P">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="fechaHemograma" >Fecha Hemograma</label><br>
+                                        <input type="checkbox" id="sinFechaHemograma" onclick="deshabilita('sinFechaHemograma', 'sinFechaHemograma_P')"> <label for="sinFechaHemograma">No consta</label><br>
+                                        <div id="sinFechaHemograma_P">
+                                            <input type="date" id="fechaHemograma" class="form-control"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas" for="unidadesHemograma" >Unidades</label><br>
+                                        <input type="radio" name="unidadesHemograma" id="unidadesConvecionales" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesConvecionales">Unidades convencionales</label><br>
+                                        <input type="radio" name="unidadesHemograma" id="unidadesSI" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesSI">Unidades del Sistema Internacional (SI)</label><br>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="hematies" >Hematíes</label><br>
+                                        <input type="checkbox" id="sinHematies" onclick="deshabilita('sinHematies', 'sinHematies_P')"> <label for="sinHematies">No consta</label><br>
+                                        <div id="sinHematies_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvHematies" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>6</sup>/µL</b></p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSIHematies" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>12</sup>/L</b></p>
+                                            </div>
+                                            <input type="number" id="hematies" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="hematocrito" >Hematocrito</label><br>
+                                        <input type="checkbox" id="sinHematocrito" onclick="deshabilita('sinHematocrito', 'sinHematocrito_P')"> <label for="sinHematocrito">No consta</label><br>
+                                        <div id="sinHematocrito_P">
+                                            <p>Unidades: <b>%</b></p>
+                                            <input type="number" id="hematocrito" class="form-control" placeholder="0.0"  min="0.0" max="100.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="hemoglobina" >Hemoglobina</label><br>
+                                        <input type="checkbox" id="sinHemaglobina" onclick="deshabilita('sinHemaglobina', 'sinHemaglobina_P')"> <label for="sinHemaglobina">No consta</label><br>
+                                        <div id="sinHemaglobina_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvHemoglobina" style="display: none;">
+                                                <p>Unidades: <b>g/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSIHemoglobina" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="hemoglobina" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="leucocitos" >Leucocitos</label><br>
+                                        <input type="checkbox" id="sinLeucocitos" onclick="deshabilita('sinLeucocitos', 'sinLeucocitos_P')"> <label for="sinLeucocitos">No consta</label><br>
+                                        <div id="sinLeucocitos_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvLeucocitos" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSILeucocitos" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
+                                            </div>
+                                            <input type="number" id="leucocitos" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="linfocitos">Linfocitos</label><br>
+                                        <input type="checkbox" id="sinLinfocitos" onclick="deshabilita('sinLinfocitos', 'sinLinfocitos_P')"> <label for="sinLinfocitos">No consta</label><br>
+                                        <div id="sinLinfocitos_P">
+                                            <p>Unidades: <b>%</b></p>
+                                            <input type="number" id="linfocitos" class="form-control" placeholder="0.0"  min="0.0" max="100.00" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="linfocitosCD4" >Linfocitos totales CD4</label><br>
+                                        <input type="checkbox" id="sinLinfocitosCD4" onclick="deshabilita('sinLinfocitosCD4', 'sinLinfocitosCD4_P')"> <label for="sinLinfocitosCD4">No consta</label><br>
+                                        <div id="sinLinfocitosCD4_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvLinfocitosCD4" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSILinfocitosCD4" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <input type="number" id="linfocitosCD4" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="linfocitosCD8" >Linfocitos totales CD8</label><br>
+                                        <input type="checkbox" id="sinLinfocitosCD8" onclick="deshabilita('sinLinfocitosCD8', 'sinLinfocitosCD8_P')"> <label for="sinLinfocitosCD8">No consta</label><br>
+                                        <div id="sinLinfocitosCD8_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvLinfocitosCD8" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSILinfocitosCD8" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <input type="number" id="linfocitosCD8" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="ilterleucina6" >Interleucina 6 (IL-6)</label><br>
+                                        <input type="checkbox" id="sinInterleucina6" onclick="deshabilita('sinInterleucina6', 'sinInterleucina6_P')"> <label for="sinInterleucina6">No consta</label><br>
+                                        <div id="sinInterleucina6_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvInterleucina6" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSIInterleucina6" style="display: none;">
+                                                <p>Unidades: </p>
+                                            </div>
+                                            <input type="number" id="ilterleucina6" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="monocitos" >Monocitos</label><br>
+                                        <input type="checkbox" id="sinMonocitos" onclick="deshabilita('sinMonocitos', 'sinMonocitos_P')"> <label for="sinMonocitos">No consta</label><br>
+                                        <div id="sinMonocitos_P">
+                                            <p>Unidades: <b>%</b></p>
+                                            <input type="number" id="monocitos" class="form-control" placeholder="0.0"  min="0.00" max="100.00" step="any" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="plaquetas" >Plaquetas</label><br>
+                                        <input type="checkbox" id="sinPlaquetas" onclick="deshabilita('sinPlaquetas', 'sinPlaquetas_P')"> <label for="sinPlaquetas">No consta</label><br>
+                                        <div id="sinPlaquetas_P">
+                                            <div class="unidadesConvecionalesTab" id="unidadesConvPlaquetas" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
+                                            </div>
+                                            <div class="unidadesSITab" id="unidadesSIPlaquetas" style="display: none;">
+                                                <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
+                                            </div>
+                                            <input type="number" id="plaquetas" class="form-control" placeholder="0.0" step="any" required/>
+                                        </div>
+                                    </div>      
                                 </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas" for="unidadesHemograma" >Unidades</label><br>
-                                    <input type="radio" name="unidadesHemograma" id="unidadesConvecionales" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesConvecionales">Unidades convencionales</label><br>
-                                    <input type="radio" name="unidadesHemograma" id="unidadesSI" onclick="mostrarDiv('unidadesSI', 'unidadesSITab'); mostrarDiv('unidadesConvecionales', 'unidadesConvecionalesTab')"/> <label for="unidadesSI">Unidades del Sistema Internacional (SI)</label><br>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="hematies" >Hematíes</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvHematies" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>6</sup>/µL</b></p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSIHematies" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>12</sup>/L</b></p>
-                                    </div>
-                                    <input type="number" id="hematies" class="form-control" placeholder="0.0" required step="any"/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="hematocitos" >Hematocrito</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="hematocitos" class="form-control" placeholder="0.0"  min="0.0" max="100.0" required step="any"/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="hemoglobina" >Hemoglobina</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvHemoglobina" style="display: none;">
-                                        <p>Unidades: <b>g/dL</b></p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSIHemoglobina" style="display: none;">
-                                        <p>Unidades: <b>mmol/L</b></p>
-                                    </div>
-                                    <input type="number" id="hemoglobina" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="leucocitos" >Leucocitos</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvLeucocitos" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSILeucocitos" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
-                                    </div>
-                                    <input type="number" id="leucocitos" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="linfocitos">Linfocitos</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="linfocitos" class="form-control" placeholder="0.0"  min="0.0" max="100.00" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="linfocitosCD4" >Linfocitos totales CD4</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvLinfocitosCD4" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSILinfocitosCD4" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <input type="number" id="linfocitosCD4" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="linfocitosCD8" >Linfocitos totales CD8</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvLinfocitosCD8" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSILinfocitosCD8" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <input type="number" id="linfocitosCD8" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="ilterleucina6" >Interleucina 6 (IL-6)</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvInterleucina6" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSIInterleucina6" style="display: none;">
-                                        <p>Unidades: </p>
-                                    </div>
-                                    <input type="number" id="ilterleucina6" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="monocitos" >Monocitos</label><br>
-                                    <p>Unidades: <b>%</b></p>
-                                    <input type="number" id="monocitos" class="form-control" placeholder="0.0"  min="0.00" max="100.00" step="any" required/>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="plaquetas" >Plaquetas</label><br>
-                                    <div class="unidadesConvecionalesTab" id="unidadesConvPlaquetas" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
-                                    </div>
-                                    <div class="unidadesSITab" id="unidadesSIPlaquetas" style="display: none;">
-                                        <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
-                                    </div>
-                                    <input type="number" id="plaquetas" class="form-control" placeholder="0.0" step="any" required/>
-                                </div>
-
                                 <hr>
                             </div>
                         </div>
-                        <!--<div class="form-outline mb-4 w-75">
-                            <label class="form-label required formatoPreguntas" for="dosisFraccionada">6. Dosis fraccionada</label>
-                            <p>Unidades: <b>Gy</b></p>
-                            <label class="form-label tabulador" for="primeraSesion">1ª Sesión: </label>
-                            <input type="number" id="primeraSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
-                            <label class="form-label tabulador" for="primeraSesion">2ª Sesión: </label>
-                            <input type="number" id="segundaSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" /><br>
-                            <label class="form-label tabulador" for="primeraSesion">3ª Sesión: </label>
-                            <input type="number" id="terceraSesion" class="tabulador form-control formSesion sabrDropdown" placeholder="No indicad las unidades" min="0" max="14" />
-                        </div>-->
                     </div>
                     <div style="overflow:auto;">
                         <div style="float:right; display: flex; align-items: center; gap: 10px;">
