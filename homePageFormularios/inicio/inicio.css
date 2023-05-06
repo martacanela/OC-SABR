@@ -22,14 +22,14 @@ body{
 .general {
     background-color: var(--bg-color);
     width: 60%;
+    min-width: 320px;
     max-width: 1200px;
     height: 600px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 33px;
 
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
+    display: grid;
+    grid-template-areas: 'insert imgLogo';
 }
 
 /*Size of sections within the general class*/
@@ -46,11 +46,16 @@ body{
     background-color: var(--light-transparent-60-color);
     border-top-left-radius: 33px;
     border-bottom-left-radius: 33px;
+    grid-area: insert;
+}
+
+.imgLogo {
+    grid-area: imgLogo;
 }
 
 /*Form size within section*/
 form{
-    width: 60%;
+    width: 70%;
 }
 
 /*Input size and border style*/
@@ -154,4 +159,28 @@ button:hover {
     border-color: var(--text-color);
     color: var(--bg-color);
 }
-  
+
+
+@media only screen and (max-width: 840px) {
+    .general {
+        grid-template-areas: 'insert'
+                            'imgLogo';
+        height: auto;
+    }
+
+    .insert {
+        border-top-left-radius: 33px;
+        border-top-right-radius: 33px;
+        border-bottom-left-radius: 0px;
+    }
+
+    .imgLogo h1 {
+        padding-top: 5%;
+    }
+
+    .imgLogo p {
+        padding: 5% 10%;
+        margin: 0;
+        font-size: clamp(10px, 3vw, 16px);
+    }
+}
