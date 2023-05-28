@@ -209,18 +209,22 @@ $('#it_completa').on('change', function () {
       $("#fechaFinalizacionIT").hide();
   }
 });
+// 
+var allInputsSelectsAndDatalists = Array.from(document.querySelectorAll('#regForm input, #regForm select, #regForm datalist'));
 // Array de inputs invalidos
 const invalidInputs = [];
+const uploadBtn = document.getElementById("uploadBtn");
 
 // Añadir una alerta de enviamiento para comprobar validaciones. Si se quiere implementar el enviamiento, modificar / comentar este codigo
 $('#regForm').on('submit', function(e) {
 e.preventDefault();
+uploadBtn.parentElement.classList.remove('showErrorMessage');
 document.getElementById('popup_container').classList.add('popup_showed');
 })
 
 
 // Para todos los inputs y selects invalidos al enviar el formulario:
-$('input, select').on('invalid', function(e) {
+allInputsSelectsAndDatalists.map(input => input.addEventListener('invalid', function(e) {
 e.preventDefault();
 // Coger el div padre y añadirle una clase form_error en caso que no la tenga ya
 let parentDiv = this.parentElement;
@@ -230,6 +234,8 @@ $(parentDiv).addClass('form_error');
 
 // Añadirlos al array de inputs invalidos
 invalidInputs.push(this);
+
+uploadBtn.parentElement.classList.add('showErrorMessage');
 
 // Si es el primer input invalido, y hay más de un tab, deberá mostrarse ese tab para comenzar a arreglar los errores
 if (invalidInputs.indexOf(this) === 0 && document.getElementsByClassName('tab').length != 0) {
@@ -255,7 +261,7 @@ if (invalidInputs.indexOf(this) === 0 && document.getElementsByClassName('tab').
   currentTab = thisTabIndex;
   showTab(thisTabIndex);
 }
-});
+}));
 
 
 // Cada vez que en un input o select haya un cambia, se quita la clase form_error del div padre
@@ -458,31 +464,19 @@ const inputsQueTienenDropdowns = document.querySelectorAll('.dropdownGroup');
 
 // Funcion para cambiar el atributo required en los child inputs de los desplegables
 function cambiarRequiredEnChildInputs() {
-if (this.id === 'hormonoterapia' || this.id === 'hormonoterapiaAdyuvante') {
-  let inhibidoresCromatasaNeo = document.getElementById('inhibidoresDeLaCromatasaNeo');
-  let inhibidoresCromatasaAdy = document.getElementById('inhibidoresDeLaCromatasaAdy');
-  if (document.getElementById('cancerPrimarioMama').checked) {
-    inhibidoresCromatasaNeo.setAttribute('required', 'true');
-    inhibidoresCromatasaAdy.setAttribute('required', 'true');
+  // Si la clase de el input cambiado contiene `idGroup`, siendo "id" el atributo id del propio input, guardar los inputs que contengan la clase `idDropdown`.
+  // En caso contrario, guardar los inputs con clase `nameDropdown`, siendo name el atributo name del grupo de inputs del input cambiado (Se usara `idDropdown` para
+  // los checkboxes y `nameDropdown` para los radiobuttons, pues todos los radio buttons de un grupo de inputs afecta a un desplegable, mientras que un solo checkbox afecta
+  // a un desplegable).
+  console.log(this)
+  let childInputs = (this.classList.contains(`${this.id}Group`)) ? document.querySelectorAll(`.${this.id}Dropdown`) : document.querySelectorAll(`.${this.name}Dropdown`);
+  // Si tiene la clase "hasDropdown" y esta marcado, dar required a los child inputs
+  if (this.classList.contains('hasDropdown') && this.checked) {
+    childInputs.forEach(input => input.setAttribute('required', ''));
+  // En caso contrario, quitar el required
   } else {
-    inhibidoresCromatasaNeo.removeAttribute('required');
-    inhibidoresCromatasaAdy.removeAttribute('required');
+    childInputs.forEach(input => input.removeAttribute('required'));
   }
-  return;
-}
-
-// Si la clase de el input cambiado contiene `idGroup`, siendo "id" el atributo id del propio input, guardar los inputs que contengan la clase `idDropdown`.
-// En caso contrario, guardar los inputs con clase `nameDropdown`, siendo name el atributo name del grupo de inputs del input cambiado (Se usara `idDropdown` para
-// los checkboxes y `nameDropdown` para los radiobuttons, pues todos los radio buttons de un grupo de inputs afecta a un desplegable, mientras que un solo checkbox afecta
-// a un desplegable).
-let childInputs = (this.classList.contains(`${this.id}Group`)) ? document.querySelectorAll(`.${this.id}Dropdown`) : document.querySelectorAll(`.${this.name}Dropdown`);
-// Si tiene la clase "hasDropdown" y esta marcado, dar required a los child inputs
-if (this.classList.contains('hasDropdown') && this.checked) {
-  childInputs.forEach(input => input.setAttribute('required', ''));
-// En caso contrario, quitar el required
-} else {
-  childInputs.forEach(input => input.removeAttribute('required'));
-}
 }
 
 // Por todos los inputs que tienen desplegable, llamar a la funcion cambiarRequiredEnChildInputs cada vez que haya un cambio
@@ -517,58 +511,40 @@ divsCirugias.forEach(div => div.classList.contains('selected') ? div.style.displ
 }
 
 
-const selectsNumeroDeTratamientos = Array.from(document.getElementsByClassName('selectNumero'));
+const selectsNumero = Array.from(document.getElementsByClassName('selectNumero'));
 
-selectsNumeroDeTratamientos.map(select => select.addEventListener('change', function () {
-let numeroContainer = document.querySelector(`div.selectContainer:has(select#${this.id}) + div.numeroContainer`);
-let template = numeroContainer.querySelector('div.template');
-let newDiv = '';
-let cantidad = parseInt(this.value);
-
-numeroContainer.innerHTML = '';
-
-for (let i = 1; i <= cantidad; i++) {
-  let index = i === 1 ? '' : `_${i}`;
-
-  newDiv = template.cloneNode(true);
-  newDiv.style.display = 'block';
-  
-  let divsCirugias = Array.from(newDiv.querySelectorAll('.divsCirugias'));
-  let labelsDeNewDiv = Array.from(newDiv.querySelectorAll('label'));
-  let inputsYSelectsDeNewDiv = Array.from(newDiv.querySelectorAll('input, select'));
-
-  divsCirugias.map(div => div.id = `${div.id}${index}`);
-  
-  labelsDeNewDiv.map(label => {
-    label.htmlFor = `${label.htmlFor}${index}`;
-    if (label.hasAttribute('id')) label.id = `${label.id}`;
-  });
-
-  inputsYSelectsDeNewDiv.map (input => {
-    input.id = `${input.id}${index}`;
-    if (input.hasAttribute('name')) input.name = `${input.name}${index}`;
-  })
-
-  numeroContainer.appendChild(newDiv);
-}
+selectsNumero.map(select => select.addEventListener('change', function () {
+  let cantidad = parseInt(this.value);
+  duplicarContainer(cantidad, this);
 }));
+
+function duplicarContainer(cantidad, changedSelect) {
+  let divNC = document.querySelector(`div.selectContainer:has(select#${changedSelect.id}) ~ div.numeroContainer`);
+  let templates = Array.from(divNC.querySelectorAll('div.template'));
+  
+  templates.map(template => template.style.display = 'none')
+
+  for (let i = 0; i < cantidad; i++) {
+    templates[i].style.display = 'block';
+  }
+}
 
 
 const radiosUbicacionCirugia = Array.from(document.querySelectorAll('input[name="ubicacionCirugia"]'));
 
 function mostrarTipoCirugiaSegunUbicacion(changedInput) {
-let divsCirugiaTipo = Array.from(document.getElementsByClassName('divsCirugiasTipo'));
-let divAMostrar = divsCirugiaTipo.find(div => div.id === `${changedInput.id}DivCirugia`);
-let divTipoCirugia = document.getElementById('divTipoCirugia');
+  let divsCirugiaTipo = Array.from(document.getElementsByClassName('divsCirugiasTipo'));
+  let divAMostrar = divsCirugiaTipo.find(div => div.id === `${changedInput.id}DivCirugia`);
+  let divTipoCirugia = document.getElementById('divTipoCirugia');
 
-if (changedInput.id === 'ubicacionCirugiaOtras__L' || changedInput.id === 'ubicacionCirugiaOtras__T') {
-  divTipoCirugia.style.display = 'none';
-  return;
-}
+  if (changedInput.id === 'ubicacionCirugiaOtras__L' || changedInput.id === 'ubicacionCirugiaOtras__T') {
+    divTipoCirugia.style.display = 'none';
+    return;
+  }
 
-divTipoCirugia.style.display = 'block';
-divsCirugiaTipo.map(div => div.style.display = 'none');
-divAMostrar.style.display = 'block';
+  divTipoCirugia.style.display = 'block';
+  divsCirugiaTipo.map(div => div.style.display = 'none');
+  divAMostrar.style.display = 'block';
 }
 
 radiosUbicacionCirugia.map(input => input.addEventListener('change', function() {
@@ -682,3 +658,45 @@ numUbicacionesDropdown.addEventListener('change', () => {
           break;
   }
 });
+
+function modificarPregunta() {
+  var selectedQuestion = document.getElementById("preguntaSeleccionada").value;
+
+  switch (selectedQuestion) {
+      case "2":
+          otrosAparece('anoN', 'anoNacimiento');
+          break;
+      case "3":
+          document.getElementById("pregunta3").innerHTML = "Nueva pregunta para el Sexo";
+          break;
+      case "4":
+          document.getElementById("pregunta4").innerHTML = "Nueva pregunta para el Año de menarquía";
+          break;
+      case "5":
+          document.getElementById("pregunta5").innerHTML = "Nueva pregunta para el Estado";
+          break;
+      case "6":
+          document.getElementById("pregunta6").innerHTML = "Nueva pregunta para el Año de menopausia";
+          break;
+      case "7":
+          document.getElementById("pregunta7").innerHTML = "Nueva pregunta para la Talla";
+          break;
+      case "8":
+          document.getElementById("pregunta8").innerHTML = "Nueva pregunta para el Peso";
+          break;
+      case "9":
+          document.getElementById("pregunta9").innerHTML = "Nueva pregunta para los Antecedentes oncológicos";
+          break;
+      case "10":
+          document.getElementById("pregunta10").innerHTML = "Nueva pregunta para los Antecedentes familiares oncológicos";
+          break;
+      case "11":
+          document.getElementById("pregunta11").innerHTML = "Nueva pregunta para los Hábitos tóxicos";
+          break;
+      case "12":
+          document.getElementById("pregunta12").innerHTML = "Nueva pregunta para las Patologías concomitantes actuales";
+          break;
+      default:
+          break;
+  }
+}

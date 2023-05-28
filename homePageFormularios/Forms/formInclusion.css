@@ -171,3 +171,8 @@ button:hover {
     opacity: 1;
     z-index: 1;
 }
+
+.showErrorMessage::after {
+    content: 'Rellene todos los campos obligatorios';
+    color: #FF0000;
+}
