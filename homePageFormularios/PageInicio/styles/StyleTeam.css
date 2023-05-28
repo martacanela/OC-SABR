@@ -1,0 +1,267 @@
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;}
+
+/*Bacground color and font-family for all the document*/
+body{
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+/**/
+.boss-joven{
+    background-color: var(--light-transparent-15-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap:20px;
+
+    justify-content: center;
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/**/
+.person-joven{
+    text-align: center;
+
+    background-color: var(--bg-color);
+    box-shadow: 0 0 15px var(--light-transparent-60-color);
+
+    border-radius: 33px;
+    
+    width: 35%;
+
+    align-items: center;
+    text-align: center;
+    margin-top: 10rem;
+}
+/*Headers background color and pearson box in line*/
+.boss{
+    background-color: var(--light-transparent-15-color);
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap:20px;
+
+    justify-content: center;
+
+    padding-bottom: 2%;
+}
+
+/*Style of each people box*/
+.person{
+    text-align: center;
+
+    background-color: var(--bg-color);
+    box-shadow: 0 0 15px var(--light-transparent-60-color);
+
+    border-radius: 33px;
+    
+    width: 30%;
+
+    align-items: center;
+    text-align: center;
+}
+
+/*Border image people*/
+#personImg{
+    width: 100%;
+    height: 70%;
+    border-top-left-radius:33px;
+    border-top-right-radius:33px;
+}
+
+/*More button normal style*/
+#more{
+    margin-bottom: 5%;
+    padding: 6px 9px;
+
+    border: none;
+    border-radius: 33px;
+    
+    cursor: pointer;
+    
+    color: var(--bg-color);
+    background-color: var(--light-transparent-60-color);
+    
+    outline: none;
+
+    text-decoration: none;
+}
+
+/*More button hover style*/
+#more:hover{
+    box-shadow: 0 0 5px var(--light-blue-color) ;
+}
+
+
+/*DDESPLEGABLE*/
+/*-------------------------------------------------------------------------*/
+
+/*dropdown centering and margins*/
+.faq-container {    
+    max-width: 90%;
+    margin: 50px auto 0 auto;
+}
+
+/*Drop down options style*/
+details { 
+    background-color: var(--light-transparent-15-color);
+
+    margin-bottom: 1%;   
+    border-radius: 33px;  
+
+    color: var(--text-color);
+}
+
+details summary {  
+    font-size: 1.25rem;
+    padding: 1rem;
+    cursor: pointer;
+
+    list-style: none;
+}
+
+/*Container size of each employee*/
+.employee{
+    display: flex;
+    flex-wrap: wrap;
+    
+    gap:10px;
+
+    justify-content: center;
+
+    padding: 2%;
+}
+
+/*Shadow when passing over and when the dropdowns were open*/
+details:hover,
+details[open] {
+    box-shadow: 0 0 15px var(--light-transparent-60-color);
+}
+
+
+/*POP UP*/
+/*-------------------------------------------------------------------------*/
+  
+/*Button More padding*/
+.box {
+    width: 40%;
+    margin: 0 auto;
+
+    padding: 7%;
+    border-radius: 33px;
+}
+
+/*Pop Up position, animation and background color.*/
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 1s;
+    
+    visibility: hidden;
+    opacity: 0;
+}
+.overlay:target {
+    visibility: visible;
+    opacity: 1;
+}
+ 
+/*Pop Up background and margins*/
+.popup {
+
+    margin: 70px auto;
+    padding: 20px;
+
+    background: var(--bg-color);
+    
+    border-radius: 33px;
+    width: 50%;
+    
+    position: relative;
+    transition: all 1s ease-in-out;
+}
+ 
+/*Pop Up title*/
+.popup h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+/*Close icon and style*/
+.popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    
+    transition: all 200ms;
+    
+    font-size: 30px;
+    font-weight: bold;
+    
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/*Hover close color*/
+.popup .close:hover {
+    color: var(--bg-dark-blue-color);
+}
+
+/*Pop up content*/
+.popup .content {
+    max-height: 30%;
+    overflow: auto;
+}
+  
+/*Responsive pop up*/
+@media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+}
+
+/*POP UP CONTENT*/
+/*-----------------------------------------------------------------*/
+
+/*Pop up organization*/
+.popup{
+    display: flex;
+    margin-top: 10%;
+    gap: 5%;
+}
+
+/*Icon and emmail centered*/
+.email{
+    display: flex;
+    align-items: center;
+}
+
+/*Emil icon pop up color and width*/
+.icon{
+    color: #87B3FD;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+/*Cargo color*/
+.cargo{
+    color: var(--light-blue-color);
+}

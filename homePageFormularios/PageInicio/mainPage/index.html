@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>URB</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/logo_URB.png" />
+        <!-- Core theme CSS -->
+        <link href="index.css" rel="stylesheet" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+        <!-- Header links -->
+        <link rel="stylesheet" href="../header/styles/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+        <script defer src="../header/scripts/script.js"></script>
+
+        <!-- Footer links-->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link rel="stylesheet" href="../styles/StyleFooter.css">
+
+    </head>
+    <body>
+        <!-- Navigation bar-->
+        <!-- Elemento header, contiene todo el header -->
+        <header class="header">
+            <!-- Sección de contenido del header, sin márgenes -->
+            <section class="headerContent">
+                <!-- Imágen del Logo URB -->
+                <a href="../mainPage/index.html">
+                    <img src="../img/logo_noDetails_blue_black.png" alt="Logo URB" class="logo">
+                </a>
+                
+                <!-- Barra de navegación per se, con la lista de ítems de navegación -->
+                <nav class="nav" id="nav">
+                    <!-- Lista de ítems de navegación con todas las páginas para visitar -->
+                    <ul class="navList menu-expansion" id="menuExpansion">
+                        <!-- Lista de elementos, con las diferentes páginas y enlaces -->
+                        <li class="navItem"><a href="#" class="navLink">Research</a></li>
+                        <li class="navItem"><a href="../../PageInicio/subpages/team/team.html" class="navLink">Team</a></li>
+                        <li class="navItem"><a href="../../PageInicio/subpages/projects/projects.html" class="navLink">Projects</a></li>
+                        <li class="navItem"><a href="../../PageInicio/subpages/publications/publications.html" class="navLink">Publications</a></li>
+                        <li class="navItem"><a href="../../PageInicio/subpages/contact/contact.html" class="navLink">Contact</a></li>
+                        <li class="navItem"><a href="../../inicio/inicio.html" class="navLink">Log in</a></li>
+                    </ul>
+                </nav>
+                <!-- Botón del menú, solamente visible a partir de un ancho de pantalla de 720px (móviles y tablets). -->
+                <button id="menuBtn" class="menuBtn" onclick="menuDisplay()">
+                    <!-- Elementos que conforman visualmente el burger menu -->
+                    <span class="burger"></span>
+                    <span class="burger" id="secondLayerMenu"></span>
+                    <span class="burger"></span>
+                </button>
+            </section>
+        </header>
+        <!-- Masthead-->
+        <section class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Welcome</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Unitat de Recerca Biomédica!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-black mt-0">Lorem <span class="blueCar mt-0"> Ipsum!</span></h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-black-75 mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas non risus vitae nisl convallis placerat ut vitae magna. Nulla facilisi. Cras faucibus neque nec ligula feugiat cursus. Vestibulum laoreet odio lectus, nec lacinia sem convallis vel. Curabitur vel venenatis augue, a aliquam lacus. Curabitur luctus mi non molestie interdum. Aenean a aliquet risus, a feugiat massa. Phasellus quis purus tortor. Etiam erat metus, aliquet nec luctus ut, dignissim non sem. Donec pellentesque interdum ipsum, sed vulputate enim consectetur semper. Nulla sollicitudin justo nec pretium varius. Sed felis nunc, viverra sit amet ornare sed, hendrerit quis elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer-->
+        <footer class="footer">
+            <section class="footerContents">
+                <img src="../img/footerLogo.png" alt="Logo URB">
+    
+                <div class="contactUs">
+                    <div class="contactUsContents">
+                        <h2>CONTACT US</h2>
+                        <div id="contentContact">
+                            <ion-icon name="location-outline"></ion-icon>
+                            <p>Lorem Ipsum</p>
+                        </div>
+    
+                        <div id="contentContact">
+                            <ion-icon name="call-outline"></ion-icon>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                        
+                        <div id="contentContact">
+                            <ion-icon name="mail-outline"></ion-icon>
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+    
+                    <div class="redesSociales">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                        
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </div>
+                </div>
+            </section>
+        </footer>
+        <!-- Bootstrap core JS-->
+    </body>
+</html>

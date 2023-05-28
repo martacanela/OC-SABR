@@ -1,0 +1,83 @@
+
+/* Variables de colores */
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+
+    --burger-menu-distance: 10px;
+}
+/*Color de fonto para toda la pagina*/
+body{
+    background-color: var(--bg-color);;
+}
+
+/*Margenes de todo el footer y separacion entre la imagen y el Contact Us y todo lo que va debajo de este*/
+.footerContents{
+    margin-left: 30%;
+    display: flex;
+    gap: 10%;
+}
+
+/*Tamaño del logo*/
+img{
+    width: 25%;
+    height: 25%;
+}
+
+/*Centrar todos los elementos del footer*/
+.contactUs{
+    display: flex;
+
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+/*Centrado del contenido de ContactUs*/
+.contactUsContents{
+    text-align: center;
+}
+
+/*Centrar las redes sociales con el contenido de contactUs y pone una debajo de la otra*/
+.redesSociales{
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+}
+
+/*El icono salga en la misma linea que el contenido*/
+#contentContact{
+    display: flex;
+    gap: 15%;
+    
+    align-items: center;
+}
+
+/*Color de todos los iconos*/
+ion-icon{
+    color: #87B3FD;
+
+    width: 2rem;
+    height: 2rem
+}
+
+@media screen and (max-width: 720px) {
+    /*Tamaño del logo*/
+    img{
+        width: 50%;
+        height: 50%;
+    }
+    
+    /*Margenes de todo el footer y separacion entre la imagen y el Contact Us y todo lo que va debajo de este*/
+    .footerContents{
+        margin-left: 15%;
+        display: flex;
+        gap: 10%;
+    }
+
+
+}

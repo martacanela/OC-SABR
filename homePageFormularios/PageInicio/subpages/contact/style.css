@@ -1,0 +1,359 @@
+/* Variables de colores */
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+    --disabled: #CCD3D8;
+    --error: #de2e2e;
+}
+
+/* Quitar margenes interiores y exteriores de todos los elementos, y ajustar el tamaño de estos incluyendoles sus bordes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body, ajustar el tamaño maximo al de la pantalla (Si se necesita más tamaño en alguna dimensión, modificar este bloque) */
+body {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+/* Ocultar la barra de scroll para mejorar el diseño */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Sección que contiene el formulario y el título de contacto, envueltos ambos en el container. Se centran los elementos en esta sección */
+.contactFormSection {
+    width: 100vw;
+    background-color: var(--light-transparent-15-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+/* Container que envuelve el título y el formulario, sección blanca, con un 70% del tamaño */
+.container {
+    margin-top: 10rem;
+    width: 70%;
+    max-width: 1250px;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 7.5rem;
+    gap: 3rem;
+}
+
+/* Título de la sección */
+.sectionTitle {
+    font-size: clamp(28px, 3vw, 56px);
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+/* Span para cambiar el color y accentuar visiblemente algunas palabras del título y de los inputs */
+.span {
+    color: var(--light-blue-color);
+    font-weight: bold;
+}
+
+/* Formulario de contacto, con una distribución en grid */
+.contactForm {
+    display: grid;
+    grid-template-areas: 
+        'nameGroup nameGroup emailGroup emailGroup'
+        'messageGroup messageGroup messageGroup messageGroup'
+        'messageGroup messageGroup messageGroup messageGroup'
+        'cbGroup cbGroup cbGroup infoGroup'
+        'submitGroup submitGroup submitGroup submitGroup';
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Distintos nombres para las areas del grid del formulario (inputs y demás) */
+.nameGroup { grid-area: nameGroup;}
+.emailGroup { grid-area: emailGroup;}
+.messageGroup { grid-area: messageGroup;}
+.cbGroup { grid-area: cbGroup;}
+.infoGroup { grid-area: infoGroup;}
+.submitGroup {grid-area: submitGroup;}
+
+/* División que envuelve tanto al input como a su etiqueta y su mensaje de error */
+.formGroup {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Etiqueta de cada input, estilos generales para cada una */
+.label {
+    color: var(--text-color);
+    font-size: clamp(16px, 1vw, 20px);
+    cursor: text;
+}
+
+/* Estilos para todas las etiquetas exceptuando la del checkbox. Se centra con posición absoluta dentro del input */
+.label:not(.cbLabel) {
+    width: fit-content;
+    padding-left: .25rem;
+    position: absolute;
+    top: 1rem;
+    left: .75rem;
+    background-color: transparent;
+    transition: top .3s,
+                font-size .3s,
+                background-color .3s .05s,
+                color .3s;
+}
+
+/* Inputs del formulario, redondeando esquinas y dando tamaño de fuente */
+.input {
+    height: 3.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--text-color);
+    width: 100%;
+    padding: 1rem;
+    font-size: clamp(14px, 1vw, 20px);
+    background-color: var(--bg-color);
+    transition: border-color .3s;
+}
+
+/* Cuando el usuario este escribiendo o haya escrito algo válido, se cambia el color del borde y se elimina el delineado */
+.input:not(.cbInput):focus,
+.input:not(.cbInput):valid {
+    outline: none;
+    border-color: var(--bg-dark-blue-color);
+}
+
+/* Evitamos el reescalado del textarea de mensaje */
+.messageInput {
+    resize: none;
+    height: 20rem;
+}
+
+/* División para el mensaje de Field required, centrando el texto a la derecha */
+.infoGroup {
+    display: flex;
+    justify-content: end;
+    font-size: clamp(13px, 1vw, 16px);
+}
+
+/* Para todos los inputs (que no sean del checkbox) que el usuario esté escribiendo, haya escrito algo válido o no se pueda ver el placeHolder (
+   es decir, hay texto pero es inválido), se sube su etiqueta y se cambia el color */
+.input:not(.cbInput):focus ~ .label,
+.input:not(.cbInput):valid ~ .label,
+.input:not(.cbInput):not(:placeholder-shown) ~ .label {
+    top: -.6rem;
+    font-size: clamp(10px, 1vw, 14px);
+    background-color: var(--bg-color);
+    color: var(--bg-dark-blue-color);
+}
+
+/* Para todos los inputs (que no sean del checkbox) que el usuario esté escribiendo, haya escrito algo válido o no se pueda ver el placeHolder (
+   es decir, hay texto pero es inválido), se esconde el span (*), ya que ya no es necesario advertir que ese campo es obligatorio */
+.input:not(.cbInput):focus ~ .label .span,
+.input:not(.cbInput):valid ~ .label .span,
+.input:not(.cbInput):not(:placeholder-shown) ~ .label .span {
+    visibility: hidden;
+}
+
+/* División para el grupo del checkbox, separamos el input de la etiqueta */
+.cbGroup {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Input checkbox, cambiamos el color cuando está marcado (y tamaño) */
+.cbInput {
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px solid var(--text-color);
+    outline: none;
+    accent-color: var(--bg-dark-blue-color);
+    cursor: pointer;
+}
+
+/* Cambiar el cursor visualmente cuando lo pasemos por encima de la etiqueta del checkbox */
+.cbLabel {
+    cursor: pointer;
+    font-size: clamp(13px, 1vw, 16px);
+}
+
+/* Link de políticas de privacidad, cambiamos el delineado a azul claro */
+.link {
+    text-decoration-color: var(--light-blue-color);
+}
+
+/* División para el botón de enviar, centramos contenido */
+.submitGroup {
+    justify-content: center;
+}
+
+/* Estilos para el botón de enviar, cambiamos su tamaño, color y borde */
+.submitBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 5rem;
+    font-size: 24px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: var(--light-blue-color);
+    color: var(--bg-color);
+    cursor: pointer;
+    transition: background-color .3s,
+                color .3s;
+}
+
+/* Cuando pasemos el ratón por encima del botón, cambiamos el color de fondo */
+.submitBtn:hover {
+    background-color: var(--bg-dark-blue-color);
+}
+
+/* Si el botón está deshabilitado, cambiamos colores de fondo y texto, y mostramos el cursor como prohibido */
+.submitBtn:disabled {
+    background-color: var(--disabled);
+    color: var(--text-color);
+    cursor: not-allowed;
+}
+
+/* Texto de error de validación de cada input, lo ponemos con posición absoluta debajo de cada input con un color rojo */
+.error {
+    position: absolute;
+    left: 5px;
+    bottom: -1.5rem;
+    font-size: clamp(10px, 1vw, 14px);
+    color: var(--error);
+}
+
+/* Cambiamos el color del borde de un input si tiene un mensaje de error */
+.input:has(~ .error) {
+    border-color: var(--error);
+}
+
+/* Media queries */
+/* Media query para pantallas menores a 1220px */
+@media only screen and (max-width: 1220px) {
+    /* El container aumenta al 100% */
+    .container {
+        width: 100%;
+    }
+
+    /* Reducimos la altura del input de mensaje */
+    .messageInput {
+        height: 13rem;
+    }
+}
+
+/* Media query para pantallas menores a 960px */
+@media only screen and (max-width: 960px) {
+    /* Reducimos el padding lateral de la sección del formulario de contact */
+    .contactFormSection {
+        padding: 4rem 2rem;
+    }
+    
+    /* Reducimos el padding y el gap del container */
+    .container {
+        padding: 3.5rem;
+        gap: 2rem;
+    }
+
+    /* Alineamos en el centro el título y reducimos el intervalo de la fuente de letra*/
+    .sectionTitle {
+        text-align: center;
+        font-size: clamp(20px, 3vw, 28px);
+    }
+
+    /* Cambiamos la estructura visual del formulario */
+    .contactForm {
+        grid-template-areas: 
+        'nameGroup nameGroup'
+        'emailGroup emailGroup'
+        'messageGroup messageGroup'
+        'messageGroup messageGroup'
+        'infoGroup infoGroup'
+        'cbGroup cbGroup'
+        'submitGroup submitGroup';
+        gap: 2rem;
+    }
+
+    /* Reducimos la altura de los inputs */
+    .input {
+        height: 3rem;
+    }
+
+    /* Desplazamos arriba la etiqueta de todos los inputs menos la del checkbox, y reducimos su intervalo de tamaño de fuente */
+    .label:not(.cbLabel) {
+        top: .75rem;
+        font-size: clamp(12px, 2vw, 16px);;
+    }
+
+    /* Reducimos la altura del input de mensaje */
+    .messageInput {
+        height: 10rem;
+    }
+
+    /* Bajamos la etiqueta cuando esta escribiendo o ha escrito algo el usuario */
+    .input:not(.cbInput):focus ~ .label,
+    .input:not(.cbInput):valid ~ .label,
+    .input:not(.cbInput):not(:placeholder-shown) ~ .label {
+        top: -.5rem;
+    }
+
+    /* Justificamos el texto al inicio */
+    .infoGroup {
+        justify-content: start;
+    }
+
+    /* Reducimos el tamaño del checkbox */
+    .cbInput {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    /* Reducimos el intervalo del tamaño de fuente de la etiqueta del checkbox  */
+    .cbLabel {
+        font-size: clamp(10px, 2vw, 14px);
+    }
+
+    /* Aumentamos el tamaño a un 70% del botón de enviar, con un tamaño mínimo. Disminuimos su altura y el intervalo de tamaño de fuente también */
+    .submitBtn {
+        width: 70%;
+        min-width: 126px;
+        height: 3.5rem;
+        font-size: clamp(16px, 3vw, 24px);
+    }
+
+    /* Subimos el mensaje de error */
+    .error {
+        bottom: -1.2rem;
+    }
+}
+
+/* Media query para pantallas menores a 460px */
+@media only screen and (max-width: 460px) {
+    /* Reducimos el padding lateral del container */
+    .container {
+        padding: 3.5rem 1.75rem;
+    }
+
+    /* Reducimos el gap del grupo del checkbox */
+    .cbGroup {
+        gap: .5rem;
+    }
+}

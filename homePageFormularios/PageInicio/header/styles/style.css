@@ -1,0 +1,352 @@
+/* Variables de colores y algunas distancias fijas usadas */
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+
+    --burger-menu-distance: 10px;
+}
+
+/* Quitar margenes interiores y exteriores de todos los elementos, y ajustar el tamaño de estos incluyendoles sus bordes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body, ajustar el tamaño maximo al de la pantalla (Si se necesita más tamaño en alguna dimensión, modificar este bloque) */
+body {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+/* Header, contenedor exterior, conteniendo todos los elementos */
+.header {
+    display: flex;
+    padding: 1rem 2rem;
+    width: 100vw;
+    background-color: var(--bg-color);
+    position: fixed;
+    z-index: 1;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor de los contenidos del header sin los margenes de los extremos */
+.headerContent {
+    display: flex;
+    gap: clamp(2.5rem, 6.5vw, 20rem);
+}
+
+/* Foto del logo URB */
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+/* Barra de navegación, con los items para ir a las distintas páginas */
+.nav {
+    display: flex;
+}
+
+/* Lista que contiene cada elemento de la barra de navegación, ajustando el contenido a la mitad y añadiendo separación */
+.navList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(18px, 2vw, 24px);
+    list-style: none;
+    gap: 2rem;
+}
+
+/* Cada ítem de la barra de navegación (cada página) */
+.navItem {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Si te encuentras en la misma página que este ítem, se le añade la clase active para cambiar el peso de la fuente */
+.navItem.active {
+    font-weight: bold;
+}
+
+/* También se le cambia el color al link del apartado activo */
+.navItem.active .navLink {
+    color: var(--bg-dark-blue-color);
+}
+
+/* Elemento before de cada ítem, para añadir una pequeña animación al hacer hover. Este elemento es una raya
+horizontal debajo de cada ítem que se hace más grande si pasas el ratón por encima del elemento principal */
+.navItem::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: var(--bg-dark-blue-color);
+    transform: scaleX(0);
+    transition: all .3s;
+}
+
+/* Animación de hover para el elemento before del ítem */
+.navItem:hover::before {
+    transform: scaleX(1);
+}
+
+/* Clase link, para los enlaces a las distintas páginas */
+.navLink {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Botón del menú, solamente visible a partir de 720px de ancho (pantalla). */
+.menuBtn {
+    display: none;
+}
+
+
+/* Media queries */
+/* Media query para pantallas de menos de 720px */
+@media only screen and (max-width: 720px) {
+    /* Barra de navegación, con otra apariencia a la de escritorio. Ahora está fija fuera de la pantalla 
+    hasta que se abra el menú, que se desplazará dentro */
+    .nav {
+        padding: 9rem 2rem;
+        position: absolute;
+        top: 0;
+        right: 0rem;
+        height: 100vh;
+        background-color: var(--bg-color);
+        box-shadow: 0 0 0 0 var(--text-color);
+        transition: right .3s,
+                    box-shadow .3s ease-out .25s;
+    }
+
+    /* Barra de navegación cuando no está el menú abierto (la barra está escondida) */
+    .nav:not(.menu-opened) {
+        right: -15rem;
+    }
+
+    /* Barra de navegación cuando el menú está abierto (la barra está mostrada) */
+    .nav.menu-opened {
+        box-shadow: 20px 0 50px 2px var(--text-color);
+    }
+
+    /* Lista de ítems de la barra de navegación para llevarte a distintas páginas, ahora se pone en forma de columna */
+    .navList {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+
+    /* Ítem de navegación, ahora se alinea hacia la derecha para mejorarlo visualmente */
+    .navItem {
+        align-self: flex-end;
+    }
+
+    /* Cambiamos el orígen de la animación del elemento before, ahora empieza desde el extremo derecho */
+    .navItem::before {
+        transform-origin: 100%;
+    }
+
+    /* Añadimos estilos al botón de menú, para mostrar únicamente el icono del menú burger */
+    .menuBtn {
+        position: absolute;
+        top: 2.5rem;
+        right: 1.5rem;
+        display: flex;
+        background: none;
+        border: none;
+        outline: none;
+        width: 3rem;
+        height: 3rem;
+        cursor: pointer;
+    }
+
+    /* Cada elemento del menú burger (cada raya), con posición absoluta y centrándolos */
+    .burger {
+        width: 60%;
+        height: 4px;
+        border-radius: 10px;
+        background-color: var(--text-color);
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transform-origin: center;
+    }
+
+    /* Primera raya del burger menu, se centra desplazándolo un poco hacia arriba en el botón */
+    .menuBtn .burger:nth-child(1) {
+        top: calc(50% - var(--burger-menu-distance));
+    }
+
+    /* Segunda raya del burger menu, se centra en el botón */
+    .menuBtn .burger:nth-child(2) {
+        top: 50%;
+    }
+
+    /* Tercera raya del burger menu, se centra desplazándolo un poco hacia abajo en el botón */
+    .menuBtn .burger:nth-child(3) {
+        top: calc(50% + var(--burger-menu-distance));
+    }
+
+    /* Animación de la primera raya del burger menú cuando se abre */
+    .nav.menu-opened + .menuBtn .burger:nth-child(1) {
+        animation: firstLayerMenuOpen .5s ease-out forwards;
+    }
+    
+    /* Animación de la segunda raya del burger menú cuando se abre */
+    .nav.menu-opened + .menuBtn .burger:nth-child(2) {
+        opacity: 1;
+        animation: secondLayerMenuOpen 0s linear .25s forwards;
+    }
+
+    /* Animación de la tercera raya del burger menú cuando se abre */
+    .nav.menu-opened + .menuBtn .burger:nth-child(3) {
+        animation: thirdLayerMenuOpen .5s ease-out forwards;
+    }
+    
+    /* Animación de la primera raya del burger menú cuando se cierra */
+    .nav:not(.menu-opened) + .menuBtn .burger:nth-child(1) {
+        animation: firstLayerMenuClosed .5s ease-out forwards;
+    }
+
+    /* Animación de la segunda raya del burger menú cuando se cierra */
+    .nav:not(.menu-opened) + .menuBtn .burger:nth-child(2) {
+        opacity: 0;
+        animation: secondLayerMenuClosed 0s linear .25s forwards;
+    }
+
+    /* Animación de la tercera raya del burger menú cuando se cierra */
+    .nav:not(.menu-opened) + .menuBtn .burger:nth-child(3) {
+        animation: thirdLayerMenuClosed .5s ease-out forwards;
+    }
+
+    /* Animación de la primera raya del burger menu cuando se abre */
+    @keyframes firstLayerMenuOpen {
+        /* Se desplaza hacia debajo */
+        0% {
+            top: calc(50% - var(--burger-menu-distance));
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        /* Se mantiene en el centro */
+        50% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        
+        /* Se rota -45 grados */
+        100% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    } 
+
+    /* Animación de apertura de la segunda raya del burger menu */
+    @keyframes secondLayerMenuOpen {
+        /* Se baja la opacidad para hacerlo desaparecer */
+        from {
+            opacity: 1;
+        } 
+        
+        to {
+            opacity: 0;
+        }
+    }
+
+    /* Animación de apertura de la tercera raya del burger menu */
+    @keyframes thirdLayerMenuOpen {
+        /* Se desplaza hacia arriba */
+        0% {
+            top: calc(50% + var(--burger-menu-distance));
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        /* Se mantiene en el centro */
+        50% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        
+        /* Se rota 45 grados */
+        100% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+    }
+
+    /* Animación de cerrar de la primera raya del burger menu */
+    @keyframes firstLayerMenuClosed {
+        /* Se rota 45 grados */
+        0% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+        
+        /* Se mantiene en el centro */
+        50% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        
+        /* Se desplaza hacia arriba */
+        100% {
+            top: calc(50% - var(--burger-menu-distance));
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    } 
+
+    /* Animación de cerrar de la segunda raya del burger menu */
+    @keyframes secondLayerMenuClosed {
+        /* Se cambia la opacidad para que aparezca en pantalla */
+        from {
+            opacity: 0;
+        } 
+        
+        to {
+            opacity: 1;
+        }
+    }
+
+    /* Animación de cerrar de la tercera raya del burger menu */
+    @keyframes thirdLayerMenuClosed {
+        /* Se rota -45 grados */
+        0% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        
+        /* Se mantiene en el centro */
+        50% {
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        
+        /* Se desplaza hacia debajo */
+        100% {
+            top: calc(50% + var(--burger-menu-distance));
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    } 
+}
+
+/* Media query para pantallas mayores de 1900px. Esta media query es para controlar que el header no se quede en el extremo izquierdo en pantallas muy grandes */
+@media only screen and (min-width: 1900px) {
+    /* Header completo, centramos el contenido */
+    .header {
+        justify-content: center;
+    }
+
+    /* Contenido del propio header, sin margenes. Le damos un tamaño del 70% de la pantalla, limitandolo a 1250px, con el resto del contenido */
+    .headerContent {
+        width: 70%;
+        max-width: 1250px;
+    }
+}

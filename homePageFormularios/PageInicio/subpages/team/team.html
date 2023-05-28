@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team</title>
+    <link rel="stylesheet" href="../../styles/StyleTeam.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="team.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <!-- Header links -->
+    <link rel="stylesheet" href="../../header/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="../../header/scripts/script.js"></script>
+
+    <!-- Footer links-->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="../../styles/StyleFooter.css">
+
+</head>
+<body>
+    <!-- Navigation bar-->
+    <!-- Elemento header, contiene todo el header -->
+    <header class="header">
+        <!-- Sección de contenido del header, sin márgenes -->
+        <section class="headerContent">
+        <!-- Imágen del Logo URB -->
+        <a href="../../mainPage/index.html">
+            <img src="../../img/logo_noDetails_blue_black.png" alt="Logo URB" class="logo">
+        </a>
+            <!-- Barra de navegación per se, con la lista de ítems de navegación -->
+            <nav class="nav" id="nav">
+                <!-- Lista de ítems de navegación con todas las páginas para visitar -->
+                <ul class="navList menu-expansion" id="menuExpansion">
+                    <!-- Lista de elementos, con las diferentes páginas y enlaces -->
+                    <li class="navItem"><a href="#" class="navLink">Research</a></li>
+                    <li class="navItem"><a href="../team/team.html" class="navLink">Team</a></li>
+                    <li class="navItem"><a href="../projects/projects.html" class="navLink">Projects</a></li>
+                    <li class="navItem"><a href="../publications/publications.html" class="navLink">Publications</a></li>
+                    <li class="navItem"><a href="../contact/contact.html" class="navLink">Contact</a></li>
+                    <li class="navItem"><a href="../../../inicio/inicio.html" class="navLink">Log in</a></li>
+                </ul>
+            </nav>
+            <!-- Botón del menú, solamente visible a partir de un ancho de pantalla de 720px (móviles y tablets). -->
+            <button id="menuBtn" class="menuBtn" onclick="menuDisplay()">
+                <!-- Elementos que conforman visualmente el burger menu -->
+                <span class="burger"></span>
+                <span class="burger" id="secondLayerMenu"></span>
+                <span class="burger"></span>
+            </button>
+        </section>
+    </header>
+    <team class="team">
+
+        <!--Heads section-->
+        <section class="boss-joven">
+            <div class="person-joven">
+                <img id="personImg" src="../../img/person.jpg" alt="">
+                <h2>Jorge Joven Maried</h2>
+                <p>URB Director.</p>
+                <div class="box">
+                    <a id="more" class="button" href="#joven">More...</a>
+                </div>
+            </div>
+        </section>
+            
+        <!--Coordinators section-->
+        <section class="boss">
+            <!--Camps-->
+            <div class="person">
+                <img id="personImg" src="../../img/person.jpg" alt="">
+                <h2>Jordi Camps Andreu</h2>
+                <p>URB Coordinator</p>
+                <div class="box">
+                    <a id="more" class="button" href="#camps">More...</a>
+                </div>
+            </div>
+            
+            <!--Arenas-->
+            <div class="person" id="arenasPerson">
+                <img id="personImg" src="../../img/person.jpg" alt="">
+                <h2>Meritxell Arenas Prat</h2>
+                <p>Cancer Coordinator.</p>
+                <div class="box">
+                    <a id="more" class="button" href="#arenas">More...</a>
+                </div>
+            </div>
+
+            <!--Hernández-->
+            <div class="person">
+                <img id="personImg" src="../../img/person.jpg" alt="">
+                <h2>Mercè Hernández González</h2>
+                <p>Obesity Coordinator.</p>
+                <div class="box">
+                    <a id="more" class="button" href="#hernandez">More...</a>
+                </div>
+            </div>
+        </section>
+      
+        <!--Dropdown options-->
+        <section class="faq-container">
+
+            <!--Basic Science-->
+            <details>
+                <summary>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Basic Science
+                </summary>
+                <section class="employee">
+                    <!--Castañé-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Helena Castañé Vilafranca</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#castane">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Jiménez-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Andrea Jiménez Franco</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#jimenez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Martínez-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Cristian Martínez Navidad</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#martinez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Placed-->
+                    <div class="person" id="placedPerson">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Cristina Placed Gallego</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#placed">More...</a>
+                        </div>
+                    </div>
+
+
+                    <!--Aguilera-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Anna Hernández Aguilera</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#aguilera">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Parada-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>David Parada Domínguez</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#parada">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Peña-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Karla Beatriz Peña González</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#pena">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Riu-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Francisco Pedro Riu Ferrando</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#riu">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Fort-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Isabel Fort Gallifa</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#fort">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Sans-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Teresa Sans Mateu</h2>
+                        <p>Basic Science Team</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#sans">More...</a>
+                        </div>
+                    </div>
+                </section>
+            </details>
+          
+            <!--Cancer-->
+            <details>
+                <summary>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Cancer
+                </summary>
+                <section class="employee">
+                    <!--Masgrau-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Víctor Hernández Masgrau</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#masgrau">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Gómez-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>David Gómez Gómez</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#gomez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Henriquez-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Ivan Henriquez López</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#henriquez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Montero-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Manuel Jesús Montero Jaime</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#montero">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Arguis-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Monic Arguis Pinel</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#arguis">More...</a>
+                        </div>
+                    </div>
+
+                    <!--López-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Yolanda López Sánchez</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#lopez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Murcia-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Mauricio Murcia Mejía</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#murcia">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Escuin-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Cecilia Escuin Troncho</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#escuin">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Benavides-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>América Rocío Benavides Villarreal</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#benavides">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Alonso-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Carlos Alonso Villaverde</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#alonso">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Valentí-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Vicenç Valentí Moreno</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#valenti">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Flores-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Gemma Flores Mateo</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#flores">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Fernández-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Laura Fernández Sender</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#fernandez">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Capdevila-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Laia Capdevila Riera</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#capdevila">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Ruiz-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Isabel Ruiz Cabrero</h2>
+                        <p>Cancer</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#ruiz">More...</a>
+                        </div>
+                    </div>
+                </section>
+            </details>
+            
+            <!--Obesity-->
+            <details>
+                <summary>
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                    Obesity
+                </summary>
+                <section class="employee">   
+                    <!--París-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Marta París Sans</h2>
+                        <p>Obesity</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#paris">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Raga-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Esther Raga Carceller</h2>
+                        <p>Obesity</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#raga">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Bartra-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Elia Bartra Balcells</h2>
+                        <p>Obesity</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#bartra">More...</a>
+                        </div>
+                    </div>
+
+                    <!--Trinidad-->
+                    <div class="person">
+                        <img id="personImg" src="../../img/person.jpg" alt="">
+                        <h2>Anna Trinidad Borràs</h2>
+                        <p>Obesity</p>
+                        <div class="box">
+                            <a id="more" class="button" href="#trinidad">More...</a>
+                        </div>
+                    </div>
+                </section> 
+            </details>
+        </section>
+
+        <!--PopUp-->
+
+        <!--Joven-->
+        <div id="joven" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Jorge Joven Maried</h2>
+                    <p class="cargo">URB Director.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Camps-->
+        <div id="camps" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Jordi Camps Andreu</h2>
+                    <p class="cargo">URB Coordinator.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Arenas-->
+        <div id="arenas" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Meritxell Arenas Prat</h2>
+                    <p class="cargo">Cancer Coordinator.</p>
+                    <a class="close" href="#arenasPerson">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Hernández-->
+        <div id="hernandez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Mercà Hernández González</h2>
+                    <p class="cargo">Obesity Coordinator.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Castañé-->
+        <div id="castane" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Helena Castañé Vilafranca</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+         <!--Jimenéz-->
+         <div id="jimenez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Andrea Jiménez Franco</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Placed-->
+        <div id="placed" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Cristina Placed Gallego</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#placedPerson">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Martínez-->
+        <div id="martinez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Cristina Martínez Navidad</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Aguilera-->
+        <div id="aguilera" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Anna Hernández Aguilera</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Parada-->
+        <div id="parada" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>David Parada Domínguez</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Peña-->
+        <div id="pena" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>karla Beatriz Peña González</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Riu-->
+        <div id="riu" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Francisco Pedro Riu Ferrando</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Fort-->
+        <div id="fort" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Isabel Fort Gallifa</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Sans-->
+        <div id="sans" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Teresa Sans Mateu</h2>
+                    <p class="cargo">Oxidation-Inflammation and Metabolism.</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Masgrau-->
+        <div id="masgrau" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Víctor Hernández Masgrau</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Gómez-->
+        <div id="gomez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>David Gómez Gómez</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Henriquez-->
+        <div id="henriquez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Ivan henriquez López</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Montero-->
+        <div id="montero" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Manuel Jesús Montero Jaime</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Arguis-->
+        <div id="arguis" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Monica Arguis Pinel</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--López-->
+        <div id="lopez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Yolanda López Sánchez</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Murcia-->
+        <div id="murcia" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Mauricio Murcia Mejía</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Escuin-->
+        <div id="escuin" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Cecilia Escuin Troncho</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Benavides-->
+        <div id="benavides" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>América Rocío Benavides Villarreal</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Alonso-->
+        <div id="alonso" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Carlos Alonso Villaverde</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Valentí-->
+        <div id="valenti" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Vicenç Valentí Moreno</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Flores-->
+        <div id="flores" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Gemma Flores Mateo</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Fernandez-->
+        <div id="fernandez" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Laura Fernández Sender</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Capdevila-->
+        <div id="capdevila" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Laia Capdevila Riera</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Ruiz-->
+        <div id="ruiz" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Isabel Ruiz Cabrero</h2>
+                    <p class="cargo">Cancer</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--París-->
+        <div id="paris" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Marta París Sans</h2>
+                    <p class="cargo">Obesity</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Raga-->
+        <div id="raga" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Esther Raga Carceller</h2>
+                    <p class="cargo">Obesity</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Trinidad-->
+        <div id="trinidad" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Anna Trinidad Borràs</h2>
+                    <p class="cargo">Obesity</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+
+        <!--Bartra-->
+        <div id="bartra" class="overlay">
+            <div class="popup">
+                <img src="../../img/persona1.jpg" alt="Imagen persona1">
+                <article class="popUpContent">
+                    <h2>Elia Bartra Barcells</h2>
+                    <p class="cargo">Obesity</p>
+                    <a class="close" href="#">&times;</a>
+                    <p class="content">
+                        Thank to pop me out of that button, but now i'm done so you can close this window.
+                    </p>
+                    <article class="email">
+                        <ion-icon class="icon" name="mail-outline"></ion-icon>
+                        <p>email</p>
+                    </article>
+                </article>
+            </div>
+        </div>
+    </team>
+    <!-- Footer-->
+    <footer class="footer">
+        <section class="footerContents">
+            <img src="../../img/footerLogo.png" alt="Logo URB">
+
+            <div class="contactUs">
+                <div class="contactUsContents">
+                    <h2>CONTACT US</h2>
+                    <div id="contentContact">
+                        <ion-icon name="location-outline"></ion-icon>
+                        <p>Lorem Ipsum</p>
+                    </div>
+
+                    <div id="contentContact">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                    
+                    <div id="contentContact">
+                        <ion-icon name="mail-outline"></ion-icon>
+                        <p>Lorem Ipsum</p>
+                    </div>
+                </div>
+
+                <div class="redesSociales">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    
+                    <ion-icon name="logo-twitter"></ion-icon>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>
