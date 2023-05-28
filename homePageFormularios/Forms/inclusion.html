@@ -44,12 +44,16 @@
 
                                         <div class="form-outline mb-4" id="preguntaMenarquia" style="display: none;">
                                             <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="fechaMenarquia">4. Año de menarquía</label>
+                                                <label class="form-label required formatoPreguntas" for="fechaMenarquia">4. Año de menarquía</label><br>
+                                                <input type="checkbox" name="fechaMenarquia" id="sinfechaMenarquia" onclick="deshabilita('sinfechaMenarquia', 'yearMenarquiaP')" > <label for="sinfechaMenarquia">No consta</label><br>
+                                                <div id="yearMenarquiaP">
+                                                    <input type="number" id="fechaMenarquia" class="form-control"/>
+                                                </div>
                                                 <!-- Clase `nameDropdown`, para los inputs desplegados POR UN RADIO BUTTON -->
-                                                <input type="number" id="fechaMenarquia" class="form-control"/>
                                             </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="estado" >5. Estado</label><br>
+                                                <input value="estadoNoConsta" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="estadoNoConsta"> <label for="estadoNoConsta">No consta</label><br>
                                                 <input value="premenopausia" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="premenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="premenopausia">Premenopausia</label><br>
                                                 <input value="perimenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="perimenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="perimenopausia">Perimenopausia</label><br>
                                                 <input value="postmenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="postmenopausia" onclick="otrosAparece('postmenopausia', 'preguntaEdadMenopausia')"> <label for="postmenopausia">Postmenopausia</label><br>
