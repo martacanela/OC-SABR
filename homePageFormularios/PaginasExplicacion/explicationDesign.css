@@ -25,6 +25,11 @@ body {
     background-color:  var(--light-transparent-15-color);
 }
 
+ul {
+    padding-left: 40px; /* Espacio interno a la izquierda de la lista */
+}
+
+
 .button {
     border: none;
     width: 50%;
@@ -68,6 +73,17 @@ body {
     align-items: center;
     padding: 5rem 7.5rem;
     gap: 3rem;
+}
+
+.description {
+    font-size: clamp(12px, 3vw, 18px);
+    text-align: justify;
+    
+    padding-right: 100px;
+    padding-left: 100px;
+    border-left-width: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 /* Título de la sección */

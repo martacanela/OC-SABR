@@ -6,35 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="forms.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <script src="inicio.js"></script>
     
 </head>
 <body>
+       
     <!--Central section where all the content is-->
-    <section class="general">
-        <!--Title-->
-        <div class="titulo">
-            <h1>FORMULARIOS</h1>
-        </div>
-        <div class="description">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium totam facere, atque quidem a 
-            molestiae esse rem molestias reprehenderit autem, soluta qui sapiente laborum. Quod alias optio adipisci 
-            porro laboriosam! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur placeat, dolorum 
-            recusandae provident eos eveniet culpa deserunt voluptate tempore accusamus doloremque qui amet facilis dolorem! 
-            Reprehenderit quasi consequatur eum vel?
-        </div>
-        <!--Buttons to access the different forms-->
-        <div class="buttons">
-            <button class="style-1" type="button" onclick="changePage('../Forms/inclusion.html')">Inclusión</button>
-            <button class="style-1" type="button" onclick="changePage('../Forms/cancerPrimario.html')">Cáncer primario</button>
-            <button class="style-1" type="button" onclick="changePage('../Forms/m1.html')">M1</button>
-            <button class="style-1" type="button" onclick="changePage('../Forms/SABR.html')">SABR</button>
-            <button class="style-1" type="button" onclick="changePage('../PaginasExplicacion/explicacionSeguimiento.html')">Seguimiento</button>
-            <button class="style-1" type="button" onclick="changePageImg()">Imágenes</button>
-            <!--<button class="style-1" type="button" onclick="changePage()">Modificación</button>
-            <button class="style-1" type="button" onclick="changePage()">Mauricio</button>
-            <button class="style-1" type="button" onclick="changePage()">Rocio</button>
-            <button class="style-1" type="button" onclick="changePage()">EOM</button>-->
+    <section class="general gradient-form">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="card rounded-3">
+                    <!--Title-->
+                    <div class="titulo">
+                        <h1>FORMULARIOS</h1>
+                    </div>
+                    <div class="description">
+                        <p>Este formulario recoge informaci&oacute;n sobre:</p>
+                        <ul style="list-style-type: disc;">
+                        <li>Variables cl&iacute;nicas: antes de la SABR, al 1m, 3m, 6m, 12m y 24m</li>
+                        <li>5 muestras de sangre: antes de la SABR, al 1m, 3m, 12m y 24m</li>
+                        <li>3 TACs de Radioterapia: antes de la SABR, al 1m y 12m</li>
+                        </ul>
+                        <p>Las variables estudiadas ser&aacute;n recogidas en 5 secciones diferentes: inclusi&oacute;n, c&aacute;ncer primario, M1, SABR y seguimiento. Adem&aacute;s, el formulario dispone de una secci&oacute;n adicional para poder subir las im&aacute;genes obtenidas.</p>
+                        <p>Una vez enviado el formulario de cada secci&oacute;n, este no podr&aacute; volver a realizarse. En caso de querer modificar alguna informaci&oacute;n, es necesario indicarlo en la secci&oacute;n &ldquo;modificaciones&rdquo;.</p>
+                        <p>Muchas gracias por vuestra participaci&oacute;n en el estudio.</p>
+                    </div>
+                    <!--Buttons to access the different forms-->
+                    <div class="buttons">
+                        <button class="style-1" type="button" onclick="changePage('../Forms/inclusion.html')">Inclusión</button>
+                        <button class="style-1" type="button" onclick="changePage('../Forms/cancerPrimario.html')">Cáncer primario</button>
+                        <button class="style-1" type="button" onclick="changePage('../Forms/m1.html')">M1</button>
+                    </div>
+                    <div class="buttons">
+                        <button class="style-1" type="button" onclick="changePage('../Forms/SABR.html')">SABR</button>
+                        <button class="style-1" type="button" onclick="changePage('../PaginasExplicacion/explicacionSeguimiento.html')">Seguimiento</button>
+                        <button class="style-1" type="button" onclick="changePageImg()">Imágenes</button>
+                        <!--<button class="style-1" type="button" onclick="changePage()">Modificación</button>
+                        <button class="style-1" type="button" onclick="changePage()">Mauricio</button>
+                        <button class="style-1" type="button" onclick="changePage()">Rocio</button>
+                        <button class="style-1" type="button" onclick="changePage()">EOM</button>-->
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </body>
