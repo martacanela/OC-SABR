@@ -15,6 +15,7 @@
       
 /*Bacground color, font-family and organization for all the document*/
 body{
+    margin: 5rem 0;
     background-color: white;
     font-family: 'Poppins', sans-serif;
 
@@ -34,11 +35,27 @@ body{
 
 }
 
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+}
+
 /*Title color and spacing*/
 .titulo{
-    padding: 30px;
+    padding: 15px 30px;
     color: var(--text-color);
-    font-size: 30px;
+    font-size: clamp(24px, 3vw, 30px);
+}
+
+.titulo > h1 {
+    margin-bottom: .5rem;
+}
+
+.description {
+    padding: 15px 0;
+    font-size: clamp(12px, 3vw, 18px);
 }
 
 /*Button margin*/
@@ -57,6 +74,10 @@ body{
     font-weight:600;
     max-width:250px;
     font-size: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     text-align:center;  
     margin:10px auto;
@@ -111,12 +132,9 @@ body{
         height: 110px;
     }
 }
+
 @media screen and (max-width: 401px) {
-    .style-1 {
-      width: 90px;
-      height: 90px;
+    .general {
+        padding: 0 5px;
     }
 }
-
-
-  
