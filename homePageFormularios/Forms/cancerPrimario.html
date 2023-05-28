@@ -100,7 +100,7 @@
                             <div class="form-outline mb-4 ">
                                 <label class="form-label required formatoPreguntas" for="tils">11. TiLs</label>
                                 <p>Unidades: <b>%</b></p>
-                                <input type="checkbox" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')"> <label for="sintils">No consta</label><br>
+                                <input type="checkbox" class="no-required" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')"> <label for="sintils">No consta</label><br>
                                 <div id="tilsP">
                                     <input type="number" id="tils" name="tils" class="form-control" min="0.0" max="100.0" step="any" required/>
                                 </div>
@@ -136,7 +136,7 @@
                             </div>
                             <div class="form-outline mb-4" id="pld1Tab" style="display:none;">
                                 <label class="form-label required formatoPreguntas" for="pdl1Primario">15. PDL1 Positivo (%)</label>
-                                <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control pld1Dropdown" min="0.0" max="100.0"/>
+                                <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control pld1Dropdown no-required" min="0.0" max="100.0"/>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label required formatoPreguntas" for="alk" >16. ALK</label><br>
@@ -213,7 +213,7 @@
 
                             <div class="form-outline mb-4" id="dosLobulosGleasonTab" style="display: none;">
                                 <label class="form-label required formatoPreguntas" for="lobuloContralateral">26. Gleason lóbulo contralateral</label>
-                                <select class="form-control lobuloContralateralDropdown" name="lobuloContralateral" id="lobuloContralateral">
+                                <select class="form-control lobuloContralateralDropdown no-required" name="lobuloContralateral" id="lobuloContralateral">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "3_3">3+3</option>
                                     <option value = "3_4">3+4</option>
@@ -1776,13 +1776,12 @@
                             <label for="observaciones" class="form-label formatoPreguntas">36. Observaciones</label>
                             <input type="text" class="form-control" name="observaciones">
                         </div>    
-                    </div>
-
+                    </div> 
                     <div style="overflow:auto;">
-                        <div style="float:right; display: flex; align-items: center; gap: 10px;">
-                          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-                          <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
-                          <input type="submit" value="Subir" style="display: block;" id="uploadBtn" class="btn">
+                        <div style="float:right; display: flex; align-items: center; gap: 10px; flex-direction: row-reverse;">
+                            <button type="button" id="nextBtn" onclick="nextPrev(1)">Siguiente</button>
+                            <input type="submit" value="Subir" style="display: block;" id="uploadBtn" class="btn">
+                            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
                         </div>
                     </div>
                     <!-- Circles which indicates the steps of the form: -->
