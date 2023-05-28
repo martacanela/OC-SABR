@@ -131,25 +131,32 @@
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label required formatoPreguntas" for="pdl1" >14. PDL1 </label><br>
+                                <input type="radio" name="pdl1" id="pdl1NoConsta" class="dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1NoConsta">No consta</label><br>
                                 <input type="radio" name="pdl1" id="pdl1Positivo" class="hasDropdown dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1Positivo">Positivo</label><br>
                                 <input type="radio" name="pdl1" id="pdl1Negativo" class="dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1Negativo">Negativo</label><br>
                             </div>
                             <div class="form-outline mb-4" id="pld1Tab" style="display:none;">
-                                <label class="form-label required formatoPreguntas" for="pdl1Primario">15. PDL1 Positivo (%)</label>
-                                <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control pld1Dropdown no-required" min="0.0" max="100.0"/>
+                                <label class="form-label required formatoPreguntas" for="pdl1Primario">15. PDL1 Positivo (%)</label><br>
+                                <input type="checkbox" class="no-required" name="pdl1Primario" id="pdl1PrimarioNoConsta" onclick="deshabilita('pdl1PrimarioNoConsta', 'pdl1PrimarioNoConstaP')"> <label for="pdl1PrimarioNoConsta">No consta</label><br>
+                                <div id="pdl1PrimarioNoConstaP">
+                                    <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control pld1Dropdown no-required" min="0.0" max="100.0"/>
+                                </div>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label required formatoPreguntas" for="alk" >16. ALK</label><br>
+                                <input type="radio" name="alk" id="alkNoConsta"> <label for="alkNoConsta">No consta</label><br>
                                 <input type="radio" name="alk" id="alkSi"> <label for="alkSi">Sí</label><br>
                                 <input type="radio" name="alk" id="alkNo"> <label for="alkNo">No</label><br>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label required formatoPreguntas" for="ros" >17. ROS</label><br>
+                                <input type="radio" name="ros" id="rosNoConsta"> <label for="rosNoConsta">No consta</label><br>
                                 <input type="radio" name="ros" id="rosSi"> <label for="rosSi">Sí</label><br>
                                 <input type="radio" name="ros" id="rosNo"> <label for="rosNo">No</label><br>
                             </div>
                             <div class="form-outline mb-4">
                                 <label class="form-label required formatoPreguntas" for="EFGR" >18. EFGR</label><br>
+                                <input type="radio" name="EFGR" id="EFGRNoConsta"> <label for="EFGRNoConsta">No consta</label><br>
                                 <input type="radio" name="EFGR" id="EFGRSi"> <label for="EFGRSi">Sí</label><br>
                                 <input type="radio" name="EFGR" id="EFGRNo"> <label for="EFGRNo">No</label><br>
                             </div>
