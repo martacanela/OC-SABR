@@ -96,6 +96,15 @@ function otrosAparece(labelElemento, textoElemento){
   }
 }
 
+function noMostrar(labelElemento, textoElemento){
+  if (document.getElementById(labelElemento).checked) {
+      document.getElementById(textoElemento).style.display = 'none';
+  }
+  else{
+      document.getElementById(textoElemento).style.display = 'block';
+  }
+}
+
 function mostrarDivs(labelElemento, divsAMostrar){
   console.log("divsAMostrar: ", divsAMostrar);
   for (var j = 0; j < divsAMostrar.length; j++){

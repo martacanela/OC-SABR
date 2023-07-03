@@ -387,7 +387,7 @@
                         <br>
                         <div class="form-outline mb-4 ">
                             <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">34. Tratamientos</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias();"> <label for="m1Cirugia">Cirugía</label><br>
+                            <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias(); otrosAparece('m1Cirugia', 'tipoRtCirugiaMarcada'); noMostrar('m1Cirugia', 'tipoRtSinCirugia')"> <label for="m1Cirugia">Cirugía</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown rtGroup" name="tratamientosCancerPrimario" id="rt" onclick="otrosAparece('rt', 'rt_preguntas')"> <label for="rt">Radioterapia <b>(RT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown qtGroup" name="tratamientosCancerPrimario" id="qt" onclick="otrosAparece('qt', 'qt_preguntas')"> <label for="qt">Quimioterapia <b>(QT)</b> y/o anticuerpos monoclonales</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown hormonoterapiaAdyuvanteGroup" name="tratamientosCancerPrimario" id="hormonoterapiaAdyuvante" onclick="otrosAparece('hormonoterapiaAdyuvante', 'hormonoterapia_preguntas')"> <label for="hormonoterapiaAdyuvante">Hormonoterapia <b>(HT)</b></label><br>
@@ -448,14 +448,19 @@
                         </div>
                         <div id="rt_preguntas" style="display: none;">
                             <h4>Radioterapia</h4>
-                            <div class="form-outline mb-4">
-                                <label class="form-label formatoPreguntas" for="tipoQt">Tipo de radioterapia</label><br>
+                            <div class="form-outline mb-4" id="tipoRtCirugiaMarcada" style="display: none;">
+                                <label class="form-label formatoPreguntas" for="tipoRt" >Tipo de radioterapia</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtnGroup" name="rtNeoadyuvente" id="rtNeoadyuvante" onclick="otrosAparece('rtNeoadyuvante', 'rtna_preguntas')"> <label for="rtNeoadyuvante">Neoadyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="rtAdyuvante" id="rtadyuvante" onclick="otrosAparece('rtadyuvante', 'rta_preguntas')"> <label for="rtadyuvante">Adyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown rteGroup" name="rtExclusiva" id="rtexclusiva" onclick="otrosAparece('rtexclusiva', 'rtex_preguntas')"> <label for="rtexclusiva">Exclusiva</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown rtConcGroup" name="rtConcomitante" id="rtConcomitante" onclick="otrosAparece('rtConcomitante', 'rtConc_preguntas')"> <label for="rtConcomitante">Concomitante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown rtSecGroup" name="rtSecuencial" id="rtSecuencial" onclick="otrosAparece('rtSecuencial', 'rtsec_preguntas')"> <label for="rtSecuencial">Secuencial</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtPalGroup" name="rtPaliativa" id="rtPaliativa" onclick="otrosAparece('rtPaliativa', 'rtPal_preguntas')"> <label for="rtPaliativa">Paliativa</label><br>
+                            </div>
+                            
+                            <div class="form-outline mb-4" id="tipoRtSinCirugia" style="display: block;">
+                                <label class="form-label formatoPreguntas" for="tipoRt">Tipo de radioterapia</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rteCGroup" name="rtCExclusiva" id="rtCexclusiva" onclick="otrosAparece('rtCexclusiva', 'rtex_preguntas')"> <label for="rtCexclusiva">Exclusiva</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtConcCGroup" name="rtCConcomitante" id="rtCConcomitante" onclick="otrosAparece('rtCConcomitante', 'rtConc_preguntas')"> <label for="rtCConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtSecCGroup" name="rtCSecuencial" id="rtCSecuencial" onclick="otrosAparece('rtCSecuencial', 'rtsec_preguntas')"> <label for="rtCSecuencial">Secuencial</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalCGroup" name="rtCPaliativa" id="rtCPaliativa" onclick="otrosAparece('rtCPaliativa', 'rtPal_preguntas')"> <label for="rtCPaliativa">Paliativa</label><br>
                             </div>
                             <div id="rtna_preguntas" style="display: none;">
                                 <h5>Radioterapia neoadyuvante <b>(RTNA)</b></h5>
@@ -464,6 +469,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoRtNa" onclick="deshabilita('sinInfoRtNa', 'InfoRtNa_P')"> <label for="sinInfoRtNa">No se dispone información</label><br><br>
                                         <div id="InfoRtNa_P">
+                                            <div class="form-outline mb-4" id="tipoRtNACirugiaMarcada">
+                                                <label class="form-label formatoPreguntas" for="tipoRtNA">Tipo de radioterapia neoadyuvante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtNAeGroup" name="rtNAExclusiva" id="rtNAexclusiva"> <label for="rtNAexclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtNAConcGroup" name="rtNAConcomitante" id="rtNAConcomitante"> <label for="rtNAConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtNASecGroup" name="rtNASecuencial" id="rtNASecuencial"> <label for="rtNASecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="localizacionRadioterapiaNeoadyuvante" >Localización</label><br>
                                                 <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacion" style="display: none;">
@@ -550,6 +561,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoRtA" onclick="deshabilita('sinInfoRtA', 'InfoRtA_P')"> <label for="sinInfoRtA">No se dispone información</label><br><br>
                                         <div id="InfoRtA_P">
+                                            <div class="form-outline mb-4" id="tipoRtACirugiaMarcada">
+                                                <label class="form-label formatoPreguntas" for="tipoRtA">Tipo de radioterapia adyuvante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtAeGroup" name="rtAExclusiva" id="rtAexclusiva"> <label for="rtAexclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtAConcGroup" name="rtAConcomitante" id="rtAConcomitante"> <label for="rtAConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtASecGroup" name="rtASecuencial" id="rtASecuencial"> <label for="rtASecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="localizacionRadioterapiaAdyuvante" >Localización</label><br>
                                                 <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacion" style="display: none;">
@@ -894,6 +911,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoRtPal" onclick="deshabilita('sinInfoRtPal', 'InfoRtPal_P')"> <label for="sinInfoRtPal">No se dispone información</label><br><br>
                                         <div id="InfoRtPal_P">
+                                            <div class="form-outline mb-4" id="tipoRtPalCirugiaMarcada">
+                                                <label class="form-label formatoPreguntas" for="tipoRtA">Tipo de radioterapia paliativa</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtPaleGroup" name="rtPalExclusiva" id="rtPalExclusiva"> <label for="rtPalExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalConcGroup" name="rtPalConcomitante" id="rtPalConcomitante"> <label for="rtPalConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalSecGroup" name="rtPalSecuencial" id="rtPalSecuencial"> <label for="rtPalSecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="localizacionRadioterapiapaliativa" >Localización</label><br>
                                                 <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacion" style="display: none;">
@@ -973,10 +996,103 @@
                                     </div>
                                 </div>
                             </div>
+                            <div id="rtPalC_preguntas" style="display: none;">
+                                <h5>Radioterapia Paliativa</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4 template">
+                                        <input type="checkbox" id="sinInfoRtPal" onclick="deshabilita('sinInfoRtPal', 'InfoRtPal_P')"> <label for="sinInfoRtPal">No se dispone información</label><br><br>
+                                        <div id="InfoRtPal_P">
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="localizacionRadioterapiapaliativaC" >Localización</label><br>
+                                                <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioMamaRTLocalizacionC" style="display: none;">
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpMamaC" class="RtPalCDropdown"/> <label for="lrpMamaC">Mama</label><br>
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpMasectomiaC"/> <label for="lrpMasectomiaC">Mastectomía</label><br>
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpAreasGanglionaresC"/> <label for="lrpAreasGanglionaresC">Áreas ganglionares</label><br>
+                                                </div>
+                                                <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioPulmonRTLocalizacion" style="display: none;">
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpPulmonC" class="RtPalCDropdown"/> <label for="lrpPulmonC">Pulmón</label><br>
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpAreasGanglionaresC"/> <label for="lrpAreasGanglionaresC">Áreas ganglionares</label><br>
+                                                </div>
+                                                <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioColorectalRTLocalizacion" style="display: none;">
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpRectoC" class="RtPalCDropdown"/> <label for="lrpRectoC">Recto</label><br>
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpAreasGanglionaresC"/> <label for="lrpAreasGanglionaresC">Áreas ganglionares</label><br>
+                                                </div>
+                                                <div class="form-outline mb-4 divsRTLocalizacion" id="cancerPrimarioProstataRTLocalizacion" style="display: none;">
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpProstataC" class="RtPalCDropdown"/> <label for="lrpProstataC">Próstata</label><br>
+                                                    <input type="checkbox" name="localizacionRadioterapiapaliativaC" id="lrpAreasGanglionaresC"/> <label for="lrpAreasGanglionaresC">Áreas ganglionares</label><br>
+                                                </div>
+    
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaInicioRtPalC" >Fecha de inicio</label><br>
+                                                <input type="checkbox" id="sinfechaInicioRtPalC" onclick="deshabilita('sinfechaInicioRtPalC', 'fechaInicioRtPalC_P')"> <label for="sinfechaInicioRtPalC">No consta</label><br>
+                                                <div id="fechaInicioRtPalC_P">
+                                                    <input type="date" id="fechaInicioRtPalC" class="form-control RtPalCDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaFinRtPalC" >Fecha de finalización</label><br>
+                                                <input type="checkbox" id="sinfechaFinRtPalC" onclick="deshabilita('sinfechaFinRtPalC', 'fechaFinRtPalC_P')"> <label for="sinfechaFinRtPalC">No consta</label><br>
+                                                <div id="fechaFinRtPalC_P">
+                                                    <input type="date" id="fechaFinRtPalC" class="form-control RtPalCDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label required formatoPreguntas" for="dosisTotal_RtPalC">Dosis total</label><br>
+                                                <p><i>En caso de tener más de un PTV indicar la dosis más alta</i></p>
+                                                <p>Unidades: <b>Gy</b></p>
+                                                <input type="checkbox" id="sinDosisTotalRtPalC" onclick="deshabilita('sinDosisTotalRtPalC', 'dosisTotalRtPalC_P')"> <label for="sinDosisTotalRtPalC">No consta</label><br>
+                                                <div id="dosisTotalRtPalC_P">
+                                                    <input type="number" id="dosisTotal_RtPalC" class="form-control RtPalCDropdown" placeholder="0.0" min="0" max="80" step="any"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label required formatoPreguntas" for="numSesionesRtPalC">Número de sesiones</label><br>
+                                                <input type="checkbox" id="sinNumSesionesRtPalC" onclick="deshabilita('sinNumSesionesRtPalC', 'numSesionesRtPalC_P')"> <label for="sinNumSesionesRtPalC">No consta</label><br>
+                                                <div id="numSesionesRtPalC_P">
+                                                    <input type="number" id="numSesionesRtPalC" class="form-control RtPalCDropdown" min="0" max="30"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="sesionesSemana_RtPalC" >Sesiones / semana</label><br>
+                                                <input type="checkbox" id="sinSesionesSemanaRtPalC" onclick="deshabilita('sinSesionesSemanaRtPalC', 'sesionesSemanaRtPalC_P')"> <label for="sinSesionesSemanaRtPalC">No consta</label><br>
+                                                <div id="sesionesSemanaRtPalC_P">
+                                                    <input type="number" id="sesionesSemana_RtPalC" class="form-control RtPalCDropdown" min="1" max="5"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="RtPalC_completa" >¿RT paliativa completa?</label>
+                                                <select class="form-control RtPalCDropdown" name = "RtPalC_completa" id="RtPalC_completa">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "noConsta_RtPalC">No consta</option>
+                                                    <option value = "enTratamiento_RtPalC">En tratamiento</option>
+                                                    <option value = "suspendida_RtPalC">Suspendida</option>
+                                                    <option value = "completada_RtPalC">Completada</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="toxicidad_RtPalC" >Toxicidad a la RT paliativa</label><br>
+                                                <input type="radio" class="RtPalCDropdown" name="toxicidad_RtPalC" id="toxicidad_RtPalSiC"> <label for="toxicidad_RtPalSiC">Sí</label><br>
+                                                <input type="radio" name="toxicidad_RtPalC" id="toxicidad_RtPalNoC"> <label for="toxicidad_RtPalNoC">No</label><br>
+                                                <input type="radio" name="toxicidad_RtPalC" id="toxicidad_RtPalNoConstaC"> <label for="toxicidad_RtPalNoConstaC">No consta</label><br>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div id="qt_preguntas" style="display: none;">
                             <h4>Quimioterapia y/o anticuerpos monoclonales</h4>
                             <div class="form-outline mb-4 ">
+                                <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtnGroup" name="qtNeoadyuvente" id="qtNeoadyuvante" onclick="otrosAparece('qtNeoadyuvante', 'qtn')"> <label for="qtNeoadyuvante">Neoadyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad')"> <label for="qtadyuvante">Adyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtPalGroup" name="qtPaliativa" id="qtPaliativa" onclick="otrosAparece('qtPaliativa', 'qtPal')"> <label for="qtPaliativa">Paliativa</label><br>
+                            </div>
+                            <!--
+                                                            <div class="form-outline mb-4 ">
                                 <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtnGroup" name="qtNeoadyuvente" id="qtNeoadyuvante" onclick="otrosAparece('qtNeoadyuvante', 'qtn')"> <label for="qtNeoadyuvante">Neoadyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad')"> <label for="qtadyuvante">Adyuvante</label><br>
@@ -986,6 +1102,7 @@
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtPalGroup" name="qtPaliativa" id="qtPaliativa" onclick="otrosAparece('qtPaliativa', 'qtPal')"> <label for="qtPaliativa">Paliativa</label><br>
 
                             </div>
+                            -->
                             <div id="qtn" style="display: none;">
                                 <h5>Quimioterapia neoadyuvante <b>(QTNA)</b></h5>
                                 <br>
@@ -993,6 +1110,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoQtNa" onclick="deshabilita('sinInfoQtNa', 'InfoQtNa_P')"> <label for="sinInfoQtNa">No se dispone información</label><br><br>
                                         <div id="InfoQtNa_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qteGroup" name="qtExclusiva" id="qtexclusiva"> <label for="qtexclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcGroup" name="qtConcomitante" id="qtConcomitante"> <label for="qtConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtSecGroup" name="qtSecuencial" id="qtSecuencial"> <label for="qtSecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioQtna" >Fecha de inicio</label><br>
                                                 <input type="checkbox" id="sinfechaInicioQtna" onclick="deshabilita('sinfechaInicioQtna', 'fechaInicioQtna_P')"> <label for="sinfechaInicioQtna">No consta</label><br>
