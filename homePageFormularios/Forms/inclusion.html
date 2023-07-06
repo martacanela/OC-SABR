@@ -38,35 +38,12 @@
                                             <label class="form-label required formatoPreguntas" for="sexo" >3. Sexo</label><br>
                                             <!-- Clase dropdownGroup, para los grupos de inputs que tienen desplegable (mostrar u ocultar) -->
                                             <!-- Clase hasDropdown, para el input en concreto que muestra el desplegable -->
-                                            <input value="mujer" class="hasDropdown dropdownGroup" type="radio" name="sexo" id="mujer" onclick="otrosAparece('mujer', 'preguntaMenarquia')" required> <label for="mujer">Mujer</label><br>
-                                            <input value="hombre" class="dropdownGroup" type="radio" name="sexo" id="hombre" onclick="otrosAparece('mujer', 'preguntaMenarquia')"> <label for="hombre">Hombre</label><br>
-                                        </div>
-
-                                        <div class="form-outline mb-4" id="preguntaMenarquia" style="display: none;">
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="fechaMenarquia">4. Año de menarquia</label><br>
-                                                <input type="checkbox" name="fechaMenarquia" id="sinfechaMenarquia" onclick="deshabilita('sinfechaMenarquia', 'yearMenarquiaP')" > <label for="sinfechaMenarquia">No consta</label><br>
-                                                <div id="yearMenarquiaP">
-                                                    <input type="number" id="fechaMenarquia" class="form-control"/>
-                                                </div>
-                                                <!-- Clase `nameDropdown`, para los inputs desplegados POR UN RADIO BUTTON -->
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="estado" >5. Estado</label><br>
-                                                <input value="estadoNoConsta" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="estadoNoConsta" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="estadoNoConsta">No consta</label><br>
-                                                <input value="premenopausia" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="premenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="premenopausia">Premenopausia</label><br>
-                                                <input value="perimenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="perimenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="perimenopausia">Perimenopausia</label><br>
-                                                <input value="postmenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="postmenopausia" onclick="otrosAparece('postmenopausia', 'preguntaEdadMenopausia')"> <label for="postmenopausia">Postmenopausia</label><br>
-                                            </div>
-
-                                            <div class="form-outline mb-4" id="preguntaEdadMenopausia" style="display: none;">
-                                                <label class="form-label required formatoPreguntas" for="fechaMenopausia" >6. Año de menopausia</label>
-                                                <input type="number" id="fechaMenopausia" class="form-control"/>
-                                            </div>
+                                            <input value="mujer" type="radio" name="sexo" id="mujer" required> <label for="mujer">Mujer</label><br>
+                                            <input value="hombre" type="radio" name="sexo" id="hombre"> <label for="hombre">Hombre</label><br>
                                         </div>
 
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required formatoPreguntas" for="altura">7. Talla</label>
+                                            <label class="form-label required formatoPreguntas" for="altura">4. Talla</label>
                                             <p>Unidades: <b>m</b></p>
                                             <input type="checkbox" name="altura" id="sinaltura" onclick="deshabilita('sinaltura', 'alturaP')" > <label for="sinaltura">No consta</label><br>
                                             <div id="alturaP">
@@ -75,7 +52,7 @@
                                         </div>
 
                                         <div class="form-outline mb-4 ">
-                                            <label class="form-label required formatoPreguntas" for="peso">8. Peso</label>
+                                            <label class="form-label required formatoPreguntas" for="peso">5. Peso</label>
                                             <p>Unidades: <b>kg</b></p>
                                             <input type="checkbox" name="peso" id="sinPeso" onclick="deshabilita('sinPeso', 'pesoP')"> <label for="sinPeso">No consta</label><br>
                                             <div id="pesoP">
@@ -84,7 +61,7 @@
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required formatoPreguntas" for="antecedentesOncologicos">9. Antecedentes oncológicos previos al cáncer primario</label><br>
+                                            <label class="form-label required formatoPreguntas" for="antecedentesOncologicos">6. Antecedentes oncológicos previos al cáncer primario</label><br>
                                             <input type="checkbox" name="antecedentesOncologicos" id="sinAntecedentes" onclick="deshabilita('sinAntecedentes', 'sinAnt'); otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" required> <label for="sinAntecedentes">Sin antecedentes</label><br>
                                             <div id="sinAnt">
                                                 <input value="mama" type="checkbox" name="antecedentesOncologicos" id="antecMama" onclick="otrosAparece('antecedentesOtros__L', 'antecedentesOtros__T')" > <label for="antecMama">Mama</label><br>
@@ -98,12 +75,13 @@
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required formatoPreguntas" for="antFamiliares" >10. Antecedentes familiares oncológicos</label><br>
-                                            <input type="radio" name="antFamiliares" id="antFamiliaresSi" required> <label for="antFamiliaresSi">Sí</label><br>
+                                            <label class="form-label required formatoPreguntas" for="antFamiliares" >7. Antecedentes familiares oncológicos</label><br>
+                                            <input type="radio" name="antFamiliares" id="antFamiliaresNoConsta" required> <label for="antFamiliaresNoConsta">No consta</label><br>
+                                            <input type="radio" name="antFamiliares" id="antFamiliaresSi"> <label for="antFamiliaresSi">Sí</label><br>
                                             <input type="radio" name="antFamiliares" id="antFamiliaresNo" > <label for="antFamiliaresNo">No</label><br>
                                         </div>
                                         <div class="form-outline mb-4 habToxicos">
-                                            <label class="form-label required formatoPreguntas" for="habitosToxicos">11. Hábitos tóxicos</label><br>
+                                            <label class="form-label required formatoPreguntas" for="habitosToxicos">8. Hábitos tóxicos</label><br>
                                             <p>Seleccione como máximo 3 opciones</p>
                                             <input type="checkbox" name="habitosToxicos" id="sinHabitosToxicos" onclick="deshabilita('sinHabitosToxicos', 'habToxicos')" required> <label for="sinHabitosToxicos">Sin hábitos tóxicos</label><br>
                                             <div id="habToxicos">
@@ -116,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required formatoPreguntas" for="patologiasConcomitantes">12. Patologías concomitantes actuales</label><br>
+                                            <label class="form-label required formatoPreguntas" for="patologiasConcomitantes">9. Patologías concomitantes actuales</label><br>
                                             <input type="checkbox" name="patologiasConcomitantes" id="sinConcomitantes" onclick="deshabilita('sinConcomitantes', 'sinPatConc'); otrosAparece('patOtros__L', 'patOtrosText__T')" required> <label for="sinConcomitantes">Sin patologías concomitantes</label><br>
                                             <div id="sinPatConc">
                                                 <input type="checkbox" name="patologiasConcomitantes" id="db2" onclick="otrosAparece('patOtros__L', 'patOtrosText__T')"> <label for="db2">Diabetes tipo 2</label><br>
@@ -131,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <label class="form-label required formatoPreguntas" for="principiosActivos">13. Principios activos actuales</label><br>
+                                            <label class="form-label required formatoPreguntas" for="principiosActivos">10. Principios activos actuales</label><br>
                                             <p>Si cree que existen otros medicamentos que puedan influir, indique los principios activos separados por ";"</p>
                                             <input type="checkbox" name="principiosActivos" id="sinMedicamentos" onclick="deshabilita('sinMedicamentos', 'sinPrincActivos'); otrosAparece('principiosOtros__L', 'principiosOtros__T')" required> <label for="sinMedicamentos">Sin medicamentos</label><br>
                                             <div id="sinPrincActivos">
@@ -151,7 +129,7 @@
                                             </div>
                                         </div>   
                                         <div class="form-outline mb-4">
-                                            <label for="observaciones" class="form-label formatoPreguntas">14. Observaciones</label>
+                                            <label for="observaciones" class="form-label formatoPreguntas">11. Observaciones</label>
                                             <input type="text" class="form-control" name="observaciones">
                                         </div>        
                                     </div>
