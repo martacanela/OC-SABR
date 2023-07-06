@@ -34,14 +34,6 @@
                             <input type="date" id="fechaDiagnostico" class="form-control" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="estadoCancerPrimario" >3. Estatus actual del cáncer primario</label><br>
-                            <input value="sinRespuesta" type="radio" name="estadoCancerPrimario" id="sinRespuesta" required> <label for="sinRespuesta">Sin respuesta</label><br>
-                            <input value="respCompleta" type="radio" name="estadoCancerPrimario" id="respCompleta" > <label for="respCompleta">Respuesta completa</label><br>
-                            <input value="respParcial" type="radio" name="estadoCancerPrimario" id="respParcial" > <label for="respParcial">Respuesta parcial</label><br>
-                            <input value="progresionCancerPrimario" type="radio" name="estadoCancerPrimario" id="progresionCancerPrimario" > <label for="progresionCancerPrimario">Progresión</label><br>
-                        </div>
-
-                        <div class="form-outline mb-4">
                             <label class="form-label required formatoPreguntas" for="cancerPrimario" >4. Cáncer primario</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioMama"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioMama', 'cancerPrimarioMamaRTLocalizacion')" required> <label class="colorMama" for="cancerPrimarioMama">Mama</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioPulmon"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioPulmon','cancerPrimarioPulmonRTLocalizacion')" > <label class="colorPulmon" for="cancerPrimarioPulmon">Pulmón</label><br>
@@ -65,15 +57,15 @@
 
                             <div class="form-outline mb-4" id="preguntaMenarquia" style="display: none;">
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas" for="fechaMenarquia">6. Año de menarquia</label><br>
+                                    <label class="form-label required formatoPreguntas" for="fechaMenarquia">6. Edad de menarquia</label><br>
                                     <input type="checkbox" name="fechaMenarquia" id="sinfechaMenarquia" onclick="deshabilita('sinfechaMenarquia', 'yearMenarquiaP')" > <label for="sinfechaMenarquia">No consta</label><br>
                                     <div id="yearMenarquiaP">
-                                        <input type="number" id="fechaMenarquia" class="form-control"/>
+                                        <input type="number" id="fechaMenarquia" class="form-control" min="0" max="30"/>
                                     </div>
                                     <!-- Clase `nameDropdown`, para los inputs desplegados POR UN RADIO BUTTON -->
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas" for="estado" >7. Estado</label><br>
+                                    <label class="form-label required formatoPreguntas" for="estado" >7. Estado menopáusico</label><br>
                                     <input value="estadoNoConsta" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="estadoNoConsta" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="estadoNoConsta">No consta</label><br>
                                     <input value="premenopausia" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="premenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="premenopausia">Premenopausia</label><br>
                                     <input value="perimenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="perimenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="perimenopausia">Perimenopausia</label><br>
@@ -81,8 +73,11 @@
                                 </div>
 
                                 <div class="form-outline mb-4" id="preguntaEdadMenopausia" style="display: none;">
-                                    <label class="form-label required formatoPreguntas" for="fechaMenopausia" >8. Año de menopausia</label>
-                                    <input type="number" id="fechaMenopausia" class="form-control"/>
+                                    <label class="form-label required formatoPreguntas" for="fechaMenopausia" >8. Edad de menopausia</label><br>
+                                    <input type="checkbox" name="fechaMenopausia" id="sinfechaMenopausia" onclick="deshabilita('sinfechaMenopausia', 'yearMenopausiaP')" > <label for="sinfechaMenopausia">No consta</label><br>
+                                    <div id="yearMenopausiaP">
+                                        <input type="number" id="fechaMenopausia" class="form-control" min="35" max="70"/>
+                                    </div>
                                 </div>
                             </div>
 
@@ -289,6 +284,7 @@
                             <label class="form-label required formatoPreguntas" for="cT" >28. cT</label>
                             <select class="form-control" name = "cT" id="cT" required>
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "noConsta_Ct">No consta</option>
                                 <option value = "t1_Ct">T1</option>
                                 <option value = "t1a_Ct">T1a</option>
                                 <option value = "t1b_ct">T1b</option>
@@ -313,6 +309,7 @@
                             <label class="form-label required formatoPreguntas" for="cN" >29. cN</label>
                             <select class="form-control" name = "cN" id="cN" required>
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "noConsta_cN">No consta</option>
                                 <option value = "n0_cN">N0</option>
                                 <option value = "n1_cN">N1</option>
                                 <option value = "n2_cN">N2</option>
@@ -324,6 +321,7 @@
                             <label class="form-label required formatoPreguntas" for="cM" >30. cM</label>
                             <select class="form-control" name = "cM" id="cM" required>
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "noConsta_cM">No consta</option>
                                 <option value = "m0_cM">M0</option>
                                 <option value = "m1_cM">M1</option>
                                 <option value = "m1a_cM">M1a</option>
@@ -338,6 +336,7 @@
                             <label class="form-label required formatoPreguntas" for="pT" >31. pT</label>
                             <select class="form-control" name = "pT" id="pT">
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "nConsta_pT">No consta</option>
                                 <option value = "t1_pT">T1</option>
                                 <option value = "t1a_pT">T1a</option>
                                 <option value = "t1b_pT">T1b</option>
@@ -362,6 +361,7 @@
                             <label class="form-label required formatoPreguntas" for="pN" >32. pN</label>
                             <select class="form-control" name = "pN" id="pN">
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "noConsta">No consta</option>
                                 <option value = "n0_pN">N0</option>
                                 <option value = "n1_pN">N1</option>
                                 <option value = "n2_pN">N2</option>
@@ -373,6 +373,7 @@
                             <label class="form-label required formatoPreguntas" for="pM" >33. pM</label>
                             <select class="form-control" name = "pM" id="pM">
                                 <option value = "" selected>--Escoja una opción--</option>
+                                <option value = "noConsta_pM">No consta</option>
                                 <option value = "m0_pM">M0</option>
                                 <option value = "m1_pM">M1</option>
                                 <option value = "m1a_pM">M1a</option>
