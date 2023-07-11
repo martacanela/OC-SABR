@@ -222,6 +222,14 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
+                                    <label class="form-label required formatoPreguntas"  for="monocitos" >Monocitos</label><br>
+                                    <input type="checkbox" id="sinMonocitos" onclick="deshabilita('sinMonocitos', 'sinMonocitos_P')"> <label for="sinMonocitos">No consta</label><br>
+                                    <div id="sinMonocitos_P">
+                                        <p>Unidades: <b>%</b></p>
+                                        <input type="number" id="monocitos" class="form-control" placeholder="0.0"  min="0.00" max="100.00" step="any" required/>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
                                     <label class="form-label required formatoPreguntas"  for="linfocitos">Linfocitos</label><br>
                                     <input type="checkbox" id="sinLinfocitos" onclick="deshabilita('sinLinfocitos', 'sinLinfocitos_P')"> <label for="sinLinfocitos">No consta</label><br>
                                     <div id="sinLinfocitos_P">
@@ -256,27 +264,6 @@
                                     </div>
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="ilterleucina6" >Interleucina 6 (IL-6)</label><br>
-                                    <input type="checkbox" id="sinInterleucina6" onclick="deshabilita('sinInterleucina6', 'sinInterleucina6_P')"> <label for="sinInterleucina6">No consta</label><br>
-                                    <div id="sinInterleucina6_P">
-                                        <div class="unidadesConvecionalesTab" id="unidadesConvInterleucina6" style="display: none;">
-                                            <p>Unidades: <b>pg/mL</b></p>
-                                        </div>
-                                        <div class="unidadesSITab" id="unidadesSIInterleucina6" style="display: none;">
-                                            <p>Unidades: <b>mol/L</b></p>
-                                        </div>
-                                        <input type="number" id="ilterleucina6" class="form-control" placeholder="0.0" step="any" required/>
-                                    </div>
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas"  for="monocitos" >Monocitos</label><br>
-                                    <input type="checkbox" id="sinMonocitos" onclick="deshabilita('sinMonocitos', 'sinMonocitos_P')"> <label for="sinMonocitos">No consta</label><br>
-                                    <div id="sinMonocitos_P">
-                                        <p>Unidades: <b>%</b></p>
-                                        <input type="number" id="monocitos" class="form-control" placeholder="0.0"  min="0.00" max="100.00" step="any" required/>
-                                    </div>
-                                </div>
-                                <div class="form-outline mb-4">
                                     <label class="form-label required formatoPreguntas"  for="plaquetas" >Plaquetas</label><br>
                                     <input type="checkbox" id="sinPlaquetas" onclick="deshabilita('sinPlaquetas', 'sinPlaquetas_P')"> <label for="sinPlaquetas">No consta</label><br>
                                     <div id="sinPlaquetas_P">
@@ -287,6 +274,19 @@
                                             <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
                                         </div>
                                         <input type="number" id="plaquetas" class="form-control" placeholder="0.0" step="any" required/>
+                                    </div>
+                                </div>
+                                <div class="form-outline mb-4">
+                                    <label class="form-label required formatoPreguntas"  for="ilterleucina6" >Interleucina 6 (IL-6)</label><br>
+                                    <input type="checkbox" id="sinInterleucina6" onclick="deshabilita('sinInterleucina6', 'sinInterleucina6_P')"> <label for="sinInterleucina6">No consta</label><br>
+                                    <div id="sinInterleucina6_P">
+                                        <div class="unidadesConvecionalesTab" id="unidadesConvInterleucina6" style="display: none;">
+                                            <p>Unidades: <b>pg/mL</b></p>
+                                        </div>
+                                        <div class="unidadesSITab" id="unidadesSIInterleucina6" style="display: none;">
+                                            <p>Unidades: <b>mol/L</b></p>
+                                        </div>
+                                        <input type="number" id="ilterleucina6" class="form-control" placeholder="0.0" step="any" required/>
                                     </div>
                                 </div>
                             </div>
