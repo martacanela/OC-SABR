@@ -1939,7 +1939,33 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="form-outline mb-4 ">
+                            <label class="form-label required formatoPreguntas"  for="recidivaPrevia">35. Recidiva o progresión del tumor previos a la SABR</label><br>
+                            <input type="checkbox" name="recidivaPrevia" id="recidivaNinguna" onclick="deshabilita('recidivaNinguna', 'sinRecidiva'); otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaM1', 'preguntasRecaidaM1')" required> <label for="recidivaNinguna">Ninguna</label><br>
+                            <div id="sinRecidiva">
+                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup localGroup" id="recidivaLocal" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal')"> <label for="recidivaLocal">Local</label><br>
+                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup regionalGroup" id="recidivaRegional" onclick="otrosAparece('recidivaRegional', 'preguntasrecidivaRegional')"> <label for="recidivaRegional">Regional (Ganglionar)</label><br>
+                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup locoregionalGroup" id="recidivaLocoregional" onclick="otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaLocoregional">Loco-regional</label><br>
+                            </div>
+                        </div>
+                        <div id="preguntasrecidivaLocal" style="display: none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="fechaRecidivaLocal" >Fecha recaída recidiva o progresión local</label>
+                                <input type="date" id="fechaRecidivaLocal" class="form-control localDropdown" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecidivaLocal" >Tratamiento recidiva o progresión local</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" class="tratamientoRecidivaLocalDropdow" id="recidivaLCirugia"> <label for="recidivaLCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLRT" > <label for="recidivaLRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLQT" > <label for="recidivaLQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLHT" > <label for="recidivaLHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLIT" > <label for="recidivaLIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLRF" > <label for="recidivaLIT">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recidivaLOtros__L', 'recidivaLOtros__T')"> <label for="recidivaLOtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecidivaLocal" id="recidivaLOtros__T" class="form-control tratamientoRecidivaLocalDropdow" placeholder="Separad por ';'" style="display:none"/>
+
+                            </div>
+                        </div>
                         <div class="form-outline mb-4">
                             <label for="estado" class="form-label formatoPreguntas">35. Estado cáncer primario en el momento previo a la SABR</label><br>
                             <input type="radio" name="estado" id="estadoControlado" value="controlado" required> <label for="estadoControlado">Controlado</label><br>
