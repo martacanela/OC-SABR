@@ -280,107 +280,110 @@
                         <br>
                         <h4>cTNM</h4>
                         <br>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="cT" >28. cT</label>
-                            <select class="form-control" name = "cT" id="cT" required>
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "noConsta_Ct">No consta</option>
-                                <option value = "t1_Ct">T1</option>
-                                <option value = "t1a_Ct">T1a</option>
-                                <option value = "t1b_ct">T1b</option>
-                                <option value = "t1c_ct">T1c</option>
-                                <option value = "t2_Ct">T2</option>
-                                <option value = "t2a_Ct">T2a</option>
-                                <option value = "t2b_Ct">T2b</option>
-                                <option value = "t2c_Ct">T2c</option>
-                                <option value = "t3_Ct">T3</option>
-                                <option value = "t3a_Ct">T3a</option>
-                                <option value = "t3b_Ct">T3b</option>
-                                <option value = "t3c_Ct">T3c</option>
-                                <option value = "t3_Ct">T4</option>
-                                <option value = "t4a_Ct">T4a</option>
-                                <option value = "t4b_ct">T4b</option>
-                                <option value = "t4c_ct">T4c</option>
-                                <option value = "t4d_ct">T4d</option>
-                                <option value = "tx_Ct">Tx</option>
-                             </select>
+                        <input type="checkbox" class="no-required" name="cTNM" id="sinCTNM" onclick="deshabilita('sinCTNM', 'cTNMp')"> <label for="sinCTNM">No consta</label><br>
+                        <br>
+                        <div id="cTNMp">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="cT" >28. cT</label>
+                                <select class="form-control" name = "cT" id="cT" required>
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "t1_Ct">T1</option>
+                                    <option value = "t1a_Ct">T1a</option>
+                                    <option value = "t1b_ct">T1b</option>
+                                    <option value = "t1c_ct">T1c</option>
+                                    <option value = "t2_Ct">T2</option>
+                                    <option value = "t2a_Ct">T2a</option>
+                                    <option value = "t2b_Ct">T2b</option>
+                                    <option value = "t2c_Ct">T2c</option>
+                                    <option value = "t3_Ct">T3</option>
+                                    <option value = "t3a_Ct">T3a</option>
+                                    <option value = "t3b_Ct">T3b</option>
+                                    <option value = "t3c_Ct">T3c</option>
+                                    <option value = "t3_Ct">T4</option>
+                                    <option value = "t4a_Ct">T4a</option>
+                                    <option value = "t4b_ct">T4b</option>
+                                    <option value = "t4c_ct">T4c</option>
+                                    <option value = "t4d_ct">T4d</option>
+                                    <option value = "tx_Ct">Tx</option>
+                                 </select>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="cN" >29. cN</label>
+                                <select class="form-control" name = "cN" id="cN" required>
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "n0_cN">N0</option>
+                                    <option value = "n1_cN">N1</option>
+                                    <option value = "n2_cN">N2</option>
+                                    <option value = "n3_cN">N3</option>
+                                    <option value = "nx_cN">Nx</option>
+                                 </select>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="cM" >30. cM</label>
+                                <select class="form-control" name = "cM" id="cM" required>
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "m0_cM">M0</option>
+                                    <option value = "m1_cM">M1</option>
+                                    <option value = "m1a_cM">M1a</option>
+                                    <option value = "m1b_cM">M1b</option>
+                                    <option value = "m1c_cM">M1c</option>
+                                    <option value = "mx_cM">Mx</option>
+                                 </select>
+                            </div>
                         </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="cN" >29. cN</label>
-                            <select class="form-control" name = "cN" id="cN" required>
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "noConsta_cN">No consta</option>
-                                <option value = "n0_cN">N0</option>
-                                <option value = "n1_cN">N1</option>
-                                <option value = "n2_cN">N2</option>
-                                <option value = "n3_cN">N3</option>
-                                <option value = "nx_cN">Nx</option>
-                             </select>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="cM" >30. cM</label>
-                            <select class="form-control" name = "cM" id="cM" required>
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "noConsta_cM">No consta</option>
-                                <option value = "m0_cM">M0</option>
-                                <option value = "m1_cM">M1</option>
-                                <option value = "m1a_cM">M1a</option>
-                                <option value = "m1b_cM">M1b</option>
-                                <option value = "m1c_cM">M1c</option>
-                                <option value = "mx_cM">Mx</option>
-                             </select>
-                        </div>
+                        
                         <h4>pTNM</h4>
                         <br>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="pT" >31. pT</label>
-                            <select class="form-control" name = "pT" id="pT">
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "nConsta_pT">No consta</option>
-                                <option value = "t1_pT">T1</option>
-                                <option value = "t1a_pT">T1a</option>
-                                <option value = "t1b_pT">T1b</option>
-                                <option value = "t1c_pT">T1c</option>
-                                <option value = "t2_pT">T2</option>
-                                <option value = "t2a_pT">T2a</option>
-                                <option value = "t2b_pT">T2b</option>
-                                <option value = "t2c_pT">T2c</option>
-                                <option value = "t3_pT">T3</option>
-                                <option value = "t3a_pT">T3a</option>
-                                <option value = "t3b_pT">T3b</option>
-                                <option value = "t3c_pT">T3c</option>
-                                <option value = "t3_pT">T4</option>
-                                <option value = "t4a_pT">T4a</option>
-                                <option value = "t4b_pT">T4b</option>
-                                <option value = "t4c_pT">T4c</option>
-                                <option value = "t4d_pT">T4d</option>
-                                <option value = "tx_pT">Tx</option>
-                             </select>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="pN" >32. pN</label>
-                            <select class="form-control" name = "pN" id="pN">
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "noConsta">No consta</option>
-                                <option value = "n0_pN">N0</option>
-                                <option value = "n1_pN">N1</option>
-                                <option value = "n2_pN">N2</option>
-                                <option value = "n3_pN">N3</option>
-                                <option value = "nx_pN">Nx</option>
-                             </select>
-                        </div>
-                        <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="pM" >33. pM</label>
-                            <select class="form-control" name = "pM" id="pM">
-                                <option value = "" selected>--Escoja una opción--</option>
-                                <option value = "noConsta_pM">No consta</option>
-                                <option value = "m0_pM">M0</option>
-                                <option value = "m1_pM">M1</option>
-                                <option value = "m1a_pM">M1a</option>
-                                <option value = "m1b_pM">M1b</option>
-                                <option value = "m1c_pM">M1c</option>
-                                <option value = "mx_pM">Mx</option>
-                             </select>
+                        <input type="checkbox" class="no-required" name="pTNM" id="sinPTNM" onclick="deshabilita('sinPTNM', 'pTNMp')"> <label for="sinPTNM">No consta</label><br>
+                        <br>
+                        <div id="pTNMp">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="pT" >31. pT</label>
+                                <select class="form-control" name = "pT" id="pT">
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "t1_pT">T1</option>
+                                    <option value = "t1a_pT">T1a</option>
+                                    <option value = "t1b_pT">T1b</option>
+                                    <option value = "t1c_pT">T1c</option>
+                                    <option value = "t2_pT">T2</option>
+                                    <option value = "t2a_pT">T2a</option>
+                                    <option value = "t2b_pT">T2b</option>
+                                    <option value = "t2c_pT">T2c</option>
+                                    <option value = "t3_pT">T3</option>
+                                    <option value = "t3a_pT">T3a</option>
+                                    <option value = "t3b_pT">T3b</option>
+                                    <option value = "t3c_pT">T3c</option>
+                                    <option value = "t3_pT">T4</option>
+                                    <option value = "t4a_pT">T4a</option>
+                                    <option value = "t4b_pT">T4b</option>
+                                    <option value = "t4c_pT">T4c</option>
+                                    <option value = "t4d_pT">T4d</option>
+                                    <option value = "tx_pT">Tx</option>
+                                 </select>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="pN" >32. pN</label>
+                                <select class="form-control" name = "pN" id="pN">
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "n0_pN">N0</option>
+                                    <option value = "n1_pN">N1</option>
+                                    <option value = "n2_pN">N2</option>
+                                    <option value = "n3_pN">N3</option>
+                                    <option value = "nx_pN">Nx</option>
+                                 </select>
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas" for="pM" >33. pM</label>
+                                <select class="form-control" name = "pM" id="pM">
+                                    <option value = "" selected>--Escoja una opción--</option>
+                                    <option value = "m0_pM">M0</option>
+                                    <option value = "m1_pM">M1</option>
+                                    <option value = "m1a_pM">M1a</option>
+                                    <option value = "m1b_pM">M1b</option>
+                                    <option value = "m1c_pM">M1c</option>
+                                    <option value = "mx_pM">Mx</option>
+                                 </select>
+                            </div>
                         </div>
                     </div>
                     <div class="tab" id="tratamientoTab">
