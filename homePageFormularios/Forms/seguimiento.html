@@ -179,10 +179,10 @@
                                     <input type="checkbox" id="sinHematies" onclick="deshabilita('sinHematies', 'sinHematies_P')"> <label for="sinHematies">No consta</label><br>
                                     <div id="sinHematies_P">
                                         <div class="unidadesConvecionalesTab" id="unidadesConvHematies" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>6</sup>/µL</b></p>
+                                            <p>Unidades: <b>x10<sup>6</sup>u/µL</b></p>
                                         </div>
                                         <div class="unidadesSITab" id="unidadesSIHematies" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>12</sup>/L</b></p>
+                                            <p>Unidades: <b>x10<sup>12</sup>u/L</b></p>
                                         </div>
                                         <input type="number" id="hematies" class="form-control" placeholder="0.0" required step="any"/>
                                     </div>
@@ -213,10 +213,10 @@
                                     <input type="checkbox" id="sinLeucocitos" onclick="deshabilita('sinLeucocitos', 'sinLeucocitos_P')"> <label for="sinLeucocitos">No consta</label><br>
                                     <div id="sinLeucocitos_P">
                                         <div class="unidadesConvecionalesTab" id="unidadesConvLeucocitos" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
+                                            <p>Unidades: <b>x10<sup>3</sup>u/µL</b></p>
                                         </div>
                                         <div class="unidadesSITab" id="unidadesSILeucocitos" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
+                                            <p>Unidades: <b>x10<sup>9</sup>u/L</b></p>
                                         </div>
                                         <input type="number" id="leucocitos" class="form-control" placeholder="0.0" step="any" required/>
                                     </div>
@@ -225,7 +225,12 @@
                                     <label class="form-label required formatoPreguntas"  for="monocitos" >Monocitos</label><br>
                                     <input type="checkbox" id="sinMonocitos" onclick="deshabilita('sinMonocitos', 'sinMonocitos_P')"> <label for="sinMonocitos">No consta</label><br>
                                     <div id="sinMonocitos_P">
-                                        <p>Unidades: <b>%</b></p>
+                                        <div class="unidadesConvecionalesTab" id="unidadesConvMonocitos" style="display: none;">
+                                            <p>Unidades: <b>x10<sup>3</sup>u/µL</b></p>
+                                        </div>
+                                        <div class="unidadesSITab" id="unidadesSIMonocitos" style="display: none;">
+                                            <p>Unidades: <b>x10<sup>9</sup>u/L</b></p>
+                                        </div>
                                         <input type="number" id="monocitos" class="form-control" placeholder="0.0"  min="0.00" max="100.00" step="any" required/>
                                     </div>
                                 </div>
@@ -233,7 +238,12 @@
                                     <label class="form-label required formatoPreguntas"  for="linfocitos">Linfocitos</label><br>
                                     <input type="checkbox" id="sinLinfocitos" onclick="deshabilita('sinLinfocitos', 'sinLinfocitos_P')"> <label for="sinLinfocitos">No consta</label><br>
                                     <div id="sinLinfocitos_P">
-                                        <p>Unidades: <b>%</b></p>
+                                        <div class="unidadesConvecionalesTab" id="unidadesConvLinfocitos" style="display: none;">
+                                            <p>Unidades: <b>x10<sup>3</sup>u/µL</b></p>
+                                        </div>
+                                        <div class="unidadesSITab" id="unidadesSILinfocitos" style="display: none;">
+                                            <p>Unidades: <b>x10<sup>9</sup>u/L</b></p>
+                                        </div>
                                         <input type="number" id="linfocitos" class="form-control" placeholder="0.0"  min="0.0" max="100.00" step="any" required/>
                                     </div>
                                 </div>
@@ -268,10 +278,10 @@
                                     <input type="checkbox" id="sinPlaquetas" onclick="deshabilita('sinPlaquetas', 'sinPlaquetas_P')"> <label for="sinPlaquetas">No consta</label><br>
                                     <div id="sinPlaquetas_P">
                                         <div class="unidadesConvecionalesTab" id="unidadesConvPlaquetas" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>3</sup>/µL</b></p>
+                                            <p>Unidades: <b>x10<sup>3</sup>u/µL</b></p>
                                         </div>
                                         <div class="unidadesSITab" id="unidadesSIPlaquetas" style="display: none;">
-                                            <p>Unidades: <b>x10<sup>9</sup>/L</b></p>
+                                            <p>Unidades: <b>x10<sup>9</sup>u/L</b></p>
                                         </div>
                                         <input type="number" id="plaquetas" class="form-control" placeholder="0.0" step="any" required/>
                                     </div>
