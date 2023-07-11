@@ -5,6 +5,13 @@ $('.habToxicos :checkbox').change(function () {
   }
 });
 
+$('.recidivaCancerPrimario :checkbox').change(function () {
+  var $cs = $(this).closest('.recidivaCancerPrimario').find(':checkbox:checked');
+  if ($cs.length > 2) {
+      this.checked = false;
+  }
+});
+
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
 
