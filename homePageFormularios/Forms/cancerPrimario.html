@@ -1963,16 +1963,49 @@
                                 <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLRF" > <label for="recidivaLIT">Radiofrecuencia</label><br>
                                 <input type="checkbox" name="tratamientoRecidivaLocal" id="recidivaLOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recidivaLOtros__L', 'recidivaLOtros__T')"> <label for="recidivaLOtros__L">Otros</label><br>
                                 <input type="text" name="tratamientoRecidivaLocal" id="recidivaLOtros__T" class="form-control tratamientoRecidivaLocalDropdow" placeholder="Separad por ';'" style="display:none"/>
-
+                            </div>
+                        </div>
+                        <div id="preguntasrecidivaRegional" style="display: none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="fechaRecidivaRegional" >Fecha recaída recidiva o progresión regional</label>
+                                <input type="date" id="fechaRecidivaRegional" class="form-control regionalDropdown" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecidivaRegional" >Tratamiento recidiva o progresión regional</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" class="tratamientoRecidivaRegionalDropdow" id="recidivaLCirugia"> <label for="recidivaLCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaRRT" > <label for="recidivaRRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaRQT" > <label for="recidivaRQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaRHT" > <label for="recidivaRHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaRIT" > <label for="recidivaRIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaRRF" > <label for="recidivaRIT">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaRegional" id="recidivaROtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recidivaROtros__L', 'recidivaROtros__T')"> <label for="recidivaROtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecidivaRegional" id="recidivaROtros__T" class="form-control tratamientoRecidivaRegionalDropdow" placeholder="Separad por ';'" style="display:none"/>
+                            </div>
+                        </div>
+                        <div id="preguntasrecidivaLocoregional" style="display: none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="fechaRecidivaLocoregional" >Fecha recaída recidiva o progresión loco-regional</label>
+                                <input type="date" id="fechaRecidivaLocoregional" class="form-control regionalDropdown" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecidivaLocoregional" >Tratamiento recidiva o progresión loco-regional</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" class="tratamientoRecidivaLocoregionalDropdow" id="recidivaLCirugia"> <label for="recidivaLCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLRRT" > <label for="recidivaLRRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLRQT" > <label for="recidivaLRQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLRHT" > <label for="recidivaLRHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLRIT" > <label for="recidivaLRIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLRRF" > <label for="recidivaLRIT">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecidivaLocoregional" id="recidivaLROtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recidivaLROtros__L', 'recidivaLROtros__T')"> <label for="recidivaLROtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecidivaLocoregional" id="recidivaLROtros__T" class="form-control tratamientoRecidivaLocoregionalDropdow" placeholder="Separad por ';'" style="display:none"/>
                             </div>
                         </div>
                         <div class="form-outline mb-4">
-                            <label for="estado" class="form-label formatoPreguntas">35. Estado cáncer primario en el momento previo a la SABR</label><br>
+                            <label for="estado" class="form-label formatoPreguntas">36. Estado cáncer primario en el momento previo a la SABR</label><br>
                             <input type="radio" name="estado" id="estadoControlado" value="controlado" required> <label for="estadoControlado">Controlado</label><br>
                             <input type="radio" name="estado" id="estadoNoControlado" value="noControlado"> <label for="estadoNoControlado">No controlado</label><br>
                         </div>
                         <div class="form-outline mb-4">
-                            <label for="observaciones" class="form-label formatoPreguntas">36. Observaciones</label>
+                            <label for="observaciones" class="form-label formatoPreguntas">37. Observaciones</label>
                             <input type="text" class="form-control" name="observaciones">
                         </div>    
                     </div> 
