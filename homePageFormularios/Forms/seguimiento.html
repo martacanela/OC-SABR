@@ -305,30 +305,31 @@
                     <div class="tab">
                         <h3>Seguimiento de lesiones no tratadas con SABR</h3>
                         <br>
-                        <div class="form-outline mb-4 ">
+                        <div class="form-outline mb-4 recaidaPersistencaLimit">
                             <label class="form-label required formatoPreguntas"  for="recaidaPersistenca">7. Recaída o persistencia</label><br>
-                            <input type="checkbox" name="recaidaPersistenca" id="recaidaNinguna" onclick="deshabilita('recaidaNinguna', 'sinRecaida'); otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaM1', 'preguntasRecaidaM1')" required> <label for="recaidaNinguna">Ninguna</label><br>
+                            <input type="checkbox" name="recaidaPersistenca" id="recaidaNinguna" onclick="deshabilita('recaidaNinguna', 'sinRecaida'); otrosAparece('recaidaLocal', 'preguntasRecaidaLocal'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaLocoRegional', 'preguntasRecaidaLocoRegional'); otrosAparece('recaidaDistancia', 'preguntasRecaidaDistancia')" required> <label for="recaidaNinguna">Ninguna</label><br>
                             <div id="sinRecaida">
-                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup cancerPrimarioGroup" id="recaidaCancerPrimario" onclick="otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario')"> <label for="recaidaCancerPrimario">Recidiva cáncer primario</label><br>
-                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup ganglionarGroup" id="recaidaGanglionar" onclick="otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar')"> <label for="recaidaGanglionar">Recidiva Ganglionar</label><br>
-                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup m1Group" id="recaidaM1" onclick="otrosAparece('recaidaM1', 'preguntasRecaidaM1')"> <label for="recaidaM1">M1</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup localGroup" id="recaidaLocal" onclick="otrosAparece('recaidaLocal', 'preguntasRecaidaLocal')"> <label for="recaidaLocal">Local</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup ganglionarGroup" id="recaidaGanglionar" onclick="otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar')"> <label for="recaidaGanglionar">Regional/Ganglionar</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup locoRegionalGroup" id="recaidaLocoRegional" onclick="otrosAparece('recaidaLocoRegional', 'preguntasRecaidaLocoRegional')"> <label for="recaidaLocoRegional">Loco-regional</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup distanciaGroup" id="recaidaDistancia" onclick="otrosAparece('recaidaDistancia', 'preguntasRecaidaDistancia')"> <label for="recaidaDistancia">A distancia</label><br>
                             </div>
                         </div>
-                        <div id="preguntasRecaidaCancerPrimario" style="display:none;">
+                        <div id="preguntasRecaidaLocal" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaCancerPrimario" >8. Fecha recaída cáncer primario</label>
-                                <input type="date" id="fechaRecaidaCancerPrimario" class="form-control cancerPrimarioDropdown" />
+                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaLocal" >8. Fecha recaída local</label>
+                                <input type="date" id="fechaRecaidaLocal" class="form-control localDropdown" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaCancerPrimario" >9. Recidiva tratamiento cáncer primario</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" class="cancerPrimarioDropdown" id="recaidaCPCirugia"> <label for="recaidaCPCirugia">Cirugía</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPRT" > <label for="recaidaCPRT">Radioterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPQT" > <label for="recaidaCPQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPHT" > <label for="recaidaCPHT">Hormonoterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPIT" > <label for="recaidaCPIT">Inmunoterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPRF" > <label for="recaidaCPIT">Radiofrecuencia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaCancerPrimario" id="recaidaCPOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaCPOtros__L', 'recaidaCPOtros__T')"> <label for="recaidaCPOtros__L">Otros</label><br>
-                                <input type="text" name="tratamientoRecaidaCancerPrimario" id="recaidaCPOtros__T" class="form-control tratamientoRecaidaCancerPrimarioDropdow" placeholder="Separad por ';'" style="display:none"/>
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaLocal" >9. Recidiva tratamiento local</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" class="LocalDropdown" id="recaidaLCirugia"> <label for="recaidaLCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLRT" > <label for="recaidaLRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLQT" > <label for="recaidaLQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLHT" > <label for="recaidaLHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLIT" > <label for="recaidaLIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLRF" > <label for="recaidaLRF">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocal" id="recaidaLOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaLOtros__L', 'recaidaLOtros__T')"> <label for="recaidaLOtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecaidaLocal" id="recaidaLOtros__T" class="form-control tratamientoRecaidaLocalDropdow" placeholder="Separad por ';'" style="display:none"/>
 
                             </div>
                         </div>
@@ -349,21 +350,39 @@
                                 <input type="text" name="tratamientoRecaidaGanglionar" id="recaidaGangOtros__T" class="form-control tratamientoRecaidaGanglionarDropdow" placeholder="Separad por ';'" style="display:none"/>
                             </div>
                         </div>
-                        <div id="preguntasRecaidaM1" style="display:none;">
+                        <div id="preguntasRecaidaLocoRegional" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaM1" >12. Fecha recaída M1</label>
-                                <input type="date" id="fechaRecaidaM1" class="form-control m1Dropdown" />
+                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaLocoRegional" >12. Fecha recaída loco-regional</label>
+                                <input type="date" id="fechaRecaidaLocoRegional" class="form-control m1Dropdown" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaM1" >13. Tratamiento M1</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" class="m1Dropdown" id="recaidaM1Cirugia"> <label for="recaidaM1Cirugia">Cirugía</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1RT" > <label for="recaidaM1RT">Radioterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1QT" > <label for="recaidaM1QT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1HT" > <label for="recaidaM1HT">Hormonoterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1IT" > <label for="recaidaM1IT">Inmunoterapia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1RF" > <label for="recaidaM1RF">Radiofrecuencia</label><br>
-                                <input type="checkbox" name="tratamientoRecaidaM1" id="recaidaM1gOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaM1gOtros__L', 'recaidaM1gOtros__T')"> <label for="recaidaM1gOtros__L">Otros</label><br>
-                                <input type="text" name="tratamientoRecaidaM1" id="recaidaM1gOtros__T" class="form-control tratamientoRecaidaM1Dropdow" placeholder="Separad por ';'" style="display:none"/>
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaLocoRegional" >13. Tratamiento loco-regional</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" class="locoRegionalDropdown" id="recaidaLRCirugia"> <label for="recaidaLRCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRRT" > <label for="recaidaLRRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRQT" > <label for="recaidaLRQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRHT" > <label for="recaidaLRHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRIT" > <label for="recaidaLRIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRRF" > <label for="recaidaLRRF">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaLocoRegional" id="recaidaLRgOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaLRgOtros__L', 'recaidaLRgOtros__T')"> <label for="recaidaLRgOtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecaidaLocoRegional" id="recaidaLRgOtros__T" class="form-control tratamientoRecaidaLocoRegionalDropdow" placeholder="Separad por ';'" style="display:none"/>
+
+                            </div>
+                        </div>
+                        <div id="preguntasRecaidaDistancia" style="display:none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaDistancia" >14. Fecha recaída a distancia</label>
+                                <input type="date" id="fechaRecaidaDistancia" class="form-control m1Dropdown" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaDistancia" >15. Tratamiento de recaída a distancia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" class="distanciaDropdown" id="recaidaDCirugia"> <label for="recaidaDCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDRT" > <label for="recaidaDRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDQT" > <label for="recaidaDQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDHT" > <label for="recaidaDHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDIT" > <label for="recaidaDIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDRF" > <label for="recaidaDRF">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaDistancia" id="recaidaDgOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaDgOtros__L', 'recaidaDgOtros__T')"> <label for="recaidaDgOtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecaidaDistancia" id="recaidaDgOtros__T" class="form-control tratamientoRecaidaDistanciaDropdow" placeholder="Separad por ';'" style="display:none"/>
 
                             </div>
                         </div>
@@ -372,7 +391,7 @@
                         <h3>Toxicidad y Estatus</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required formatoPreguntas"  for="toxicidad">14. RTOG, LENT-SOMA</label><br>
+                            <label class="form-label required formatoPreguntas"  for="toxicidad">16. RTOG, LENT-SOMA</label><br>
                             <input type="checkbox" name="toxicidad" id="no" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('toxOtros__L', 'toxOtrosForm__T'); otrosAparece('astenia', 'gradoAsteniaTab');  otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('dolor', 'gradoDolorTab');" required> <label for="no">No</label><br>
                             <div id="sinToxicidad">
                                 <input type="checkbox" name="toxicidad" id="astenia" class="hasDropdown dropdownGroup asteniaGroup" onclick="otrosAparece('astenia', 'gradoAsteniaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="astenia">Astenia</label><br>
