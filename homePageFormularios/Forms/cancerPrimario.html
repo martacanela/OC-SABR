@@ -1941,12 +1941,11 @@
                         </div>
                         <div class="form-outline mb-4 recidivaCancerPrimario">
                             <label class="form-label required formatoPreguntas"  for="recidivaPrevia">35. Recidiva o progresión del tumor previos a la SABR</label><br>
-                            <input type="checkbox" name="recidivaPrevia" id="recidivaNinguna" onclick="deshabilita('recidivaNinguna', 'sinRecidiva'); otrosAparece('recaidaCancerPrimario', 'preguntasRecaidaCancerPrimario'); otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar'); otrosAparece('recaidaM1', 'preguntasRecaidaM1')" required> <label for="recidivaNinguna">Ninguna</label><br>
-                            <div id="sinRecidiva">
-                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup localGroup" id="recidivaLocal" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal')"> <label for="recidivaLocal">Local</label><br>
-                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup regionalGroup" id="recidivaRegional" onclick="otrosAparece('recidivaRegional', 'preguntasrecidivaRegional')"> <label for="recidivaRegional">Regional (Ganglionar)</label><br>
-                                <input type="checkbox" name="recidivaPrevia" class="hasDropdown dropdownGroup locoregionalGroup" id="recidivaLocoregional" onclick="otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaLocoregional">Loco-regional</label><br>
-                            </div>
+                            <input type="radio" name="recidivaPrevia" id="recidivaNinguna" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')" required> <label for="recidivaNinguna">Ninguna</label><br>
+                            <input type="radio" name="recidivaPrevia" class="hasDropdown dropdownGroup localGroup" id="recidivaLocal" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaLocal">Local</label><br>
+                            <input type="radio" name="recidivaPrevia" class="hasDropdown dropdownGroup regionalGroup" id="recidivaRegional" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaRegional">Regional (Ganglionar)</label><br>
+                            <input type="radio" name="recidivaPrevia" class="hasDropdown dropdownGroup locoregionalGroup" id="recidivaLocoregional" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaLocoregional">Loco-regional</label><br>
+                        
                         </div>
                         <div id="preguntasrecidivaLocal" style="display: none;">
                             <div class="form-outline mb-4">
