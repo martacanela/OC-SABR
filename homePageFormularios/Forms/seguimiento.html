@@ -313,6 +313,7 @@
                                 <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup ganglionarGroup" id="recaidaGanglionar" onclick="otrosAparece('recaidaGanglionar', 'preguntasRecaidaGanglionar')"> <label for="recaidaGanglionar">Regional/Ganglionar</label><br>
                                 <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup locoRegionalGroup" id="recaidaLocoRegional" onclick="otrosAparece('recaidaLocoRegional', 'preguntasRecaidaLocoRegional')"> <label for="recaidaLocoRegional">Loco-regional</label><br>
                                 <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup distanciaGroup" id="recaidaDistancia" onclick="otrosAparece('recaidaDistancia', 'preguntasRecaidaDistancia')"> <label for="recaidaDistancia">A distancia</label><br>
+                                <input type="checkbox" name="recaidaPersistenca" class="hasDropdown dropdownGroup segundaNeoplasiaGroup" id="recaidaSegundaNeoplasia" onclick="otrosAparece('recaidaSegundaNeoplasia', 'preguntasRecaidaSegundaNeoplasia')"> <label for="recaidaSegundaNeoplasia">Segunda neoplasia</label><br>
                             </div>
                         </div>
                         <div id="preguntasRecaidaLocal" style="display:none;">
@@ -386,12 +387,30 @@
 
                             </div>
                         </div>
+                        <div id="preguntasRecaidaSegundaNeoplasia" style="display:none;">
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="fechaRecaidaSegundaNeoplasia" >16. Fecha recidiva o progresión segunda neoplasia</label>
+                                <input type="date" id="fechaRecaidaSegundaNeoplasia" class="form-control m1Dropdown" />
+                            </div>
+                            <div class="form-outline mb-4">
+                                <label class="form-label required formatoPreguntas"  for="tratamientoRecaidaSegundaNeoplasia" >17. Tratamiento recidiva o progresión segunda neoplasia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" class="segundaNeoplasiaDropdown" id="recaidaSNCirugia"> <label for="recaidaSNCirugia">Cirugía</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNRT" > <label for="recaidaSNRT">Radioterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNQT" > <label for="recaidaSNQT">Quimioterapia y/o anticuerpos monoclonales - terapia dirigida</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNHT" > <label for="recaidaSNHT">Hormonoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNIT" > <label for="recaidaSNIT">Inmunoterapia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNRF" > <label for="recaidaSNRF">Radiofrecuencia</label><br>
+                                <input type="checkbox" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNgOtros__L" class="hasDropdown dropdownGroup" onclick="otrosAparece('recaidaSNgOtros__L', 'recaidaSNgOtros__T')"> <label for="recaidaSNgOtros__L">Otros</label><br>
+                                <input type="text" name="tratamientoRecaidaSegundaNeoplasia" id="recaidaSNgOtros__T" class="form-control tratamientoRecaidaSegundaNeoplasiaDropdow" placeholder="Separad por ';'" style="display:none"/>
+
+                            </div>
+                        </div>
                     </div>
                     <div class="tab">
                         <h3>Toxicidad y Estatus</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required formatoPreguntas"  for="toxicidad">16. RTOG, LENT-SOMA</label><br>
+                            <label class="form-label required formatoPreguntas"  for="toxicidad">18. RTOG, LENT-SOMA</label><br>
                             <input type="checkbox" name="toxicidad" id="no" onclick="deshabilita('no', 'sinToxicidad'); otrosAparece('toxOtros__L', 'toxOtrosForm__T'); otrosAparece('astenia', 'gradoAsteniaTab');  otrosAparece('disnea', 'gradoDisneaTab'); otrosAparece('neumonitis', 'gradoNeumonitisTab'); otrosAparece('dolor', 'gradoDolorTab');" required> <label for="no">No</label><br>
                             <div id="sinToxicidad">
                                 <input type="checkbox" name="toxicidad" id="astenia" class="hasDropdown dropdownGroup asteniaGroup" onclick="otrosAparece('astenia', 'gradoAsteniaTab'); otrosAparece('toxOtros__L', 'toxOtrosForm__T')"> <label for="astenia">Astenia</label><br>
@@ -544,7 +563,7 @@
                             </select>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas"  for="estatus" >15. Estatus</label>
+                            <label class="form-label required formatoPreguntas"  for="estatus" >19. Estatus</label>
                             <select class="form-control" name = "estatus" id="estatus" required>
                                 <option value = "vivaSinEnfermedad" selected>Vivo/a sin enfermedad</option>
                                 <option value = "vivaConEnfermedad">Vivo/a con enfermedad</option>
