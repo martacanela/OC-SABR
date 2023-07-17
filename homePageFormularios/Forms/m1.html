@@ -31,26 +31,19 @@
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label required formatoPreguntas" for="diagnosticoM1" >2. Diagnóstico de la primera M1</label><br>
-                                        <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" onclick="otrosAparece('metacronico', 'm1Metacronico')" required> <label for="sincronico">Sincrónico</label><br>
-                                        <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico" onclick="otrosAparece('metacronico', 'm1Metacronico')"> <label for="metacronico">Metacrónico</label><br>
+                                        <input type="radio" name="diagnosticoM1"  class="dropdownGroup" id="sincronico" required> <label for="sincronico">Sincrónico</label><br>
+                                        <input type="radio" name="diagnosticoM1" class="hasDropdown dropdownGroup" id="metacronico"> <label for="metacronico">Metacrónico</label><br>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label required formatoPreguntas" for="fechaM1">3. Fecha de la primera M1</label>
                                         <input type="date" id="fechaM1" class="form-control" required/>
                                     </div>
-                                    <div id="m1Metacronico" style="display:none;">
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label required formatoPreguntas" for="statusM1" >4. Estado actual M1</label><br>
-                                            <input type="radio" name="statusM1" id="m1Controlado" class="diagnosticoM1Dropdown"> <label for="m1Controlado">Controlado</label><br>
-                                            <input type="radio" name="statusM1" id="m1NoControlado" > <label for="m1NoControlado">No controlado</label><br>
-                                        </div>
-                                    </div>
                                     <div class="form-outline mb-4 ">
-                                        <label class="form-label required formatoPreguntas" for="numeroM1">5. Número de M1</label>
+                                        <label class="form-label required formatoPreguntas" for="numeroM1">4. Número de M1</label>
                                         <input type="number" id="numeroM1" class="form-control" required/>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <label class="form-label required formatoPreguntas" for="organosAfectados">6. Órganos afectados</label><br>
+                                        <label class="form-label required formatoPreguntas" for="organosAfectados">5. Órganos afectados</label><br>
                                         <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
                                         <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
                                         <input type="checkbox" name="organosAfectados" id="organoAfectadoGanglionar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoGanglionar">Ganglionar</label><br>
@@ -65,7 +58,7 @@
                                     <h3>Tratamientos</h3>
                                     <br>
                                     <div class="form-outline mb-4 ">
-                                        <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">7. Tratamientos de todas las M1 previas a la SABR</label><br>
+                                        <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">6. Tratamientos de todas las M1 previas a la SABR</label><br>
                                         <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias();"> <label for="m1Cirugia">Cirugía</label><br>
                                         <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="tratamientosCancerPrimario" id="rta" onclick="otrosAparece('rta', 'rta_preguntas')"> <label for="rta">Radioterapia <b>(RT)</b></label><br>
                                         <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="tratamientosCancerPrimario" id="qta" onclick="otrosAparece('qta', 'qta_preguntas')"> <label for="qta">Quimioterapia <b>(QT)</b> y/o anticuerpos monoclonales</label><br>
