@@ -338,98 +338,88 @@ return divsTumoresPrimarios.find(div => div.id === divId);
 
 // Funcion para ocultar o mostrar el hidden tab
 function cambiarVisibilidadDelHiddenTab(changedInput) {
-// Si se marca el input "otros", añadir clase hidden para ocultar el tab y ocultar el circulito del paso opcional 
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
-  tumorPrimarioTab.classList.add('hidden');
-  circulitoPasoAMostrar.style.display = 'none';
-// De lo contrario, mostrar ambos
-} else {
-  // Quite la classe hidden del tab del tumor primario
-  tumorPrimarioTab.classList.remove('hidden');
-  // Muestre el circulo del paso opcional
-  circulitoPasoAMostrar.style.display = 'inline-block';
-}
+  // Si se marca el input "otros", añadir clase hidden para ocultar el tab y ocultar el circulito del paso opcional 
+  if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
+    tumorPrimarioTab.classList.add('hidden');
+    circulitoPasoAMostrar.style.display = 'none';
+  // De lo contrario, mostrar ambos
+  } else {
+    // Quite la classe hidden del tab del tumor primario
+    tumorPrimarioTab.classList.remove('hidden');
+    // Muestre el circulo del paso opcional
+    circulitoPasoAMostrar.style.display = 'inline-block';
+  }
 }
 
 // Mostrar div concreto dentro del tab hidden (Mama, Pulmon, Prostata...) y ocultar los otros
 function mostrarDivCorrespondienteHiddenTab(changedInput) {
-// Si el input es "Otros", return
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
-// Buscar el div del input marcado y todos los divs
-let thisDiv = findDivDeHiddenTab(changedInput);
-let divsTumoresPrimarios = Array.from(document.querySelectorAll('#tumorPrimarioTab > div'));
-// Ocultar todos los divs y mostrar el actual
-divsTumoresPrimarios.map(div => div.style.display = 'none');
-thisDiv.style.display = 'block';
+  // Si el input es "Otros", return
+  if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
+  // Buscar el div del input marcado y todos los divs
+  let thisDiv = findDivDeHiddenTab(changedInput);
+  let divsTumoresPrimarios = Array.from(document.querySelectorAll('#tumorPrimarioTab > div'));
+  // Ocultar todos los divs y mostrar el actual
+  divsTumoresPrimarios.map(div => div.style.display = 'none');
+  thisDiv.style.display = 'block';
 }
 
 // Cambiar required de inputs dentro del div seleccionado del hidden tab
 function cambiarRequiredDeInputsDentroDelDivDelHiddenTab (changedInput) {
-// Quitar required de todos los inputs
-inputsDentroDelHiddenTab.forEach(input => input.removeAttribute('required'));
-// Si es "Otros", return
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
-// Guardar el div del input marcado y los inputs y selects dentro del div del input marcado
-let thisDiv = findDivDeHiddenTab(changedInput);
-let inputsDeThisDiv = Array.from(thisDiv.querySelectorAll('input, select'));
-// Inicializar una variable lastInput con el primer input como valor inicial, y:
-let lastInput = inputsDeThisDiv[0];
-for (let i = 0; i < inputsDeThisDiv.length; i++) {
-  // Por cada input dentro de inputsDeThisDiv añadir un required, siempre y cuando no sean del mismo grupo (con el mismo name) que el lastInput o no sean required
-  if (lastInput.name === inputsDeThisDiv[i].name || inputsDeThisDiv[i].classList.contains('no-required')) continue;
-  inputsDeThisDiv[i].setAttribute('required', '');
-  // Actualizar lastInput
-  lastInput = inputsDeThisDiv[i];
-}
-// Ponerle required al primer input, pues no se actualiza
-inputsDeThisDiv[0].setAttribute('required', '');
+  // Quitar required de todos los inputs
+  inputsDentroDelHiddenTab.forEach(input => input.removeAttribute('required'));
+  // Si es "Otros", return
+  if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') return;
+  // Guardar el div del input marcado y los inputs y selects dentro del div del input marcado
+  let thisDiv = findDivDeHiddenTab(changedInput);
+  let inputsDeThisDiv = Array.from(thisDiv.querySelectorAll('input, select'));
+  // Inicializar una variable lastInput con el primer input como valor inicial, y:
+  let lastInput = inputsDeThisDiv[0];
+  for (let i = 0; i < inputsDeThisDiv.length; i++) {
+    // Por cada input dentro de inputsDeThisDiv añadir un required, siempre y cuando no sean del mismo grupo (con el mismo name) que el lastInput o no sean required
+    if (lastInput.name === inputsDeThisDiv[i].name || inputsDeThisDiv[i].classList.contains('no-required')) continue;
+    inputsDeThisDiv[i].setAttribute('required', '');
+    // Actualizar lastInput
+    lastInput = inputsDeThisDiv[i];
+  }
+  // Ponerle required al primer input, pues no se actualiza
+  inputsDeThisDiv[0].setAttribute('required', '');
 }
 
 
 const checkboxCirugia = document.getElementById('m1Cirugia');
 
 function mostrarCirugiaCorrespondiente(changedInput) {
-let divsSeleccionados = document.querySelectorAll('.selected.divsCirugias');
-let selectCirugia = document.getElementById('numeroCirugia');
-let numero = selectCirugia ? parseInt(selectCirugia.value) : 1;
+  let divsSeleccionados = document.querySelectorAll('.selected.divsCirugias');
+  let selectCirugia = document.getElementById('numeroCirugia');
+  let numero = selectCirugia ? parseInt(selectCirugia.value) : 1;
 
-if (changedInput.id === 'cancerPrimarioOtros__L' || changedInput.id === 'cancerPrimarioOtros__T') {
-  if (divsSeleccionados.length === 0) return;
-  divsSeleccionados.forEach(divSeleccionado => {
-    ocultarCirugia(divSeleccionado);
-    document.getElementById('m1Cirugia_preguntas').style.display = 'none';
-    checkboxCirugia.checked = false;
-  })
-  return;
-}
+  if (divsSeleccionados.length === 0) {
+    let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia`);
+    let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
+    divCirugiaCorrespondiente.classList.add('selected');
+    divCirugiaCorrespondiente.style.display = 'block';
+    inputsCirugia.setAttribute('required', true);
+    return;
+  }
 
-if (divsSeleccionados.length === 0) {
-  let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia`);
-  let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
-  divCirugiaCorrespondiente.classList.add('selected');
-  divCirugiaCorrespondiente.style.display = 'block';
-  inputsCirugia.setAttribute('required', true);
-  return;
-}
+  divsSeleccionados.forEach(divSeleccionado => ocultarCirugia(divSeleccionado));
 
-divsSeleccionados.forEach(divSeleccionado => ocultarCirugia(divSeleccionado));
+  for (let i = 1; i <= numero; i++) {
+    let index = i === 1 ? '' : `_${i}`;
 
-for (let i = 1; i <= numero; i++) {
-  let index = i === 1 ? '' : `_${i}`;
+    let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia${index}`);
+    let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
 
-  let divCirugiaCorrespondiente = document.getElementById(`${changedInput.id}Cirugia${index}`);
-  let inputsCirugia = divCirugiaCorrespondiente.querySelector('input');
-
-  divCirugiaCorrespondiente.classList.add('selected');
-  divCirugiaCorrespondiente.style.display = 'block';
-  inputsCirugia.setAttribute('required', true);
-}
+    divCirugiaCorrespondiente.classList.add('selected');
+    divCirugiaCorrespondiente.style.display = 'block';
+    inputsCirugia.setAttribute('required', true);
+  }
 }
 
 function ocultarCirugia(divCirugia) {
-divCirugia.classList.remove('selected');
-divCirugia.style.display = 'none';
-divCirugia.querySelector('input').removeAttribute('required');
+  divCirugia.classList.remove('selected');
+  divCirugia.style.display = 'none';
+  divCirugia.querySelector('input').removeAttribute('required');
 }
 
 
