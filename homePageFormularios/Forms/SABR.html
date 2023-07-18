@@ -292,6 +292,159 @@
                                         </div>
                                     </div>     
                                 </div>
+                                <h4>Bioquímica</h4>
+                                <br>
+                                <input type="checkbox" id="sinInfoBioquimica" onclick="deshabilita('sinInfoBioquimica', 'sinInfoBioquimica_P')"> <label for="sinInfoBioquimica">No se dispone información de la bioquímica</label><br><br>
+                                <div id="sinInfoBioquimica_P">
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas" for="unidadesBioquimica" >Unidades</label><br>
+                                        <input type="radio" name="unidadesBioquimica" id="unidadesConvecionalesBioq" onclick="mostrarDiv('unidadesSIBioq', 'unidadesSIBioqTab'); mostrarDiv('unidadesConvecionalesBioq', 'unidadesConvecionalesBioqTab')"/> <label for="unidadesConvecionalesBioq">Unidades convencionales</label><br>
+                                        <input type="radio" name="unidadesBioquimica" id="unidadesSIBioq" onclick="mostrarDiv('unidadesSIBioq', 'unidadesSIBioqTab'); mostrarDiv('unidadesConvecionalesBioq', 'unidadesConvecionalesBioqTab')"/> <label for="unidadesSIBioq">Unidades del Sistema Internacional (SI)</label><br>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="glucosa" >Glucosa</label><br>
+                                        <input type="checkbox" id="sinGlucosa" onclick="deshabilita('sinGlucosa', 'sinGlucosa_P')"> <label for="sinGlucosa">No consta</label><br>
+                                        <div id="sinGlucosa_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvGlucosa" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIGlucosa" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="glucosa" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="trigliceridos" >Trigliceridos</label><br>
+                                        <input type="checkbox" id="sinTrigliceridos" onclick="deshabilita('sinTrigliceridos', 'sinTrigliceridos_P')"> <label for="sinTrigliceridos">No consta</label><br>
+                                        <div id="sinTrigliceridos_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvTrigliceridos" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSITrigliceridos" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="trigliceridos" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="colesterolTotal" >Colesterol total</label><br>
+                                        <input type="checkbox" id="sinColesterolTotal" onclick="deshabilita('sinColesterolTotal', 'sinColesterolTotal_P')"> <label for="sinColesterolTotal">No consta</label><br>
+                                        <div id="sinColesterolTotal_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvColesterolTotal" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIColesterolTotal" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="colesterolTotal" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="hdl" >HDL</label><br>
+                                        <input type="checkbox" id="sinHdl" onclick="deshabilita('sinHdl', 'sinHdl_P')"> <label for="sinHdl">No consta</label><br>
+                                        <div id="sinHdl_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvHdl" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIHdl" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="hdl" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="ldl" >LDL</label><br>
+                                        <input type="checkbox" id="sinLdl" onclick="deshabilita('sinLdl', 'sinLdl_P')"> <label for="sinLdl">No consta</label><br>
+                                        <div id="sinLdl_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvLdl" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSILdl" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="ldl" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="alt" >ALT (Alanina aminotransferasa)</label><br>
+                                        <input type="checkbox" id="sinAlt" onclick="deshabilita('sinAlt', 'sinAlt_P')"> <label for="sinAlt">No consta</label><br>
+                                        <div id="sinAlt_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvAlt" style="display: none;">
+                                                <p>Unidades: <b>U/L</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIAlt" style="display: none;">
+                                                <p>Unidades: <b>µkat/L</b></p>
+                                            </div>
+                                            <input type="number" id="alt" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="ast" >AST (Aspartato aminotransferasa)</label><br>
+                                        <input type="checkbox" id="sinAst" onclick="deshabilita('sinAst', 'sinAst_P')"> <label for="sinAst">No consta</label><br>
+                                        <div id="sinAst_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvAst" style="display: none;">
+                                                <p>Unidades: <b>U/L</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIAst" style="display: none;">
+                                                <p>Unidades: <b>µkat/L</b></p>
+                                            </div>
+                                            <input type="number" id="ast" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="ggt" >GGT (Gamma glutamil transferasa) </label><br>
+                                        <input type="checkbox" id="sinGgt" onclick="deshabilita('sinGgt', 'sinGgt_P')"> <label for="sinGgt">No consta</label><br>
+                                        <div id="sinGgt_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvGgt" style="display: none;">
+                                                <p>Unidades: <b>U/L</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIGgt" style="display: none;">
+                                                <p>Unidades: <b>µkat/L</b></p>
+                                            </div>
+                                            <input type="number" id="ggt" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="creatinina" >Creatinina</label><br>
+                                        <input type="checkbox" id="sinCreatinina" onclick="deshabilita('sinCreatinina', 'sinCreatinina_P')"> <label for="sinCreatinina">No consta</label><br>
+                                        <div id="sinCreatinina_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvCreatinina" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSICreatinina" style="display: none;">
+                                                <p>Unidades: <b>µmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="creatinina" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="vsg" >VSG (Velocidad de sedimentación glomerular)</label><br>
+                                        <input type="checkbox" id="sinVsg" onclick="deshabilita('sinVsg', 'sinVsg_P')"> <label for="sinVsg">No consta</label><br>
+                                        <div id="sinVsg_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvVsg" style="display: none;">
+                                                <p>Unidades: <b>mm/h</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIVsg" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="vsg" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label required formatoPreguntas"  for="pcr" >PCR (Proteína C reactiva)</label><br>
+                                        <input type="checkbox" id="sinPcr" onclick="deshabilita('sinPcr', 'sinPcr_P')"> <label for="sinPcr">No consta</label><br>
+                                        <div id="sinPcr_P">
+                                            <div class="unidadesConvecionalesBioqTab" id="unidadesConvPcr" style="display: none;">
+                                                <p>Unidades: <b>mg/dL</b></p>
+                                            </div>
+                                            <div class="unidadesSIBioqTab" id="unidadesSIPcr" style="display: none;">
+                                                <p>Unidades: <b>mmol/L</b></p>
+                                            </div>
+                                            <input type="number" id="pcr" class="form-control" placeholder="0.0" required step="any"/>
+                                        </div>
+                                    </div>
+                                </div>
                                 <hr>
                             </div>
                         </div>
