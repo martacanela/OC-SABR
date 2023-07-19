@@ -119,16 +119,16 @@ function noMostrar(labelElemento, textoElemento){
   }
 }
 
-function mostrarDivs(labelElemento, divsAMostrar){
+function mostrarDivs(idElemento, divsAMostrar){
   console.log("divsAMostrar: ", divsAMostrar);
   for (var j = 0; j < divsAMostrar.length; j++){
-    mostrarDiv(labelElemento, divsAMostrar[j]);
+    mostrarDiv(idElemento, divsAMostrar[j]);
   }
 }
 
-function mostrarDiv(labelElemento, divMostrar){
-  console.log("document.getElementById(labelElemento).checked: ", document.getElementById(labelElemento).checked);
-  if (document.getElementById(labelElemento).checked) {
+function mostrarDiv(idElemento, divMostrar){
+  console.log("document.getElementById(idElemento).checked: ", document.getElementById(idElemento).checked);
+  if (document.getElementById(idElemento).checked) {
     console.log("document.getElementsByClassName(divMostrar): ", document.getElementsByClassName(divMostrar));
     
     var elements = document.getElementsByClassName(divMostrar);
@@ -146,16 +146,16 @@ function mostrarDiv(labelElemento, divMostrar){
   }
 }
 
-function ocultarDivs(labelElemento, divsAOcultar){
+function ocultarDivs(idElemento, divsAOcultar){
   console.log("divsAOcultar: ", divsAOcultar);
   for (var j = 0; j < divsAOcultar.length; j++){
-    ocultarDiv(labelElemento, divsAOcultar[j]);
+    ocultarDiv(idElemento, divsAOcultar[j]);
   }
 }
 
-function ocultarDiv(labelElemento, divOcultar){
-  console.log("document.getElementById(labelElemento).checked: ", document.getElementById(labelElemento).checked);
-  if (document.getElementById(labelElemento).checked) {
+function ocultarDiv(idElemento, divOcultar){
+  console.log("document.getElementById(idElemento).checked: ", document.getElementById(idElemento).checked);
+  if (document.getElementById(idElemento).checked) {
     console.log("document.getElementsByClassName(divOcultar): ", document.getElementsByClassName(divOcultar));
     
     var elements = document.getElementsByClassName(divOcultar);

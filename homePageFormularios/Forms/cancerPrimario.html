@@ -391,7 +391,7 @@
                         <br>
                         <div class="form-outline mb-4 ">
                             <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">34. Tratamientos del cáncer primario previos a la SABR</label><br>
-                            <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias(); otrosAparece('m1Cirugia', 'tipoRtCirugiaMarcada'); noMostrar('m1Cirugia', 'tipoRtSinCirugia')"> <label for="m1Cirugia">Cirugía</label><br>
+                            <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias(); mostrarDivs('m1Cirugia', ['tipoRtCirugiaMarcada', 'tipoQtCirugiaMarcada', 'tipoHtCirugiaMarcada', 'tipoItCirugiaMarcada']); ocultarDivs('m1Cirugia', ['tipoRtSinCirugia', 'tipoQtSinCirugia', 'tipoHtSinCirugia', 'tipoItSinCirugia'])"> <label for="m1Cirugia">Cirugía</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown rtGroup" name="tratamientosCancerPrimario" id="rt" onclick="otrosAparece('rt', 'rt_preguntas')"> <label for="rt">Radioterapia <b>(RT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown qtGroup" name="tratamientosCancerPrimario" id="qt" onclick="otrosAparece('qt', 'qt_preguntas')"> <label for="qt">Quimioterapia <b>(QT)</b> y/o anticuerpos monoclonales</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown hormonoterapiaAdyuvanteGroup" name="tratamientosCancerPrimario" id="hormonoterapiaAdyuvante" onclick="otrosAparece('hormonoterapiaAdyuvante', 'hormonoterapia_preguntas')"> <label for="hormonoterapiaAdyuvante">Hormonoterapia <b>(HT)</b></label><br>
@@ -448,6 +448,17 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label required formatoPreguntas" for="tipoRespuesta_cirugia" >Tipo de respuesta</label>
+                                            <select class="form-control tipoCirugiaDropdown" name = "tipoRespuesta_cirugia" id="tipoRespuesta_cirugia">
+                                                <option value = "" selected>--Escoja una opción--</option>
+                                                <option value = "completa_tipoCirugia">Completa</option>
+                                                <option value = "parcial_tipoCirugia">Parcial</option>
+                                                <option value = "estable_tipoCirugia">Estable</option>
+                                                <option value = "progresion_tipoCirugia">Progresión</option>
+                                                <option value = "noConsta_tipoCirugia">No consta</option>
+                                            </select>
+                                        </div>
                                     </div>
                                     <hr>
                                 </div>
@@ -455,19 +466,19 @@
                         </div>
                         <div id="rt_preguntas" style="display: none;">
                             <h4>Radioterapia</h4>
-                            <div class="form-outline mb-4" id="tipoRtCirugiaMarcada" style="display: none;">
+                            <div class="form-outline mb-4 tipoRtCirugiaMarcada" id="tipoRtCirugiaMarcada" style="display: none;">
                                 <label class="form-label formatoPreguntas" for="tipoRt" >Tipo de radioterapia</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtnGroup" name="rtNeoadyuvente" id="rtNeoadyuvante" onclick="otrosAparece('rtNeoadyuvante', 'rtna_preguntas')"> <label for="rtNeoadyuvante">Neoadyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="rtAdyuvante" id="rtadyuvante" onclick="otrosAparece('rtadyuvante', 'rta_preguntas')"> <label for="rtadyuvante">Adyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtPalGroup" name="rtPaliativa" id="rtPaliativa" onclick="otrosAparece('rtPaliativa', 'rtPal_preguntas')"> <label for="rtPaliativa">Paliativa</label><br>
                             </div>
                             
-                            <div class="form-outline mb-4" id="tipoRtSinCirugia" style="display: block;">
+                            <div class="form-outline mb-4 tipoRtSinCirugia" id="tipoRtSinCirugia" style="display: block;">
                                 <label class="form-label formatoPreguntas" for="tipoRt">Tipo de radioterapia</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rteCGroup" name="rtCExclusiva" id="rtCexclusiva" onclick="otrosAparece('rtCexclusiva', 'rtex_preguntas')"> <label for="rtCexclusiva">Exclusiva</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtConcCGroup" name="rtCConcomitante" id="rtCConcomitante" onclick="otrosAparece('rtCConcomitante', 'rtConc_preguntas')"> <label for="rtCConcomitante">Concomitante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown rtSecCGroup" name="rtCSecuencial" id="rtCSecuencial" onclick="otrosAparece('rtCSecuencial', 'rtsec_preguntas')"> <label for="rtCSecuencial">Secuencial</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalCGroup" name="rtCPaliativa" id="rtCPaliativa" onclick="otrosAparece('rtCPaliativa', 'rtPal_preguntas')"> <label for="rtCPaliativa">Paliativa</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown rtPalCGroup" name="rtCPaliativa" id="rtCPaliativa" onclick="otrosAparece('rtCPaliativa', 'rtPalC_preguntas')"> <label for="rtCPaliativa">Paliativa</label><br>
                             </div>
                             <div id="rtna_preguntas" style="display: none;">
                                 <h5>Radioterapia neoadyuvante <b>(RTNA)</b></h5>
@@ -555,6 +566,17 @@
                                                 <input type="radio" class="rtnaDropdown" name="toxicidad_rtna" id="toxicidad_rtnaSi"> <label for="toxicidad_rtaSi">Sí</label><br>
                                                 <input type="radio" name="toxicidad_rtna" id="toxicidad_rtnaNo"> <label for="toxicidad_rtaNo">No</label><br>
                                                 <input type="radio" name="toxicidad_rtna" id="toxicidad_rtnaNoConsta"> <label for="toxicidad_rtnaNoConsta">No consta</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtna" >Tipo de respuesta</label>
+                                                <select class="form-control tiportnaDropdown" name = "tipoRespuesta_rtna" id="tipoRespuesta_rtna">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportna">Completa</option>
+                                                    <option value = "parcial_tiportna">Parcial</option>
+                                                    <option value = "estable_tiportna">Estable</option>
+                                                    <option value = "progresion_tiportna">Progresión</option>
+                                                    <option value = "noConsta_tiportna">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -648,6 +670,17 @@
                                                 <input type="radio" name="toxicidad_RtA" id="toxicidad_RtANo"> <label for="toxicidad_rtaNo">No</label><br>
                                                 <input type="radio" name="toxicidad_RtA" id="toxicidad_RtANoConsta"> <label for="toxicidad_RtANoConsta">No consta</label><br>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rta" >Tipo de respuesta</label>
+                                                <select class="form-control tiportaDropdown" name = "tipoRespuesta_rta" id="tipoRespuesta_rta">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiporta">Completa</option>
+                                                    <option value = "parcial_tiporta">Parcial</option>
+                                                    <option value = "estable_tiporta">Estable</option>
+                                                    <option value = "progresion_tiporta">Progresión</option>
+                                                    <option value = "noConsta_tiporta">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -733,6 +766,17 @@
                                                 <input type="radio" class="RtExcDropdown" name="toxicidad_RtExc" id="toxicidad_RtExcSi"> <label for="toxicidad_RtExcSi">Sí</label><br>
                                                 <input type="radio" name="toxicidad_RtExc" id="toxicidad_RtExcNo"> <label for="toxicidad_RtExcNo">No</label><br>
                                                 <input type="radio" name="toxicidad_RtExc" id="toxicidad_RtExcNoConsta"> <label for="toxicidad_RtExcNoConsta">No consta</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtex" >Tipo de respuesta</label>
+                                                <select class="form-control tiportexDropdown" name = "tipoRespuesta_rtex" id="tipoRespuesta_rtex">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportex">Completa</option>
+                                                    <option value = "parcial_tiportex">Parcial</option>
+                                                    <option value = "estable_tiportex">Estable</option>
+                                                    <option value = "progresion_tiportex">Progresión</option>
+                                                    <option value = "noConsta_tiportex">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -820,6 +864,17 @@
                                                 <input type="radio" name="toxicidad_RtConc" id="toxicidad_RtConcNo"> <label for="toxicidad_RtConcNo">No</label><br>
                                                 <input type="radio" name="toxicidad_RtConc" id="toxicidad_RtConcNoConsta"> <label for="toxicidad_RtConcNoConsta">No consta</label><br>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtconc" >Tipo de respuesta</label>
+                                                <select class="form-control tiportconcDropdown" name = "tipoRespuesta_rtconc" id="tipoRespuesta_rtconc">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportconc">Completa</option>
+                                                    <option value = "parcial_tiportconc">Parcial</option>
+                                                    <option value = "estable_tiportconc">Estable</option>
+                                                    <option value = "progresion_tiportconc">Progresión</option>
+                                                    <option value = "noConsta_tiportconc">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -905,6 +960,17 @@
                                                 <input type="radio" class="RtSecDropdown" name="toxicidad_RtSec" id="toxicidad_RtSecSi"> <label for="toxicidad_RtSecSi">Sí</label><br>
                                                 <input type="radio" name="toxicidad_RtSec" id="toxicidad_RtSecNo"> <label for="toxicidad_RtSecNo">No</label><br>
                                                 <input type="radio" name="toxicidad_RtSec" id="toxicidad_RtSecNoConsta"> <label for="toxicidad_RtSecNoConsta">No consta</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtsec" >Tipo de respuesta</label>
+                                                <select class="form-control tiportsecDropdown" name = "tipoRespuesta_rtsec" id="tipoRespuesta_rtsec">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportsec">Completa</option>
+                                                    <option value = "parcial_tiportsec">Parcial</option>
+                                                    <option value = "estable_tiportsec">Estable</option>
+                                                    <option value = "progresion_tiportsec">Progresión</option>
+                                                    <option value = "noConsta_tiportsec">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -998,6 +1064,17 @@
                                                 <input type="radio" name="toxicidad_RtPal" id="toxicidad_RtPalNo"> <label for="toxicidad_RtPalNo">No</label><br>
                                                 <input type="radio" name="toxicidad_RtPal" id="toxicidad_RtPalNoConsta"> <label for="toxicidad_RtPalNoConsta">No consta</label><br>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtpal" >Tipo de respuesta</label>
+                                                <select class="form-control tiportpalDropdown" name = "tipoRespuesta_rtpal" id="tipoRespuesta_rtpal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportpal">Completa</option>
+                                                    <option value = "parcial_tiportpal">Parcial</option>
+                                                    <option value = "estable_tiportpal">Estable</option>
+                                                    <option value = "progresion_tiportpal">Progresión</option>
+                                                    <option value = "noConsta_tiportpal">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1084,6 +1161,17 @@
                                                 <input type="radio" name="toxicidad_RtPalC" id="toxicidad_RtPalNoC"> <label for="toxicidad_RtPalNoC">No</label><br>
                                                 <input type="radio" name="toxicidad_RtPalC" id="toxicidad_RtPalNoConstaC"> <label for="toxicidad_RtPalNoConstaC">No consta</label><br>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_rtpal" >Tipo de respuesta</label>
+                                                <select class="form-control tiportpalDropdown" name = "tipoRespuesta_rtpal" id="tipoRespuesta_rtpal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tiportpal">Completa</option>
+                                                    <option value = "parcial_tiportpal">Parcial</option>
+                                                    <option value = "estable_tiportpal">Estable</option>
+                                                    <option value = "progresion_tiportpal">Progresión</option>
+                                                    <option value = "noConsta_tiportpal">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1092,24 +1180,20 @@
                         </div>
                         <div id="qt_preguntas" style="display: none;">
                             <h4>Quimioterapia y/o anticuerpos monoclonales</h4>
-                            <div class="form-outline mb-4 ">
+                            <div class="form-outline mb-4 tipoQtCirugiaMarcada" id="tipoQtCirugiaMarcada" style="display: none;">
                                 <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtnGroup" name="qtNeoadyuvente" id="qtNeoadyuvante" onclick="otrosAparece('qtNeoadyuvante', 'qtn')"> <label for="qtNeoadyuvante">Neoadyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad')"> <label for="qtadyuvante">Adyuvante</label><br>
                                 <input type="checkbox" class="dropdownGroup hasDropdown qtPalGroup" name="qtPaliativa" id="qtPaliativa" onclick="otrosAparece('qtPaliativa', 'qtPal')"> <label for="qtPaliativa">Paliativa</label><br>
                             </div>
-                            <!--
-                                                            <div class="form-outline mb-4 ">
+                            
+                            <div class="form-outline mb-4 tipoQtSinCirugia" id="tipoQtSinCirugia" style="display: block;">
                                 <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtnGroup" name="qtNeoadyuvente" id="qtNeoadyuvante" onclick="otrosAparece('qtNeoadyuvante', 'qtn')"> <label for="qtNeoadyuvante">Neoadyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtaGroup" name="qtAdyuvante" id="qtadyuvante" onclick="otrosAparece('qtadyuvante', 'qtad')"> <label for="qtadyuvante">Adyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qteGroup" name="qtExclusiva" id="qtexclusiva" onclick="otrosAparece('qtexclusiva', 'qtex')"> <label for="qtexclusiva">Exclusiva</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcGroup" name="qtConcomitante" id="qtConcomitante" onclick="otrosAparece('qtConcomitante', 'qtConc')"> <label for="qtConcomitante">Concomitante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtSecGroup" name="qtSecuencial" id="qtSecuencial" onclick="otrosAparece('qtSecuencial', 'qtSec')"> <label for="qtSecuencial">Secuencial</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown qtPalGroup" name="qtPaliativa" id="qtPaliativa" onclick="otrosAparece('qtPaliativa', 'qtPal')"> <label for="qtPaliativa">Paliativa</label><br>
-
+                                <input type="checkbox" class="dropdownGroup hasDropdown qteCGroup" name="qtCExclusiva" id="qtCexclusiva" onclick="otrosAparece('qtCexclusiva', 'qtex')"> <label for="qtCexclusiva">Exclusiva</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcCGroup" name="qtCConcomitante" id="qtCConcomitante" onclick="otrosAparece('qtCConcomitante', 'qtConc')"> <label for="qtCConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtSecCGroup" name="qtCSecuencial" id="qtCSecuencial" onclick="otrosAparece('qtCSecuencial', 'qtSec')"> <label for="qtCSecuencial">Secuencial</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown qtPalCGroup" name="qtCPaliativa" id="qtCPaliativa" onclick="otrosAparece('qtCPaliativa', 'qtPalC')"> <label for="qtCPaliativa">Paliativa</label><br>
                             </div>
-                            -->
                             <div id="qtn" style="display: none;">
                                 <h5>Quimioterapia neoadyuvante <b>(QTNA)</b></h5>
                                 <br>
@@ -1118,10 +1202,10 @@
                                         <input type="checkbox" id="sinInfoQtNa" onclick="deshabilita('sinInfoQtNa', 'InfoQtNa_P')"> <label for="sinInfoQtNa">No se dispone información</label><br><br>
                                         <div id="InfoQtNa_P">
                                             <div class="form-outline mb-4 ">
-                                                <label class="form-label formatoPreguntas" for="tipoQt">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
-                                                <input type="checkbox" class="dropdownGroup hasDropdown qteGroup" name="qtExclusiva" id="qtexclusiva"> <label for="qtexclusiva">Exclusiva</label><br>
-                                                <input type="checkbox" class="dropdownGroup hasDropdown qtConcGroup" name="qtConcomitante" id="qtConcomitante"> <label for="qtConcomitante">Concomitante</label><br>
-                                                <input type="checkbox" class="dropdownGroup hasDropdown qtSecGroup" name="qtSecuencial" id="qtSecuencial"> <label for="qtSecuencial">Secuencial</label><br>
+                                                <label class="form-label formatoPreguntas" for="tipoQtNA">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtNaeGroup" name="qtNaExclusiva" id="qtNaexclusiva"> <label for="qtNaexclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtNaConcGroup" name="qtNaConcomitante" id="qtNaConcomitante"> <label for="qtNaConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtNaSecGroup" name="qtNaSecuencial" id="qtNaSecuencial"> <label for="qtNaSecuencial">Secuencial</label><br>
                                             </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioQtna" >Fecha de inicio</label><br>
@@ -1179,6 +1263,17 @@
                                                 <input type="radio" name="toxicidad_qtna" id="toxicidad_qtnaNo"> <label for="toxicidad_qtnaNo">No</label><br>
                                                 <input type="radio" name="toxicidad_qtna" id="toxicidad_qtnaNoConsta"> <label for="toxicidad_qtnaNoConsta">No consta</label><br>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_qtna" >Tipo de respuesta</label>
+                                                <select class="form-control tipoqtNaDropdown" name = "tipoRespuesta_qtNa" id="tipoRespuesta_qtNa">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoqtNa">Completa</option>
+                                                    <option value = "parcial_tipoqtNa">Parcial</option>
+                                                    <option value = "estable_tipoqtNa">Estable</option>
+                                                    <option value = "progresion_tipoqtNa">Progresión</option>
+                                                    <option value = "noConsta_tipoqtNa">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1191,6 +1286,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoQtA" onclick="deshabilita('sinInfoQtA', 'InfoQtA_P')"> <label for="sinInfoQtA">No se dispone información</label><br><br>
                                         <div id="InfoQtA_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoqtA">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtAeGroup" name="qtAExclusiva" id="qtAexclusiva"> <label for="qtAexclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtAConcGroup" name="qtAConcomitante" id="qtAConcomitante"> <label for="qtAConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown qtASecGroup" name="qtASecuencial" id="qtASecuencial"> <label for="qtASecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioQtA" >Fecha de inicio</label><br>
                                                 <input type="checkbox" id="sinfechaInicioQtA" onclick="deshabilita('sinfechaInicioQtA', 'fechaInicioQtA_P')"> <label for="sinfechaInicioQtA">No consta</label><br>
@@ -1231,7 +1332,13 @@
                                                 </select>
                                             </div>
                                             <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="respuesta_QtA" >Respuesta a la QTA</label>
+                                                <label class="form-label required formatoPreguntas" for="toxicidad_QtA" >Toxicidad a la QTA</label><br>
+                                                <input type="radio" class="QtADropdown" name="toxicidad_QtA" id="toxicidad_QtASi"> <label for="toxicidad_QtASi">Sí</label><br>
+                                                <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANo"> <label for="toxicidad_QtANo">No</label><br>
+                                                <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANoConsta"> <label for="toxicidad_QtANoConsta">No consta</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="respuesta_QtA" >Tipo de respuesta</label>
                                                 <select class="form-control QtADropdown" name = "respuesta_QtA" id="respuesta_QtA">
                                                     <option value = "" selected>--Escoja una opción--</option>
                                                     <option value = "completa">Completa</option>
@@ -1240,12 +1347,6 @@
                                                     <option value = "progresion">Progresion</option>
                                                     <option value = "noConsta">No consta</option>
                                                 </select>
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="toxicidad_QtA" >Toxicidad a la QTA</label><br>
-                                                <input type="radio" class="QtADropdown" name="toxicidad_QtA" id="toxicidad_QtASi"> <label for="toxicidad_QtASi">Sí</label><br>
-                                                <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANo"> <label for="toxicidad_QtANo">No</label><br>
-                                                <input type="radio" name="toxicidad_QtA" id="toxicidad_QtANoConsta"> <label for="toxicidad_QtANoConsta">No consta</label><br>
                                             </div>
                                         </div>
                                         <hr>
@@ -1299,7 +1400,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="respuesta_QtExc" >Respuesta a la quimioterapia exclusiva</label>
+                                                <label class="form-label required formatoPreguntas" for="respuesta_QtExc" >Tipo de respuesta</label>
                                                 <select class="form-control QtExcDropdown" name = "respuesta_QtExc" id="respuesta_QtExc">
                                                     <option value = "" selected>--Escoja una opción--</option>
                                                     <option value = "completa">Completa</option>
@@ -1367,7 +1468,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="respuesta_QtConc" >Respuesta a la quimioterapia concomitante</label>
+                                                <label class="form-label required formatoPreguntas" for="respuesta_QtConc" >Tipo de respuesta</label>
                                                 <select class="form-control QtConcDropdown" name = "respuesta_QtConc" id="respuesta_QtConc">
                                                     <option value = "" selected>--Escoja una opción--</option>
                                                     <option value = "completa">Completa</option>
@@ -1435,7 +1536,7 @@
                                                 </select>
                                             </div>
                                             <div class="form-outline mb-4">
-                                                <label class="form-label required formatoPreguntas" for="respuesta_QtSec" >Respuesta a la Quimioterapia secuencial</label>
+                                                <label class="form-label required formatoPreguntas" for="respuesta_QtSec" >Tipo de respuesta</label>
                                                 <select class="form-control QtSecDropdown" name = "respuesta_QtSec" id="respuesta_QtSec">
                                                     <option value = "" selected>--Escoja una opción--</option>
                                                     <option value = "completa">Completa</option>
@@ -1457,6 +1558,82 @@
                                 </div>
                             </div>
                             <div id="qtPal" style="display: none;">
+                                <h5>Quimioterapia Paliativa</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4  ">
+                                        <div class="form-outline mb-4 template">
+                                            <input type="checkbox" id="sinInfoQtPal" onclick="deshabilita('sinInfoQtPal', 'InfoQtPal_P')"> <label for="sinInfoQtPal">No se dispone información</label><br><br>
+                                            <div id="InfoQtPal_P">
+                                                <div class="form-outline mb-4 ">
+                                                    <label class="form-label formatoPreguntas" for="tipoqtPal">Tipo de quimioterapia y/o anticuerpos monoclonales</label><br>
+                                                    <input type="checkbox" class="dropdownGroup hasDropdown qtPaleGroup" name="qtPalExclusiva" id="qtPalexclusiva"> <label for="qtPalexclusiva">Exclusiva</label><br>
+                                                    <input type="checkbox" class="dropdownGroup hasDropdown qtPalConcGroup" name="qtPalConcomitante" id="qtPalConcomitante"> <label for="qtPalConcomitante">Concomitante</label><br>
+                                                    <input type="checkbox" class="dropdownGroup hasDropdown qtPalSecGroup" name="qtPalSecuencial" id="qtPalSecuencial"> <label for="qtPalSecuencial">Secuencial</label><br>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="fechaInicioQtPal" >Fecha de inicio</label><br>
+                                                    <input type="checkbox" id="sinfechaInicioQtPal" onclick="deshabilita('sinfechaInicioQtPal', 'fechaInicioQtPal_P')"> <label for="sinfechaInicioQtPal">No consta</label><br>
+                                                    <div id="fechaInicioQtPal_P">
+                                                        <input type="date" id="fechaInicioQtPal" class="form-control QtPalDropdown"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="fechaFinQtPal" >Fecha de finalización</label><br>
+                                                    <input type="checkbox" id="sinfechaFinQtPal" onclick="deshabilita('sinfechaFinQtPal', 'fechaFinQtPal_P')"> <label for="sinfechaFinQtPal">No consta</label><br>
+                                                    <div id="fechaFinQtPal_P">
+                                                        <input type="date" id="fechaFinQtPal" class="form-control QtPalDropdown"/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="tipoQtPal" >Tipo de quimioterapia paliativa</label><br>
+                                                        <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="sinTipoQtPal" onclick="deshabilita('sinTipoQtPal', 'tipoQtPal_P')"> <label for="sinTipoQtPal">No consta</label><br>
+                                                        <div id="tipoQtPal_P">
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalAntraciclinas" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorMama" for="QtPalAntraciclinas">Antraciclinas</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalTaxanos" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorMama" for="QtPalTaxanos">Taxanos</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalAnticuerpos" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorMama" for="QtPalAnticuerpos">Anticuerpos monoclonales</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalDoblePlatino" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorPulmon" for="QtPalDoblePlatino">Doble platino</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPal5Fu" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorColon" for="QtPal5Fu">5-FU</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalCapecitabina" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorColon" for="QtPalCapecitabina">Capecitabina</label><br>
+                                                            <input type="checkbox" class="dropdownGroup" name="tipoQtPal" id="QtPalDocetaxel" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label class="colorProstata" for="QtPalDocetaxel">Docetaxel</label><br>
+                                                            <input type="checkbox" class="dropdownGroup hasDropdown" name="tipoQtPal" id="tipoQtPalOtros__L" onclick="otrosAparece('tipoQtPalOtros__L', 'tipoQtPalOtros__T')"> <label for="tipoQtPalOtros__L">Otros</label><br>
+                                                            <input type="text" name="tipoQtPal" id="tipoQtPalOtros__T" class="form-control tipoQtPalDropdown" placeholder="Separad por ';'" style="display:none" />
+                                                        </div>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="QtPal_completa" >¿Quimioterapia paliativa completa?</label>
+                                                    <select class="form-control QtPalDropdown" name = "QtPal_completa" id="QtPal_completa">
+                                                        <option value = "" selected>--Escoja una opción--</option>
+                                                        <option value = "enTratamiento">En tratamiento</option>
+                                                        <option value = "suspendida">Suspendida</option>
+                                                        <option value = "completada">Completada</option>
+                                                        <option value = "noConsta">No consta</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="respuesta_QtPal" >Tipo de respuesta</label>
+                                                    <select class="form-control QtPalDropdown" name = "respuesta_QtPal" id="respuesta_QtPal">
+                                                        <option value = "" selected>--Escoja una opción--</option>
+                                                        <option value = "completa">Completa</option>
+                                                        <option value = "parcial">Parcial</option>
+                                                        <option value = "sinRespuesta">Sin respuesta</option>
+                                                        <option value = "progresion">Progresion</option>
+                                                        <option value = "noConsta">No consta</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-outline mb-4">
+                                                    <label class="form-label required formatoPreguntas" for="toxicidad_QtPal" >Toxicidad a la Quimioterapia paliativa</label><br>
+                                                    <input type="radio" class="QtPalDropdown" name="toxicidad_QtPal" id="toxicidad_QtPalSi"> <label for="toxicidad_QtPalSi">Sí</label><br>
+                                                    <input type="radio" name="toxicidad_QtPal" id="toxicidad_QtPalNo"> <label for="toxicidad_QtPalNo">No</label><br>
+                                                    <input type="radio" name="toxicidad_QtPal" id="toxicidad_QtPalNoConsta"> <label for="toxicidad_QtPalNoConsta">No consta</label><br>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="qtPalC" style="display: none;">
                                 <h5>Quimioterapia Paliativa</h5>
                                 <br>
                                 <div class="form-outline mb-4  ">
@@ -1504,7 +1681,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-outline mb-4">
-                                                    <label class="form-label required formatoPreguntas" for="respuesta_QtPal" >Respuesta a la Quimioterapia paliativa</label>
+                                                    <label class="form-label required formatoPreguntas" for="respuesta_QtPal" >Tipo de respuesta</label>
                                                     <select class="form-control QtPalDropdown" name = "respuesta_QtPal" id="respuesta_QtPal">
                                                         <option value = "" selected>--Escoja una opción--</option>
                                                         <option value = "completa">Completa</option>
@@ -1529,14 +1706,19 @@
                         </div>
                         <div id="hormonoterapia_preguntas" style="display: none;">
                             <h4>Hormonoterapia</h4>
-                            <div class="form-outline mb-4">
-                                <label  class="form-label formatoPreguntas" for="tipoQt">Tipo de hormonoterapia</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown htnGroup" name="htNeoadyuvente" id="htNeoadyuvante" onclick="otrosAparece('htNeoadyuvante', 'hormonoterapiaNeo_preguntas')"> <label for="htNeoadyuvante">Neoadyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown haGroup" name="hAdyuvante" id="hadyuvante" onclick="otrosAparece('hadyuvante', 'hormonoterapiaAdyuvante_preguntas')"> <label for="hadyuvante">Adyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown heGroup" name="hExclusiva" id="hexclusiva" onclick="otrosAparece('hexclusiva', 'hormonoterapiaExclusiva_preguntas')"> <label for="hexclusiva">Exclusiva</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown hconGroup" name="hConcomitante" id="hconcomitante" onclick="otrosAparece('hconcomitante', 'hormonoterapiaConcomitante_preguntas')"> <label for="hconcomitante">Concomitante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown hsecGroup" name="hSecuencial" id="hsecuencial" onclick="otrosAparece('hsecuencial', 'hormonoterapiaSecuencial_preguntas')"> <label for="hsecuencial">Secuencial</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown hpalGroup" name="hPaliativa" id="hpaliativa" onclick="otrosAparece('hpaliativa', 'hormonoterapiaPaliativa_preguntas')"> <label for="hpaliativa">Paliativa</label><br>
+                            <div class="form-outline mb-4 tipoHtCirugiaMarcada" id="tipoHtCirugiaMarcada" style="display: none;">
+                                <label class="form-label formatoPreguntas" for="tipoHt" >Tipo de hormonoterapia</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown tnGroup" name="htNeoadyuvente" id="htNeoadyuvente" onclick="otrosAparece('htNeoadyuvente', 'hormonoterapiaNeo_preguntas')"> <label for="htNeoadyuvente">Neoadyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown htaGroup" name="htAdyuvante" id="htAdyuvante" onclick="otrosAparece('htAdyuvante', 'hormonoterapiaAdyuvante_preguntas')"> <label for="htAdyuvante">Adyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown htPalGroup" name="htPaliativa" id="htPaliativa" onclick="otrosAparece('htPaliativa', 'hormonoterapiaPaliativa_preguntas')"> <label for="htPaliativa">Paliativa</label><br>
+                            </div>
+                            
+                            <div class="form-outline mb-4 tipoHtSinCirugia" id="tipoHtSinCirugia" style="display: block;">
+                                <label class="form-label formatoPreguntas" for="tipoHt">Tipo de hormonoterapia</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown hteCGroup" name="htCExclusiva" id="htCExclusiva" onclick="otrosAparece('htCExclusiva', 'hormonoterapiaExclusiva_preguntas')"> <label for="htCExclusiva">Exclusiva</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown htConcCGroup" name="htCConcomitante" id="htCConcomitante" onclick="otrosAparece('htCConcomitante', 'hormonoterapiaConcomitante_preguntas')"> <label for="htCConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown htSecCGroup" name="htCSecuencial" id="htCSecuencial" onclick="otrosAparece('htCSecuencial', 'hormonoterapiaSecuencial_preguntas')"> <label for="htCSecuencial">Secuencial</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown htPalCGroup" name="htCPaliativa" id="htCPaliativa" onclick="otrosAparece('htCPaliativa', 'hormonoterapiaPaliativaC_preguntas')"> <label for="htCPaliativa">Paliativa</label><br>
                             </div>
                             <div id="hormonoterapiaNeo_preguntas" style="display: none;">
                                 <h5>Hormonoterapia Neoadyuvante <b>(HTNA)</b></h5>
@@ -1545,6 +1727,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoHtNa" onclick="deshabilita('sinInfoHtNa', 'InfoHtNa_P')"> <label for="sinInfoHtNa">No se dispone información</label><br><br>
                                         <div id="InfoHtNa_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoHtNa">Tipo de hormonoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htNaeGroup" name="tipoHtNa" id="htNaExclusiva"> <label for="htNaExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htNaConcGroup" name="tipoHtNa" id="htNaConcomitante"> <label for="htNaConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htNaSecGroup" name="tipoHtNa" id="htNaSecuencial"> <label for="htNaSecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioHormo" >Fecha de inicio de la HTNA</label><br>
                                                 <input type="checkbox" id="sinfechaInicioHtNa" onclick="deshabilita('sinfechaInicioHtNa', 'fechaInicioHtNa_P')"> <label for="sinfechaInicioHtNa">No consta</label><br>
@@ -1572,6 +1760,17 @@
                                                     <input type="text" name="tipoHormonoterapia_neo" id="tipoHormonoterapiaNeoOtros__T" class="form-control tipoHormonoterapia_neoDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htNa" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtNaDropdown" name = "tipoRespuesta_htNa" id="tipoRespuesta_htNa">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtNa">Completa</option>
+                                                    <option value = "parcial_tipohtNa">Parcial</option>
+                                                    <option value = "estable_tipohtNa">Estable</option>
+                                                    <option value = "progresion_tipohtNa">Progresión</option>
+                                                    <option value = "noConsta_tipohtNa">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1584,6 +1783,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoHtA" onclick="deshabilita('sinInfoHtA', 'InfoHtA_P')"> <label for="sinInfoHtA">No se dispone información</label><br><br>
                                         <div id="InfoHtA_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipohtA">Tipo de hormonoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htAeGroup" name="tipohtA" id="htAExclusiva"> <label for="htAExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htAConcGroup" name="tipohtA" id="htAConcomitante"> <label for="htAConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htASecGroup" name="tipohtA" id="htASecuencial"> <label for="htASecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioHormoAdyu" >Fecha de inicio de la HTA</label><br>
                                                 <input type="checkbox" id="sinfechaInicioHtA" onclick="deshabilita('sinfechaInicioHtA', 'fechaInicioHtA_P')"> <label for="sinfechaInicioHtA">No consta</label><br>
@@ -1610,6 +1815,17 @@
                                                     <input type="radio" class="dropdownGroup hasDropdown" name="tipoHormonoterapia_ady" id="tipoHormonoterapiaadyOtros__L" onclick="otrosAparece('tipoHormonoterapiaadyOtros__L', 'tipoHormonoterapiaadyOtros__T')"> <label for="tipoHormonoterapiaadyOtros__L">Otros</label><br>
                                                     <input type="text" name="tipoHormonoterapia_ady" id="tipoHormonoterapiaadyOtros__T" class="form-control tipoHormonoterapia_adyDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htA" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtADropdown" name = "tipoRespuesta_htA" id="tipoRespuesta_htA">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtA">Completa</option>
+                                                    <option value = "parcial_tipohtA">Parcial</option>
+                                                    <option value = "estable_tipohtA">Estable</option>
+                                                    <option value = "progresion_tipohtA">Progresión</option>
+                                                    <option value = "noConsta_tipohtA">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -1650,6 +1866,17 @@
                                                     <input type="text" name="tipoHormonoterapia_HtExc" id="tipoHormonoterapiaHtExcOtros__T" class="form-control tipoHormonoterapia_HtExcDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htExc" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtExcDropdown" name = "tipoRespuesta_htExc" id="tipoRespuesta_htExc">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtExc">Completa</option>
+                                                    <option value = "parcial_tipohtExc">Parcial</option>
+                                                    <option value = "estable_tipohtExc">Estable</option>
+                                                    <option value = "progresion_tipohtExc">Progresión</option>
+                                                    <option value = "noConsta_tipohtExc">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1688,6 +1915,17 @@
                                                     <input type="radio" class="dropdownGroup hasDropdown" name="tipoHormonoterapia_HtConc" id="tipoHormonoterapiaHtConcOtros__L" onclick="otrosAparece('tipoHormonoterapiaHtConcOtros__L', 'tipoHormonoterapiaHtConcOtros__T')"> <label for="tipoHormonoterapiaHtConcOtros__L">Otros</label><br>
                                                     <input type="text" name="tipoHormonoterapia_HtConc" id="tipoHormonoterapiaHtConcOtros__T" class="form-control tipoHormonoterapia_HtConcDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htConc" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtConcDropdown" name = "tipoRespuesta_htConc" id="tipoRespuesta_htConc">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtConc">Completa</option>
+                                                    <option value = "parcial_tipohtConc">Parcial</option>
+                                                    <option value = "estable_tipohtConc">Estable</option>
+                                                    <option value = "progresion_tipohtConc">Progresión</option>
+                                                    <option value = "noConsta_tipohtConc">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -1728,12 +1966,79 @@
                                                     <input type="text" name="tipoHormonoterapia_HtSec" id="tipoHormonoterapiaHtSecOtros__T" class="form-control tipoHormonoterapia_HtSecDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htSec" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtSecDropdown" name = "tipoRespuesta_htSec" id="tipoRespuesta_htSec">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtSec">Completa</option>
+                                                    <option value = "parcial_tipohtSec">Parcial</option>
+                                                    <option value = "estable_tipohtSec">Estable</option>
+                                                    <option value = "progresion_tipohtSec">Progresión</option>
+                                                    <option value = "noConsta_tipohtSec">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
                                 </div>
                             </div>
                             <div id="hormonoterapiaPaliativa_preguntas" style="display: none;">
+                                <h5>Hormonoterapia Paliativa</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4 template">
+                                        <input type="checkbox" id="sinInfoHtPal" onclick="deshabilita('sinInfoHtPal', 'InfoHtPal_P')"> <label for="sinInfoHtPal">No se dispone información</label><br><br>
+                                        <div id="InfoHtPal_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipohtPal">Tipo de hormonoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htPaleGroup" name="tipohtPal" id="htPalExclusiva"> <label for="htPalExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htPalConcGroup" name="tipohtPal" id="htPalConcomitante"> <label for="htPalConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown htPalSecGroup" name="tipohtPal" id="htPalSecuencial"> <label for="htPalSecuencial">Secuencial</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaInicioHormoPaliativa" >Fecha de inicio de la Hormonoterapia Paliativa</label><br>
+                                                <input type="checkbox" id="sinfechaInicioHtPal" onclick="deshabilita('sinfechaInicioHtPal', 'fechaInicioHtPal_P')"> <label for="sinfechaInicioHtPal">No consta</label><br>
+                                                <div id="fechaInicioHtPal_P">
+                                                    <input type="date" id="fechaInicioHormoPaliativa" class="form-control hormonoterapiaPaliativaDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaFinHormoPaliativa" >Fecha de finalización de la Hormonoterapia Paliativa</label><br>
+                                                <input type="checkbox" id="sinfechaFinHtPal" onclick="deshabilita('sinfechaFinHtPal', 'fechaFinHtPal_P')"> <label for="sinfechaFinHtPal">No consta</label><br>
+                                                <div id="fechaFinHtPal_P">
+                                                    <input type="date" id="fechaFinHormoPaliativa" class="form-control hormonoterapiaPaliativaDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4" id="tipoHormonoterapiaPaliativa">
+                                                <label class="form-label required formatoPreguntas" for="tipoHormonoterapia_Paliativa" >Tipo de Hormonoterapia Paliativa</label><br>
+                                                <input type="radio" id="sinTipoHtPal" onclick="deshabilita('sinTipoHtPal', 'tipoHtPal_P')"> <label for="sinTipoHtPal">No consta</label><br>
+                                                <div id="tipoHtPal_P">
+                                                    <input type="radio" id="inhibidoresDeLaCromatasaHtPal" name="tipoHormonoterapia_HtPal" class="dropdownGroup hormonoterapiaDropdown" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"/> <label class="colorMama" for="inhibidoresDeLaCromatasaHtPal" >Inhibidores de la aromatasa</label><br>
+                                                    <input type="radio" id="antiestrogenosHtPal" name="tipoHormonoterapia_HtPal" class="dropdownGroup" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"/> <label class="colorMama" for="antiestrogenosHtPal" >Antiestrógenos</label><br>
+                                                    <input type="radio" id="androgenicoSimpleHtPal" name="tipoHormonoterapia_HtPal" class="dropdownGroup" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"/> <label class="colorProstata" for="androgenicoSimpleHtPal" >Bloqueo androgénico simple</label><br>
+                                                    <input type="radio" id="androgenicoCompleto1HtPal" name="tipoHormonoterapia_HtPal" class="dropdownGroup" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"/> <label class="colorProstata" for="androgenicoCompleto1HtPal" >Bloqueo androgénico completo 1ª generación</label><br>
+                                                    <input type="radio" id="androgenicoCompleto2HtPal" name="tipoHormonoterapia_HtPal" class="dropdownGroup" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"/> <label class="colorProstata" for="androgenicoCompleto2HtPal" >Bloqueo androgénico completo 2ª generación</label><br>
+                                                    <input type="radio" class="dropdownGroup hasDropdown" name="tipoHormonoterapia_HtPal" id="tipoHormonoterapiaHtPalOtros__L" onclick="otrosAparece('tipoHormonoterapiaHtPalOtros__L', 'tipoHormonoterapiaHtPalOtros__T')"> <label for="tipoHormonoterapiaHtPalOtros__L">Otros</label><br>
+                                                    <input type="text" name="tipoHormonoterapia_HtPal" id="tipoHormonoterapiaHtPalOtros__T" class="form-control tipoHormonoterapia_HtPalDropdown" placeholder="Separad por ';'" style="display:none" />
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htPal" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtPalDropdown" name = "tipoRespuesta_htPal" id="tipoRespuesta_htPal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtPal">Completa</option>
+                                                    <option value = "parcial_tipohtPal">Parcial</option>
+                                                    <option value = "estable_tipohtPal">Estable</option>
+                                                    <option value = "progresion_tipohtPal">Progresión</option>
+                                                    <option value = "noConsta_tipohtPal">No consta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="hormonoterapiaPaliativaC_preguntas" style="display: none;">
                                 <h5>Hormonoterapia Paliativa</h5>
                                 <br>
                                 <div class="form-outline mb-4  ">
@@ -1767,6 +2072,17 @@
                                                     <input type="text" name="tipoHormonoterapia_HtPal" id="tipoHormonoterapiaHtPalOtros__T" class="form-control tipoHormonoterapia_HtPalDropdown" placeholder="Separad por ';'" style="display:none" />
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_htPal" >Tipo de respuesta</label>
+                                                <select class="form-control tipohtPalDropdown" name = "tipoRespuesta_htPal" id="tipoRespuesta_htPal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipohtPal">Completa</option>
+                                                    <option value = "parcial_tipohtPal">Parcial</option>
+                                                    <option value = "estable_tipohtPal">Estable</option>
+                                                    <option value = "progresion_tipohtPal">Progresión</option>
+                                                    <option value = "noConsta_tipohtPal">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1775,15 +2091,19 @@
                         </div>
                         <div id="immunoterapia_preguntas" style="display: none;">
                             <h4>Inmunoterapia</h4>
-                            <div class="form-outline mb-4">
-                                <label  class="form-label formatoPreguntas" for="tipoQt">Tipo de inmunoterapia</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown itnGroup" name="itNeoadyuvente" id="itNeoadyuvante" onclick="otrosAparece('itNeoadyuvante', 'itn')"> <label for="itNeoadyuvante">Neoadyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown iaGroup" name="iAdyuvante" id="iadyuvante" onclick="otrosAparece('iadyuvante', 'inmunoterapiaAdyuvante_preguntas')"> <label for="iadyuvante">Adyuvante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown ieGroup" name="iExclusiva" id="iexclusiva" onclick="otrosAparece('iexclusiva', 'inmunoterapiaExclusiva_preguntas')"> <label for="iexclusiva">Exclusiva</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown icGroup" name="iConcomitante" id="iconcomitante" onclick="otrosAparece('iconcomitante', 'inmunoterapiaConcomitante_preguntas')"> <label for="iconcomitante">Concomitante</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown isGroup" name="iSecuencial" id="isecuencial" onclick="otrosAparece('isecuencial', 'inmunoterapiaSecuencial_preguntas')"> <label for="isecuencial">Secuencial</label><br>
-                                <input type="checkbox" class="dropdownGroup hasDropdown ipGroup" name="iPaliativa" id="ipaliativa" onclick="otrosAparece('ipaliativa', 'inmunoterapiaPaliativa_preguntas')"> <label for="ipaliativa">Paliativa</label><br>
-
+                            <div class="form-outline mb-4 tipoItCirugiaMarcada" id="tipoItCirugiaMarcada" style="display: none;">
+                                <label class="form-label formatoPreguntas" for="tipoIt" >Tipo de inmunoterapia</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itNGroup" name="tipoIt" id="itNeoadyuvente" onclick="otrosAparece('itNeoadyuvente', 'itn')"> <label for="itNeoadyuvente">Neoadyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itaGroup" name="tipoIt" id="itAdyuvante" onclick="otrosAparece('itAdyuvante', 'inmunoterapiaAdyuvante_preguntas')"> <label for="itAdyuvante">Adyuvante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itPalGroup" name="tipoIt" id="itPaliativa" onclick="otrosAparece('itPaliativa', 'inmunoterapiaPaliativa_preguntas')"> <label for="itPaliativa">Paliativa</label><br>
+                            </div>
+                            
+                            <div class="form-outline mb-4 tipoItSinCirugia" id="tipoItSinCirugia" style="display: block;">
+                                <label class="form-label formatoPreguntas" for="tipoIt">Tipo de inmunoterapia</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown iteCGroup" name="itCExclusiva" id="itCExclusiva" onclick="otrosAparece('itCExclusiva', 'inmunoterapiaExclusiva_preguntas')"> <label for="itCExclusiva">Exclusiva</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itConcCGroup" name="itCConcomitante" id="itCConcomitante" onclick="otrosAparece('itCConcomitante', 'inmunoterapiaConcomitante_preguntas')"> <label for="itCConcomitante">Concomitante</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itSecCGroup" name="itCSecuencial" id="itCSecuencial" onclick="otrosAparece('itCSecuencial', 'inmunoterapiaSecuencial_preguntas')"> <label for="itCSecuencial">Secuencial</label><br>
+                                <input type="checkbox" class="dropdownGroup hasDropdown itPalCGroup" name="itCPaliativa" id="itCPaliativa" onclick="otrosAparece('itCPaliativa', 'inmunoterapiaPaliativaC_preguntas')"> <label for="itCPaliativa">Paliativa</label><br>
                             </div>
                             <div id="itn" style="display: none;">
                                 <h5>Inmunoterapia neoadyuvante</h5>
@@ -1792,6 +2112,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoItNa" onclick="deshabilita('sinInfoItNa', 'InfoItNa_P')"> <label for="sinInfoItNa">No se dispone información</label><br><br>
                                         <div id="InfoItNa_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoItNa">Tipo de inmunoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itNaeGroup" name="tipoItNa" id="itNaExclusiva"> <label for="itNaExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itNaConcGroup" name="tipoItNa" id="itNaConcomitante"> <label for="itNaConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itNaSecGroup" name="tipoItNa" id="itNaSecuencial"> <label for="itNaSecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioInmuno" >Fecha de inicio de la inmunoterapia</label><br>
                                                 <input type="checkbox" id="sinfechaInicioInmuno" onclick="deshabilita('sinfechaInicioInmuno', 'fechaInicioInmuno_P')"> <label for="sinfechaInicioInmuno">No consta</label><br>
@@ -1806,6 +2132,17 @@
                                                     <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itNa" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitNaDropdown" name = "tipoRespuesta_itNa" id="tipoRespuesta_itNa">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitNa">Completa</option>
+                                                    <option value = "parcial_tipoitNa">Parcial</option>
+                                                    <option value = "estable_tipoitNa">Estable</option>
+                                                    <option value = "progresion_tipoitNa">Progresión</option>
+                                                    <option value = "noConsta_tipoitNa">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1818,6 +2155,12 @@
                                     <div class="form-outline mb-4 template">
                                         <input type="checkbox" id="sinInfoItA" onclick="deshabilita('sinInfoItA', 'InfoItA_P')"> <label for="sinInfoItA">No se dispone información</label><br><br>
                                         <div id="InfoItA_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoitA">Tipo de inmunoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itAeGroup" name="tipoitA" id="itAExclusiva"> <label for="itAExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itAConcGroup" name="tipoitA" id="itAConcomitante"> <label for="itAConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itASecGroup" name="tipoitA" id="itASecuencial"> <label for="itASecuencial">Secuencial</label><br>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <label class="form-label required formatoPreguntas" for="fechaInicioInmunoAdyu" >Fecha de inicio de la inmunoterapia</label><br>
                                                 <input type="checkbox" id="sinfechaInicioInmunoAdyu" onclick="deshabilita('sinfechaInicioInmunoAdyu', 'fechaInicioInmunoAdyu_P')"> <label for="sinfechaInicioInmunoAdyu">No consta</label><br>
@@ -1831,6 +2174,17 @@
                                                 <div id="fechaFinInmunoAdyu_P">
                                                     <input type="date" id="fechaFinInmunoAdyu" class="form-control inmunoterapiaAdyuDropdown"/>
                                                 </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itA" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitADropdown" name = "tipoRespuesta_itA" id="tipoRespuesta_itA">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitA">Completa</option>
+                                                    <option value = "parcial_tipoitA">Parcial</option>
+                                                    <option value = "estable_tipoitA">Estable</option>
+                                                    <option value = "progresion_tipoitA">Progresión</option>
+                                                    <option value = "noConsta_tipoitA">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -1858,6 +2212,17 @@
                                                     <input type="date" id="fechaFinInmunoExc" class="form-control inmunoterapiaExcDropdown"/>
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itExc" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitExcDropdown" name = "tipoRespuesta_itExc" id="tipoRespuesta_itExc">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitExc">Completa</option>
+                                                    <option value = "parcial_tipoitExc">Parcial</option>
+                                                    <option value = "estable_tipoitExc">Estable</option>
+                                                    <option value = "progresion_tipoitExc">Progresión</option>
+                                                    <option value = "noConsta_tipoitExc">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
@@ -1883,6 +2248,17 @@
                                                 <div id="fechaFinInmunoConc_P">
                                                     <input type="date" id="fechaFinInmunoConc" class="form-control inmunoterapiaConcDropdown"/>
                                                 </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itConc" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitConcDropdown" name = "tipoRespuesta_itConc" id="tipoRespuesta_itConc">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitConc">Completa</option>
+                                                    <option value = "parcial_tipoitConc">Parcial</option>
+                                                    <option value = "estable_tipoitConc">Estable</option>
+                                                    <option value = "progresion_tipoitConc">Progresión</option>
+                                                    <option value = "noConsta_tipoitConc">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
@@ -1910,12 +2286,66 @@
                                                     <input type="date" id="fechaFinInmunoSec" class="form-control inmunoterapiaSecDropdown"/>
                                                 </div>
                                             </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itSec" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitSecDropdown" name = "tipoRespuesta_itSec" id="tipoRespuesta_itSec">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitSec">Completa</option>
+                                                    <option value = "parcial_tipoitSec">Parcial</option>
+                                                    <option value = "estable_tipoitSec">Estable</option>
+                                                    <option value = "progresion_tipoitSec">Progresión</option>
+                                                    <option value = "noConsta_tipoitSec">No consta</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <hr>
                                     </div>
                                 </div>
                             </div>
                             <div id="inmunoterapiaPaliativa_preguntas" style="display: none;">
+                                <h5>Inmunoterapia paliativa</h5>
+                                <br>
+                                <div class="form-outline mb-4  ">
+                                    <div class="form-outline mb-4 template">
+                                        <input type="checkbox" id="sinInfoItPal" onclick="deshabilita('sinInfoItPal', 'InfoItPal_P')"> <label for="sinInfoItPal">No se dispone información</label><br><br>
+                                        <div id="InfoItPal_P">
+                                            <div class="form-outline mb-4 ">
+                                                <label class="form-label formatoPreguntas" for="tipoitPal">Tipo de inmunoterapia</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itPaleGroup" name="tipoitPal" id="itPalExclusiva"> <label for="itPalExclusiva">Exclusiva</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itPalConcGroup" name="tipoitPal" id="itPalConcomitante"> <label for="itPalConcomitante">Concomitante</label><br>
+                                                <input type="checkbox" class="dropdownGroup hasDropdown itPalSecGroup" name="tipoitPal" id="itPalSecuencial"> <label for="itPalSecuencial">Secuencial</label><br>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaInicioInmunoPal" >Fecha de inicio de la inmunoterapia</label><br>
+                                                <input type="checkbox" id="sinfechaInicioInmunoPal" onclick="deshabilita('sinfechaInicioInmunoPal', 'fechaInicioInmunoPal_P')"> <label for="sinfechaInicioInmunoPal">No consta</label><br>
+                                                <div id="fechaInicioInmunoPal_P">
+                                                    <input type="date" id="fechaInicioInmunoPal" class="form-control inmunoterapiaPalDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="fechaFinInmunoPal" >Fecha de finalización de la inmunoterapia</label><br>
+                                                <input type="checkbox" id="sinfechaFinInmunoPal" onclick="deshabilita('sinfechaFinInmunoPal', 'fechaFinInmunoPal_P')"> <label for="sinfechaFinInmunoPal">No consta</label><br>
+                                                <div id="fechaFinInmunoPal_P">
+                                                    <input type="date" id="fechaFinInmunoPal" class="form-control inmunoterapiaPalDropdown"/>
+                                                </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itPal" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitPalDropdown" name = "tipoRespuesta_itPal" id="tipoRespuesta_itPal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitPal">Completa</option>
+                                                    <option value = "parcial_tipoitPal">Parcial</option>
+                                                    <option value = "estable_tipoitPal">Estable</option>
+                                                    <option value = "progresion_tipoitPal">Progresión</option>
+                                                    <option value = "noConsta_tipoitPal">No consta</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="inmunoterapiaPaliativaC_preguntas" style="display: none;">
                                 <h5>Inmunoterapia paliativa</h5>
                                 <br>
                                 <div class="form-outline mb-4  ">
@@ -1935,6 +2365,17 @@
                                                 <div id="fechaFinInmunoPal_P">
                                                     <input type="date" id="fechaFinInmunoPal" class="form-control inmunoterapiaPalDropdown"/>
                                                 </div>
+                                            </div>
+                                            <div class="form-outline mb-4">
+                                                <label class="form-label required formatoPreguntas" for="tipoRespuesta_itPal" >Tipo de respuesta</label>
+                                                <select class="form-control tipoitPalDropdown" name = "tipoRespuesta_itPal" id="tipoRespuesta_itPal">
+                                                    <option value = "" selected>--Escoja una opción--</option>
+                                                    <option value = "completa_tipoitPal">Completa</option>
+                                                    <option value = "parcial_tipoitPal">Parcial</option>
+                                                    <option value = "estable_tipoitPal">Estable</option>
+                                                    <option value = "progresion_tipoitPal">Progresión</option>
+                                                    <option value = "noConsta_tipoitPal">No consta</option>
+                                                </select>
                                             </div>
                                         </div>
                                         <hr>
