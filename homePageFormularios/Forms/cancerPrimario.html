@@ -35,16 +35,16 @@
                         </div>
                         <div class="form-outline mb-4">
                             <label class="form-label required formatoPreguntas" for="cancerPrimario" >4. Cáncer primario</label><br>
-                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioMama"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioMama', 'cancerPrimarioMamaRTLocalizacion')" required> <label class="colorMama" for="cancerPrimarioMama">Mama</label><br>
-                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioPulmon"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioPulmon','cancerPrimarioPulmonRTLocalizacion')" > <label class="colorPulmon" for="cancerPrimarioPulmon">Pulmón</label><br>
-                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioColorectal"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioColorectal', 'cancerPrimarioColorectalRTLocalizacion')" > <label class="colorColon" for="cancerPrimarioColorectal">Colorectal</label><br>
-                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioProstata"  onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioProstata','cancerPrimarioProstataRTLocalizacion')" > <label class="colorProstata" for="cancerPrimarioProstata">Próstata</label><br>
+                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioMama" value="mama" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioMama', 'cancerPrimarioMamaRTLocalizacion')" required> <label class="colorMama" for="cancerPrimarioMama">Mama</label><br>
+                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioPulmon" value="pulmon" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioPulmon','cancerPrimarioPulmonRTLocalizacion')" > <label class="colorPulmon" for="cancerPrimarioPulmon">Pulmón</label><br>
+                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioColorectal" value="colorrectal" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioColorectal', 'cancerPrimarioColorectalRTLocalizacion')" > <label class="colorColon" for="cancerPrimarioColorectal">Colorectal</label><br>
+                            <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioProstata" value="prostata" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioProstata','cancerPrimarioProstataRTLocalizacion')" > <label class="colorProstata" for="cancerPrimarioProstata">Próstata</label><br>
                             <input class="dropdownGroup hasDropdown" type="radio" name="cancerPrimario" id="cancerPrimarioOtros__L" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T')"> <label for="cancerPrimarioOtros__L">Otros</label><br>
                             <input type="text" name="cancerPrimario" id="cancerPrimarioOtros__T" class="form-control cancerPrimarioDropdown" placeholder="Separad por ';'" style="display:none" />
                         </div>
                     </div>
                     <div class="tab hidden" id="tumorPrimarioTab">
-                        <h3>Tumor primario</h3>
+                        <h3 id="headerTumorPrimario">Tumor primario</h3>
                         <br>
                         <div id="tumorPrimarioMama" style="display:none;">
                             <div class="form-outline mb-4">
@@ -2473,6 +2473,7 @@
     </div>
 </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="./cancerPrimario.js"></script>
   <script src="./forms.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
