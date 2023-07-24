@@ -34,7 +34,7 @@
                             <input type="date" id="fechaDiagnostico" class="form-control" required/>
                         </div>
                         <div class="form-outline mb-4">
-                            <label class="form-label required formatoPreguntas" for="cancerPrimario" >4. Cáncer primario</label><br>
+                            <label class="form-label required formatoPreguntas" for="cancerPrimario" >3. Cáncer primario</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioMama" value="mama" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioMama', 'cancerPrimarioMamaRTLocalizacion')" required> <label class="colorMama" for="cancerPrimarioMama">Mama</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioPulmon" value="pulmon" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioPulmon','cancerPrimarioPulmonRTLocalizacion')" > <label class="colorPulmon" for="cancerPrimarioPulmon">Pulmón</label><br>
                             <input class="dropdownGroup" type="radio" name="cancerPrimario" id="cancerPrimarioColorectal" value="colorrectal" onclick="otrosAparece('cancerPrimarioOtros__L', 'cancerPrimarioOtros__T'); otrosAparece('cancerPrimarioColorectal', 'cancerPrimarioColorectalRTLocalizacion')" > <label class="colorColon" for="cancerPrimarioColorectal">Colorectal</label><br>
@@ -48,7 +48,7 @@
                         <br>
                         <div id="tumorPrimarioMama" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="sexo" >5. Sexo</label><br>
+                                <label class="form-label required formatoPreguntas" for="sexo" >4. Sexo</label><br>
                                 <!-- Clase dropdownGroup, para los grupos de inputs que tienen desplegable (mostrar u ocultar) -->
                                 <!-- Clase hasDropdown, para el input en concreto que muestra el desplegable -->
                                 <input value="mujer" class="hasDropdown dropdownGroup" type="radio" name="sexo" id="mujer" onclick="otrosAparece('mujer', 'preguntaMenarquia')" required> <label for="mujer">Mujer</label><br>
@@ -57,7 +57,7 @@
 
                             <div class="form-outline mb-4" id="preguntaMenarquia" style="display: none;">
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas" for="fechaMenarquia">6. Edad de menarquia</label><br>
+                                    <label class="form-label required formatoPreguntas" for="fechaMenarquia">5. Edad de menarquia</label><br>
                                     <input type="checkbox" name="fechaMenarquia" id="sinfechaMenarquia" onclick="deshabilita('sinfechaMenarquia', 'yearMenarquiaP')" > <label for="sinfechaMenarquia">No consta</label><br>
                                     <div id="yearMenarquiaP">
                                         <input type="number" id="fechaMenarquia" class="form-control" min="0" max="30"/>
@@ -65,7 +65,7 @@
                                     <!-- Clase `nameDropdown`, para los inputs desplegados POR UN RADIO BUTTON -->
                                 </div>
                                 <div class="form-outline mb-4">
-                                    <label class="form-label required formatoPreguntas" for="estado" >7. Estado menopáusico</label><br>
+                                    <label class="form-label required formatoPreguntas" for="estado" >6. Estado menopáusico</label><br>
                                     <input value="estadoNoConsta" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="estadoNoConsta" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="estadoNoConsta">No consta</label><br>
                                     <input value="premenopausia" class="sexoDropdown dropdownGroup" type="radio" name="estado" id="premenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="premenopausia">Premenopausia</label><br>
                                     <input value="perimenopausia" class="hasDropdown dropdownGroup" type="radio" name="estado" id="perimenopausia" onclick="otrosAparece('perimenopausia', 'preguntaEdadMenopausia')"> <label for="perimenopausia">Perimenopausia</label><br>
@@ -73,7 +73,7 @@
                                 </div>
 
                                 <div class="form-outline mb-4" id="preguntaEdadMenopausia" style="display: none;">
-                                    <label class="form-label required formatoPreguntas" for="fechaMenopausia" >8. Edad de menopausia</label><br>
+                                    <label class="form-label required formatoPreguntas" for="fechaMenopausia" >7. Edad de menopausia</label><br>
                                     <input type="checkbox" name="fechaMenopausia" id="sinfechaMenopausia" onclick="deshabilita('sinfechaMenopausia', 'yearMenopausiaP')" > <label for="sinfechaMenopausia">No consta</label><br>
                                     <div id="yearMenopausiaP">
                                         <input type="number" id="fechaMenopausia" class="form-control" min="35" max="70"/>
@@ -82,7 +82,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="anatopatoAguja" >9. Anatomía patológica de la biopsia</label><br>
+                                <label class="form-label required formatoPreguntas" for="anatopatoAguja" >8. Anatomía patológica de la biopsia</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAguja" id="anatopatoDuctal"  onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoDuctal">Ductal</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAguja" id="anatopatoLobul"  onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoLobul">Lobulillar</label><br>
                                 <input type="radio" class="dropdownGroup hasDropdown" name="anatopatoAguja" id="anatopatoOtros__L" onclick="otrosAparece('anatopatoOtros__L', 'anatopatoOtros__T')"> <label for="anatopatoOtros__L">Otros</label><br>
@@ -90,7 +90,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="gradoHistologico" >10. Grado histológico</label>
+                                <label class="form-label required formatoPreguntas" for="gradoHistologico" >9. Grado histológico</label>
                                 <select class="form-control" name = "gradoHistologico" id="gradoHist">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "unoGrado">1</option>
@@ -100,31 +100,31 @@
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="receptorEstrogeno">11. Receptor estrógeno</label>
+                                <label class="form-label required formatoPreguntas" for="receptorEstrogeno">10. Receptor estrógeno</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="receptorEstrogeno" name="receptorEstrogeno" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="receptorProgesterona">12. Receptor progesterona</label>
+                                <label class="form-label required formatoPreguntas" for="receptorProgesterona">11. Receptor progesterona</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="receptorProgesterona" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="her2Positivo" >13. Her2+</label><br>
+                                <label class="form-label required formatoPreguntas" for="her2Positivo" >12. Her2+</label><br>
                                 <input type="radio" name="her2Positivo" id="her2Si"> <label for="her2Si">Sí</label><br>
                                 <input type="radio" name="her2Positivo" id="her2No"> <label for="her2No">No</label><br>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="ki67">14. Ki67</label>
+                                <label class="form-label required formatoPreguntas" for="ki67">13. Ki67</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="number" id="ki67" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
 
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="tils">15. TiLs</label>
+                                <label class="form-label required formatoPreguntas" for="tils">14. TiLs</label>
                                 <p>Unidades: <b>%</b></p>
                                 <input type="checkbox" class="no-required" name="tils" id="sintils" onclick="deshabilita('sintils', 'tilsP')"> <label for="sintils">No consta</label><br>
                                 <div id="tilsP">
@@ -134,7 +134,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="subtipoMolecular" >16. Subtipo molecular</label>
+                                <label class="form-label required formatoPreguntas" for="subtipoMolecular" >15. Subtipo molecular</label>
                                 <select class="form-control" name = "subtipoMolecular" id="subtipoMolecular">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "luminalA">Luminal A</option>
@@ -146,7 +146,7 @@
                         </div>
                         <div id="tumorPrimarioPulmon" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaPulmon" >13. Anatomía patológica de la biopsia</label><br>
+                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaPulmon" >16. Anatomía patológica de la biopsia</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaPulmon" id="sinAnatopatoPulmon"  onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')"> <label for="sinAnatopatoPulmon">Sin anatomía patológica</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaPulmon" id="anatopatoPulmonAdenocarcinoma"  onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')" > <label for="anatopatoPulmonAdenocarcinoma">Adenocarcinoma</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaPulmon" id="anatopatoPulmonEscamoso"  onclick="otrosAparece('anatopatoPulmonOtros__L', 'anatopatoPulmonOtros__T')"> <label for="anatopatoPulmonEscamoso">Escamoso</label><br>
@@ -156,32 +156,32 @@
                                 <input type="text" name="anatopatoAgujaPulmon" id="anatopatoPulmonOtros__T" class="form-control anatopatoAgujaPulmonDropdown" placeholder="Separad por ';'" style="display:none" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="pdl1" >14. PDL1 </label><br>
+                                <label class="form-label required formatoPreguntas" for="pdl1" >17. PDL1 </label><br>
                                 <input type="radio" name="pdl1" id="pdl1NoConsta" class="dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1NoConsta">No consta</label><br>
                                 <input type="radio" name="pdl1" id="pdl1Positivo" class="hasDropdown dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1Positivo">Positivo</label><br>
                                 <input type="radio" name="pdl1" id="pdl1Negativo" class="dropdownGroup" onclick="otrosAparece('pdl1Positivo', 'pld1Tab')"> <label for="pdl1Negativo">Negativo</label><br>
                             </div>
                             <div class="form-outline mb-4" id="pld1Tab" style="display:none;">
-                                <label class="form-label required formatoPreguntas" for="pdl1Primario">15. PDL1 Positivo (%)</label><br>
+                                <label class="form-label required formatoPreguntas" for="pdl1Primario">18. PDL1 Positivo (%)</label><br>
                                 <input type="checkbox" class="no-required" name="pdl1Primario" id="pdl1PrimarioNoConsta" onclick="deshabilita('pdl1PrimarioNoConsta', 'pdl1PrimarioNoConstaP')"> <label for="pdl1PrimarioNoConsta">No consta</label><br>
                                 <div id="pdl1PrimarioNoConstaP">
                                     <input type="number" name="pdl1Primario" id="pdl1Primario" class="form-control pld1Dropdown no-required" min="0.0" max="100.0" step="any"/>
                                 </div>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="alk" >16. ALK</label><br>
+                                <label class="form-label required formatoPreguntas" for="alk" >19. ALK</label><br>
                                 <input type="radio" name="alk" id="alkNoConsta"> <label for="alkNoConsta">No consta</label><br>
                                 <input type="radio" name="alk" id="alkSi"> <label for="alkSi">Sí</label><br>
                                 <input type="radio" name="alk" id="alkNo"> <label for="alkNo">No</label><br>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="ros" >17. ROS</label><br>
+                                <label class="form-label required formatoPreguntas" for="ros" >20. ROS</label><br>
                                 <input type="radio" name="ros" id="rosNoConsta"> <label for="rosNoConsta">No consta</label><br>
                                 <input type="radio" name="ros" id="rosSi"> <label for="rosSi">Sí</label><br>
                                 <input type="radio" name="ros" id="rosNo"> <label for="rosNo">No</label><br>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="EFGR" >18. EFGR</label><br>
+                                <label class="form-label required formatoPreguntas" for="EFGR" >21. EFGR</label><br>
                                 <input type="radio" name="EFGR" id="EFGRNoConsta"> <label for="EFGRNoConsta">No consta</label><br>
                                 <input type="radio" name="EFGR" id="EFGRSi"> <label for="EFGRSi">Sí</label><br>
                                 <input type="radio" name="EFGR" id="EFGRNo"> <label for="EFGRNo">No</label><br>
@@ -189,13 +189,13 @@
                         </div>
                         <div id="tumorPrimarioColorectal" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaColo" >19. Anatomía patológica de la biopsia</label><br>
+                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaColo" >22. Anatomía patológica de la biopsia</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaColo" id="anatopatoColoAdenocarcinoma"  onclick="otrosAparece('anatopatoColoOtros__L', 'anatopatoColoOtros__T')"> <label for="anatopatoColoAdenocarcinoma">Adenocarcinoma</label><br>
                                 <input type="radio" class="dropdownGroup hasDropdown" name="anatopatoAgujaColo" id="anatopatoColoOtros__L" onclick="otrosAparece('anatopatoColoOtros__L', 'anatopatoColoOtros__T')"> <label for="anatopatoColoOtros__L">Otros</label><br>
                                 <input type="text" name="anatopatoAgujaColo" id="anatopatoColoOtros__T" class="form-control anatopatoAgujaColoDropdown" placeholder="Separad por ';'" style="display:none" />
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="localizacionCancerColorectal" >20. Localización</label><br>
+                                <label class="form-label required formatoPreguntas" for="localizacionCancerColorectal" >23. Localización</label><br>
                                 <input type="radio" name="localizacionCancerColorectal" id="colonAscendente"> <label for="colonAscendente">Colon Ascendente</label><br>
                                 <input type="radio" name="localizacionCancerColorectal" id="colonDescendente"> <label for="colonDescendente">Colon Descendente</label><br>
                                 <input type="radio" name="localizacionCancerColorectal" id="colonTransverso"> <label for="colonTransverso">Colon Transverso</label><br>
@@ -205,7 +205,7 @@
                                 <input type="radio" name="localizacionCancerColorectal" id="colorectalSigma"> <label for="colorectalSigma">Sigma</label><br>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="gradoHistologicoColo" >21. Grado histológico</label>
+                                <label class="form-label required formatoPreguntas" for="gradoHistologicoColo" >24. Grado histológico</label>
                                 <select class="form-control" name = "gradoHistologicoColo" id="gradoHist">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "unoGradoColo">1</option>
@@ -216,17 +216,17 @@
                         </div>
                         <div id="tumorPrimarioProstata" style="display:none;">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaProstata" >22. Anatomía patológica de la biopsia</label><br>
+                                <label class="form-label required formatoPreguntas" for="anatopatoAgujaProstata" >25. Anatomía patológica de la biopsia</label><br>
                                 <input type="radio" class="dropdownGroup" name="anatopatoAgujaProstata" id="anatopatoProstataAdenocarcinoma"  onclick="otrosAparece('anatopatoProstataOtros__L', 'anatopatoProstataOtros__T')"> <label for="anatopatoProstataAdenocarcinoma">Adenocarcinoma</label><br>
                                 <input type="radio" class="dropdownGroup hasDropdown" name="anatopatoAgujaProstata" id="anatopatoProstataOtros__L" onclick="otrosAparece('anatopatoProstataOtros__L', 'anatopatoProstataOtros__T')"> <label for="anatopatoProstataOtros__L">Otros</label><br>
                                 <input type="text" name="anatopatoAgujaProstata" id="anatopatoProstataOtros__T" class="form-control anatopatoAgujaProstataDropdown" placeholder="Separad por ';'" style="display:none" />
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="psa">23. PSA</label>
+                                <label class="form-label required formatoPreguntas" for="psa">26. PSA</label>
                                 <input type="number" id="psa" name="psa" class="form-control" min="0.0" max="100.0" step="any"/>
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="gleason">24. Gleason</label>
+                                <label class="form-label required formatoPreguntas" for="gleason">27. Gleason</label>
                                 <select class="form-control" name="gleason" id="gleason">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "3_3">3+3</option>
@@ -239,13 +239,13 @@
                                  </select>
                             </div>
                             <div class="form-outline mb-4 ">
-                                <label class="form-label required formatoPreguntas" for="gleasonAfectacion">25. Afectación Gleason</label><br>
+                                <label class="form-label required formatoPreguntas" for="gleasonAfectacion">28. Afectación Gleason</label><br>
                                 <input type="radio" name="gleasonAfectacion" class="dropdownGroup" id="unlobulo" onclick="otrosAparece('doslobulos', 'dosLobulosGleasonTab')"> <label for="unlobulo">Un lóbulo</label><br>
                                 <input type="radio" name="gleasonAfectacion" class="hasDropdown dropdownGroup" id="doslobulos" onclick="otrosAparece('doslobulos', 'dosLobulosGleasonTab')"> <label for="doslobulos">Dos lóbulos</label><br>
                             </div>
 
                             <div class="form-outline mb-4" id="dosLobulosGleasonTab" style="display: none;">
-                                <label class="form-label required formatoPreguntas" for="lobuloContralateral">26. Gleason lóbulo contralateral</label>
+                                <label class="form-label required formatoPreguntas" for="lobuloContralateral">29. Gleason lóbulo contralateral</label>
                                 <select class="form-control lobuloContralateralDropdown no-required" name="lobuloContralateral" id="lobuloContralateral">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "3_3">3+3</option>
@@ -259,7 +259,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="riesgo" >27. Riesgo</label><br>
+                                <label class="form-label required formatoPreguntas" for="riesgo" >30. Riesgo</label><br>
                                 <input type="radio" name="riesgo" id="muyAlto"> <label for="muyAlto">Muy alto riesgo</label><br>
                                 <input type="radio" name="riesgo" id="alto"> <label for="alto">Alto riesgo</label><br>
                                 <input type="radio" name="riesgo" id="intermedio_favorable"> <label for="intermedio_favorable">Riesgo intermedio - favorable</label><br>
@@ -269,7 +269,7 @@
                             </div>
 
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="tumorSincronicoMulticentrico">28. En caso de tumor sincrónico o multicéntrico indicar aquí:</label><br>
+                                <label class="form-label required formatoPreguntas" for="tumorSincronicoMulticentrico">31. En caso de tumor sincrónico o multicéntrico indicar aquí:</label><br>
                                 <input type="checkbox" class="no-required" name="tumorSincronicoMulticentrico" id="sincronicoMulticentrico"> <label for="sincronicoMulticentrico">Sincrónico o multicéntrico</label><br>
                             </div>
 
@@ -284,7 +284,7 @@
                         <br>
                         <div id="cTNMp">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="cT" >28. cT</label>
+                                <label class="form-label required formatoPreguntas" for="cT" >32. cT</label>
                                 <select class="form-control" name = "cT" id="cT" required>
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "t1_Ct">T1</option>
@@ -308,7 +308,7 @@
                                  </select>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="cN" >29. cN</label>
+                                <label class="form-label required formatoPreguntas" for="cN" >33. cN</label>
                                 <select class="form-control" name = "cN" id="cN" required>
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "n0_cN">N0</option>
@@ -319,7 +319,7 @@
                                  </select>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="cM" >30. cM</label>
+                                <label class="form-label required formatoPreguntas" for="cM" >34. cM</label>
                                 <select class="form-control" name = "cM" id="cM" required>
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "m0_cM">M0</option>
@@ -338,7 +338,7 @@
                         <br>
                         <div id="pTNMp">
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="pT" >31. pT</label>
+                                <label class="form-label required formatoPreguntas" for="pT" >35. pT</label>
                                 <select class="form-control" name = "pT" id="pT">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "t1_pT">T1</option>
@@ -362,7 +362,7 @@
                                  </select>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="pN" >32. pN</label>
+                                <label class="form-label required formatoPreguntas" for="pN" >36. pN</label>
                                 <select class="form-control" name = "pN" id="pN">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "n0_pN">N0</option>
@@ -373,7 +373,7 @@
                                  </select>
                             </div>
                             <div class="form-outline mb-4">
-                                <label class="form-label required formatoPreguntas" for="pM" >33. pM</label>
+                                <label class="form-label required formatoPreguntas" for="pM" >37. pM</label>
                                 <select class="form-control" name = "pM" id="pM">
                                     <option value = "" selected>--Escoja una opción--</option>
                                     <option value = "m0_pM">M0</option>
@@ -390,7 +390,7 @@
                         <h3>Tratamientos</h3>
                         <br>
                         <div class="form-outline mb-4 ">
-                            <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">34. Tratamientos del cáncer primario previos a la SABR</label><br>
+                            <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">38. Tratamientos del cáncer primario previos a la SABR</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias(); mostrarDivs('m1Cirugia', ['tipoRtCirugiaMarcada', 'tipoQtCirugiaMarcada', 'tipoHtCirugiaMarcada', 'tipoItCirugiaMarcada']); ocultarDivs('m1Cirugia', ['tipoRtSinCirugia', 'tipoQtSinCirugia', 'tipoHtSinCirugia', 'tipoItSinCirugia'])"> <label for="m1Cirugia">Cirugía</label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown rtGroup" name="tratamientosCancerPrimario" id="rt" onclick="otrosAparece('rt', 'rt_preguntas')"> <label for="rt">Radioterapia <b>(RT)</b></label><br>
                             <input type="checkbox" class="dropdownGroup hasDropdown qtGroup" name="tratamientosCancerPrimario" id="qt" onclick="otrosAparece('qt', 'qt_preguntas')"> <label for="qt">Quimioterapia <b>(QT)</b> y/o anticuerpos monoclonales</label><br>
@@ -2373,7 +2373,7 @@
                             </div>
                         </div>
                         <div class="form-outline mb-4 recidivaCancerPrimario">
-                            <label class="form-label required formatoPreguntas"  for="recidivaPrevia">35. Recidiva o progresión del tumor previos a la SABR</label><br>
+                            <label class="form-label required formatoPreguntas"  for="recidivaPrevia">39. Recidiva o progresión del tumor previos a la SABR</label><br>
                             <input type="radio" name="recidivaPrevia" id="recidivaNinguna" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')" required> <label for="recidivaNinguna">Ninguna</label><br>
                             <input type="radio" name="recidivaPrevia" class="hasDropdown dropdownGroup localGroup" id="recidivaLocal" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaLocal">Local</label><br>
                             <input type="radio" name="recidivaPrevia" class="hasDropdown dropdownGroup regionalGroup" id="recidivaRegional" onclick="otrosAparece('recidivaLocal', 'preguntasrecidivaLocal'); otrosAparece('recidivaRegional', 'preguntasrecidivaRegional'); otrosAparece('recidivaLocoregional', 'preguntasrecidivaLocoregional')"> <label for="recidivaRegional">Regional (Ganglionar)</label><br>
@@ -2432,12 +2432,12 @@
                             </div>
                         </div>
                         <div class="form-outline mb-4">
-                            <label for="estado" class="form-label formatoPreguntas">36. Estado cáncer primario en el momento previo a la SABR</label><br>
+                            <label for="estado" class="form-label formatoPreguntas">40. Estado cáncer primario en el momento previo a la SABR</label><br>
                             <input type="radio" name="estado" id="estadoControlado" value="controlado" required> <label for="estadoControlado">Controlado</label><br>
                             <input type="radio" name="estado" id="estadoNoControlado" value="noControlado"> <label for="estadoNoControlado">No controlado</label><br>
                         </div>
                         <div class="form-outline mb-4">
-                            <label for="observaciones" class="form-label formatoPreguntas">37. Observaciones</label>
+                            <label for="observaciones" class="form-label formatoPreguntas">41. Observaciones</label>
                             <input type="text" class="form-control" name="observaciones">
                         </div>    
                     </div> 
