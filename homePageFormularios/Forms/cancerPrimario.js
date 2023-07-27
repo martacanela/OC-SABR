@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
                 switch (input.value) {
                     case 'mama':
                         heading.innerText = 'Tumor primario - Mama';
-                        heading.style.color = "#FF00FF"
+                        title = 'Cáncer Primario - Mama'
                         break;
                     case 'pulmon':
                         heading.innerText = 'Tumor primario - Pulmón';
                         heading.style.color = "#FF0000"
                         break;
                     case 'colorrectal':
-                        heading.innerText = 'Tumor primario - Colorrectal';
+                        heading.innerText = 'Tumor primario - Colorectal';
                         heading.style.color = "#B45F04"
                         break;
                     case 'prostata':
