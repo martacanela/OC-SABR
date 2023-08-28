@@ -1,0 +1,179 @@
+/* Variables de colores */
+:root {
+    --bg-dark-blue-color: #477ED7;
+    --light-blue-color: #87B3FD;
+    --light-transparent-60-color: #87b3fd99;
+    --light-transparent-15-color: #87b3fd26;
+    --text-color: #1E1E1E;
+    --bg-color: #F8F8F8;
+}
+
+/* Quitar margenes interiores y exteriores de todos los elementos, y ajustar el tamaño de estos incluyendoles sus bordes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body, ajustar el tamaño maximo al de la pantalla (Si se necesita más tamaño en alguna dimensión, modificar este bloque) */
+body {
+    width: 100vw;
+    max-width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: var(--bg-color);
+}
+
+/* Ocultar la barra de scroll para mejorar el diseño */
+body::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Sección que contiene las publicaciones envueltas en el container. Se centran los elementos en esta sección */
+.publicationsSection {
+    width: 100vw;
+    background-color: var(--light-transparent-15-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+/* Container que envuelve el título y el contenido de las publicaciones, junto con el resumen, sección blanca, con un 70% del tamaño */
+.container {
+    margin-top: 10rem;
+    width: 70%;
+    max-width: 1250px;
+    background-color: var(--bg-color);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 7.5rem;
+    gap: 3rem;
+}
+
+/* Título de la sección */
+.sectionTitle {
+    font-size: clamp(36px, 4vw, 56px);
+    color: var(--text-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Span para cambiar el color y accentuar visiblemente algunas palabras del título  */
+.span {
+    color: var(--light-blue-color);
+}
+
+/* Contenido de esta sección, que contiene el resumen y las propias publicaciones */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Resumen de las publicaciones */
+.summary {
+    font-size: clamp(18px, 1.5vw, 24px);
+}
+
+/* Lista de publicaciones sin estilo de lista */
+.publicationList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Índice de los elementos de la lista, en negrita */
+.marker {
+    font-size: clamp(15px, 1.5vw, 22px);
+    font-weight: bold;
+}
+
+/* Título de la publicación (autores, tema...) y link */
+.publicationTitle, .publicationLink {
+    font-size: clamp(15px, 1.5vw, 20px);
+}
+
+/* Link de la publicación en su estado normal y visitado, sin decoración y con color azul*/
+.publicationLink, .publicationLink:visited {
+    color: var(--light-blue-color);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: color .3s ease,
+                border-bottom-color .3s ease .1s;
+}
+
+/* Cuando se pasa el ratón por encima, cambia de color y se muestra un delineado */
+.publicationLink:hover {
+    color: var(--bg-dark-blue-color);
+    border-bottom-color: var(--bg-dark-blue-color);
+}
+
+/* Media queries */
+/* Media query para el tramo etre 691px y 1200px de anchura */
+@media only screen and (max-width: 1200px) and (min-width: 691px) {
+    /* Reducimos el padding de la sección de publicaciones */
+    .publicationsSection {
+        padding: 2rem;
+    }
+
+    /* Aumentamos el tamaño y reducimos gap y padding del container */
+    .container {
+        width: 90%;
+        gap: 1.5rem;
+        padding: 3rem 5rem;
+    }
+}
+
+/* Para pantallas de menos de 690px de anchura */
+@media only screen and (max-width: 690px) {
+    /* Reducimos el padding lateral de la sección de publicaciones */
+    .publicationsSection {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Aumentamos anchura y reducimos padding lateral del container */
+    .container {
+        width: 100%;
+        padding: 3rem;
+    }
+}
+
+/* Para pantallas de menos de 560px */
+@media only screen and (max-width: 560px) {
+    /* Reducimos el padding lateral y gap del container */
+    .container {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    /* Reducimos gap de la lista de publicaciones */
+    .publicationList {
+        gap: 1rem;
+    }
+
+    /* Reducimos el intervalo de tamaño de fuente para el título de la sección */
+    .sectionTitle {
+        font-size: clamp(24px, 3vw, 36px);
+    }
+
+    /* Reducimos el intervalo de tamaño de fuente para el resumen */
+    .summary {
+        font-size: clamp(12px, 3vw, 15px);
+    }
+
+    /* Reducimos el intervalo de tamaño de fuente para el índice de la lista */
+    .marker {
+        font-size: clamp(12px, 3vw, 15px);
+    }
+
+    /* Reducimos el intervalo de tamaño de fuente para el título de cada publicación y el link */
+    .publicationTitle, .publicationLink {
+        font-size: clamp(11px, 3vw, 15px);
+    }
+}

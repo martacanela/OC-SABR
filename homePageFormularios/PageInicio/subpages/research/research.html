@@ -8,9 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <script defer src="jquery.js"></script>
-    <script defer src="script.js"></script>
-    <title>Contact</title>
+    <title>Research</title>
 
     <!-- Header links -->
     <link rel="stylesheet" href="../../header/styles/style.css">
@@ -30,11 +28,10 @@
     <header class="header">
         <!-- Sección de contenido del header, sin márgenes -->
         <section class="headerContent">
-            <!-- Imágen del Logo URB -->
-            <a href="../../mainPage/index.html">
-                <img src="../../img/logo_noDetails_blue_black.png" alt="Logo URB" class="logo">
-            </a>
-            
+        <!-- Imágen del Logo URB -->
+        <a href="../../mainPage/index.html">
+            <img src="../../img/logo_noDetails_blue_black.png" alt="Logo URB" class="logo">
+        </a>
             <!-- Barra de navegación per se, con la lista de ítems de navegación -->
             <nav class="nav" id="nav">
                 <!-- Lista de ítems de navegación con todas las páginas para visitar -->
@@ -56,52 +53,28 @@
             </button>
         </section>
     </header>
-    <!-- Sección de contacto, contiene el contenedor con sus elementos -->
-    <section class="contactFormSection">
-        <!-- Container (sección blanca), contiene el título y el formulario -->
+    <!-- Sección de publicaciones, envolviendo el container y todos sus elementos -->
+    <section class="publicationsSection">
+        <!-- Container de la sección (zona blanca), conteniendo los elementos de publicación, como el título, resumen y lista -->
         <section class="container">
-            <!-- Título de la sección de contacto -->
-            <h2 class="sectionTitle">Any doubt? Contact <span class="span">us!</span></h2>
-            <!-- Formulario de contacto -->
-            <form method="post" class="contactForm" id="contactForm">
-                <!-- División para el input de nombre -->
-                <div class="formGroup nameGroup">
-                    <!-- Input y etiqueta para introducir el nombre -->
-                    <input class="input nameInput" id="nameInput" placeholder=" " type="text" required>
-                    <label class="label" for="nameInput">Name: <span class="span">*</span></label>
-                </div>
-                <!-- División para el input de email -->
-                <div class="formGroup emailGroup">
-                    <!-- Input y etiqueta para introducir el email -->
-                    <input class="input emailInput" id="emailInput" type="email" placeholder=" " required>
-                    <label class="label" for="emailInput">E-mail: <span class="span">*</span></label>
-                </div>
-                <!-- División para el input de mensaje -->
-                <div class="formGroup messageGroup">
-                    <!-- Input y etiqueta para introducir el mensaje -->
-                    <textarea class="input messageInput" id="messageInput" placeholder=" " cols="30" rows="30" required></textarea>
-                    <label class="label" for="messageInput">Message: <span class="span">*</span></label>
-                </div>
-                <!-- División para el input de checkbox -->
-                <div class="formGroup cbGroup">
-                    <!-- Input y etiqueta para marcar checkbox de políticas de privacidad -->
-                    <input type="checkbox" class="input cbInput" name="privacyPoliticsCB" id="privacyPoliticsCB" required>
-                    <label class="label cbLabel" for="privacyPoliticsCB">I read and accept the terms of <a href="#" class="link"><span class="span">privacy politics</span></a></label>
-                </div>
-                <!-- División para el texto de información-->
-                <div class="formGroup infoGroup">
-                    <!-- Texto informativo acerca de los inputs -->
-                    <p class="infoText"><span class="span">*: </span>Required field</p>
-                </div>
-                <!-- División para el botón de enviar -->
-                <div class="formGroup submitGroup">
-                    <!-- Botón de enviar información y mandar mail -->
-                    <input type="submit" value="Send mail" class="submitBtn" id="submitBtn" disabled>
-                </div>
-            </form>
+            <!-- Título de la sección -->
+            <h2 class="sectionTitle">Research</h2>
+            <!-- Artículo con el resumen y la lista de publicaciones -->
+            <article class="content">
+                <p class="summary">Our multidisciplinary research group is dedicated to investigating the alterations in metabolism that occur in obesity, fatty liver disease, and cancer. Our goal is to identify biomarkers and therapeutic targets to enhance the treatment and management of these diseases.
+                    <br><br>
+                    Our team is made up of specialists in various fields, including molecular biology, biochemistry, and clinical research. By combining our expertise and utilizing cutting-edge technology, we can gain a comprehensive understanding of the relationship between metabolic dysfunction and the development of obesity and cancer.
+                    <br><br>
+                    Our research focuses on determining the key metabolic pathways and enzymes that are altered in these diseases, and how these changes can be utilized to develop new diagnostic tools and treatments. Our findings have the potential to significantly impact patient care by providing earlier diagnoses and more effective treatments for obesity and cancer.
+                    <br><br>
+                    We are committed to driving progress and improving the lives of those affected by these diseases through our innovative research. We believe that our multidisciplinary approach will lead to a deeper understanding of obesity and cancer and bring us closer to a world where they are manageable and preventable.
+                </p>
+                
+            </article>
         </section>
     </section>
 
+</body>
     <!-- Footer-->
     <footer class="footer">
         <section class="footerContents">
@@ -134,5 +107,4 @@
             </div>
         </section>
     </footer>
-</body>
 </html>
