@@ -11279,11 +11279,37 @@ hr.divider-light {
     color: #f4623a;
   }
 }
+.carousel-caption-overlay {
+  position: absolute;
+  top: 50%; /* Ajusta según tu diseño */
+  left: 50%; /* Ajusta según tu diseño */
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white; /* Ajusta según tu diseño */
+  font-size: 2.25rem;
+}
+.header{
+  position: fixed;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 1000;
+}
+.carousel-item {
+  height: 100vh; /* Resta la altura del encabezado */
+}
+
+.carousel-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 section.masthead {
   padding-top: 10rem;
   padding-bottom: calc(10rem - 4.5rem);
-  background: url("../assets/bg-masthead.jpg");
+  /*background: url("../assets/DSC_0168.jpeg");*/
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
