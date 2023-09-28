@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label required formatoPreguntas" for="fechaM1">3. Fecha de la primera M1</label>
-                                        <input type="date" id="fechaM1" class="form-control" required/>
+                                        <input type="date" id="fechaM1" class="form-control validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()" required/>
                                     </div>
                                     <div class="form-outline mb-4 ">
                                         <label class="form-label required formatoPreguntas" for="numeroM1">4. Número de todas las M1 previas a la SABR</label>
@@ -85,7 +85,7 @@
                                             <div class="form-outline mb-4 template">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaCirugiaM1" >Fecha de cirugía</label>
-                                                    <input type="date" id="fechaCirugiaM1" class="form-control m1CirugiaDropdown"/>
+                                                    <input type="date" id="fechaCirugiaM1" class="form-control m1CirugiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="ubicacionCirugia">Localización</label><br>
@@ -113,7 +113,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaCirugiaM1_2" >Fecha de cirugía</label>
-                                                    <input type="date" id="fechaCirugiaM1_2" class="form-control m1CirugiaDropdown"/>
+                                                    <input type="date" id="fechaCirugiaM1_2" class="form-control m1CirugiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="ubicacionCirugia_2">Localización</label><br>
@@ -140,7 +140,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaCirugiaM1_3" >Fecha de cirugía</label>
-                                                    <input type="date" id="fechaCirugiaM1_3" class="form-control m1CirugiaDropdown"/>
+                                                    <input type="date" id="fechaCirugiaM1_3" class="form-control m1CirugiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="ubicacionCirugia_3">Localización</label><br>
@@ -167,7 +167,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaCirugiaM1_4" >Fecha de cirugía</label>
-                                                    <input type="date" id="fechaCirugiaM1_4" class="form-control m1CirugiaDropdown"/>
+                                                    <input type="date" id="fechaCirugiaM1_4" class="form-control m1CirugiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="ubicacionCirugia_4">Localización</label><br>
@@ -194,7 +194,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaCirugiaM1_5" >Fecha de cirugía</label>
-                                                    <input type="date" id="fechaCirugiaM1_5" class="form-control m1CirugiaDropdown"/>
+                                                    <input type="date" id="fechaCirugiaM1_5" class="form-control m1CirugiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="ubicacionCirugia_5">Localización</label><br>
@@ -258,7 +258,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioRtna" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioRtna" onclick="deshabilita('sinfechaInicioRtna', 'fechaInicioRtna_P')"> <label for="sinfechaInicioRtna">No consta</label><br>
                                                         <div id="fechaInicioRtna_P">
-                                                            <input type="date" id="fechaInicioRtna" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaInicioRtna" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -275,7 +275,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinRtna" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinRtna" onclick="deshabilita('sinfechaFinRtna', 'fechaFinRtna_P')"> <label for="sinfechaFinRtna">No consta</label><br>
                                                         <div id="fechaFinRtna_P">
-                                                            <input type="date" id="fechaFinRtna" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaFinRtna" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4 ">
@@ -345,7 +345,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioRtna_2" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioRtna_2" onclick="deshabilita('sinfechaInicioRtna_2', 'fechaInicioRtna_P_2')"> <label for="sinfechaInicioRtna_2">No consta</label><br>
                                                         <div id="fechaInicioRtna_P_2">
-                                                            <input type="date" id="fechaInicioRtna_2" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaInicioRtna_2" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -362,7 +362,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinRtna_2" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinRtna_2" onclick="deshabilita('sinfechaFinRtna_2', 'fechaFinRtna_P_2')"> <label for="sinfechaFinRtna_2">No consta</label><br>
                                                         <div id="fechaFinRtna_P_2">
-                                                            <input type="date" id="fechaFinRtna_2" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaFinRtna_2" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4 ">
@@ -432,7 +432,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioRtna_3" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioRtna_3" onclick="deshabilita('sinfechaInicioRtna_3', 'fechaInicioRtna_P_3')"> <label for="sinfechaInicioRtna_3">No consta</label><br>
                                                         <div id="fechaInicioRtna_P_3">
-                                                            <input type="date" id="fechaInicioRtna_3" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaInicioRtna_3" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -449,7 +449,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinRtna_3" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinRtna_3" onclick="deshabilita('sinfechaFinRtna_3', 'fechaFinRtna_P_3')"> <label for="sinfechaFinRtna_3">No consta</label><br>
                                                         <div id="fechaFinRtna_P_3">
-                                                            <input type="date" id="fechaFinRtna_3" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaFinRtna_3" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4 ">
@@ -519,7 +519,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioRtna_4" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioRtna_4" onclick="deshabilita('sinfechaInicioRtna_4', 'fechaInicioRtna_P_4')"> <label for="sinfechaInicioRtna_4">No consta</label><br>
                                                         <div id="fechaInicioRtna_P_4">
-                                                            <input type="date" id="fechaInicioRtna_4" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaInicioRtna_4" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -536,7 +536,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinRtna_4" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinRtna_4" onclick="deshabilita('sinfechaFinRtna_4', 'fechaFinRtna_P_4')"> <label for="sinfechaFinRtna_4">No consta</label><br>
                                                         <div id="fechaFinRtna_P_4">
-                                                            <input type="date" id="fechaFinRtna_4" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaFinRtna_4" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4 ">
@@ -606,7 +606,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioRtna_5" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioRtna_5" onclick="deshabilita('sinfechaInicioRtna_5', 'fechaInicioRtna_P_5')"> <label for="sinfechaInicioRtna_5">No consta</label><br>
                                                         <div id="fechaInicioRtna_P_5">
-                                                            <input type="date" id="fechaInicioRtna_5" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaInicioRtna_5" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -623,7 +623,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinRtna_5" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinRtna_5" onclick="deshabilita('sinfechaFinRtna_5', 'fechaFinRtna_P_5')"> <label for="sinfechaFinRtna_5">No consta</label><br>
                                                         <div id="fechaFinRtna_P_5">
-                                                            <input type="date" id="fechaFinRtna_5" class="form-control RtnaDropdown"/>
+                                                            <input type="date" id="fechaFinRtna_5" class="form-control RtnaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4 ">
@@ -693,7 +693,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioQtA" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioQtA" onclick="deshabilita('sinfechaInicioQtA', 'fechaInicioQtA_P')"> <label for="sinfechaInicioQtA">No consta</label><br>
                                                         <div id="fechaInicioQtA_P">
-                                                            <input type="date" id="fechaInicioQtA" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaInicioQtA" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -710,7 +710,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinQtA" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinQtA" onclick="deshabilita('sinfechaFinQtA', 'fechaFinQtA_P')"> <label for="sinfechaFinQtA">No consta</label><br>
                                                         <div id="fechaFinQtA_P">
-                                                            <input type="date" id="fechaFinQtA" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaFinQtA" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -755,7 +755,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioQtA_2" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioQtA_2" onclick="deshabilita('sinfechaInicioQtA_2', 'fechaInicioQtA_P_2')"> <label for="sinfechaInicioQtA_2">No consta</label><br>
                                                         <div id="fechaInicioQtA_P_2">
-                                                            <input type="date" id="fechaInicioQtA_2" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaInicioQtA_2" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -772,7 +772,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinQtA_2" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinQtA_2" onclick="deshabilita('sinfechaFinQtA_2', 'fechaFinQtA_P_2')"> <label for="sinfechaFinQtA_2">No consta</label><br>
                                                         <div id="fechaFinQtA_P_2">
-                                                            <input type="date" id="fechaFinQtA_2" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaFinQtA_2" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -817,7 +817,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioQtA_3" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioQtA_3" onclick="deshabilita('sinfechaInicioQtA_3', 'fechaInicioQtA_P_3')"> <label for="sinfechaInicioQtA_3">No consta</label><br>
                                                         <div id="fechaInicioQtA_P_3">
-                                                            <input type="date" id="fechaInicioQtA_3" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaInicioQtA_3" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -834,7 +834,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinQtA_3" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinQtA_3" onclick="deshabilita('sinfechaFinQtA_3', 'fechaFinQtA_P_3')"> <label for="sinfechaFinQtA_3">No consta</label><br>
                                                         <div id="fechaFinQtA_P_3">
-                                                            <input type="date" id="fechaFinQtA_3" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaFinQtA_3" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -879,7 +879,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioQtA_4" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioQtA_4" onclick="deshabilita('sinfechaInicioQtA_4', 'fechaInicioQtA_P_4')"> <label for="sinfechaInicioQtA_4">No consta</label><br>
                                                         <div id="fechaInicioQtA_P_4">
-                                                            <input type="date" id="fechaInicioQtA_4" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaInicioQtA_4" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -896,7 +896,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinQtA_4" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinQtA_4" onclick="deshabilita('sinfechaFinQtA_4', 'fechaFinQtA_P_4')"> <label for="sinfechaFinQtA_4">No consta</label><br>
                                                         <div id="fechaFinQtA_P_4">
-                                                            <input type="date" id="fechaFinQtA_4" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaFinQtA_4" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -941,7 +941,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioQtA_5" >Fecha de inicio</label><br>
                                                         <input type="checkbox" id="sinfechaInicioQtA_5" onclick="deshabilita('sinfechaInicioQtA_5', 'fechaInicioQtA_P_5')"> <label for="sinfechaInicioQtA_5">No consta</label><br>
                                                         <div id="fechaInicioQtA_P_5">
-                                                            <input type="date" id="fechaInicioQtA_5" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaInicioQtA_5" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -958,7 +958,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinQtA_5" >Fecha de finalización</label><br>
                                                         <input type="checkbox" id="sinfechaFinQtA_5" onclick="deshabilita('sinfechaFinQtA_5', 'fechaFinQtA_P_5')"> <label for="sinfechaFinQtA_5">No consta</label><br>
                                                         <div id="fechaFinQtA_P_5">
-                                                            <input type="date" id="fechaFinQtA_5" class="form-control QtADropdown"/>
+                                                            <input type="date" id="fechaFinQtA_5" class="form-control QtADropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1019,7 +1019,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioHormo" >Fecha de inicio de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioHtNa" onclick="deshabilita('sinfechaInicioHtNa', 'fechaInicioHtNa_P')"> <label for="sinfechaInicioHtNa">No consta</label><br>
                                                         <div id="fechaInicioHtNa_P">
-                                                            <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown"/>
+                                                            <input type="date" id="fechaInicioHormo" class="form-control hormonoterapiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1036,7 +1036,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinHormo" >Fecha de finalización de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinoHtNa" onclick="deshabilita('sinfechaFinoHtNa', 'fechaFinHtNa_P')"> <label for="sinfechaFinoHtNa">No consta</label><br>
                                                         <div id="fechaFinHtNa_P">
-                                                            <input type="date" id="fechaFinHormo" class="form-control hormonoterapiaDropdown"/>
+                                                            <input type="date" id="fechaFinHormo" class="form-control hormonoterapiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante">
@@ -1073,7 +1073,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioHormo_2" >Fecha de inicio de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioHtNa_2" onclick="deshabilita('sinfechaInicioHtNa_2', 'fechaInicioHtNa_P_2')"> <label for="sinfechaInicioHtNa_2">No consta</label><br>
                                                         <div id="fechaInicioHtNa_P_2">
-                                                            <input type="date" id="fechaInicioHormo_2" class="form-control hormonoterapiaDropdown_2"/>
+                                                            <input type="date" id="fechaInicioHormo_2" class="form-control hormonoterapiaDropdown_2 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1090,7 +1090,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinHormo_2" >Fecha de finalización de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinoHtNa_2" onclick="deshabilita('sinfechaFinoHtNa_2', 'fechaFinHtNa_P_2')"> <label for="sinfechaFinoHtNa_2">No consta</label><br>
                                                         <div id="fechaFinHtNa_P_2">
-                                                            <input type="date" id="fechaFinHormo_2" class="form-control hormonoterapiaDropdown_2"/>
+                                                            <input type="date" id="fechaFinHormo_2" class="form-control hormonoterapiaDropdown_2 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante_2">
@@ -1127,7 +1127,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioHormo_3" >Fecha de inicio de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioHtNa_3" onclick="deshabilita('sinfechaInicioHtNa_3', 'fechaInicioHtNa_P_3')"> <label for="sinfechaInicioHtNa_3">No consta</label><br>
                                                         <div id="fechaInicioHtNa_P_3">
-                                                            <input type="date" id="fechaInicioHormo_3" class="form-control hormonoterapiaDropdown_3"/>
+                                                            <input type="date" id="fechaInicioHormo_3" class="form-control hormonoterapiaDropdown_3 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1144,7 +1144,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinHormo_3" >Fecha de finalización de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinoHtNa_3" onclick="deshabilita('sinfechaFinoHtNa_3', 'fechaFinHtNa_P_3')"> <label for="sinfechaFinoHtNa_3">No consta</label><br>
                                                         <div id="fechaFinHtNa_P_3">
-                                                            <input type="date" id="fechaFinHormo_3" class="form-control hormonoterapiaDropdown_3"/>
+                                                            <input type="date" id="fechaFinHormo_3" class="form-control hormonoterapiaDropdown_3 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante_3">
@@ -1181,7 +1181,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioHormo_4" >Fecha de inicio de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioHtNa_4" onclick="deshabilita('sinfechaInicioHtNa_4', 'fechaInicioHtNa_P_4')"> <label for="sinfechaInicioHtNa_4">No consta</label><br>
                                                         <div id="fechaInicioHtNa_P_4">
-                                                            <input type="date" id="fechaInicioHormo_4" class="form-control hormonoterapiaDropdown_4"/>
+                                                            <input type="date" id="fechaInicioHormo_4" class="form-control hormonoterapiaDropdown_4 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1198,7 +1198,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinHormo_4" >Fecha de finalización de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinoHtNa_4" onclick="deshabilita('sinfechaFinoHtNa_4', 'fechaFinHtNa_P_4')"> <label for="sinfechaFinoHtNa_4">No consta</label><br>
                                                         <div id="fechaFinHtNa_P_4">
-                                                            <input type="date" id="fechaFinHormo_4" class="form-control hormonoterapiaDropdown_4"/>
+                                                            <input type="date" id="fechaFinHormo_4" class="form-control hormonoterapiaDropdown_4 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante_4">
@@ -1235,7 +1235,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioHormo_5" >Fecha de inicio de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioHtNa_5" onclick="deshabilita('sinfechaInicioHtNa_5', 'fechaInicioHtNa_P_5')"> <label for="sinfechaInicioHtNa_5">No consta</label><br>
                                                         <div id="fechaInicioHtNa_P_5">
-                                                            <input type="date" id="fechaInicioHormo_5" class="form-control hormonoterapiaDropdown_5"/>
+                                                            <input type="date" id="fechaInicioHormo_5" class="form-control hormonoterapiaDropdown_5 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1252,7 +1252,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinHormo_5" >Fecha de finalización de la Hormonoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinoHtNa_5" onclick="deshabilita('sinfechaFinoHtNa_5', 'fechaFinHtNa_P_5')"> <label for="sinfechaFinoHtNa_5">No consta</label><br>
                                                         <div id="fechaFinHtNa_P_5">
-                                                            <input type="date" id="fechaFinHormo_5" class="form-control hormonoterapiaDropdown_5"/>
+                                                            <input type="date" id="fechaFinHormo_5" class="form-control hormonoterapiaDropdown_5 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4" id="tipoHormonoterapiaNeoadyuvante_5">
@@ -1305,7 +1305,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioInmuno" >Fecha de inicio de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioInmuno" onclick="deshabilita('sinfechaInicioInmuno', 'fechaInicioInmuno_P')"> <label for="sinfechaInicioInmuno">No consta</label><br>
                                                         <div id="fechaInicioInmuno_P">
-                                                            <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown"/>
+                                                            <input type="date" id="fechaInicioInmuno" class="form-control inmunoterapiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1322,7 +1322,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinInmuno" >Fecha de finalización de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinInmuno" onclick="deshabilita('sinfechaFinInmuno', 'fechaFinInmuno_P')"> <label for="sinfechaFinInmuno">No consta</label><br>
                                                         <div id="fechaFinInmuno_P">
-                                                            <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown"/>
+                                                            <input type="date" id="fechaFinInmuno" class="form-control inmunoterapiaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1346,7 +1346,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioInmuno_2" >Fecha de inicio de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioInmuno_2" onclick="deshabilita('sinfechaInicioInmuno_2', 'fechaInicioInmuno_P_2')"> <label for="sinfechaInicioInmuno_2">No consta</label><br>
                                                         <div id="fechaInicioInmuno_P_2">
-                                                            <input type="date" id="fechaInicioInmuno_2" class="form-control inmunoterapiaDropdown_2"/>
+                                                            <input type="date" id="fechaInicioInmuno_2" class="form-control inmunoterapiaDropdown_2 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1363,7 +1363,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinInmuno_2" >Fecha de finalización de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinInmuno_2" onclick="deshabilita('sinfechaFinInmuno_2', 'fechaFinInmuno_P_2')"> <label for="sinfechaFinInmuno_2">No consta</label><br>
                                                         <div id="fechaFinInmuno_P_2">
-                                                            <input type="date" id="fechaFinInmuno_2" class="form-control inmunoterapiaDropdown_2"/>
+                                                            <input type="date" id="fechaFinInmuno_2" class="form-control inmunoterapiaDropdown_2 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1387,7 +1387,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioInmuno_3" >Fecha de inicio de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioInmuno_3" onclick="deshabilita('sinfechaInicioInmuno_3', 'fechaInicioInmuno_P_3')"> <label for="sinfechaInicioInmuno_3">No consta</label><br>
                                                         <div id="fechaInicioInmuno_P_3">
-                                                            <input type="date" id="fechaInicioInmuno_3" class="form-control inmunoterapiaDropdown_3"/>
+                                                            <input type="date" id="fechaInicioInmuno_3" class="form-control inmunoterapiaDropdown_3 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1404,7 +1404,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinInmuno_3" >Fecha de finalización de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinInmuno_3" onclick="deshabilita('sinfechaFinInmuno_3', 'fechaFinInmuno_P_3')"> <label for="sinfechaFinInmuno_3">No consta</label><br>
                                                         <div id="fechaFinInmuno_P_3">
-                                                            <input type="date" id="fechaFinInmuno_3" class="form-control inmunoterapiaDropdown_3"/>
+                                                            <input type="date" id="fechaFinInmuno_3" class="form-control inmunoterapiaDropdown_3 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1428,7 +1428,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioInmuno_4" >Fecha de inicio de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioInmuno_4" onclick="deshabilita('sinfechaInicioInmuno_4', 'fechaInicioInmuno_P_4')"> <label for="sinfechaInicioInmuno_4">No consta</label><br>
                                                         <div id="fechaInicioInmuno_P_4">
-                                                            <input type="date" id="fechaInicioInmuno_4" class="form-control inmunoterapiaDropdown_4"/>
+                                                            <input type="date" id="fechaInicioInmuno_4" class="form-control inmunoterapiaDropdown_4 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1445,7 +1445,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinInmuno_4" >Fecha de finalización de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinInmuno_4" onclick="deshabilita('sinfechaFinInmuno_4', 'fechaFinInmuno_P_4')"> <label for="sinfechaFinInmuno_4">No consta</label><br>
                                                         <div id="fechaFinInmuno_P_4">
-                                                            <input type="date" id="fechaFinInmuno_4" class="form-control inmunoterapiaDropdown_4"/>
+                                                            <input type="date" id="fechaFinInmuno_4" class="form-control inmunoterapiaDropdown_4 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1469,7 +1469,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaInicioInmuno_5" >Fecha de inicio de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaInicioInmuno_5" onclick="deshabilita('sinfechaInicioInmuno_5', 'fechaInicioInmuno_P_5')"> <label for="sinfechaInicioInmuno_5">No consta</label><br>
                                                         <div id="fechaInicioInmuno_P_5">
-                                                            <input type="date" id="fechaInicioInmuno_5" class="form-control inmunoterapiaDropdown_5"/>
+                                                            <input type="date" id="fechaInicioInmuno_5" class="form-control inmunoterapiaDropdown_5 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1486,7 +1486,7 @@
                                                         <label class="form-label required formatoPreguntas" for="fechaFinInmuno_5" >Fecha de finalización de la Inmunoterapia</label><br>
                                                         <input type="checkbox" id="sinfechaFinInmuno_5" onclick="deshabilita('sinfechaFinInmuno_5', 'fechaFinInmuno_P_5')"> <label for="sinfechaFinInmuno_5">No consta</label><br>
                                                         <div id="fechaFinInmuno_P_5">
-                                                            <input type="date" id="fechaFinInmuno_5" class="form-control inmunoterapiaDropdown_5"/>
+                                                            <input type="date" id="fechaFinInmuno_5" class="form-control inmunoterapiaDropdown_5 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-outline mb-4">
@@ -1522,7 +1522,7 @@
                                             <div class="form-outline mb-4 template">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaRadioM1" >Fecha de radiofrecuencia</label>
-                                                    <input type="date" id="fechaRadioM1" class="form-control m1RadiofrecuenciaDropdown"/>
+                                                    <input type="date" id="fechaRadioM1" class="form-control m1RadiofrecuenciaDropdown validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="localizacionRadioM1" >Localización radiofrecuencia</label><br>
@@ -1547,7 +1547,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaRadioM1_2" >Fecha de radiofrecuencia</label>
-                                                    <input type="date" id="fechaRadioM1_2" class="form-control m1RadiofrecuenciaDropdown_2"/>
+                                                    <input type="date" id="fechaRadioM1_2" class="form-control m1RadiofrecuenciaDropdown_2 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="localizacionRadioM1_2" >Localización radiofrecuencia</label><br>
@@ -1572,7 +1572,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaRadioM1_3" >Fecha de radiofrecuencia</label>
-                                                    <input type="date" id="fechaRadioM1_3" class="form-control m1RadiofrecuenciaDropdown_3"/>
+                                                    <input type="date" id="fechaRadioM1_3" class="form-control m1RadiofrecuenciaDropdown_3 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="localizacionRadioM1_3" >Localización radiofrecuencia</label><br>
@@ -1597,7 +1597,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaRadioM1_4" >Fecha de radiofrecuencia</label>
-                                                    <input type="date" id="fechaRadioM1_4" class="form-control m1RadiofrecuenciaDropdown_4"/>
+                                                    <input type="date" id="fechaRadioM1_4" class="form-control m1RadiofrecuenciaDropdown_4 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="localizacionRadioM1_4" >Localización radiofrecuencia</label><br>
@@ -1622,7 +1622,7 @@
                                             <div class="form-outline mb-4 template" style="display: none;">
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="fechaRadioM1_5" >Fecha de radiofrecuencia</label>
-                                                    <input type="date" id="fechaRadioM1_5" class="form-control m1RadiofrecuenciaDropdown_5"/>
+                                                    <input type="date" id="fechaRadioM1_5" class="form-control m1RadiofrecuenciaDropdown_5 validacionfecha" min="1900-01-01" max="2100-01-01" onblur="validateDate()"/>
                                                 </div>
                                                 <div class="form-outline mb-4">
                                                     <label class="form-label required formatoPreguntas" for="localizacionRadioM1_5" >Localización radiofrecuencia</label><br>
