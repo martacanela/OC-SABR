@@ -713,3 +713,22 @@ function modificarPregunta() {
           break;
   }
 }
+// Validación de fecha (Marta)
+function validateDate() {
+  var inputDate = document.getElementsByClassName("validadionfecha").value;
+  var minDate = document.getElementsByClassName("validadionfecha").getAttribute("min");
+  var maxDate = document.getElementsByClassName("validadionfecha").getAttribute("max");
+  var dateError = document.getElementsByClassName("validadionfecha");
+
+  if (inputDate === "") {
+    // El campo está vacío, no se requiere validación
+    dateError.textContent = "";
+  } else if (inputDate >= minDate && inputDate <= maxDate) {
+    // La fecha está dentro del rango, no hay error
+    dateError.textContent = "";
+  } else {
+    // La fecha está fuera del rango, se muestra un mensaje de error
+    dateError.textContent = "La fecha debe estar entre " + minDate + " y " + maxDate + ".";
+    dateError.style.color="red"
+  }
+}
