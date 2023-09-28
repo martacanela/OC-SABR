@@ -40,9 +40,9 @@
                                     </div>
                                     <div class="form-outline mb-4 ">
                                         <label class="form-label required formatoPreguntas" for="numeroM1">4. Número de todas las M1 previas a la SABR</label>
-                                        <input type="number" id="numeroM1" class="form-control" required/>
+                                        <input type="number" id="numeroM1" class="form-control" oninput="checkMetastasis()" required/>
                                     </div>
-                                    <div class="form-outline mb-4">
+                                    <div class="form-outline mb-4" id="additionalQuestions">
                                         <label class="form-label required formatoPreguntas" for="organosAfectados">5. Órganos afectados</label><br>
                                         <input type="checkbox" name="organosAfectados" id="organoAfectadoOsea" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" required> <label for="organoAfectadoOsea">Ósea</label><br>
                                         <input type="checkbox" name="organosAfectados" id="organoAfectadoPulmonar" onclick="otrosAparece('organoAfectadoOtros__L', 'organoAfectadoOtros__T')" > <label for="organoAfectadoPulmonar">Pulmonar</label><br>
@@ -54,10 +54,10 @@
                                         <input type="text" name="organosAfectados" id="organoAfectadoOtros__T" class="form-control organosAfectadosDropdown" style="display:none" placeholder="Separad por ';'"/>
                                     </div>
                                 </div>
-                                <div class="tab">
+                                <div class="tab" >
                                     <h3>Tratamientos</h3>
                                     <br>
-                                    <div class="form-outline mb-4 ">
+                                    <div class="form-outline mb-4 " id="tratamientosm1">
                                         <label class="form-label required formatoPreguntas" for="tratamientosCancerPrimario">6. Tratamientos de todas las M1 previas a la SABR</label><br>
                                         <input type="checkbox" class="dropdownGroup hasDropdown m1CirugiaGroup" name="tratamientosCancerPrimario" id="m1Cirugia" onclick="otrosAparece('m1Cirugia', 'm1Cirugia_preguntas'); mostrarCirugias();"> <label for="m1Cirugia">Cirugía</label><br>
                                         <input type="checkbox" class="dropdownGroup hasDropdown rtaGroup" name="tratamientosCancerPrimario" id="rta" onclick="otrosAparece('rta', 'rta_preguntas')"> <label for="rta">Radioterapia <b>(RT)</b></label><br>

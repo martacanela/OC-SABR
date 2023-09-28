@@ -732,3 +732,27 @@ function validateDate() {
     dateError.style.color="red"
   }
 }
+
+// Bloqueo M1 si hay 0 
+function checkMetastasis() {
+  var numeroM1 = document.getElementById("numeroM1").value;
+  var tratamientosm1 = document.getElementById("tratamientosm1");
+  var nextBtn = document.getElementById("nextBtn");
+  var prevBtn = document.getElementById("prevBtn");
+  var uploadBtn = document.getElementById("uploadBtn");
+
+  if (parseInt(numeroM1) === 0) {
+      // If the number of metastasis is 0, hide or disable remaining questions
+      document.getElementById("additionalQuestions").style.display = "none";
+      tratamientosm1.style.display = "none";
+      nextBtn.style.display = "none";
+      prevBtn.style.display = "none";
+      // Show the submit button
+      uploadBtn.style.display = "block";
+  } else {
+      // If the number of metastasis is not 0, show remaining questions
+      document.getElementById("additionalQuestions").style.display = "block";
+      tratamientosm1.style.display = "block"
+      nextBtn.style.display = "block";
+  }
+}
